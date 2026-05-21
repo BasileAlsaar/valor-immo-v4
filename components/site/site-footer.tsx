@@ -1,0 +1,121 @@
+import Link from "next/link"
+import Image from "next/image"
+import { Mail, MapPin, Phone, Clock } from "lucide-react"
+
+import { Container } from "@/components/ui/container"
+import { SITE } from "@/lib/site"
+import { CATEGORIES } from "@/lib/data/categories"
+
+const PLAN_SITE = [
+  { label: "Vente", href: "/vente" },
+  { label: "Location", href: "/location" },
+  { label: "Estimations", href: "/estimations" },
+  { label: "Opportunités", href: "/opportunites" },
+  { label: "Signatures", href: "/signatures" },
+  { label: "Actualités", href: "/actualites" },
+  { label: "L'agence", href: "/l-agence" },
+  { label: "Contact", href: "/contact" },
+]
+
+const LEGAL = [
+  { label: "Mentions légales", href: "/mentions-legales" },
+  { label: "Politique de confidentialité", href: "/politique-de-confidentialite" },
+  { label: "Gestion des cookies", href: "/gestion-des-cookies" },
+]
+
+export function SiteFooter() {
+  return (
+    <footer className="bg-fir-dark text-cream">
+      <Container className="py-20 lg:py-28">
+        <div className="grid gap-12 lg:grid-cols-4">
+          <div>
+            <Link href="/" className="flex items-center gap-3">
+              <Image
+                src="/logo-valor-immo.png"
+                alt={SITE.name}
+                width={56}
+                height={56}
+                className="h-14 w-14 object-contain brightness-0 invert"
+              />
+              <span className="font-display text-2xl uppercase tracking-tight">{SITE.name}</span>
+            </Link>
+            <p className="mt-4 max-w-xs text-sm leading-relaxed opacity-80">{SITE.baseline}</p>
+            <ul className="mt-6 space-y-3 text-sm">
+              <li className="flex items-start gap-3">
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold" aria-hidden />
+                <span>
+                  {SITE.address.line1}
+                  <br />
+                  {SITE.address.line2}
+                </span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Phone className="h-4 w-4 shrink-0 text-gold" aria-hidden />
+                <a href={`tel:${SITE.telephoneTel}`} className="hover:text-gold">
+                  {SITE.telephoneDisplay}
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <Mail className="h-4 w-4 shrink-0 text-gold" aria-hidden />
+                <a href={`mailto:${SITE.email}`} className="hover:text-gold">
+                  {SITE.email}
+                </a>
+              </li>
+              <li className="flex items-start gap-3">
+                <Clock className="mt-0.5 h-4 w-4 shrink-0 text-gold" aria-hidden />
+                <span className="opacity-80">{SITE.hours.full}</span>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <p className="eyebrow text-gold">Plan du site</p>
+            <ul className="mt-5 space-y-3 text-sm">
+              {PLAN_SITE.map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href} className="opacity-80 transition hover:text-gold hover:opacity-100">
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <p className="eyebrow text-gold">Classes d'actifs</p>
+            <ul className="mt-5 space-y-3 text-sm">
+              {CATEGORIES.map((cat) => (
+                <li key={cat.slug}>
+                  <Link href={cat.href} className="opacity-80 transition hover:text-gold hover:opacity-100">
+                    {cat.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <p className="eyebrow text-gold">Légal</p>
+            <ul className="mt-5 space-y-3 text-sm">
+              {LEGAL.map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href} className="opacity-80 transition hover:text-gold hover:opacity-100">
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-8 text-xs leading-relaxed opacity-60">
+              Carte professionnelle Hoguet : <span className="font-mono text-gold">[CARTE T À FOURNIR]</span>
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-16 flex flex-col gap-4 border-t border-cream/15 pt-8 text-xs opacity-60 md:flex-row md:items-center md:justify-between">
+          <p>© 2026 {SITE.name} · Tous droits réservés</p>
+          <p>{SITE.address.line1}, {SITE.address.line2} · {SITE.telephoneDisplay}</p>
+        </div>
+      </Container>
+    </footer>
+  )
+}

@@ -1,26 +1,179 @@
 @import "tailwindcss";
 
+@theme {
+  /* Couleurs Valor Immo V4 — palette Jade Kine noir/blanc + accent or */
+  --color-fir-dark: #0F3D2E;
+  --color-gold: #C9A961;
+  --color-gold-warm: #B8893E;
+  --color-gold-deep: #7A571E;
+  --color-cream: #F5F2EC;
+  --color-cream-soft: #FAF8F3;
+  --color-ink: #0A0E1A;
+  --color-ink-pure: #000000;
+  --color-slate-muted: #5B6573;
+
+  /* Fonts via next/font (chargées en layout.tsx) */
+  --font-display: var(--font-anton);
+  --font-sans: var(--font-inter);
+  --font-accent: var(--font-fraunces);
+  --font-mono: var(--font-jetbrains);
+
+  /* Easing & durations sophistiquées */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+}
+
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #000000;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, sans-serif;
+  font-feature-settings: "kern", "liga", "calt";
+}
+
+/* Typo display — Anton, ultra condensed black pour titres XXL Jade Kine */
+.font-display {
+  font-family: var(--font-display), "Bebas Neue", "Acumin Pro Condensed", sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 0.9;
+}
+
+/* Effet outline text Jade Kine — titres H2 vides */
+.text-outline-black {
+  -webkit-text-stroke: 1.5px #000;
+  color: transparent;
+}
+
+.text-outline-white {
+  -webkit-text-stroke: 1.5px #fff;
+  color: transparent;
+}
+
+@media (min-width: 1024px) {
+  .text-outline-black {
+    -webkit-text-stroke: 2px #000;
+  }
+  .text-outline-white {
+    -webkit-text-stroke: 2px #fff;
+  }
+}
+
+.text-outline-gold {
+  -webkit-text-stroke: 1.5px #C9A961;
+  color: transparent;
+}
+
+/* Eyebrow uppercase small-caps */
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+/* Chiffres tabulaires pour ARGUS */
+.tabular {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+/* Reset des focus rings — focus visible Jade Kine style */
+*:focus {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 2px solid #C9A961;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* MapLibre overrides */
+.maplibregl-popup-content {
+  font-family: var(--font-sans);
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.maplibregl-ctrl-attrib {
+  font-size: 10px;
+}
+
+/* Selection */
+::selection {
+  background: #C9A961;
+  color: #000;
+}
+
+/* Scroll bar discrete */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #0A0E1A;
+  border-radius: 8px;
+}
+
+/* Prose éditorial articles */
+.prose-editorial {
+  font-family: var(--font-sans);
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: #0A0E1A;
+}
+.prose-editorial p {
+  margin-bottom: 1.5rem;
+}
+.prose-editorial p:first-child::first-letter {
+  font-family: var(--font-display);
+  font-size: 4.5rem;
+  float: left;
+  line-height: 0.9;
+  padding: 0.5rem 0.75rem 0 0;
+  color: #C9A961;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Marquee anim */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+
+/* Subtle reveal */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
 }

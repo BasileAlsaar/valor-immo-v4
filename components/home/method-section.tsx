@@ -1,0 +1,80 @@
+import Link from "next/link"
+import { Phone } from "lucide-react"
+
+import { Container } from "@/components/ui/container"
+import { Eyebrow } from "@/components/ui/eyebrow"
+import { OutlineText } from "@/components/ui/outline-text"
+import { CtaPill } from "@/components/ui/cta-pill"
+import { RevealStagger, RevealItem } from "@/components/motion/reveal"
+import { SITE } from "@/lib/site"
+
+const STEPS = [
+  {
+    chiffre: "24h",
+    titre: "Brief précis",
+    text: "Surface, emplacement, activité, budget. Pas de visite hors cible.",
+  },
+  {
+    chiffre: "48h",
+    titre: "Première visite",
+    text: "Sur les biens identifiés et validés ensemble.",
+  },
+  {
+    chiffre: "1",
+    titre: "Interlocuteur",
+    text: "Du premier appel à la signature. Aucun sous-traitant.",
+  },
+] as const
+
+export function MethodSection() {
+  return (
+    <section className="relative overflow-hidden bg-fir-dark py-32 text-white md:py-44 lg:py-56">
+      <Container>
+        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div className="max-w-3xl">
+            <Eyebrow className="text-gold">Méthode</Eyebrow>
+            <OutlineText
+              color="gold"
+              className="mt-6 text-[clamp(2.5rem,9vw,10rem)] leading-[0.9]"
+            >
+              Du brief à la signature, sans relais.
+            </OutlineText>
+          </div>
+          <a
+            href={`tel:${SITE.telephoneTel}`}
+            className="font-display hidden text-3xl uppercase tracking-tight text-gold hover:text-white md:inline-flex md:items-center md:gap-3"
+          >
+            <Phone className="h-6 w-6" /> {SITE.telephoneDisplay}
+          </a>
+        </div>
+
+        <RevealStagger className="mt-20 grid gap-12 md:grid-cols-3">
+          {STEPS.map((step) => (
+            <RevealItem key={step.chiffre}>
+              <div className="border-t-2 border-gold/30 pt-8">
+                <p className="font-display text-[clamp(5rem,12vw,11rem)] leading-[0.85] text-gold">
+                  {step.chiffre}
+                </p>
+                <h3 className="mt-6 text-2xl font-medium uppercase tracking-tight">
+                  {step.titre}
+                </h3>
+                <p className="mt-4 text-base leading-relaxed opacity-80">
+                  {step.text}
+                </p>
+              </div>
+            </RevealItem>
+          ))}
+        </RevealStagger>
+
+        <div className="mt-20 flex flex-wrap items-center gap-6">
+          <CtaPill href="/contact" variant="gold" size="lg">
+            Démarrer mon projet
+          </CtaPill>
+          <Link href="/l-agence" className="text-sm uppercase tracking-wider opacity-80 hover:text-gold hover:opacity-100">
+            En savoir plus sur l'agence ↗
+          </Link>
+        </div>
+      </Container>
+    </section>
+  )
+}
