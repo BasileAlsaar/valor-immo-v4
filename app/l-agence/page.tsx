@@ -119,7 +119,7 @@ export default function AgencePage() {
               <p className="mt-4 text-sm text-ink/60">
                 Carte T en cours d'obtention — délivrée par la CCI Paris Île-de-France
                 <br />
-                Garantie financière : <span className="font-mono font-medium text-fir-dark">[ORGANISME ET MONTANT À FOURNIR]</span>
+                Garantie financière : en cours de souscription
               </p>
             </div>
             <div className="rounded-3xl bg-cream p-10">

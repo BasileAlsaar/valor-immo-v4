@@ -3,6 +3,36 @@
 Problèmes hors-scope identifiés pendant les sprints, consolidés pour traitement dans
 les sprints suivants ou dans un sprint dédié.
 
+## Sprint 5b minimaliste — Décisions et backlog futur (traçabilité)
+
+**Sprint 5b minimaliste — placeholders légaux traités en mode "en cours",
+politique de confidentialité RGPD générique créée** : 2 placeholders « garantie
+financière » (l-agence + mentions-legales) remplacés par « en cours de souscription »
+en symétrie avec « Carte T en cours d'obtention » déjà en place. Page
+`/politique-de-confidentialite` enrichie d'un stub minimal vers une politique
+RGPD complète (responsable de traitement, données collectées, finalités, base
+légale, durée de conservation, destinataires Resend, droits, cookies, CNIL).
+Aucun tracker analytique en place — politique formulée honnêtement sans mention
+de Google Analytics / Hotjar / etc. Lien footer « Politique de confidentialité »
+déjà présent dans `components/site/site-footer.tsx` (section Légal), pointe
+correctement vers `/politique-de-confidentialite`. Captures Playwright produites
+dans `captures/sprint-5b/`.
+
+**Sprint 5b complet (futur) — mentions légales avec data réelles** :
+2 placeholders restants dans `app/mentions-legales/page.tsx` en attente data
+Basile :
+- ligne 28 : `[SIRET / RCS / Capital social — À FOURNIR]`
+- ligne 36 : `[Nom et qualité — À FOURNIR]` (directeur de publication)
+
+Ces 2 lignes n'ont pas été traitées en mode « en cours » car SIRET et qualité
+de directeur de publication sont des data binaires (on les a ou on ne les a pas).
+Sprint 5b complet déclenché par Basile dès que les data juridiques réelles sont
+disponibles (raison sociale, SIRET, RCS, capital social, garantie financière
+réelle, organisme + montant, directeur de publication nommé). Voir aussi les
+4 placeholders restants documentés dans la section « Sprint Mentions légales »
+plus bas (la garantie financière étant désormais traitée en mode transitoire,
+3 restent).
+
 ## Sprint 5a — Décisions et backlog futur (traçabilité)
 
 **Logo hero home XL (200 px desktop / 120 px mobile)** : nouveau composant
@@ -121,13 +151,16 @@ la chorégraphie animation justifie un retour à 2 lignes.
 
 ## Sprint « Mentions légales » (avant mise en ligne publique)
 
-4 placeholders `[X À FOURNIR]` restants dans le DOM rendu. Hors périmètre tâche ❷ Hoguet
-(qui ne traitait que `[CARTE T À FOURNIR]`).
+**Mise à jour sprint 5b minimaliste** : 2 des 4 placeholders initialement listés
+ont été traités en mode transitoire « en cours de souscription » (les 2 lignes
+« garantie financière »). 2 placeholders restent en attente data réelles Basile :
 
 - `app/mentions-legales/page.tsx:28` — `[SIRET / RCS / Capital social — À FOURNIR]`
-- `app/mentions-legales/page.tsx:33` — `[ORGANISME ET MONTANT À FOURNIR]` (garantie financière)
 - `app/mentions-legales/page.tsx:36` — `[Nom et qualité — À FOURNIR]` (directeur de publication)
-- `app/l-agence/page.tsx:122` — `[ORGANISME ET MONTANT À FOURNIR]` (garantie financière)
+
+Traités sprint 5b minimaliste :
+- ~~`app/l-agence/page.tsx:122`~~ → « Garantie financière : en cours de souscription »
+- ~~`app/mentions-legales/page.tsx:33`~~ → « Garantie financière : en cours de souscription »
 
 **Note sprint 2** : le brief initial sprint 2 prévoyait 2 nouveaux placeholders
 `[ADRESSE À FOURNIR]` et `[HORAIRES À FOURNIR]` sur la page `/contact`. OVERRIDE 1
