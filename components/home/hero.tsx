@@ -13,6 +13,7 @@ import { Phone, ChevronDown } from "lucide-react"
 import { Container } from "@/components/ui/container"
 import { CtaPill } from "@/components/ui/cta-pill"
 import { SearchBar } from "@/components/home/search-bar"
+import { HeroLogo } from "@/components/home/hero-logo"
 import { CallbackTrigger } from "@/components/callback/CallbackTrigger"
 import { SITE } from "@/lib/site"
 import {
@@ -60,6 +61,9 @@ export function Hero() {
           <source src="/hero-paris.mp4" type="video/mp4" />
         </video>
       </motion.div>
+      {/* Logo XL surimposé — sprint 5a (le SiteHeader masque son logo sur '/') */}
+      <HeroLogo />
+
       {/* Overlay vert sapin Valor Immo — opacité ajustable pour contraste AA sur H1 */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-fir-dark/60 via-fir-dark/55 to-fir-dark/85" aria-hidden />
 

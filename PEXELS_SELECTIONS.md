@@ -165,3 +165,58 @@ Règle de complémentarité brief §80-87 : photo secondaire **doit raconter que
 2. **Vérification frame-par-frame** des spec strictes (pas de personnes identifiables, pas de marques, pas de signe étranger, pas de Tesla) **non effectuée** dans cette session — risque assumé par Basile en validation bloc post-merge.
 3. **ID 776415 initial** pour cession-droit-au-bail était 404. Retry avec `1320686`. Document de traçabilité conservé.
 4. **8 photos secondaires galerie** : sprint 4b uniquement (1 photo/bien supplémentaire pour Gallery composant).
+
+---
+
+# SPRINT 5A — RE-SOURCING TOTAL POST-AUDIT VISUEL
+
+**Contexte** : audit visuel frame-par-frame après sprint 4b a révélé **6 cartes
+catégories hors-spec sur 6** (cf. brief sprint 5a §2) + **13 photos biens sur 16
+problématiques** (personnes visibles, hors-sujet, food close-up). Sprint 5a effectue
+le re-sourcing complet avec workflow audit + traçabilité 3 candidats par carte
+(cartes) ou 1 candidat ciblé par photo bien (volume oblige).
+
+**Documentation détaillée** : `PEXELS_CANDIDATES_SPRINT_5A.md` (audit-trail complet
+des 3 candidats par carte + verdict).
+
+## Cartes classes d'actifs (6 photos remplacées)
+
+| Carte | Nouveau Pexels ID | Auteur | Sujet |
+|-------|-------------------|--------|-------|
+| `locaux-commerciaux.jpg` | **10427698** | Céline | Épicerie Paris traditionnelle, awning, façade quartier |
+| `bureaux.jpg` | **4353719** | ArtHouse Studio | Salon haussmannien parquet herringbone + moulures + cheminée + chandelier |
+| `hotellerie-restauration.jpg` | **28704256** | Céline | Café parisien intérieur warm lighting (Paris géoloc) |
+| `immeubles.jpg` | **31543003** | Carl-Emil Jørgensen | Façade haussmannienne 19e + balcons + mansardes + ciel bleu (Paris) |
+| `entrepots-logistique.jpg` | **4487363** | Tiger Lily | Entrepôt moderne racks + palettes |
+| `cession-droit-au-bail.jpg` | **14690503** | Consuelo Borroni | Bistrot d'angle parisien avec auvent rouge + métal/bois patinés (Paris) |
+
+## Photos biens (13 photos remplacées sur 16)
+
+Cf. `PEXELS_CANDIDATES_SPRINT_5A.md` section « Tâche ❹ » pour le tableau complet
+avant/après + audit visuel verdict par photo (À RE-SOURCER / DOUTEUSE / OK).
+
+**Photos conservées (verdict OK sprint 4b)** :
+- `boutique-passy-86m2.jpg` (boutique mode Ivo Nikkol vitrine intérieure)
+- `hotel-marais-12-chambres.jpg` (chambre design bois sombre soignée)
+- `immeuble-grands-boulevards-840m2-2.jpg` (intérieur appart parisien briques blanches)
+
+**Photos re-sourcées (13)** : voir tableau de traçabilité dans
+`PEXELS_CANDIDATES_SPRINT_5A.md`.
+
+**Compromis explicites assumés** :
+- `hotel-marais-12-chambres-2.jpg` : coin salon plutôt que chambre (Pexels manque
+  de chambres hôtel premium parisiennes sans personnes)
+- `entrepot-pajol-680m2.jpg` : atelier industriel métallique (typologie proche
+  mais plus « tôles » que « palettes universelles »)
+- `fonds-pizzeria-bastille-95m2.jpg` : cuisine + four à briques plutôt que la
+  salle (lecture pizzeria immédiate via four)
+- `fonds-pizzeria-bastille-95m2-2.jpg` : Valencia/Espagne plutôt que Paris
+  (Pexels catalogue limité sur pizzeria intérieur sans personnes)
+
+## Contrainte non-figuratif strict
+
+Toutes les nouvelles photos (catégories + biens) ont été vérifiées visuellement
+frame par frame pour confirmer **absence de personnes reconnaissables, même
+anonymes** (rappel feedback mémoire Basile). Les silhouettes très lointaines au
+fond de `local-chatelet-halles-173m2-2.jpg` (Galerie Vero-Dodat) sont jugées
+acceptables car non identifiables individuellement.

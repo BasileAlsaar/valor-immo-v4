@@ -3,6 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { useEffect, useState } from "react"
+import { usePathname } from "next/navigation"
 import { Menu, X, Phone } from "lucide-react"
 
 import { cn } from "@/lib/utils"
@@ -11,6 +12,11 @@ import { SITE, NAV } from "@/lib/site"
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+  const pathname = usePathname()
+  // Sprint 5a — sur la home le HeroLogo XL prend le relais ; on masque le logo
+  // de la barre sticky tant qu'on n'a pas scrollé (où le hero a disparu).
+  const isHome = pathname === "/"
+  const showLogo = !isHome || scrolled
 
   useEffect(() => {
     function onScroll() {
@@ -38,7 +44,16 @@ export function SiteHeader() {
       )}
     >
       <div className="mx-auto flex max-w-[1440px] items-center justify-between px-6 py-5 md:px-12 lg:px-24">
-        <Link href="/" aria-label={`Retour à l'accueil — ${SITE.name}`} className="flex items-center gap-3">
+        <Link
+          href="/"
+          aria-label={`Retour à l'accueil — ${SITE.name}`}
+          className={cn(
+            "flex items-center gap-3",
+            // Home avant scroll : le HeroLogo XL prend le relais, on cache
+            // tout le bloc identitaire du SiteHeader (logo PNG + nom).
+            !showLogo && "pointer-events-none invisible",
+          )}
+        >
           <Image
             src="/logo-valor-immo.png"
             alt=""

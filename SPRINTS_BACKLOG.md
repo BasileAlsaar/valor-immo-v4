@@ -3,6 +3,64 @@
 Problèmes hors-scope identifiés pendant les sprints, consolidés pour traitement dans
 les sprints suivants ou dans un sprint dédié.
 
+## Sprint 5a — Décisions et backlog futur (traçabilité)
+
+**Logo hero home XL (200 px desktop / 120 px mobile)** : nouveau composant
+`components/home/hero-logo.tsx` en surimpression sur la vidéo Paris (filtre
+`brightness-0 invert` = blanc). Le `SiteHeader` masque son logo + nom sur la home
+pré-scroll via `usePathname()` pour éviter le double-affichage. La règle bascule
+naturellement à `scrolled` (le user voit alors le header complet logo + nom). Si
+ajout d'autres pages avec hero pleine vidéo, factoriser dans une prop `hideLogoUntilScroll`.
+
+**Logo conservé en PNG 1024×1024 RGBA** : le brief §32 supposait un SVG, mais la
+réalité du repo est un PNG. Pas de migration SVG demandée — la qualité visuelle
+est bonne en downscale 5× (1024 → 200). Sprint dédié possible si Basile veut SVG
+pour scaling vectoriel parfait.
+
+**Re-sourcing complet post-audit visuel** : sprints 4a/4b avaient livré sourcing
+**uniquement sur titres/tags Pexels** sans inspection visuelle (cf. réserve §165
+de `PEXELS_SELECTIONS.md` sprint 4a). Audit visuel sprint 5a a révélé **6/6 cartes
+hors-spec** + **13/16 photos biens problématiques** (personnes visibles, hors-sujet,
+food close-up). Workflow sprint 5a impose désormais **inspection frame-par-frame
+obligatoire** + traçabilité 3 candidats / 1 reco par photo. Documentation complète
+dans `PEXELS_CANDIDATES_SPRINT_5A.md`.
+
+**Workflow validation Basile assoupli mi-sprint** : « mets toujours candidat 1 ».
+Le traçage 3 candidats reste fait dans le doc (audit-trail), mais l'instruction
+écourte la phase STOP-validation pour les cartes restantes 2.4-2.6. Pour la tâche
+❹ (volume 13 photos), workflow réduit à 1 candidat ciblé direct par photo.
+
+**Compromis explicites assumés sur quelques photos biens** (cf.
+`PEXELS_CANDIDATES_SPRINT_5A.md` section « Compromis explicites notés ») :
+- `hotel-marais-12-chambres-2.jpg` : coin salon plutôt que chambre
+- `entrepot-pajol-680m2.jpg` : atelier industriel plutôt qu'entrepôt logistique
+- `fonds-pizzeria-bastille-95m2.jpg` : cuisine/four plutôt que salle
+- `fonds-pizzeria-bastille-95m2-2.jpg` : pizzeria Valencia/Espagne (catalogue
+  Pexels limité sur pizzeria intérieur sans personnes)
+Backlog : remplacement par shoot client dédié si Basile juge insuffisant.
+
+**Cache Next.js image servait l'ancienne version** : `.next/dev/cache/images`
+(1.2 Go de WebP optimisées) persistait après remplacement des fichiers sources,
+provoquant un faux négatif lors des captures Playwright (hero bien-chatelet montrait
+encore la piscine). Purge manuelle `rm -rf .next/dev/cache/images` requise en dev
+après tout swap de visuel. **Sur Vercel preview, le cache est hash-based sur le
+contenu source, donc l'invalidation est automatique — pas d'action prod nécessaire.**
+
+**[OUT-OF-SCOPE] sticky filter bar `/opportunites`** : arbitrage reporté au
+sprint 5 motion design (refonte UX interaction filtres). Non bloquant pour 5a.
+
+**[OUT-OF-SCOPE] sprint 5b** mentions légales — **reporté en attente data
+juridiques Basile** (raison sociale, RCS, capital social, hébergeur, DPO, RGPD).
+Pas de déclenchement automatique tant que ces données ne sont pas fournies.
+
+**[OUT-OF-SCOPE] sprints 5c/5d** typographie/espacements/footer + team page enrichie.
+
+**Remplacement futur par visuels client** : les 4 compromis Pexels assumés sprint
+5a (bureaux salon haussmannien « rural cottage », hotel-marais-2 coin salon,
+pizzeria cuisine+four, pizzeria-2 Valencia/Espagne) sont à remplacer par des
+photos client réelles dès qu'un shoot dédié sera disponible. La structure data
+`lib/data/properties.ts` accepte la substitution sans refacto.
+
 ## Sprint 4b — Décisions et backlog futur (traçabilité)
 
 **Galerie minimaliste (2 photos par bien)** : décision Basile sprint 4b — sourcing automatique 1 hero + 1 secondaire par bien. À enrichir vers 4 photos par bien (extérieur / intérieur / détail / vue) quand les vrais visuels client (shoot dédié) seront disponibles. La structure `<Gallery>` accepte un tableau, l'extension est triviale côté data.
