@@ -27,10 +27,28 @@ les a annulés — les valeurs réelles V4 (96 Rue Boileau / 75016 Paris ; Lun-V
 ## Pré-mise en ligne — Resend (action Basile)
 
 - Créer une clé Resend (https://resend.com/api-keys)
-- Vérifier le domaine `valor-immo.com` côté Resend (DNS SPF/DKIM/DMARC)
+- **Vérification DNS du domaine `valor-immo.com` côté Resend (SPF / DKIM / DMARC)
+  à faire par Basile avant la mise en production.**
 - Renseigner `.env.local` (cf. `.env.local.example`) avec la vraie clé
 - Switcher `RESEND_FROM_EMAIL` de `Valor Immo <onboarding@resend.dev>` vers
   `Valor Immo <contact@valor-immo.com>` quand le domaine est vérifié
+
+## Politique de confidentialité — enrichissement RGPD spécifique formulaire 3 étapes
+
+La route `/politique-de-confidentialite` existe (stub minimal posé au bootstrap V4).
+Elle doit être **enrichie d'une mention RGPD spécifique au formulaire 3 étapes** :
+
+- Finalité du traitement : qualification d'un prospect commercial B2B (lead).
+- Base légale : intérêt légitime de Valor Immo + mesures précontractuelles à
+  l'initiative de la personne concernée (art. 6.1.b et 6.1.f RGPD).
+- Données collectées : typologie d'actif, transaction, surface, budget, deadline,
+  financement, secteur d'activité, zones, nom, société, email, téléphone, source,
+  message libre, consentement explicite, IP (rate-limit / honeypot).
+- Durée de conservation : à fixer côté agence (recommandation : 24 mois après
+  dernier contact, puis archivage 5 ans pour preuve commerciale art. L110-4 C.com).
+- Destinataires : Valor Immo (boîte interne) + sous-traitant Resend (envoi).
+- Droits : accès, rectification, effacement, opposition, portabilité, limitation.
+- DPO / contact RGPD : à fournir.
 
 Action attendue : recueillir les valeurs réelles auprès de l'agence (SIREN, capital social,
 forme juridique, garantie financière, nom du directeur de publication) et appliquer le
