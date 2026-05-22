@@ -1,6 +1,6 @@
 # SPRINTS_BACKLOG — Valor Immo V4
 
-Problèmes hors-scope identifiés pendant le sprint 1, consolidés pour traitement dans
+Problèmes hors-scope identifiés pendant les sprints, consolidés pour traitement dans
 les sprints suivants ou dans un sprint dédié.
 
 ## Hotfix 1.1 — Décisions de composition (traçabilité)
@@ -19,21 +19,34 @@ la chorégraphie animation justifie un retour à 2 lignes.
 - `app/mentions-legales/page.tsx:36` — `[Nom et qualité — À FOURNIR]` (directeur de publication)
 - `app/l-agence/page.tsx:122` — `[ORGANISME ET MONTANT À FOURNIR]` (garantie financière)
 
+**Note sprint 2** : le brief initial sprint 2 prévoyait 2 nouveaux placeholders
+`[ADRESSE À FOURNIR]` et `[HORAIRES À FOURNIR]` sur la page `/contact`. OVERRIDE 1
+les a annulés — les valeurs réelles V4 (96 Rue Boileau / 75016 Paris ; Lun-Ven
+9h-19h) sont en place. Aucun nouveau placeholder créé sur ces 2 champs.
+
+## Pré-mise en ligne — Resend (action Basile)
+
+- Créer une clé Resend (https://resend.com/api-keys)
+- Vérifier le domaine `valor-immo.com` côté Resend (DNS SPF/DKIM/DMARC)
+- Renseigner `.env.local` (cf. `.env.local.example`) avec la vraie clé
+- Switcher `RESEND_FROM_EMAIL` de `Valor Immo <onboarding@resend.dev>` vers
+  `Valor Immo <contact@valor-immo.com>` quand le domaine est vérifié
+
 Action attendue : recueillir les valeurs réelles auprès de l'agence (SIREN, capital social,
 forme juridique, garantie financière, nom du directeur de publication) et appliquer le
 même protocole de remplacement strict que pour Hoguet — aucun crochet, aucune
 formulation alternative laissée.
 
-## Sprint 2 — Formulaire de qualification multi-étapes
+## Sprint 2 — Formulaire de qualification multi-étapes — ✅ LIVRÉ
 
-Brief annoncé : remplacer le bouton générique « Demander à être rappelé » par un parcours
-de qualification multi-étapes (type / surface / budget / arrondissement / disponibilité)
-qui matérialise l'ancre `#contact` actuellement câblée vers `/contact`.
-
-Périmètre :
-- Composant `<QualificationForm>` réutilisable (hero, CallbackSection, page contact)
-- Validation Zod par étape, persistence localStorage en cours de saisie
-- Submit → `/api/contact` existant avec payload structuré
+Voir `SPRINT_2_PR_REPORT.md` pour le détail. Résumé :
+- `ContactForm` 3 étapes (Projet / Contexte / Coordonnées) sur `/contact`
+- Mock state demo via `/contact/success-demo` pour captures (désactivé en prod)
+- `CallbackTrigger` modal court (nom + tel + créneau) pour CTA « Être rappelé
+  gratuitement » du Hero → POST `/api/callback` (intact, OVERRIDE 3)
+- `ContactCTA` en pied de home (remplace `CtaFooterOutline` sprint 1)
+- `lib/email.ts` + templates premium internes/client avec masquage tel RGPD
+- Intégration Resend testée (preuve `captures/sprint-2/api-resend-evidence.txt`)
 
 ## Sprint 3 — Carte interactive €/m²/an par arrondissement
 

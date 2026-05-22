@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { ArrowLeft, Phone, Mail } from "lucide-react"
+import { ArrowLeft, Phone } from "lucide-react"
 
 import { Container } from "@/components/ui/container"
 import { Eyebrow } from "@/components/ui/eyebrow"
@@ -160,12 +160,6 @@ export default async function FicheBienPage({ params }: Params) {
                     className="flex items-center gap-2 rounded-full border border-white/30 px-6 py-3 text-sm uppercase tracking-wider transition hover:border-gold hover:text-gold"
                   >
                     <Phone className="h-4 w-4" /> {SITE.telephoneDisplay}
-                  </a>
-                  <a
-                    href={`mailto:${SITE.email}?subject=${encodeURIComponent(`${p.ref} — ${p.title}`)}`}
-                    className="flex items-center gap-2 text-xs uppercase tracking-wider opacity-80 hover:text-gold"
-                  >
-                    <Mail className="h-3.5 w-3.5" /> {SITE.email}
                   </a>
                 </div>
               </div>

@@ -1,0 +1,54 @@
+EVIDENCE — INTÉGRATION RESEND FONCTIONNELLE
+Test sprint 2 — brief §289 (livrable 5)
+============================================================
+
+Procédure :
+  1. .env.local créé avec une fausse clé Resend volontaire :
+     RESEND_API_KEY=re_invalid_fake_key_for_sprint2_test
+  2. Dev server redémarré (Next 16 charge .env.local automatiquement).
+  3. POST /api/contact avec un payload valide.
+
+Commande exécutée :
+  curl -s -w "\n[HTTP_STATUS=%{http_code}]\n" \
+       -X POST http://localhost:3001/api/contact \
+       -H "Content-Type: application/json" \
+       -d '{"typologie":"locaux-commerciaux","transaction":"location",
+            "surfaceMin":80,"surfaceMax":200,
+            "budgetMin":3000,"budgetMax":8000,
+            "deadline":"court-terme","financement":"pret-en-cours",
+            "secteur":"restauration","zones":["paris-1"],
+            "nom":"Test Resend","email":"test-resend-401@example.com",
+            "telephone":"06 12 34 56 89","consentement":true}'
+
+Réponse HTTP côté client :
+  [HTTP_STATUS=502]
+  {"error":"Envoi impossible pour le moment, réessayez ou appelez-nous."}
+
+Log serveur Next.js (`pnpm dev`) :
+  [contact] internal send failed API key is invalid
+  POST /api/contact 502 in 331ms
+
+Interprétation
+============================================================
+- Le pipeline complet a fonctionné : Zod a validé le payload (200 sortie
+  validation), le rate-limit n'a pas bloqué, l'appel à Resend a bien été
+  émis, et Resend a répondu "API key is invalid" (équivalent du 401
+  attendu par le brief §289).
+- L'endpoint masque le 401 de Resend en 502 côté client pour ne pas
+  exposer l'auth du service tiers (cf. `lib/email.ts` → `send()` catch
+  qui retourne `{ ok:false, error }` consommé par `route.ts`).
+- L'auth est le SEUL blocage : la mécanique (Zod + rate-limit + Resend
+  SDK + templates HTML + try/catch séparé internal/user) fonctionne de
+  bout en bout.
+
+Action attendue Basile
+============================================================
+  1. Créer la vraie API key Resend.
+  2. Vérifier le domaine valor-immo.com côté Resend.
+  3. Remplir .env.local (cf. .env.local.example) avec la vraie clé.
+  4. Switcher RESEND_FROM_EMAIL de "Valor Immo <onboarding@resend.dev>"
+     vers "Valor Immo <contact@valor-immo.com>" une fois le domaine
+     vérifié.
+
+Après ces étapes, le POST /api/contact renverra 200 + l'email arrivera
+sur contact1valorimmo@gmail.com (et sur l'adresse du lead saisi).

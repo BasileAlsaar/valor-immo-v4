@@ -1,5 +1,4 @@
-import Link from "next/link"
-import { Phone, Mail } from "lucide-react"
+import { Phone } from "lucide-react"
 
 import { Container } from "@/components/ui/container"
 import { Eyebrow } from "@/components/ui/eyebrow"
@@ -31,12 +30,6 @@ export function CallbackSection() {
               className="inline-flex items-center gap-3 text-base font-medium text-fir-dark hover:text-gold-deep"
             >
               <Phone className="h-5 w-5" /> {SITE.telephoneDisplay}
-            </a>
-            <a
-              href={`mailto:${SITE.email}`}
-              className="inline-flex items-center gap-3 text-sm text-ink/70 hover:text-fir-dark"
-            >
-              <Mail className="h-4 w-4" /> {SITE.email}
             </a>
           </div>
         </div>

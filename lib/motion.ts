@@ -27,3 +27,35 @@ export const splitTextReveal = {
   hidden: { y: "110%" },
   visible: { y: "0%", transition: { duration: duration.base, ease: easing.brisk } },
 }
+
+/**
+ * Transition horizontale entre étapes (formulaire qualifiant sprint 2).
+ * `direction` : 1 = avancer (entrée par la droite, sortie vers la gauche),
+ *               -1 = reculer (entrée par la gauche, sortie vers la droite).
+ */
+export const slideStep = {
+  enter: (direction: 1 | -1) => ({
+    x: direction * 48,
+    opacity: 0,
+  }),
+  center: {
+    x: 0,
+    opacity: 1,
+    transition: { duration: duration.fast, ease: easing.smooth },
+  },
+  exit: (direction: 1 | -1) => ({
+    x: direction * -48,
+    opacity: 0,
+    transition: { duration: 0.3, ease: easing.smooth },
+  }),
+}
+
+/** Apparition simple — réutilisable hors scroll (ContactCTA, SuccessScreen). */
+export const fadeUpSmall = {
+  hidden: { opacity: 0, y: 16 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: duration.base, ease: easing.smooth },
+  },
+}

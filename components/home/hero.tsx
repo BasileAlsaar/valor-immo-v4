@@ -13,6 +13,7 @@ import { Phone, ChevronDown } from "lucide-react"
 import { Container } from "@/components/ui/container"
 import { CtaPill } from "@/components/ui/cta-pill"
 import { SearchBar } from "@/components/home/search-bar"
+import { CallbackTrigger } from "@/components/callback/CallbackTrigger"
 import { SITE } from "@/lib/site"
 import {
   duration,
@@ -115,9 +116,9 @@ export function Hero() {
           transition={{ duration: duration.base, ease: easing.smooth, delay: SPLIT_DELAY + 0.8 }}
           className="mt-5 flex flex-wrap items-center gap-4"
         >
-          <CtaPill href="/contact" variant="outline-white" size="lg">
+          <CallbackTrigger variant="outline-white" size="lg">
             Être rappelé gratuitement
-          </CtaPill>
+          </CallbackTrigger>
           <CtaPill href="/opportunites" variant="gold" size="lg">
             Voir les opportunités
           </CtaPill>
