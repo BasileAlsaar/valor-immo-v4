@@ -3,6 +3,22 @@
 Problèmes hors-scope identifiés pendant les sprints, consolidés pour traitement dans
 les sprints suivants ou dans un sprint dédié.
 
+## Sprint 4a — Décisions et backlog futur (traçabilité)
+
+**14 photos Pexels sourcées automatiquement par Claude Code** (cf. brief §54 — validation en bloc par Basile post-merge). 6 cartes catégories + 8 hero biens. Documentation complète dans `PEXELS_SELECTIONS.md`. Risque : aucune vérification visuelle frame-par-frame des specs strictes (pas de personnes identifiables, pas de Tesla, pas de signe étranger) — Basile valide ou rejette en bloc.
+
+**Sprint 4b à venir** — refonte fiches `/opportunites/[slug]` enrichies :
+- Composants restants à créer : `Gallery`, `MiniMap`, `ComparableLeases`, `BudgetSimulator`
+- 8 photos secondaires Pexels (1 par bien) pour la Gallery
+- Carte localisation centrée quartier (offset ±50 m via `properties.center` existant)
+- Tableau baux comparables dérivé de `data/references-synthetic.json` (sprint 3)
+- Simulateur budget avec inputs surface modifiables
+- CTA « Demander le plan détaillé » → `/contact?intent=plan&bien=${slug}`
+
+**[OUT-OF-SCOPE] hero `/opportunites/[slug]`** — encore en `<div style={backgroundImage}>` CSS (pas Next/Image priority). Refonte sprint 4b en cohérence avec la refonte intégrale de la fiche.
+
+**[OUT-OF-SCOPE] copy `/opportunites`** subtitle PageHero — la mention « bail, plan, baux comparables, simulation » est conservée intacte sprint 4a (sera honorée par sprint 4b). Décision validée par Basile en lock-in périmètre 4a.
+
 ## Sprint 3 — Décisions et backlog futur (traçabilité)
 
 **Dataset synthétique heatmap ARGUS** : 1300 points générés (fourchette brief

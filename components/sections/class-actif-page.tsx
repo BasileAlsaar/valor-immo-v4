@@ -6,7 +6,7 @@ import { PageHero } from "@/components/sections/page-hero"
 import { CallbackSection } from "@/components/sections/callback-section"
 import { Container } from "@/components/ui/container"
 import { Eyebrow } from "@/components/ui/eyebrow"
-import { CtaPill } from "@/components/ui/cta-pill"
+import { Badge } from "@/components/ui/badge"
 import { RevealStagger, RevealItem } from "@/components/motion/reveal"
 import {
   properties,
@@ -14,7 +14,6 @@ import {
   TYPE_LABEL,
   type PropertyCategory,
 } from "@/lib/data/properties"
-import { cn } from "@/lib/utils"
 
 type Props = {
   category: PropertyCategory
@@ -136,19 +135,19 @@ export function ClassActifPage({
                         sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
                         className="object-cover transition duration-700 ease-out-expo group-hover:scale-105"
                       />
-                      <span
-                        className={cn(
-                          "absolute left-4 top-4 rounded-full px-3 py-1 text-xs font-medium uppercase tracking-wider",
-                          p.statut === "vente" && "bg-gold text-ink",
-                          p.statut === "location" && "bg-white text-fir-dark",
-                          p.statut === "murs-libres" && "bg-fir-darker text-gold",
-                        )}
+                      <Badge
+                        variant="status"
+                        tone={
+                          p.statut === "vente"
+                            ? "gold"
+                            : p.statut === "murs-libres"
+                              ? "green"
+                              : "neutral"
+                        }
+                        className="absolute left-4 top-4"
                       >
                         {STATUT_LABEL[p.statut]}
-                      </span>
-                      <span className="absolute bottom-3 right-3 rounded bg-black/40 px-2 py-1 text-[10px] uppercase tracking-wider text-white/80 backdrop-blur-sm">
-                        Photo d'illustration
-                      </span>
+                      </Badge>
                     </div>
                     <div className="p-6">
                       <p className="eyebrow text-gold-deep">{TYPE_LABEL[p.type]}</p>

@@ -4,9 +4,9 @@ import { ArrowUpRight } from "lucide-react"
 
 import { Container } from "@/components/ui/container"
 import { Eyebrow } from "@/components/ui/eyebrow"
+import { Badge } from "@/components/ui/badge"
 import { RevealStagger, RevealItem } from "@/components/motion/reveal"
 import { properties, STATUT_LABEL, TYPE_LABEL } from "@/lib/data/properties"
-import { cn } from "@/lib/utils"
 
 const SELECTION = ["MZ1-2026", "MZ2-2026", "MZ3-2026", "MZ5-2026"]
 
@@ -59,22 +59,16 @@ export function OpportunitiesPreview() {
                     className="object-cover transition duration-700 ease-out-expo group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-fir-dark/40 to-transparent" />
-                  <span
-                    className={cn(
-                      "absolute left-4 top-4 rounded-full px-3 py-1 text-xs font-medium uppercase tracking-wider",
-                      p.statut === "vente" && "bg-gold text-ink",
-                      p.statut === "location" && "bg-white text-fir-dark",
-                      p.statut === "murs-libres" && "bg-fir-darker text-gold",
-                    )}
+                  <Badge
+                    variant="status"
+                    tone={p.statut === "vente" ? "gold" : p.statut === "murs-libres" ? "green" : "neutral"}
+                    className="absolute left-4 top-4"
                   >
                     {STATUT_LABEL[p.statut]}
-                  </span>
-                  <span className="absolute right-4 top-4 text-xs uppercase tracking-wider text-white/80">
+                  </Badge>
+                  <Badge variant="ref" tone="dark" className="absolute right-4 top-4">
                     {p.ref}
-                  </span>
-                  <span className="absolute bottom-3 right-3 rounded bg-black/40 px-2 py-1 text-[10px] uppercase tracking-wider text-white/80 backdrop-blur-sm">
-                    Photo d'illustration
-                  </span>
+                  </Badge>
                 </div>
                 <div className="p-6">
                   <p className="eyebrow text-gold-deep">{TYPE_LABEL[p.type]}</p>

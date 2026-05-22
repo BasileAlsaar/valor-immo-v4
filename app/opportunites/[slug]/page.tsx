@@ -7,6 +7,7 @@ import { ArrowLeft, Phone } from "lucide-react"
 import { Container } from "@/components/ui/container"
 import { Eyebrow } from "@/components/ui/eyebrow"
 import { CtaPill } from "@/components/ui/cta-pill"
+import { Badge } from "@/components/ui/badge"
 import { CallbackSection } from "@/components/sections/callback-section"
 import {
   properties,
@@ -14,7 +15,6 @@ import {
   TYPE_LABEL,
 } from "@/lib/data/properties"
 import { SITE } from "@/lib/site"
-import { cn } from "@/lib/utils"
 
 type Params = { params: Promise<{ slug: string }> }
 
@@ -59,22 +59,14 @@ export default async function FicheBienPage({ params }: Params) {
             <ArrowLeft className="h-3.5 w-3.5" /> Retour au catalogue
           </Link>
           <div className="mt-6 flex flex-wrap items-center gap-3">
-            <span
-              className={cn(
-                "rounded-full px-3 py-1 text-xs font-medium uppercase tracking-wider",
-                p.statut === "vente" && "bg-gold text-ink",
-                p.statut === "location" && "bg-white text-fir-dark",
-                p.statut === "murs-libres" && "bg-fir-darker text-gold",
-              )}
+            <Badge
+              variant="status"
+              tone={p.statut === "vente" ? "gold" : p.statut === "murs-libres" ? "green" : "neutral"}
             >
               {STATUT_LABEL[p.statut]}
-            </span>
-            <span className="rounded-full border border-white/30 px-3 py-1 text-xs uppercase tracking-wider">
-              {TYPE_LABEL[p.type]}
-            </span>
-            <span className="rounded-full border border-white/30 px-3 py-1 text-xs uppercase tracking-wider">
-              {p.ref}
-            </span>
+            </Badge>
+            <Badge variant="type" tone="dark">{TYPE_LABEL[p.type]}</Badge>
+            <Badge variant="ref" tone="dark">{p.ref}</Badge>
           </div>
           <h1 className="font-display mt-6 max-w-4xl text-[clamp(2rem,6vw,5rem)] uppercase leading-[0.95] tracking-tight">
             {p.title}
@@ -84,9 +76,6 @@ export default async function FicheBienPage({ params }: Params) {
             {p.surfaceSousSol ? ` + ${p.surfaceSousSol} m² sous-sol` : ""}
           </p>
         </Container>
-        <span className="absolute bottom-4 right-6 rounded bg-black/40 px-2 py-1 text-[10px] uppercase tracking-wider text-white/80 backdrop-blur-sm">
-          Photo d'illustration
-        </span>
       </section>
 
       <section className="bg-cream py-24 md:py-32">

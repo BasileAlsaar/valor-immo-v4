@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 import { Container } from "@/components/ui/container"
 import { Eyebrow } from "@/components/ui/eyebrow"
 import { cn } from "@/lib/utils"
@@ -10,6 +12,11 @@ type Props = {
   className?: string
 }
 
+/**
+ * Hero générique pages V4. Sprint 4a : remplace l'image background CSS par
+ * `<Image fill priority />` Next/Image pour activer `loading="eager"` (équivalent
+ * `priority` côté Next) + optimisation WebP/AVIF via la config sprint 4a.
+ */
 export function PageHero({
   eyebrow,
   title,
@@ -26,10 +33,13 @@ export function PageHero({
     >
       {backgroundImage && (
         <>
-          <div
-            className="absolute inset-0 -z-20 bg-cover bg-center"
-            style={{ backgroundImage: `url(${backgroundImage})` }}
-            aria-hidden
+          <Image
+            src={backgroundImage}
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="absolute inset-0 -z-20 object-cover"
           />
           <div className="absolute inset-0 -z-10 bg-gradient-to-b from-fir-dark/55 via-fir-dark/60 to-fir-darker/90" aria-hidden />
         </>
