@@ -3,6 +3,12 @@
 Problèmes hors-scope identifiés pendant le sprint 1, consolidés pour traitement dans
 les sprints suivants ou dans un sprint dédié.
 
+## Hotfix 1.1 — Décisions de composition (traçabilité)
+
+**Titres outline « Explorez par typologie » et « Du brief à la signature »** : compressés à
+1 ligne (suppression des `<br />` originaux). Validé par Basile. Réversible en sprint 5 si
+la chorégraphie animation justifie un retour à 2 lignes.
+
 ## Sprint « Mentions légales » (avant mise en ligne publique)
 
 4 placeholders `[X À FOURNIR]` restants dans le DOM rendu. Hors périmètre tâche ❷ Hoguet
