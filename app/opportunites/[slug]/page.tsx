@@ -2,13 +2,17 @@ import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { ArrowLeft, Phone } from "lucide-react"
+import { ArrowLeft, ArrowUpRight, Phone } from "lucide-react"
 
 import { Container } from "@/components/ui/container"
 import { Eyebrow } from "@/components/ui/eyebrow"
 import { CtaPill } from "@/components/ui/cta-pill"
 import { Badge } from "@/components/ui/badge"
+import { Gallery } from "@/components/ui/gallery"
+import { MiniMap } from "@/components/ui/mini-map"
 import { CallbackSection } from "@/components/sections/callback-section"
+import { ComparableLeases } from "@/components/sections/comparable-leases"
+import { BudgetSimulator } from "@/components/sections/budget-simulator"
 import {
   properties,
   STATUT_LABEL,
@@ -36,20 +40,43 @@ function formatPrice(v: number) {
   return new Intl.NumberFormat("fr-FR").format(v)
 }
 
+function arrRoman(n: number): string {
+  const ROMAN: Record<number, string> = {
+    1: "Iᵉʳ", 2: "IIᵉ", 3: "IIIᵉ", 4: "IVᵉ", 5: "Vᵉ", 6: "VIᵉ", 7: "VIIᵉ",
+    8: "VIIIᵉ", 9: "IXᵉ", 10: "Xᵉ", 11: "XIᵉ", 12: "XIIᵉ", 13: "XIIIᵉ",
+    14: "XIVᵉ", 15: "XVᵉ", 16: "XVIᵉ", 17: "XVIIᵉ", 18: "XVIIIᵉ",
+    19: "XIXᵉ", 20: "XXᵉ",
+  }
+  return ROMAN[n] ?? `${n}ᵉ`
+}
+
 export default async function FicheBienPage({ params }: Params) {
   const { slug } = await params
   const p = properties.find((x) => x.slug === slug)
   if (!p) notFound()
 
+  const heroSrc = `/images/properties/${p.slug}.jpg`
+  const secondarySrc = `/images/properties/${p.slug}-2.jpg`
+
+  // Prix au m²/an dérivé du loyer mensuel pour le BudgetSimulator.
+  // Pour les biens en vente, on n'affiche pas le simulateur (cf. plus bas).
+  const prixM2An = p.loyerMensuel
+    ? Math.round((p.loyerMensuel * 12) / p.surface)
+    : null
+
   return (
     <>
+      {/* Hero plein écran — migration Next/Image (sprint 4b) */}
       <section className="relative isolate min-h-[80vh] overflow-hidden bg-fir-dark pt-32 text-white">
-        <div
-          className="absolute inset-0 -z-20 bg-cover bg-center"
-          style={{ backgroundImage: `url(/images/properties/${p.slug}.jpg)` }}
-          aria-hidden
+        <Image
+          src={heroSrc}
+          alt={p.title}
+          fill
+          priority
+          sizes="100vw"
+          className="absolute inset-0 -z-20 object-cover"
         />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-fir-dark/40 via-fir-dark/55 to-fir-darker/95" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-fir-darker/80 via-fir-dark/40 to-fir-dark/20" />
 
         <Container className="flex min-h-[60vh] flex-col justify-end pb-16">
           <Link
@@ -78,7 +105,30 @@ export default async function FicheBienPage({ params }: Params) {
         </Container>
       </section>
 
-      <section className="bg-cream py-24 md:py-32">
+      {/* Galerie iconographie */}
+      <section className="bg-cream-soft py-16 md:py-20">
+        <Container>
+          <Eyebrow className="text-gold-deep">Iconographie</Eyebrow>
+          <h2 className="font-display mt-3 text-3xl uppercase leading-tight tracking-tight text-fir-dark md:text-4xl">
+            Le bien en images
+          </h2>
+          <p className="mt-2 text-sm text-ink/60">
+            {p.surface} m² · {TYPE_LABEL[p.type]} dans le quartier {p.quartier}.
+          </p>
+          <div className="mt-8">
+            <Gallery
+              images={[
+                { src: heroSrc, alt: `${p.title} — vue principale` },
+                { src: secondarySrc, alt: `${p.title} — vue complémentaire` },
+              ]}
+              aspectRatio="4/3"
+            />
+          </div>
+        </Container>
+      </section>
+
+      {/* Description + caractéristiques + sticky aside (préservé sprint 1) */}
+      <section className="bg-cream py-20 md:py-24">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[2fr_1fr]">
             <div>
@@ -144,9 +194,16 @@ export default async function FicheBienPage({ params }: Params) {
                   <CtaPill href="/contact" variant="gold" size="lg" className="w-full">
                     Demander une visite
                   </CtaPill>
+                  <Link
+                    href={`/contact?intent=plan&bien=${p.slug}`}
+                    className="flex items-center justify-center gap-2 rounded-full border-2 border-gold/60 px-6 py-3 text-sm font-medium uppercase tracking-wider text-gold transition hover:border-gold hover:bg-gold/10"
+                  >
+                    Demander le plan détaillé
+                    <ArrowUpRight className="h-4 w-4" />
+                  </Link>
                   <a
                     href={`tel:${SITE.telephoneTel}`}
-                    className="flex items-center gap-2 rounded-full border border-white/30 px-6 py-3 text-sm uppercase tracking-wider transition hover:border-gold hover:text-gold"
+                    className="flex items-center justify-center gap-2 text-sm uppercase tracking-wider text-cream/80 transition hover:text-gold"
                   >
                     <Phone className="h-4 w-4" /> {SITE.telephoneDisplay}
                   </a>
@@ -154,6 +211,88 @@ export default async function FicheBienPage({ params }: Params) {
               </div>
             </aside>
           </div>
+        </Container>
+      </section>
+
+      {/* Localisation */}
+      <section className="bg-cream-soft py-20 md:py-24">
+        <Container>
+          <div className="grid gap-10 lg:grid-cols-[1fr_1.5fr] lg:items-start">
+            <div>
+              <Eyebrow className="text-gold-deep">Localisation</Eyebrow>
+              <h2 className="font-display mt-3 text-3xl uppercase leading-tight tracking-tight text-fir-dark md:text-4xl">
+                Quartier {p.quartier}
+                <br />
+                <span className="text-gold-deep">Paris {arrRoman(p.arrondissement)}</span>
+              </h2>
+              <p className="mt-4 text-sm leading-relaxed text-ink/65">
+                Adresse exacte communiquée sur demande après prise de contact.
+                Le marqueur indique le centroïde approximatif du quartier.
+              </p>
+            </div>
+            <MiniMap
+              lat={p.center[1]}
+              lng={p.center[0]}
+              slug={p.slug}
+              arrondissement={`Paris ${arrRoman(p.arrondissement)}`}
+            />
+          </div>
+        </Container>
+      </section>
+
+      {/* Baux comparables — données de marché */}
+      <section className="bg-cream py-20 md:py-24">
+        <Container>
+          <div className="max-w-3xl">
+            <Eyebrow className="text-gold-deep">Données de marché</Eyebrow>
+            <h2 className="font-display mt-3 text-3xl uppercase leading-tight tracking-tight text-fir-dark md:text-4xl">
+              Baux comparables récents
+            </h2>
+            <p className="mt-3 text-sm text-ink/65">
+              Sélection de transactions anonymisées sur le quartier et ses
+              limitrophes immédiats — issues de notre base d'analyse marché.
+            </p>
+          </div>
+          <div className="mt-10">
+            <ComparableLeases
+              arrondissement={p.arrondissement}
+              typologie={p.type}
+              slug={p.slug}
+            />
+          </div>
+        </Container>
+      </section>
+
+      {/* Simulation budget */}
+      <section className="bg-cream-soft py-20 md:py-24">
+        <Container>
+          {prixM2An !== null ? (
+            <BudgetSimulator
+              surfaceInitiale={p.surface}
+              prixM2An={prixM2An}
+              slug={p.slug}
+            />
+          ) : (
+            <div className="rounded-3xl border border-fir-dark/10 bg-cream p-8 md:p-10">
+              <Eyebrow className="text-gold-deep">Simulation budget</Eyebrow>
+              <h3 className="font-display mt-3 text-2xl uppercase leading-tight tracking-tight text-fir-dark md:text-3xl">
+                Estimation personnalisée
+              </h3>
+              <p className="mt-3 max-w-xl text-sm text-ink/65">
+                Le simulateur s'applique aux biens en location. Pour ce bien en{" "}
+                {p.statut === "murs-libres" ? "vente murs libres" : "acquisition"},
+                contactez-nous pour une estimation d'amortissement personnalisée
+                tenant compte du contexte fiscal et patrimonial.
+              </p>
+              <Link
+                href={`/contact?intent=simulation&bien=${p.slug}`}
+                className="mt-6 inline-flex items-center gap-2 rounded-full bg-fir-dark px-6 py-3 text-sm font-medium uppercase tracking-wider text-cream transition hover:bg-ink"
+              >
+                Affiner avec un expert
+                <ArrowUpRight className="h-4 w-4" />
+              </Link>
+            </div>
+          )}
         </Container>
       </section>
 

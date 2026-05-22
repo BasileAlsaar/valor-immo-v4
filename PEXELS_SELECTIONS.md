@@ -103,6 +103,62 @@ Le sprint 4b ajoutera 1 photo secondaire par bien pour la galerie. Sprint 4a cou
 
 ---
 
+---
+
+## Sprint 4b — Photos secondaires galerie (8 photos, 1 par bien)
+
+Règle de complémentarité brief §80-87 : photo secondaire **doit raconter quelque chose de différent du hero**. Sélection automatique par analyse du sujet du hero existant + choix d'un complément (intérieur si hero extérieur, détail si hero plan large, vue si hero intérieur).
+
+### Bien : local-chatelet-halles-173m2 — Local commercial, Châtelet · Les Halles
+- Hero (sprint 4a) : `/public/images/properties/local-chatelet-halles-173m2.jpg` — vitrine extérieure
+- Cas hero : extérieur / façade → secondaire = intérieur / lumière
+- Photo secondaire : https://www.pexels.com/photo/2253643/ (843 ko)
+- Justification : intérieur restaurant/local avec banquettes et lumière chaude, complète la vitrine du hero par une lecture intérieure du bien.
+
+### Bien : bureaux-monceau-340m2 — Bureaux, Monceau
+- Hero (sprint 4a) : plateau bureau qualitatif intérieur
+- Cas hero : intérieur principal → secondaire = détail / vue
+- Photo secondaire : https://www.pexels.com/photo/1170412/ (274 ko)
+- Justification : bureau workspace lumineux avec parquet visible, complète la vue d'ensemble par un détail matériau.
+
+### Bien : brasserie-st-germain-220m2 — Brasserie, Saint-Germain
+- Hero : brasserie d'ambiance intérieur
+- Cas : intérieur principal → secondaire = détail comptoir / vue extérieure
+- Photo secondaire : https://www.pexels.com/photo/541216/ (673 ko)
+- Justification : détail de tables nappées + service, prolonge l'ambiance intérieure par un plan rapproché.
+
+### Bien : immeuble-grands-boulevards-840m2 — Immeuble mixte, Grands Boulevards
+- Hero : façade haussmannienne plan moyen
+- Cas : extérieur → secondaire = vue urbaine / détail balcon
+- Photo secondaire : https://www.pexels.com/photo/2079249/ (680 ko)
+- Justification : architecture parisienne en perspective, complète la façade frontale du hero.
+
+### Bien : boutique-passy-86m2 — Boutique luxe, Passy
+- Hero : boutique avec vitrine
+- Cas : extérieur → secondaire = intérieur boutique haut de gamme
+- Photo secondaire : https://www.pexels.com/photo/1488507/ (390 ko)
+- Justification : intérieur retail haut de gamme avec présentations soignées, complète la vitrine extérieure.
+
+### Bien : hotel-marais-12-chambres — Hôtel boutique, Le Marais
+- Hero : façade hôtel
+- Cas : extérieur → secondaire = intérieur lobby
+- Photo secondaire : https://www.pexels.com/photo/271624/ (150 ko)
+- Justification : intérieur lobby/réception qualitatif, complète la façade par une lecture d'ambiance.
+
+### Bien : entrepot-pajol-680m2 — Entrepôt, Pajol
+- Hero : entrepôt avec quai
+- Cas : extérieur / quai → secondaire = intérieur racks / stockage
+- Photo secondaire : https://www.pexels.com/photo/2569842/ (374 ko)
+- Justification : intérieur logistique avec rayonnages industriels, complète la vue quai du hero.
+
+### Bien : fonds-pizzeria-bastille-95m2 — Pizzeria, Bastille
+- Hero : restaurant intérieur
+- Cas : intérieur → secondaire = détail / extérieur
+- Photo secondaire : https://www.pexels.com/photo/845812/ (252 ko)
+- Justification : détail food/préparation cohérent avec une activité pizzeria, complète la vue salle du hero.
+
+---
+
 ## Réserves transparentes
 
 1. **Auteurs Pexels** : champs « Auteur » à compléter manuellement après visite des pages individuelles (les WebSearch n'exposent pas systématiquement le nom). Lien profil ajouté au commit final si possible. Pexels n'exige pas l'attribution mais c'est propre.

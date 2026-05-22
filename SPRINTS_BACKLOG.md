@@ -3,6 +3,18 @@
 Problèmes hors-scope identifiés pendant les sprints, consolidés pour traitement dans
 les sprints suivants ou dans un sprint dédié.
 
+## Sprint 4b — Décisions et backlog futur (traçabilité)
+
+**Galerie minimaliste (2 photos par bien)** : décision Basile sprint 4b — sourcing automatique 1 hero + 1 secondaire par bien. À enrichir vers 4 photos par bien (extérieur / intérieur / détail / vue) quand les vrais visuels client (shoot dédié) seront disponibles. La structure `<Gallery>` accepte un tableau, l'extension est triviale côté data.
+
+**ComparableLeases avec padding limitrophes** : politique transparente activée — si < 4 baux match arrondissement + typologie exact, on étend aux arrondissements limitrophes (table § brief). Si toujours < 4, extension Paris entier. Mention pied de tableau adaptée selon le scope. À remplacer par data CRM réelle quand disponible (cf. sprint 3 traçabilité CRM).
+
+**BudgetSimulator — décision taux de charges** : choisi **caché à 15 % fixe** (pas de slider exposé) pour sprint 4b. Raison : éviter de surcharger l'UI client + 15 % est la médiane raisonnable des baux commerciaux parisiens. Sprint 5+ pourra exposer le slider si retour utilisateur le justifie. Le simulateur est masqué pour les biens en vente (où `loyerMensuel` est absent) avec un fallback CTA « Estimation personnalisée ».
+
+**[OUT-OF-SCOPE] biens en vente** : le `<BudgetSimulator>` ne s'applique qu'aux locations (où `prixM2An` est dérivable de `loyerMensuel * 12 / surface`). Pour les ventes/murs libres, message + CTA vers /contact?intent=simulation. Sprint futur estimations d'amortissement personnalisées pourrait étendre.
+
+**[OUT-OF-SCOPE] `secondaryImage` field data** : pas ajouté en `lib/data/properties.ts`. Le composant utilise la convention de nommage `${slug}-2.jpg` directement. Conserve la simplicité, évite la duplication. Si refacto data future (CMS), ajouter le champ explicit alors.
+
 ## Sprint 4a — Décisions et backlog futur (traçabilité)
 
 **14 photos Pexels sourcées automatiquement par Claude Code** (cf. brief §54 — validation en bloc par Basile post-merge). 6 cartes catégories + 8 hero biens. Documentation complète dans `PEXELS_SELECTIONS.md`. Risque : aucune vérification visuelle frame-par-frame des specs strictes (pas de personnes identifiables, pas de Tesla, pas de signe étranger) — Basile valide ou rejette en bloc.
