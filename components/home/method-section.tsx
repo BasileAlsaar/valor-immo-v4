@@ -28,37 +28,37 @@ const STEPS = [
 
 export function MethodSection() {
   return (
-    <section className="relative overflow-hidden bg-fir-dark py-32 text-white md:py-44 lg:py-56">
+    <section className="relative overflow-hidden bg-fir-dark py-20 text-white md:py-24 lg:py-28">
       <Container>
-        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+        <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div className="max-w-3xl">
             <Eyebrow className="text-gold">Méthode</Eyebrow>
             <OutlineText
               color="gold"
-              className="mt-6 text-[clamp(2.5rem,9vw,10rem)] leading-[0.9]"
+              className="mt-4 text-[clamp(2rem,6vw,6rem)] leading-[0.95]"
             >
               Du brief à la signature, sans relais.
             </OutlineText>
           </div>
           <a
             href={`tel:${SITE.telephoneTel}`}
-            className="font-display hidden text-3xl uppercase tracking-tight text-gold hover:text-white md:inline-flex md:items-center md:gap-3"
+            className="font-display hidden text-2xl uppercase tracking-tight text-gold hover:text-white md:inline-flex md:items-center md:gap-3"
           >
-            <Phone className="h-6 w-6" /> {SITE.telephoneDisplay}
+            <Phone className="h-5 w-5" /> {SITE.telephoneDisplay}
           </a>
         </div>
 
-        <RevealStagger className="mt-20 grid gap-12 md:grid-cols-3">
+        <RevealStagger className="mt-12 grid gap-10 md:grid-cols-3">
           {STEPS.map((step) => (
             <RevealItem key={step.chiffre}>
-              <div className="border-t-2 border-gold/30 pt-8">
-                <p className="font-display text-[clamp(5rem,12vw,11rem)] leading-[0.85] text-gold">
+              <div className="border-t-2 border-gold/30 pt-6">
+                <p className="font-display text-[clamp(3.5rem,8vw,7rem)] leading-[0.85] text-gold">
                   {step.chiffre}
                 </p>
-                <h3 className="mt-6 text-2xl font-medium uppercase tracking-tight">
+                <h3 className="mt-4 text-xl font-medium uppercase tracking-tight">
                   {step.titre}
                 </h3>
-                <p className="mt-4 text-base leading-relaxed opacity-80">
+                <p className="mt-3 text-sm leading-relaxed opacity-80 md:text-base">
                   {step.text}
                 </p>
               </div>
@@ -66,7 +66,7 @@ export function MethodSection() {
           ))}
         </RevealStagger>
 
-        <div className="mt-20 flex flex-wrap items-center gap-6">
+        <div className="mt-12 flex flex-wrap items-center gap-6">
           <CtaPill href="/contact" variant="gold" size="lg">
             Démarrer mon projet
           </CtaPill>

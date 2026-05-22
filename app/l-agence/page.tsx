@@ -117,7 +117,7 @@ export default function AgencePage() {
                 immeubles et fonds de commerce est exercée sous garantie financière.
               </p>
               <p className="mt-4 text-sm text-ink/60">
-                Carte T : <span className="font-mono font-medium text-fir-dark">[CARTE T À FOURNIR]</span>
+                Carte T en cours d'obtention — délivrée par la CCI Paris Île-de-France
                 <br />
                 Garantie financière : <span className="font-mono font-medium text-fir-dark">[ORGANISME ET MONTANT À FOURNIR]</span>
               </p>

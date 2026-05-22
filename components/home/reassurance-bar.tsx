@@ -17,7 +17,7 @@ const ITEMS = [
   {
     icon: Award,
     titre: "Carte Hoguet T",
-    sub: "[CARTE T À FOURNIR] — réglementation Hoguet.",
+    sub: "Carte T en cours d'obtention — délivrée par la CCI Paris Île-de-France",
   },
 ] as const
 

@@ -28,6 +28,12 @@
   --foreground: #000000;
 }
 
+@layer components {
+  .hero-video {
+    @apply absolute inset-0 -z-20 h-full w-full object-cover;
+  }
+}
+
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;

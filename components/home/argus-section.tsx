@@ -19,17 +19,17 @@ export function ArgusSection() {
   }
 
   return (
-    <section id="argus" className="relative bg-cream-soft py-32 md:py-44 lg:py-56">
+    <section id="argus" className="relative bg-cream-soft py-20 md:py-24 lg:py-28">
       <Container>
-        <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-end">
+        <div className="grid gap-6 lg:grid-cols-[1fr_1fr] lg:items-end">
           <div>
             <Eyebrow className="text-gold-deep">Estimation</Eyebrow>
-            <h2 className="font-display mt-6 text-[clamp(2.25rem,6.5vw,6rem)] uppercase leading-[0.95] tracking-tight text-fir-dark">
-              Quelle est la valeur<br />locative<br />
+            <h2 className="font-display mt-3 text-[clamp(1.75rem,4.5vw,3.75rem)] uppercase leading-[1] tracking-tight text-fir-dark">
+              Quelle est la valeur locative{" "}
               <span className="text-gold-deep">de votre commerce ?</span>
             </h2>
           </div>
-          <p className="max-w-xl text-base leading-relaxed text-ink/80 md:text-lg">
+          <p className="max-w-xl text-sm leading-relaxed text-ink/80 md:text-base">
             Notre base de plus de 40 000 références de transactions et baux
             commerciaux nous permet de fournir une fourchette précise en
             €/m²/an HT HC pour les locaux commerciaux parisiens —
@@ -37,7 +37,7 @@ export function ArgusSection() {
           </p>
         </div>
 
-        <div className="mt-16 grid gap-10 lg:grid-cols-[1.05fr_1fr]">
+        <div className="mt-10 grid gap-10 lg:grid-cols-[1.05fr_1fr]">
           {/* Carte */}
           <div className="overflow-hidden rounded-3xl border border-fir-dark/10 bg-white shadow-[0_24px_80px_-20px_rgba(15,61,46,0.18)]">
             <ArgusMap focus={focus} onFocus={setFocus} />

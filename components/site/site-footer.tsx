@@ -106,7 +106,7 @@ export function SiteFooter() {
               ))}
             </ul>
             <p className="mt-8 text-xs leading-relaxed opacity-60">
-              Carte professionnelle Hoguet : <span className="font-mono text-gold">[CARTE T À FOURNIR]</span>
+              Carte T en cours d'obtention — délivrée par la CCI Paris Île-de-France
             </p>
           </div>
         </div>
@@ -115,6 +115,18 @@ export function SiteFooter() {
           <p>© 2026 {SITE.name} · Tous droits réservés</p>
           <p>{SITE.address.line1}, {SITE.address.line2} · {SITE.telephoneDisplay}</p>
         </div>
+        <p className="mt-4 text-[11px] opacity-40">
+          Vidéo hero :{" "}
+          <a
+            href="https://www.pexels.com/video/traffic-passing-by-the-boulevard-saint-germain-13648261/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline-offset-2 hover:underline"
+          >
+            Judas Isariot
+          </a>{" "}
+          via Pexels
+        </p>
       </Container>
     </footer>
   )
