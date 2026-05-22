@@ -3,6 +3,30 @@
 Problèmes hors-scope identifiés pendant les sprints, consolidés pour traitement dans
 les sprints suivants ou dans un sprint dédié.
 
+## Sprint 3 — Décisions et backlog futur (traçabilité)
+
+**Dataset synthétique heatmap ARGUS** : 1300 points générés (fourchette brief
+500-2000), seed Mulberry32 `20260522` reproductible. Distribution calquée sur les
+concentrations attendues §61 (forte Marais/Sentier/Bastille, modérée
+St-Germain/Triangle, faible 13e/14e/15e/16e/17e, variable 19e/20e), + 50 points
+ventilés sur 5 communes de la petite couronne (Levallois, Neuilly, Boulogne,
+Saint-Mandé, Vincennes) en bbox manuelle. Prix corrélés à
+`lib/data/valeurs-locatives.ts` avec écart-type 25 %. Justification éthique :
+mention transparente en pied de section ARGUS + mini-popup `?` explicatif sur
+l'échantillon vs base historique.
+
+**Pré-mise en ligne — Connexion CRM** : remplacer le dataset synthétique
+`data/references-synthetic.json` par une vraie source CRM Valor Immo. Critères :
+géolocalisation par arrondissement (pas par adresse précise pour respecter la
+confidentialité des cédants), anonymisation totale (pas de nom de bien), refresh
+au build (statique) ou via API si fréquence ≥ hebdomadaire requise.
+
+**[OUT-OF-SCOPE] `app/estimations/page.tsx`** — le champ adresse en bas de
+section ARGUS redirige vers `/estimations?adresse={encoded}` mais ce param URL
+n'est PAS consommé par la page de destination (hérité du bootstrap V4). À
+intégrer dans un futur sprint estimations dédié (form pré-rempli + estimation
+contextuelle).
+
 ## Hotfix 1.1 — Décisions de composition (traçabilité)
 
 **Titres outline « Explorez par typologie » et « Du brief à la signature »** : compressés à

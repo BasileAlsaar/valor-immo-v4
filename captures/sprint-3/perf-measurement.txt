@@ -1,0 +1,12 @@
+=== Mesure perf — première interactivité carte ARGUS sprint 3 ===
+
+Environnement : Playwright chromium headless, viewport 1440×900, dev server Next 16 Turbopack
+Méthode : page.goto(/) → networkidle → scrollIntoView ARGUS → wait for canvas visible
+
+Temps page.goto → canvas visible : 3702 ms
+Temps page.goto → tiles + load event : 6204 ms
+
+Mesures additionnelles (browser console, mountTime → onLoad) :
+  [argus-map] first-interactive-render: 1647ms
+
+Note : dev mode (HMR), perf prod attendue sensiblement meilleure (build optim + minification + cache).
