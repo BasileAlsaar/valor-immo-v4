@@ -26,16 +26,16 @@ const DESCRIPTIONS: Record<string, string> = {
 
 export function CategoriesGrid() {
   return (
-    <section id="categories" className="relative bg-cream py-32 md:py-44 lg:py-56">
+    <section id="categories" className="relative bg-cream py-16 md:py-20 lg:py-24">
       <Container>
-        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+        <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
             <Eyebrow className="text-gold-deep">Nos commerces disponibles</Eyebrow>
             <OutlineText
               color="fir"
-              className="mt-6 text-[clamp(2.5rem,9vw,10rem)] leading-[0.88]"
+              className="mt-3 text-[clamp(1.75rem,4.5vw,4rem)] leading-[0.95]"
             >
-              Explorez par<br />typologie d'actif
+              Explorez par typologie d'actif
             </OutlineText>
           </div>
           <Link
@@ -47,7 +47,7 @@ export function CategoriesGrid() {
           </Link>
         </div>
 
-        <RevealStagger className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <RevealStagger className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {CATEGORIES.map((cat, i) => (
             <RevealItem key={cat.slug}>
               <Link

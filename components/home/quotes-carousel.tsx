@@ -52,7 +52,7 @@ export function QuotesCarousel() {
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               className="relative z-10"
             >
-              <p className="font-display text-[clamp(0.9rem,2.1vw,1.8rem)] uppercase leading-[1.15] tracking-tight">
+              <p className="font-display text-[clamp(0.85rem,1.05vw,1.2rem)] uppercase leading-[1.4] tracking-tight">
                 {q.text}
               </p>
               <footer className="mt-6">
