@@ -38,10 +38,12 @@ export default function AgencePage() {
 
       <section className="py-24 md:py-32">
         <Container>
-          <div className="grid gap-16 lg:grid-cols-[1fr_2fr]">
+          <div className="grid gap-8 lg:grid-cols-[2fr_3fr] lg:gap-12">
             <div>
               <Eyebrow className="text-gold-deep">Qui sommes-nous ?</Eyebrow>
-              <p className="mt-4 text-sm text-ink/60">Quatre directeurs spécialisés couvrent les six segments du marché.</p>
+              <p className="mt-4 text-base leading-relaxed text-ink/75">
+                Quatre directeurs spécialisés couvrent les six segments du marché.
+              </p>
             </div>
             <div className="space-y-6 text-lg leading-relaxed text-ink/85">
               <p>

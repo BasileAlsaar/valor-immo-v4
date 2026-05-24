@@ -21,7 +21,7 @@ export function HeroLogo() {
       initial={reduce ? false : { opacity: 0, y: -16 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: duration.base, ease: easing.smooth }}
-      className="pointer-events-none absolute left-6 top-6 z-20 md:left-12 md:top-12"
+      className="pointer-events-none absolute left-6 top-24 z-20 md:left-12 md:top-32"
       aria-hidden
     >
       <Image
@@ -30,7 +30,7 @@ export function HeroLogo() {
         width={400}
         height={400}
         priority
-        className="h-[120px] w-auto object-contain brightness-0 invert md:h-[200px]"
+        className="h-[100px] w-auto object-contain brightness-0 invert md:h-[160px]"
       />
     </motion.div>
   )

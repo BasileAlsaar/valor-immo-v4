@@ -3,6 +3,62 @@
 Problèmes hors-scope identifiés pendant les sprints, consolidés pour traitement dans
 les sprints suivants ou dans un sprint dédié.
 
+## Sprint 5c-fix — Corrections post-audit visuel Basile
+
+5 corrections ciblées appliquées en addendum au sprint 5c initial (`de36172`) sur
+la même branche `sprint-5c-typo-spacing-footer`. Captures `captures/sprint-5c/*-fix-1440.png`.
+
+1. **/l-agence "Qui sommes-nous"** : grid `[1fr_2fr] lg:gap-12` → `[2fr_3fr] lg:gap-12`
+   (colonne gauche élargie). Paragraphe "Quatre directeurs spécialisés…"
+   `text-sm text-ink/60` → `text-base leading-relaxed text-ink/75` pour équilibre visuel
+   avec le bloc droit.
+2. **Vide ARGUS→Opportunités** drastique : ARGUS `lg:pb-20` → `lg:pb-8` (32px) et
+   OpportunitiesPreview `lg:pt-20` → `lg:pt-10` (40px). Vide passe de 160px à
+   **72px à lg** (cible brief 80-100). Mobile équivalent : md:pb-10 / md:pt-10.
+3. **Footer pb drastique** : Container `pt-14 pb-12 lg:pt-20 lg:pb-16` →
+   `pt-14 pb-4 lg:pt-20 lg:pb-6`. pb -67% mobile, -63% lg. Tous les contenus
+   (copyright, mention Pexels) conservés.
+4. **Témoignages leading** : `leading-[1.45]` → `leading-[1.7]`. Section
+   `py-20 md:py-24 lg:py-28` → `py-24 md:py-28 lg:py-32` (+20% padding-y).
+5. **HeroLogo positionnement** : `top-6 md:top-12` → `top-24 md:top-32` (96/128px)
+   pour passer sous le SiteHeader nav (~80px). Taille réduite `h-[120px] md:h-[200px]`
+   → `h-[100px] md:h-[160px]` (-17% mobile, -20% desktop) afin d'éviter la
+   collision avec le titre h1 du hero. Le contrat sprint 5a "logo XL 200px" est
+   donc revu à 160px pour permettre la coexistence propre avec le SiteHeader.
+
+
+
+**Aération typo témoignages** : `components/home/quotes-carousel.tsx` était compressé
+par le hotfix 1.1 (commit `e49d778`) à `text-[clamp(0.85rem,1.05vw,1.2rem)] leading-[1.4]
+tracking-tight max-w-4xl`. Sprint 5c restaure de l'air sans revenir à l'over-sized
+pré-hotfix : `text-[clamp(1rem,1.25vw,1.5rem)] leading-[1.45] tracking-[0.01em] max-w-3xl`.
+Section padding `py-16 md:py-20 lg:py-24` → `py-20 md:py-24 lg:py-28` (+25%).
+
+**Footer compactage** : `components/site/site-footer.tsx` Container `py-20 lg:py-28`
+→ `pt-14 pb-12 lg:pt-20 lg:pb-16` (pt -30%, pb -40% à lg). Grid columns
+`gap-12 lg:grid-cols-4` → `gap-10 lg:grid-cols-4` (-17%). Visuellement le footer
+passe d'environ 100% à ~50-60% du viewport 1440.
+
+**Vides verticaux home — ARGUS↔Opportunités** : transition mesurée à 336px de vide
+avant (ARGUS `lg:py-28` = 112 bottom + OpportunitiesPreview `lg:py-56` = 224 top).
+ARGUS section split en `lg:pt-28 lg:pb-20` (bottom -29%). OpportunitiesPreview
+section split en `lg:pt-20 lg:pb-40` (top -64%, bottom -29%). Vide ARGUS→Opp
+ramené à 80 + 80 = **160px** à lg, pile à la limite max du brief (120-160).
+
+**Vides /l-agence "Qui sommes-nous"** : grid `gap-16 lg:grid-cols-[1fr_2fr]`
+→ `gap-8 lg:grid-cols-[1fr_2fr] lg:gap-12` (-25% à lg). L'écart horizontal entre
+le titre court (1fr) et le bloc texte (2fr) est sensiblement réduit, le rythme
+visuel est rétabli.
+
+**Captures avant/après** : `captures/sprint-5c/` (8 captures : witness, footer,
+argus-to-opportunites, agence-quisommes — en versions before et after).
+
+**Script captures `scripts/captures-sprint-5c.ts`** : exposé en mode BEFORE/AFTER.
+Helper `scrollToText` case-insensitive (innerText respecte `text-transform: uppercase`).
+
+**Note méthodologique** : `node --experimental-strip-types` + `playwright` requièrent
+de lancer depuis la racine du projet (sinon `Cannot find package 'playwright'`).
+
 ## Sprint 5b minimaliste — Décisions et backlog futur (traçabilité)
 
 **Sprint 5b minimaliste — placeholders légaux traités en mode "en cours",

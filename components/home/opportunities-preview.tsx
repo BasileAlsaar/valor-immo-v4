@@ -20,7 +20,7 @@ export function OpportunitiesPreview() {
   )
 
   return (
-    <section className="bg-white py-32 md:py-44 lg:py-56">
+    <section className="bg-white pt-8 pb-24 md:pt-10 md:pb-32 lg:pt-10 lg:pb-40">
       <Container>
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="max-w-3xl">

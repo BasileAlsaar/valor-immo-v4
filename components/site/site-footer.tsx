@@ -26,8 +26,8 @@ const LEGAL = [
 export function SiteFooter() {
   return (
     <footer className="bg-fir-dark text-cream">
-      <Container className="py-20 lg:py-28">
-        <div className="grid gap-12 lg:grid-cols-4">
+      <Container className="pt-14 pb-4 lg:pt-20 lg:pb-6">
+        <div className="grid gap-10 lg:grid-cols-4">
           <div>
             <Link href="/" className="flex items-center gap-3">
               <Image

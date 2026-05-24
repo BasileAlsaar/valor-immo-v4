@@ -24,11 +24,11 @@ export function QuotesCarousel() {
   const q = quotes[index]
 
   return (
-    <section className="relative flex min-h-[60vh] items-center overflow-hidden bg-fir-dark py-16 text-white md:py-20 lg:py-24">
+    <section className="relative flex min-h-[60vh] items-center overflow-hidden bg-fir-dark py-24 text-white md:py-28 lg:py-32">
       <Container className="relative text-center">
         <Eyebrow className="text-gold">Ils nous ont confié leur projet</Eyebrow>
 
-        <div className="relative mx-auto mt-10 max-w-4xl">
+        <div className="relative mx-auto mt-10 max-w-3xl">
           {/* Guillemets décoratifs or */}
           <span
             aria-hidden
@@ -52,7 +52,7 @@ export function QuotesCarousel() {
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               className="relative z-10"
             >
-              <p className="font-display text-[clamp(0.85rem,1.05vw,1.2rem)] uppercase leading-[1.4] tracking-tight">
+              <p className="font-display text-[clamp(1rem,1.25vw,1.5rem)] uppercase leading-[1.7] tracking-[0.01em]">
                 {q.text}
               </p>
               <footer className="mt-6">

@@ -28,7 +28,7 @@ export function ArgusSection() {
   }
 
   return (
-    <section id="argus" className="relative bg-cream-soft py-20 md:py-24 lg:py-28">
+    <section id="argus" className="relative bg-cream-soft pt-20 pb-8 md:pt-24 md:pb-10 lg:pt-28 lg:pb-8">
       <Container>
         <div className="grid gap-6 lg:grid-cols-[1fr_1fr] lg:items-end">
           <div>
