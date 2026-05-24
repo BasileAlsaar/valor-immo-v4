@@ -67,7 +67,7 @@ export function Hero() {
       {/* Overlay vert sapin Valor Immo — opacité ajustable pour contraste AA sur H1 */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-fir-dark/60 via-fir-dark/55 to-fir-dark/85" aria-hidden />
 
-      <Container className="relative flex flex-1 flex-col justify-center pt-20 pb-6 text-white">
+      <Container className="relative flex flex-1 flex-col justify-center pt-20 pb-6 text-white lg:pl-40 xl:pl-52">
         <motion.div
           initial="hidden"
           animate="visible"
