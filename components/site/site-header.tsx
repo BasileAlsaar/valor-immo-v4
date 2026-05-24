@@ -43,7 +43,7 @@ export function SiteHeader() {
           : "bg-transparent text-white",
       )}
     >
-      <div className="mx-auto flex max-w-[1440px] items-center justify-between px-6 py-5 md:px-12 lg:px-24">
+      <div className="mx-auto flex max-w-[1440px] items-center justify-between gap-6 px-6 py-5 md:px-12 lg:px-12 2xl:px-24">
         <Link
           href="/"
           aria-label={`Retour à l'accueil — ${SITE.name}`}
@@ -65,17 +65,17 @@ export function SiteHeader() {
             )}
             priority
           />
-          <span className="hidden font-display text-3xl uppercase tracking-tight md:inline">
+          <span className="hidden whitespace-nowrap font-display text-xl uppercase tracking-tight md:inline 2xl:text-3xl">
             {SITE.name}
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-7 lg:flex">
+        <nav className="hidden items-center gap-4 lg:flex 2xl:gap-7">
           {NAV.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm uppercase tracking-wider opacity-90 transition hover:opacity-100 hover:text-gold"
+              className="whitespace-nowrap text-xs uppercase tracking-wider opacity-90 transition hover:opacity-100 hover:text-gold 2xl:text-sm"
             >
               {item.label}
             </Link>
@@ -85,7 +85,7 @@ export function SiteHeader() {
         <div className="flex items-center gap-4">
           <a
             href={`tel:${SITE.telephoneTel}`}
-            className="hidden items-center gap-2 text-sm font-medium tracking-wider md:inline-flex"
+            className="hidden items-center gap-2 whitespace-nowrap text-sm font-medium tracking-wider 2xl:inline-flex"
             aria-label={`Appeler ${SITE.name}`}
           >
             <Phone className="h-4 w-4" />
