@@ -57,15 +57,15 @@ export function SiteHeader() {
           <Image
             src="/logo-valor-immo.png"
             alt=""
-            width={56}
-            height={56}
+            width={80}
+            height={80}
             className={cn(
-              "h-12 w-12 object-contain transition",
+              "h-16 w-16 object-contain transition",
               !scrolled && "brightness-0 invert",
             )}
             priority
           />
-          <span className="hidden font-display text-2xl uppercase tracking-tight md:inline">
+          <span className="hidden font-display text-3xl uppercase tracking-tight md:inline">
             {SITE.name}
           </span>
         </Link>
