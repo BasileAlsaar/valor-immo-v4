@@ -41,7 +41,7 @@ export function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative isolate flex min-h-screen flex-col overflow-hidden bg-fir-darker lg:h-screen"
+      className="relative isolate flex min-h-screen flex-col overflow-hidden bg-fir-darker"
     >
       <motion.div
         style={reduce ? undefined : { y: videoY }}
