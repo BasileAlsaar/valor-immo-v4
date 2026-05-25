@@ -6,10 +6,13 @@ import { motion, useReducedMotion } from "framer-motion"
 import { duration, easing } from "@/lib/motion"
 
 /**
- * Crest Valor Immo en composition éditoriale verticale, en tête du contenu
- * du hero. Placé dans le flow du Container du hero (et non en position
- * absolue), pour partager la même gouttière gauche que le H1 et le reste de
- * la stack. Masqué <lg ; le SiteHeader prend alors le relais pour le logo.
+ * Crest XL Valor Immo en surimpression sur le hero home.
+ * Positionné en absolute par le wrapper du hero pour s'aligner top-left
+ * avec le logo et les liens nav du SiteHeader (la nav reste au-dessus en
+ * z-index). Le composant lui-même n'embarque que l'image + l'anim
+ * d'entrée — le placement est délégué à son conteneur.
+ *
+ * Masqué <lg ; le SiteHeader prend alors le relais pour le logo.
  *
  * `brightness-0 invert` rend le logo blanc sur la vidéo Paris.
  */
@@ -21,7 +24,7 @@ export function HeroLogo() {
       initial={reduce ? false : { opacity: 0, y: -16 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: duration.base, ease: easing.smooth }}
-      className="pointer-events-none hidden lg:block"
+      className="pointer-events-none"
       aria-hidden
     >
       <Image

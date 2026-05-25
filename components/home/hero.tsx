@@ -41,7 +41,7 @@ export function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative isolate flex min-h-screen flex-col overflow-hidden bg-fir-darker"
+      className="relative isolate flex min-h-screen flex-col overflow-hidden bg-fir-darker lg:h-screen"
     >
       <motion.div
         style={reduce ? undefined : { y: videoY }}
@@ -64,16 +64,22 @@ export function Hero() {
       {/* Overlay vert sapin Valor Immo — opacité ajustable pour contraste AA sur H1 */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-fir-dark/60 via-fir-dark/55 to-fir-dark/85" aria-hidden />
 
-      <Container className="relative flex flex-1 flex-col items-start pt-24 pb-6 text-white lg:pt-36 xl:pt-40">
-        {/* Crest en composition verticale : aligné sur la même gouttière gauche
-            que le H1 grâce au Container parent (le SiteHeader masque son logo sur '/'). */}
-        <HeroLogo />
+      {/* Crest XL — aligné top-left sur les coordonnées exactes du SiteHeader
+          (mêmes max-w-[1440px] + paddings inline + top sur le baseline des liens
+          nav). Le SiteHeader reste cliquable au-dessus en z-50. */}
+      <div className="pointer-events-none absolute inset-x-0 top-11 z-10 hidden lg:block">
+        <div className="mx-auto flex max-w-[1440px] px-6 md:px-12 lg:px-12 2xl:px-24">
+          <HeroLogo />
+        </div>
+      </div>
+
+      <Container className="relative flex flex-1 flex-col justify-center pt-24 pb-16 text-white lg:justify-start lg:pt-52 lg:pb-14 xl:pt-56">
         <motion.div
           initial="hidden"
           animate="visible"
           variants={stagger(0.08)}
           transition={{ delayChildren: SPLIT_DELAY }}
-          className="max-w-4xl lg:mt-10"
+          className="max-w-4xl"
         >
           <motion.p
             variants={fadeUp}
@@ -85,7 +91,7 @@ export function Hero() {
 
           <h1
             aria-label="Votre projet commercial mérite l'emplacement parfait."
-            className="font-display mt-3 text-[clamp(2rem,5.5vw,6rem)] uppercase leading-[0.95] tracking-tight"
+            className="font-display mt-2 text-[clamp(2rem,5vw,6rem)] uppercase leading-[0.95] tracking-tight"
           >
             <SplitWords words={H1_WORDS_WHITE} reduce={reduce ?? false} />
             <span className="text-gold">
@@ -97,7 +103,7 @@ export function Hero() {
           <motion.p
             variants={fadeUp}
             transition={{ duration: duration.base, ease: easing.smooth, delay: 0.4 }}
-            className="mt-5 max-w-xl text-sm leading-relaxed opacity-90 md:text-base"
+            className="mt-4 max-w-xl text-sm leading-relaxed opacity-90 md:text-base"
           >
             Transaction · Location · Gestion sur boutiques, immeubles, bureaux et hôtellerie. Une équipe parisienne, un interlocuteur, pas de relais.
           </motion.p>
@@ -108,7 +114,7 @@ export function Hero() {
           animate="visible"
           variants={fadeUp}
           transition={{ duration: duration.base, ease: easing.smooth, delay: SPLIT_DELAY + 0.6 }}
-          className="mt-6"
+          className="mt-5"
         >
           <SearchBar />
         </motion.div>
@@ -118,7 +124,7 @@ export function Hero() {
           animate="visible"
           variants={fadeUp}
           transition={{ duration: duration.base, ease: easing.smooth, delay: SPLIT_DELAY + 0.8 }}
-          className="mt-5 flex flex-wrap items-center gap-4"
+          className="mt-4 flex flex-wrap items-center gap-4"
         >
           <CallbackTrigger variant="outline-white" size="lg">
             Être rappelé gratuitement
@@ -135,13 +141,13 @@ export function Hero() {
         </motion.div>
       </Container>
 
-      {/* Indicateur de scroll — flèche pulsation infinie subtile */}
+      {/* Indicateur de scroll — absolute pour garantir visibilité fond de hero */}
       <motion.div
         aria-hidden
         initial={reduce ? false : { opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: SPLIT_DELAY + 1.2, duration: duration.base }}
-        className="pointer-events-none relative z-10 mx-auto mb-6 hidden md:block"
+        className="pointer-events-none absolute inset-x-0 bottom-4 z-10 hidden justify-center md:flex"
       >
         <motion.div
           animate={reduce ? undefined : { y: [0, 8, 0] }}

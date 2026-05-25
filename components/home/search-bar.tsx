@@ -52,7 +52,7 @@ export function SearchBar() {
   return (
     <form
       onSubmit={onSubmit}
-      className="w-full rounded-3xl bg-white/95 p-6 text-ink shadow-[0_20px_60px_rgba(0,0,0,0.18)] backdrop-blur-md md:p-8"
+      className="w-full rounded-3xl bg-white/95 p-5 text-ink shadow-[0_20px_60px_rgba(0,0,0,0.18)] backdrop-blur-md md:p-6"
     >
       {/* Tabs */}
       <div className="flex flex-wrap gap-1 border-b border-ink/10">
@@ -62,7 +62,7 @@ export function SearchBar() {
             type="button"
             onClick={() => setTab(t.id)}
             className={cn(
-              "relative px-5 py-3 text-sm font-medium uppercase tracking-wider transition",
+              "relative px-5 py-2.5 text-sm font-medium uppercase tracking-wider transition",
               tab === t.id ? "text-ink" : "text-ink/50 hover:text-ink",
             )}
           >
@@ -75,7 +75,7 @@ export function SearchBar() {
       </div>
 
       {/* Champs */}
-      <div className="mt-6 grid gap-5 md:grid-cols-3">
+      <div className="mt-4 grid gap-5 md:grid-cols-3">
         <Field
           label="Ville · Arrondissement"
           value={ville}
@@ -99,7 +99,7 @@ export function SearchBar() {
       </div>
 
       {/* Tags */}
-      <div className="mt-6 flex flex-wrap gap-2">
+      <div className="mt-4 flex flex-wrap gap-2">
         {TAGS.map((tag) => {
           const on = activeTags.includes(tag)
           return (
@@ -121,13 +121,13 @@ export function SearchBar() {
       </div>
 
       {/* Submit */}
-      <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
+      <div className="mt-4 flex flex-wrap items-center justify-between gap-4">
         <p className="text-xs uppercase tracking-wider text-ink/50">
           Plus de 40 000 références analysées
         </p>
         <button
           type="submit"
-          className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-3.5 text-sm font-medium uppercase tracking-wider text-ink transition hover:bg-gold-warm"
+          className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-3 text-sm font-medium uppercase tracking-wider text-ink transition hover:bg-gold-warm"
         >
           <Search className="h-4 w-4" /> Rechercher
         </button>
