@@ -90,7 +90,7 @@ export function SearchBar() {
           type="number"
         />
         <Field
-          label={tab === "vente" ? "Budget max (€)" : "Loyer max (€/mois)"}
+          label={tab === "vente" ? "Budget max (€)" : "Loyer max (€/mois HT)"}
           value={loyerMax}
           onChange={setLoyerMax}
           placeholder={tab === "vente" ? "1 500 000" : "8 000"}

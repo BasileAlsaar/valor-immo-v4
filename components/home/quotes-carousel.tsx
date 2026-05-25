@@ -29,20 +29,6 @@ export function QuotesCarousel() {
         <Eyebrow className="text-gold">Ils nous ont confié leur projet</Eyebrow>
 
         <div className="relative mx-auto mt-10 max-w-3xl">
-          {/* Guillemets décoratifs or */}
-          <span
-            aria-hidden
-            className="font-display absolute -top-12 left-0 select-none text-[7rem] leading-none text-gold/30 md:-top-16 md:text-[10rem]"
-          >
-            «
-          </span>
-          <span
-            aria-hidden
-            className="font-display absolute -bottom-16 right-0 select-none text-[7rem] leading-none text-gold/30 md:-bottom-20 md:text-[10rem]"
-          >
-            »
-          </span>
-
           <AnimatePresence mode="wait">
             <motion.blockquote
               key={q.id}
@@ -54,7 +40,13 @@ export function QuotesCarousel() {
             >
               {/* leading-[1.35]! force-override : .font-display (globals.css hors layer) impose line-height:0.9, qui bat les utilities Tailwind v4 layered. Cf. PR fix(ui). */}
               <p className="font-display text-[clamp(1rem,1.25vw,1.5rem)] uppercase leading-[1.35]! tracking-[0.01em]">
+                <span aria-hidden className="mr-2 inline align-middle text-[2em] leading-none text-gold/40">
+                  «
+                </span>
                 {q.text}
+                <span aria-hidden className="ml-2 inline align-middle text-[2em] leading-none text-gold/40">
+                  »
+                </span>
               </p>
               <footer className="mt-6">
                 <p className="eyebrow text-gold">{q.attribution}</p>

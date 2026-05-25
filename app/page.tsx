@@ -2,7 +2,6 @@ import { Hero } from "@/components/home/hero"
 import { QuotesCarousel } from "@/components/home/quotes-carousel"
 import { CategoriesGrid } from "@/components/home/categories-grid"
 import { MethodSection } from "@/components/home/method-section"
-import { ReassuranceBar } from "@/components/home/reassurance-bar"
 import { ArgusSection } from "@/components/home/argus-section"
 import { OpportunitiesPreview } from "@/components/home/opportunities-preview"
 import { ContactCTA } from "@/components/sections/contact-cta"
@@ -14,10 +13,9 @@ import { ContactCTA } from "@/components/sections/contact-cta"
  * 2. QuotesCarousel (6 quotes — fond fir-dark)
  * 3. CategoriesGrid (6 tuiles classes d'actifs)
  * 4. MethodSection (24h/48h/1)
- * 5. ReassuranceBar
- * 6. ArgusSection
- * 7. OpportunitiesPreview
- * 8. ContactCTA (sprint 2 — remplace CtaFooterOutline du sprint 1)
+ * 5. ArgusSection
+ * 6. OpportunitiesPreview
+ * 7. ContactCTA (sprint 2 — remplace CtaFooterOutline du sprint 1)
  *    Footer délivré par layout.tsx via <SiteFooter />.
  */
 export default function HomePage() {
@@ -27,7 +25,6 @@ export default function HomePage() {
       <QuotesCarousel />
       <CategoriesGrid />
       <MethodSection />
-      <ReassuranceBar />
       <ArgusSection />
       <OpportunitiesPreview />
       <ContactCTA />
