@@ -21,7 +21,7 @@ export function HeroLogo() {
       initial={reduce ? false : { opacity: 0, y: -16 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: duration.base, ease: easing.smooth }}
-      className="pointer-events-none absolute left-6 top-24 z-20 md:left-12 md:top-32"
+      className="pointer-events-none absolute z-20 hidden lg:block lg:left-8 lg:top-16 xl:left-12 xl:top-24"
       aria-hidden
     >
       <Image

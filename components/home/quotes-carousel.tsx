@@ -52,7 +52,8 @@ export function QuotesCarousel() {
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               className="relative z-10"
             >
-              <p className="font-display text-[clamp(1rem,1.25vw,1.5rem)] uppercase leading-[1.3] tracking-[0.01em]">
+              {/* leading-[1.35]! force-override : .font-display (globals.css hors layer) impose line-height:0.9, qui bat les utilities Tailwind v4 layered. Cf. PR fix(ui). */}
+              <p className="font-display text-[clamp(1rem,1.25vw,1.5rem)] uppercase leading-[1.35]! tracking-[0.01em]">
                 {q.text}
               </p>
               <footer className="mt-6">

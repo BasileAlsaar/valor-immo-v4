@@ -25,6 +25,7 @@ export default function Page() {
         { label: "Pas-de-porte", value: "Somme versée par le preneur au bailleur pour entrer dans les lieux, distincte du loyer et du droit au bail." },
         { label: "Déspécialisation plénière", value: "Modification totale du champ d'activité autorisée par le bail, soumise à autorisation du bailleur et compensation éventuelle." },
       ]}
+      vocabIntro="Quatre mécanismes juridiques structurent une cession de droit au bail — chacun engage des effets fiscaux, patrimoniaux et opérationnels distincts. Leur choix détermine la valeur transférée."
       quartiers={[
         "Triangle d'or (8ᵉ) — cession boutiques luxe",
         "Saint-Germain (6ᵉ) — cession restaurants",

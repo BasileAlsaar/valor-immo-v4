@@ -25,6 +25,7 @@ export default function Page() {
         { label: "Plancher (kg/m²)", value: "Charge admissible au sol, exprimée en kg ou tonne par m². Critère essentiel pour les activités de stockage lourd ou industriel léger." },
         { label: "Quai de déchargement", value: "Aire dédiée à l'accostage des poids lourds, équipée ou non d'un niveleur de quai — indispensable pour la messagerie." },
       ]}
+      vocabIntro="Quatre indicateurs déterminent la valeur et l'usage d'un actif logistique. Aucun ne se lit isolément : c'est leur combinaison qui éclaire la décision."
       quartiers={[
         "18ᵉ — Pajol, La Chapelle (logistique urbaine)",
         "19ᵉ — Bassin de la Villette, Aubervilliers porte (dernier km)",

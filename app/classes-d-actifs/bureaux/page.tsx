@@ -25,6 +25,7 @@ export default function Page() {
         { label: "Bail tertiaire 3/6/9", value: "Bail commercial à durée de 9 ans avec faculté de sortie triennale pour le preneur — adapté aux activités de bureau." },
         { label: "Grade A / B", value: "Classification qualitative des immeubles tertiaires : Grade A = neuf ou rénové dernière génération avec certifications, Grade B = qualité intermédiaire." },
       ]}
+      vocabIntro="Quatre notions structurent la lecture d'un actif tertiaire — indice de révision, loyer effectif, architecture de bail et qualité d'immeuble. C'est leur articulation qui fonde la valorisation."
       quartiers={[
         "QCA Triangle d'or (8ᵉ) — Étoile, Champs-Élysées, Boétie",
         "9ᵉ Haussmann (9ᵉ) — Opéra, Auber, Trinité, Cadet",

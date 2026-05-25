@@ -25,6 +25,7 @@ export default function Page() {
         { label: "Multiple d'EBE", value: "Méthode de valorisation des fonds CHR : prix de cession = N × EBE, avec N typiquement entre 4 et 10× selon classement et emplacement." },
         { label: "ICR / ERP", value: "Classement de l'établissement recevant du public (catégorie 5 pour < 300 pers., catégorie 4 pour 300-700, etc.) — incidence sur les obligations sécurité incendie." },
       ]}
+      vocabIntro="Quatre éléments font la valeur d'un actif CHR — autorisation administrative, équipement technique, performance économique et classification réglementaire. Aucun ne s'examine seul."
       quartiers={[
         "Saint-Germain-des-Prés (6ᵉ) — restauration gastronomique",
         "Le Marais (3ᵉ-4ᵉ) — boutique-hôtels et bistronomie",

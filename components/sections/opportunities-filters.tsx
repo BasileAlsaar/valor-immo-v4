@@ -91,7 +91,8 @@ export function OpportunitiesFilters({ resultCount, totalCount }: Props) {
       data-testid="opportunities-filters"
       className="sticky top-20 z-30 -mx-6 border-b border-fir-dark/10 bg-cream-soft/95 px-6 py-4 backdrop-blur-md md:-mx-12 md:px-12 lg:-mx-24 lg:px-24"
     >
-      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-4">
+      {/* Padding inline aligné sur <Container> (max-w-[1440px] px-6/12/24) — composant rendu hors Container, voir app/opportunites/page.tsx. */}
+      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-4 px-6 md:px-12 lg:px-24">
         <div className="flex flex-wrap items-baseline justify-between gap-3">
           <p className="text-sm font-medium text-fir-dark">
             <span className="font-display text-2xl tabular">{resultCount}</span>{" "}

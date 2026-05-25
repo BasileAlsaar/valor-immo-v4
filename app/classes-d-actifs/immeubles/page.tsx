@@ -25,6 +25,7 @@ export default function Page() {
         { label: "Ravalement décennal", value: "Obligation municipale de ravalement de façade tous les 10 ans à Paris — incidence forte sur les charges et la valorisation." },
         { label: "Loi Carrez", value: "Mesure de la surface privative des lots en copropriété, opposable en cas de cession (tolérance 5 % d'écart)." },
       ]}
+      vocabIntro="Quatre notions encadrent la lecture d'un immeuble de rapport — rendement brut, rendement net, obligations techniques et surface légale. Leur combinaison établit la valeur réelle."
       quartiers={[
         "Grands Boulevards (2ᵉ-9ᵉ) — immeubles mixtes haussmanniens",
         "Le Marais (3ᵉ-4ᵉ) — monopropriétés et hôtels particuliers",

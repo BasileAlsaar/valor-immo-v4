@@ -25,6 +25,7 @@ export default function Page() {
         { label: "Déspécialisation", value: "Modification du champ d'activité autorisée par le bail, partielle ou plénière, soumise à autorisation du bailleur." },
         { label: "Emplacement n°1 / n°2", value: "Classification des emplacements selon le flux piétonnier et la notoriété commerciale de l'axe." },
       ]}
+      vocabIntro="Quatre repères encadrent la valeur d'un local commercial — indice de révision, droit d'entrée, régime d'activité et qualité d'emplacement. Aucun ne se lit isolément : leur combinaison fait le prix."
       quartiers={[
         "Triangle d'or (8ᵉ) — Champs-Élysées, Faubourg Saint-Honoré, Avenue Montaigne",
         "Saint-Germain-des-Prés (6ᵉ) — Bonaparte, Bac, Cherche-Midi",

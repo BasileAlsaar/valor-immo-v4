@@ -21,6 +21,8 @@ type Props = {
   title: React.ReactNode
   subtitle: string
   vocab: { label: string; value: string }[]
+  /** Phrase d'intro de la colonne gauche Vocabulaire métier, propre à la typologie. */
+  vocabIntro: string
   quartiers: string[]
   clientele: string[]
   backgroundImage: string
@@ -36,6 +38,7 @@ export function ClassActifPage({
   title,
   subtitle,
   vocab,
+  vocabIntro,
   quartiers,
   clientele,
   backgroundImage,
@@ -54,10 +57,14 @@ export function ClassActifPage({
       <section className="bg-cream py-24 md:py-32">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[1fr_2fr]">
-            <div>
+            <div className="lg:sticky lg:top-[120px] lg:self-start">
               <Eyebrow className="text-gold-deep">Vocabulaire métier</Eyebrow>
-              <p className="mt-3 text-sm text-ink/70">
-                Les indices et notions clés pour cette typologie d'actif.
+              <h3 className="font-accent mt-4 text-[clamp(2rem,3vw,2.75rem)] italic leading-[1.05] text-fir-dark">
+                Les indices qui structurent la lecture.
+              </h3>
+              <div aria-hidden className="my-6 h-px w-12 bg-gold" />
+              <p className="max-w-[36ch] text-[15px] leading-relaxed text-fir-dark/70 md:text-base">
+                {vocabIntro}
               </p>
             </div>
             <dl className="grid gap-6 md:grid-cols-2">

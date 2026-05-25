@@ -49,9 +49,10 @@ export function SiteHeader() {
           aria-label={`Retour à l'accueil — ${SITE.name}`}
           className={cn(
             "flex items-center gap-3",
-            // Home avant scroll : le HeroLogo XL prend le relais, on cache
-            // tout le bloc identitaire du SiteHeader (logo PNG + nom).
-            !showLogo && "pointer-events-none invisible",
+            // Home avant scroll : le HeroLogo XL ne prend le relais qu'à partir
+            // de lg (HeroLogo est hidden lg:block). En <lg on garde le logo
+            // du SiteHeader visible — sinon le mobile/tablette reste sans logo.
+            !showLogo && "lg:pointer-events-none lg:invisible",
           )}
         >
           <Image
