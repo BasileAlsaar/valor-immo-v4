@@ -67,7 +67,7 @@ export function Hero() {
       {/* Crest XL — aligné top-left sur les coordonnées exactes du SiteHeader
           (mêmes max-w-[1440px] + paddings inline + top sur le baseline des liens
           nav). Le SiteHeader reste cliquable au-dessus en z-50. */}
-      <div className="pointer-events-none absolute inset-x-0 top-8 z-10 hidden lg:block">
+      <div className="pointer-events-none absolute inset-x-0 top-6 z-10 hidden lg:block">
         <div className="mx-auto flex max-w-[1440px] px-6 md:px-12 lg:px-12 2xl:px-24">
           <HeroLogo />
         </div>
