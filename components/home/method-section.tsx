@@ -8,7 +8,9 @@ import { CtaPill } from "@/components/ui/cta-pill"
 import { RevealStagger, RevealItem } from "@/components/motion/reveal"
 import { SITE } from "@/lib/site"
 
-const STEPS = [
+type Step = { chiffre: string; titre: string; text: string }
+
+const STEPS_DEFAULT: ReadonlyArray<Step> = [
   {
     chiffre: "24h",
     titre: "Brief précis",
@@ -19,14 +21,11 @@ const STEPS = [
     titre: "Première visite",
     text: "Sur les biens identifiés et validés ensemble.",
   },
-  {
-    chiffre: "1",
-    titre: "Interlocuteur",
-    text: "Du premier appel à la signature. Aucun sous-traitant.",
-  },
 ] as const
 
-export function MethodSection() {
+export function MethodSection({ steps }: { steps?: ReadonlyArray<Step> } = {}) {
+  const items = steps ?? STEPS_DEFAULT
+  const gridCols = items.length === 2 ? "md:grid-cols-2 md:max-w-3xl md:mx-auto" : "md:grid-cols-3"
   return (
     <section className="relative overflow-hidden bg-fir-dark py-16 text-white md:py-18 lg:py-20">
       <Container>
@@ -48,8 +47,8 @@ export function MethodSection() {
           </a>
         </div>
 
-        <RevealStagger className="mt-10 grid gap-10 md:grid-cols-3">
-          {STEPS.map((step) => (
+        <RevealStagger className={`mt-10 grid gap-10 ${gridCols}`}>
+          {items.map((step) => (
             <RevealItem key={step.chiffre}>
               <div className="border-t-2 border-gold/30 pt-5">
                 <p className="font-display text-[clamp(2.75rem,6vw,5rem)] leading-[0.85] text-gold">

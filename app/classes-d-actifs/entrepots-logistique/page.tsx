@@ -4,7 +4,7 @@ import { ClassActifPage } from "@/components/sections/class-actif-page"
 export const metadata: Metadata = {
   title: "Entrepôts & Logistique — Paris",
   description:
-    "Stockage urbain, dernier kilomètre, locaux d'activité, plateformes logistiques. Solutions pour les opérateurs e-commerce et messagerie sur Paris et petite couronne.",
+    "Stockage urbain, dernier kilomètre, locaux d'activité, plateformes logistiques. Solutions pour les opérateurs e-commerce et messagerie sur Paris et Île-de-France.",
 }
 
 export default function Page() {
@@ -17,7 +17,7 @@ export default function Page() {
           Entrepôts et <span className="text-gold">logistique urbaine.</span>
         </>
       }
-      subtitle="Stockage, dernier kilomètre, locaux d'activité, plateformes logistiques. Recherche fine sur Paris intra-muros et petite couronne pour les opérateurs e-commerce, messagerie et ateliers urbains."
+      subtitle="Stockage, dernier kilomètre, locaux d'activité, plateformes logistiques. Recherche fine sur Paris intra-muros et Île-de-France pour les opérateurs e-commerce, messagerie et ateliers urbains."
       backgroundImage="/images/categories/entrepots-logistique.jpg"
       vocab={[
         { label: "Surface utile (SU)", value: "Surface exploitable au sol, hors gaines techniques et circulations verticales — indicateur principal pour la logistique." },
@@ -30,7 +30,7 @@ export default function Page() {
         "18ᵉ — Pajol, La Chapelle (logistique urbaine)",
         "19ᵉ — Bassin de la Villette, Aubervilliers porte (dernier km)",
         "13ᵉ — Bercy, Tolbiac",
-        "Petite couronne — Aubervilliers, Saint-Ouen, Pantin, Ivry",
+        "Île-de-France — Aubervilliers, Saint-Ouen, Pantin, Ivry",
         "Plateformes XPO/Geodis hors Paris",
       ]}
       clientele={[

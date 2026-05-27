@@ -55,7 +55,7 @@ export function ContactCTA() {
           }}
           className="mx-auto mt-5 max-w-xl text-base opacity-85"
         >
-          Brief précis sous 24h ouvrées. Un interlocuteur. Pas de relais.
+          Brief précis sous 24h ouvrées. Un interlocuteur confirmé. Pas de relais.
         </motion.p>
         <motion.div
           initial={reduce ? false : { opacity: 0, y: 24 }}

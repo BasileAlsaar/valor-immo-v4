@@ -19,7 +19,7 @@ const DESCRIPTIONS: Record<string, string> = {
   immeubles:
     "Mixtes commerce/habitation, monopropriétés, lots de copropriété. Investissement patrimonial.",
   "entrepots-logistique":
-    "Stockage urbain, dernier kilomètre, locaux d'activité. Petite couronne et hors Paris.",
+    "Stockage urbain, dernier kilomètre, locaux d'activité. Île-de-France.",
   "cession-droit-au-bail":
     "Reprise de bail, cession de fonds CHR. Optimisation fiscale et négociation bailleur.",
 }

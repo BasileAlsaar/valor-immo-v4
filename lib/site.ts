@@ -33,6 +33,7 @@ export const SITE = {
 export const NAV = [
   { label: "Vente", href: "/vente" },
   { label: "Location", href: "/location" },
+  { label: "Gestion", href: "/gestion" },
   { label: "Estimations", href: "/estimations" },
   { label: "Classes d'actifs", href: "/classes-d-actifs" },
   { label: "Opportunités", href: "/opportunites" },

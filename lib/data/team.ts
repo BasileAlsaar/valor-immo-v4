@@ -1,10 +1,8 @@
 /**
- * 4 cards équipe — /l-agence.
- * CONTENU FICTIF À REMPLACER AVANT MISE EN LIGNE PUBLIQUE.
- * Voir CONTENT_TODO.md section « PHASE 8 — Contenu fictif à remplacer ».
+ * Équipe Valor Immo — 2 interlocuteurs confirmés affichés sur /l-agence.
  *
- * Noms francisés crédibles, aucun individu réel. Photos en fallback fir-dark
- * + initiales gold (brief V3 ligne 817 : pas de mannequin Pexels en costume).
+ * Photos non encore fournies — le markup affiche un fallback initiales gold
+ * sur fond fir-dark (brief V3 ligne 817 : pas de mannequin Pexels en costume).
  */
 
 export type TeamMember = {
@@ -16,31 +14,17 @@ export type TeamMember = {
 
 export const team: TeamMember[] = [
   {
-    name: "Camille Berthier",
-    initials: "CB",
-    role: "Directrice générale",
+    name: "Yoav Marciano",
+    initials: "YM",
+    role: "Fondateur",
     expertise:
-      "15 ans en immobilier commercial parisien, ex-directrice de département en agence institutionnelle.",
+      "Fondateur de Valor Immo. Spécialiste de l'immobilier commercial parisien et de la transmission d'établissements.",
   },
   {
-    name: "Antoine Lavergne",
-    initials: "AL",
-    role: "Directeur transactions retail",
+    name: "Basile Alsaar",
+    initials: "BA",
+    role: "Spécialiste IT",
     expertise:
-      "Spécialiste des baux commerciaux pied d'immeuble et des cessions de fonds CHR.",
-  },
-  {
-    name: "Sophie Rouvier",
-    initials: "SR",
-    role: "Directrice tertiaire & investissement",
-    expertise:
-      "Pilote les opérations de bureaux et d'immeubles en bloc — clientèle family offices et institutionnels.",
-  },
-  {
-    name: "Marc Vanderputte",
-    initials: "MV",
-    role: "Conseil cession et reprise",
-    expertise:
-      "Expert des cessions de droit au bail et de la transmission de fonds CHR.",
+      "Conception et développement de la plateforme digitale Valor Immo. Outils d'analyse et de mise en relation.",
   },
 ]
