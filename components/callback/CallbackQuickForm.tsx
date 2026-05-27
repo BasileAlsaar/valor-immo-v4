@@ -139,7 +139,7 @@ export function CallbackQuickForm({ open, onClose }: Props) {
                     id="callback-title"
                     className="font-display mt-2 text-3xl uppercase leading-tight tracking-tight text-fir-dark"
                   >
-                    En 30 secondes.
+                    Laissez vos coordonnées.
                   </h2>
                   <p className="mt-2 text-sm text-ink/60">
                     Pour un brief plus long, utilisez{" "}

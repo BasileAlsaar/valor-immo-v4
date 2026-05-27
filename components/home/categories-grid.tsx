@@ -4,7 +4,6 @@ import { ArrowUpRight } from "lucide-react"
 
 import { Container } from "@/components/ui/container"
 import { Eyebrow } from "@/components/ui/eyebrow"
-import { OutlineText } from "@/components/ui/outline-text"
 import { RevealStagger, RevealItem } from "@/components/motion/reveal"
 import { cn } from "@/lib/utils"
 import { CATEGORIES } from "@/lib/data/categories"
@@ -31,12 +30,9 @@ export function CategoriesGrid() {
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
             <Eyebrow className="text-gold-deep">Nos commerces disponibles</Eyebrow>
-            <OutlineText
-              color="fir"
-              className="mt-3 text-[clamp(1.75rem,4.5vw,4rem)] leading-[0.95]"
-            >
+            <h2 className="font-display mt-3 text-[clamp(1.75rem,4.5vw,4rem)] uppercase leading-[0.95] tracking-tight text-fir-dark">
               Explorez par typologie d'actif
-            </OutlineText>
+            </h2>
           </div>
           <Link
             href="/opportunites"

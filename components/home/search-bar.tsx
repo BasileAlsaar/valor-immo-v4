@@ -60,7 +60,10 @@ export function SearchBar() {
           <button
             key={t.id}
             type="button"
-            onClick={() => setTab(t.id)}
+            onClick={() => {
+              setTab(t.id)
+              if (t.id === "bureaux") setActiveTags([])
+            }}
             className={cn(
               "relative px-5 py-2.5 text-sm font-medium uppercase tracking-wider transition",
               tab === t.id ? "text-ink" : "text-ink/50 hover:text-ink",
@@ -98,33 +101,32 @@ export function SearchBar() {
         />
       </div>
 
-      {/* Tags */}
-      <div className="mt-4 flex flex-wrap gap-2">
-        {TAGS.map((tag) => {
-          const on = activeTags.includes(tag)
-          return (
-            <button
-              key={tag}
-              type="button"
-              onClick={() => toggleTag(tag)}
-              className={cn(
-                "rounded-full border px-4 py-2 text-xs font-medium uppercase tracking-wider transition",
-                on
-                  ? "border-gold bg-gold text-ink"
-                  : "border-ink/15 text-ink/70 hover:border-ink/40 hover:text-ink",
-              )}
-            >
-              {tag}
-            </button>
-          )
-        })}
-      </div>
+      {/* Tags — pas pertinents pour les bureaux (extraction = CHR, façade = commerce) */}
+      {tab !== "bureaux" && (
+        <div className="mt-4 flex flex-wrap gap-2">
+          {TAGS.map((tag) => {
+            const on = activeTags.includes(tag)
+            return (
+              <button
+                key={tag}
+                type="button"
+                onClick={() => toggleTag(tag)}
+                className={cn(
+                  "rounded-full border px-4 py-2 text-xs font-medium uppercase tracking-wider transition",
+                  on
+                    ? "border-gold bg-gold text-ink"
+                    : "border-ink/15 text-ink/70 hover:border-ink/40 hover:text-ink",
+                )}
+              >
+                {tag}
+              </button>
+            )
+          })}
+        </div>
+      )}
 
       {/* Submit */}
-      <div className="mt-4 flex flex-wrap items-center justify-between gap-4">
-        <p className="text-xs uppercase tracking-wider text-ink/50">
-          Plus de 40 000 références analysées
-        </p>
+      <div className="mt-4 flex flex-wrap items-center justify-end gap-4">
         <button
           type="submit"
           className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-3 text-sm font-medium uppercase tracking-wider text-ink transition hover:bg-gold-warm"
