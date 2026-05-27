@@ -29,7 +29,7 @@ export function PageHero({
   return (
     <section
       className={cn(
-        "relative isolate flex min-h-[70vh] flex-col justify-end overflow-hidden bg-fir-dark pt-56 text-white",
+        "relative isolate flex min-h-[70vh] flex-col justify-end overflow-hidden bg-fir-dark pt-64 text-white",
         className,
       )}
     >

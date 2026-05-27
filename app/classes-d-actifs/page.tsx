@@ -25,7 +25,7 @@ const DESCRIPTIONS: Record<string, string> = {
   immeubles:
     "Immeubles mixtes commerce-habitation, monopropriétés haussmanniennes, lots de copropriété — investissement patrimonial, marchand de biens, foncière.",
   "entrepots-logistique":
-    "Stockage urbain, dernier kilomètre, locaux d'activité, plateformes logistiques — Paris intra-muros et petite couronne pour les opérateurs e-commerce et messagerie.",
+    "Stockage urbain, dernier kilomètre, locaux d'activité, plateformes logistiques — Paris intra-muros et Île-de-France pour les opérateurs e-commerce et messagerie.",
   "cession-droit-au-bail":
     "Reprise de bail commercial, cession de fonds CHR, négociation déspécialisation — accompagnement fiscal et juridique du cédant comme du repreneur.",
 }
@@ -40,7 +40,7 @@ export default function ClassesActifsPage() {
             Six typologies, <span className="text-gold">une seule discipline.</span>
           </>
         }
-        subtitle="Chaque classe d'actif a son vocabulaire, sa fiscalité et son réseau d'acteurs. Nos directeurs spécialisés couvrent les six segments du marché commercial parisien sans relais."
+        subtitle="Chaque classe d'actif a son vocabulaire, sa fiscalité et son réseau d'acteurs. Nos interlocuteurs confirmés couvrent les six segments du marché commercial parisien sans relais."
         backgroundImage="/images/categories/locaux-commerciaux.jpg"
       />
 

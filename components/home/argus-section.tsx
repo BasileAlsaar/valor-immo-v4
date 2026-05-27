@@ -192,7 +192,7 @@ export function ArgusSection() {
               </p>
               <p className="mt-3 text-sm leading-relaxed text-ink/80">
                 Pour une estimation personnalisée appuyée sur la base complète, contactez
-                un de nos directeurs.
+                un de nos interlocuteurs confirmés.
               </p>
             </div>
           </div>

@@ -13,7 +13,7 @@ import { articles } from "@/lib/data/articles"
 export const metadata: Metadata = {
   title: "Actualités",
   description:
-    "Analyses du marché immobilier commercial parisien : valeurs locatives, arbitrages QCA, cessions de fonds. Rédigé par les directeurs Valor Immo.",
+    "Analyses du marché immobilier commercial parisien : valeurs locatives, arbitrages QCA, cessions de fonds. Rédigé par l'équipe Valor Immo.",
 }
 
 export default function ActualitesPage() {
@@ -26,7 +26,7 @@ export default function ActualitesPage() {
             Analyses du marché<br /><span className="text-gold">commercial parisien.</span>
           </>
         }
-        subtitle="Données de marché, arbitrages d'emplacement, fiscalité de la cession : nos analyses opérationnelles, écrites par les directeurs qui les ont vécues sur le terrain."
+        subtitle="Données de marché, arbitrages d'emplacement, fiscalité de la cession : nos analyses opérationnelles, écrites par les interlocuteurs confirmés qui les ont vécues sur le terrain."
         backgroundImage="/images/categories/bureaux.jpg"
       />
 

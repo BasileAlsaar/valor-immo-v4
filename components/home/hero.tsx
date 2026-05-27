@@ -63,7 +63,7 @@ export function Hero() {
       {/* Overlay vert sapin Valor Immo — opacité ajustable pour contraste AA sur H1 */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-fir-dark/60 via-fir-dark/55 to-fir-dark/85" aria-hidden />
 
-      <Container className="relative flex flex-1 flex-col justify-center pt-24 pb-16 text-white lg:justify-start lg:pt-52 lg:pb-14 xl:pt-56">
+      <Container className="relative flex flex-1 flex-col justify-center pt-24 pb-16 text-white lg:justify-start lg:pt-60 lg:pb-14 xl:pt-64">
         <motion.div
           initial="hidden"
           animate="visible"
@@ -95,7 +95,7 @@ export function Hero() {
             transition={{ duration: duration.base, ease: easing.smooth, delay: 0.4 }}
             className="mt-4 max-w-xl text-sm leading-relaxed opacity-90 md:text-base"
           >
-            Transaction · Location · Gestion sur boutiques, immeubles, bureaux et hôtellerie. Une équipe parisienne, un interlocuteur, pas de relais.
+            Transaction · Location · Gestion sur boutiques, immeubles, bureaux et hôtellerie. Une équipe parisienne, un interlocuteur confirmé, pas de relais.
           </motion.p>
         </motion.div>
 
