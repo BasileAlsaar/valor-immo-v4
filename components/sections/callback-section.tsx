@@ -1,4 +1,4 @@
-import { Phone } from "lucide-react"
+import { Clock, Mail, MapPin, Phone } from "lucide-react"
 
 import { Container } from "@/components/ui/container"
 import { Eyebrow } from "@/components/ui/eyebrow"
@@ -22,15 +22,33 @@ export function CallbackSection() {
             </p>
           </div>
           <div className="flex flex-col gap-5">
+            <ul className="space-y-3 text-sm leading-[1.5] text-fir-dark">
+              <li className="flex items-start gap-3">
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold-deep" aria-hidden />
+                <span>
+                  {SITE.address.line1}, {SITE.address.line2}
+                </span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Phone className="h-4 w-4 shrink-0 text-gold-deep" aria-hidden />
+                <a href={`tel:${SITE.telephoneTel}`} className="hover:text-gold-deep">
+                  {SITE.telephoneDisplay}
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <Mail className="h-4 w-4 shrink-0 text-gold-deep" aria-hidden />
+                <a href={`mailto:${SITE.email}`} className="hover:text-gold-deep">
+                  {SITE.email}
+                </a>
+              </li>
+              <li className="flex items-start gap-3">
+                <Clock className="mt-0.5 h-4 w-4 shrink-0 text-gold-deep" aria-hidden />
+                <span className="text-ink/70">{SITE.hours.full}</span>
+              </li>
+            </ul>
             <CtaPill href="/contact" variant="fir" size="lg">
               Demander à être rappelé
             </CtaPill>
-            <a
-              href={`tel:${SITE.telephoneTel}`}
-              className="inline-flex items-center gap-3 text-base font-medium text-fir-dark hover:text-gold-deep"
-            >
-              <Phone className="h-5 w-5" /> {SITE.telephoneDisplay}
-            </a>
           </div>
         </div>
       </Container>

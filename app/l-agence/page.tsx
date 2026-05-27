@@ -102,7 +102,20 @@ export default function AgencePage() {
         </Container>
       </section>
 
-      <MethodSection />
+      <MethodSection
+        steps={[
+          {
+            chiffre: "24h",
+            titre: "Brief précis",
+            text: "Surface, emplacement, activité, budget. Pas de visite hors cible.",
+          },
+          {
+            chiffre: "48h",
+            titre: "Première visite",
+            text: "Sur les biens identifiés et validés ensemble.",
+          },
+        ]}
+      />
 
       <section className="bg-white py-24 md:py-32">
         <Container>
