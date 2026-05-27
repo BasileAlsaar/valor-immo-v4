@@ -10,6 +10,7 @@ type Props = {
   subtitle?: string
   backgroundImage?: string
   className?: string
+  actions?: React.ReactNode
 }
 
 /**
@@ -23,6 +24,7 @@ export function PageHero({
   subtitle,
   backgroundImage,
   className,
+  actions,
 }: Props) {
   return (
     <section
@@ -54,6 +56,7 @@ export function PageHero({
             {subtitle}
           </p>
         )}
+        {actions && <div className="mt-10 flex flex-wrap items-center gap-4">{actions}</div>}
       </Container>
     </section>
   )
