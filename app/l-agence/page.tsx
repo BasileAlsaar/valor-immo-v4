@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { PageHero } from "@/components/sections/page-hero"
 import { Container } from "@/components/ui/container"
 import { Eyebrow } from "@/components/ui/eyebrow"
+import { HoursBlock } from "@/components/ui/hours-block"
 import { CallbackSection } from "@/components/sections/callback-section"
 import { MethodSection } from "@/components/home/method-section"
 import { RevealStagger, RevealItem } from "@/components/motion/reveal"
@@ -129,7 +130,9 @@ export default function AgencePage() {
                 </div>
                 <div>
                   <dt className="text-xs uppercase tracking-wider text-ink/50">Horaires</dt>
-                  <dd className="mt-1 text-sm text-ink/70">Lun-Ven 09:00 – 19:00 · Sam : Fermé · Dim : Fermé</dd>
+                  <dd className="mt-2">
+                    <HoursBlock valueClassName="text-fir-dark" labelClassName="text-ink/55" />
+                  </dd>
                 </div>
               </dl>
             </div>

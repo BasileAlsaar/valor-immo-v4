@@ -85,7 +85,7 @@ export function StepProjet() {
       {/* Transaction — radios horizontaux */}
       <fieldset>
         <legend className="eyebrow text-gold-deep">Type de transaction</legend>
-        <div className="mt-4 grid gap-3 sm:grid-cols-3">
+        <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {TRANSACTIONS.map((tx) => {
             const checked = transaction === tx
             return (
@@ -142,8 +142,8 @@ export function StepProjet() {
         </div>
       </fieldset>
 
-      {/* Budget — conditionnel selon transaction */}
-      {transaction && (
+      {/* Budget — conditionnel selon transaction (pas affiché pour gestion) */}
+      {transaction && transaction !== "gestion" && (
         <fieldset>
           <legend className="eyebrow text-gold-deep">Budget</legend>
           {(transaction === "location" || transaction === "les-deux") && (

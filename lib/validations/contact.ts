@@ -15,7 +15,7 @@ export const TYPOLOGIES = [
   "cession-droit-au-bail",
 ] as const
 
-export const TRANSACTIONS = ["acquisition", "location", "les-deux"] as const
+export const TRANSACTIONS = ["acquisition", "location", "gestion", "les-deux"] as const
 
 export const DEADLINES = [
   "immediat",
@@ -144,6 +144,7 @@ export const LABELS = {
   transaction: {
     acquisition: "Acquisition",
     location: "Location",
+    gestion: "Gestion",
     "les-deux": "Acquisition ou location",
   },
   deadline: {

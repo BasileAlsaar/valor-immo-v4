@@ -3,6 +3,7 @@ import Image from "next/image"
 import { Mail, MapPin, Phone, Clock } from "lucide-react"
 
 import { Container } from "@/components/ui/container"
+import { HoursBlock } from "@/components/ui/hours-block"
 import { SITE } from "@/lib/site"
 import { CATEGORIES } from "@/lib/data/categories"
 
@@ -63,7 +64,7 @@ export function SiteFooter() {
               </li>
               <li className="flex items-start gap-3">
                 <Clock className="mt-0.5 h-4 w-4 shrink-0 text-gold" aria-hidden />
-                <span className="opacity-80">{SITE.hours.full}</span>
+                <HoursBlock valueClassName="opacity-90" />
               </li>
             </ul>
           </div>

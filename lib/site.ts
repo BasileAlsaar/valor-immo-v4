@@ -22,6 +22,11 @@ export const SITE = {
   hours: {
     full: "Lun-Ven 09:00 – 19:00 · Sam : Fermé · Dim : Fermé",
     compact: "Lun-Ven 9h-19h",
+    schedule: [
+      { days: "Lun — Ven", time: "09h00 – 19h00" },
+      { days: "Sam", time: "Fermé" },
+      { days: "Dim", time: "Fermé" },
+    ],
   },
   coords: {
     lng: 2.261717,

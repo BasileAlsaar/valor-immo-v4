@@ -3,6 +3,7 @@ import { Clock, Mail, MapPin, Phone } from "lucide-react"
 import { Container } from "@/components/ui/container"
 import { Eyebrow } from "@/components/ui/eyebrow"
 import { CtaPill } from "@/components/ui/cta-pill"
+import { HoursBlock } from "@/components/ui/hours-block"
 import { SITE } from "@/lib/site"
 
 export function CallbackSection() {
@@ -42,7 +43,7 @@ export function CallbackSection() {
               </li>
               <li className="flex items-start gap-3">
                 <Clock className="mt-0.5 h-4 w-4 shrink-0 text-gold-deep" aria-hidden />
-                <span className="text-ink/70">{SITE.hours.full}</span>
+                <HoursBlock valueClassName="text-ink/80" labelClassName="text-ink/55" />
               </li>
             </ul>
             <CtaPill href="/contact" variant="fir" size="lg">

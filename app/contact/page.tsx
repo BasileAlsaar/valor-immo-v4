@@ -3,6 +3,7 @@ import { Clock, Mail, MapPin, Phone } from "lucide-react"
 
 import { Container } from "@/components/ui/container"
 import { Eyebrow } from "@/components/ui/eyebrow"
+import { HoursBlock } from "@/components/ui/hours-block"
 import { ContactForm } from "@/components/contact-form/ContactForm"
 import { ContactMap } from "@/components/contact/contact-map"
 import { SITE } from "@/lib/site"
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
 }
 
 const POURQUOI_NOUS = [
-  "Réponse sous 24h ouvrées, par un interlocuteur unique.",
+  "Réponse sous 24h ouvrées, par des interlocuteurs confirmés.",
   "Équipe 100 % parisienne, connaissance fine du marché Paris + Île-de-France.",
   "Carte T en cours d'obtention — délivrée par la CCI Paris Île-de-France.",
 ] as const
@@ -36,7 +37,7 @@ export default function ContactPage() {
             Discutons de votre projet.
           </h1>
           <p className="mt-4 max-w-xl text-base opacity-85">
-            Un interlocuteur unique, réponse sous 24h ouvrées.
+            Des interlocuteurs confirmés, réponse sous 24h ouvrées.
           </p>
         </Container>
       </section>
@@ -79,7 +80,7 @@ export default function ContactPage() {
                     </a>
                   </CoordItem>
                   <CoordItem icon={Clock} label="Horaires">
-                    <span className="text-sm opacity-90">{SITE.hours.full}</span>
+                    <HoursBlock className="mt-1" />
                   </CoordItem>
                 </ul>
               </div>

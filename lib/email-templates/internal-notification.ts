@@ -76,13 +76,13 @@ export function buildInternalHtml(lead: ContactFormValues): string {
     row("Typologie", LABELS.typologie[lead.typologie]),
     row("Transaction", LABELS.transaction[lead.transaction]),
     row("Surface", formatSurface(lead.surfaceMin, lead.surfaceMax)),
-    lead.transaction !== "acquisition"
+    lead.transaction === "location" || lead.transaction === "les-deux"
       ? row(
           "Budget loyer",
           formatBudget(lead.budgetMin, lead.budgetMax, "€/mois HT HC"),
         )
       : "",
-    lead.transaction !== "location"
+    lead.transaction === "acquisition" || lead.transaction === "les-deux"
       ? row(
           "Budget acquisition",
           formatBudget(
