@@ -9,15 +9,18 @@ export function CallbackSection() {
   return (
     <section className="bg-cream py-24 md:py-32">
       <Container>
-        <div className="grid items-center gap-10 rounded-3xl bg-white p-10 shadow-[0_20px_60px_-20px_rgba(15,61,46,0.18)] md:grid-cols-[1.4fr_1fr] md:p-16">
+        <div className="grid gap-10 rounded-3xl bg-white p-10 shadow-[0_20px_60px_-20px_rgba(15,61,46,0.18)] md:grid-cols-[1.4fr_1fr] md:p-16">
           <div>
             <Eyebrow className="text-gold-deep">Vous avez un projet</Eyebrow>
             <h2 className="font-display mt-6 text-[clamp(2rem,5.5vw,4.5rem)] uppercase leading-[0.95] tracking-tight text-fir-dark">
               Discutons-en<br />
               <span className="text-gold-deep">en 24 heures.</span>
             </h2>
+            <p className="mt-6 max-w-md text-base leading-relaxed text-ink/70">
+              Un brief précis, une réponse sous 24h ouvrées, interlocuteurs confirmés.
+            </p>
           </div>
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col justify-center gap-5">
             <ul className="space-y-3 text-sm leading-[1.5] text-fir-dark">
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold-deep" aria-hidden />
@@ -42,10 +45,6 @@ export function CallbackSection() {
                 <span className="text-ink/70">{SITE.hours.full}</span>
               </li>
             </ul>
-            <p className="mt-2 text-center text-base leading-relaxed text-ink/70">
-              Un brief précis, une réponse sous 24h ouvrées, un interlocuteur
-              unique du premier appel à la signature.
-            </p>
             <CtaPill href="/contact" variant="fir" size="lg">
               Demander à être rappelé
             </CtaPill>
