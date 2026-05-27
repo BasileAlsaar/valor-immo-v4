@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { ArrowUpRight, Phone } from "lucide-react"
+import { Phone } from "lucide-react"
 
 import { PageHero } from "@/components/sections/page-hero"
 import { CallbackSection } from "@/components/sections/callback-section"
@@ -8,10 +8,8 @@ import { MethodSection } from "@/components/home/method-section"
 import { Container } from "@/components/ui/container"
 import { Eyebrow } from "@/components/ui/eyebrow"
 import { CtaPill } from "@/components/ui/cta-pill"
-import { CallbackTrigger } from "@/components/callback/CallbackTrigger"
 import { RevealStagger, RevealItem } from "@/components/motion/reveal"
 import { SITE } from "@/lib/site"
-import { CATEGORIES } from "@/lib/data/categories"
 
 export const metadata: Metadata = {
   title: "Gestion locative et technique — Paris",
@@ -48,11 +46,6 @@ const GESTION_METHOD_STEPS = [
     chiffre: "24h",
     titre: "Réactivité",
     text: "Réponse sous 24h ouvrées sur tout sujet locataire ou technique.",
-  },
-  {
-    chiffre: "1",
-    titre: "Interlocuteur dédié",
-    text: "Un seul gestionnaire référent, aucun relais.",
   },
 ] as const
 
@@ -116,7 +109,7 @@ export default function GestionPage() {
         </Container>
       </section>
 
-      {/* Méthode — 3 chiffres dédiés gestion */}
+      {/* Méthode — 2 chiffres dédiés gestion */}
       <MethodSection steps={GESTION_METHOD_STEPS} />
 
       {/* Tarification */}
@@ -143,46 +136,6 @@ export default function GestionPage() {
               </div>
             </div>
           </div>
-        </Container>
-      </section>
-
-      {/* Typologies gérées — 6 liens vers /classes-d-actifs/* */}
-      <section className="bg-cream-soft py-24 md:py-32">
-        <Container>
-          <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-            <div>
-              <Eyebrow className="text-gold-deep">Typologies gérées</Eyebrow>
-              <h2 className="font-display mt-4 text-[clamp(1.75rem,4.5vw,3.5rem)] uppercase leading-tight tracking-tight text-fir-dark">
-                Six classes d'actifs<br />
-                <span className="text-gold-deep">sous mandat.</span>
-              </h2>
-            </div>
-            <Link
-              href="/classes-d-actifs"
-              className="group inline-flex items-center gap-2 text-sm uppercase tracking-wider text-gold-deep hover:text-fir-dark"
-            >
-              Voir toutes les typologies
-              <ArrowUpRight className="h-4 w-4 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-            </Link>
-          </div>
-
-          <ul className="mt-12 grid gap-px overflow-hidden rounded-2xl bg-fir-dark/10 md:grid-cols-2">
-            {CATEGORIES.map((cat) => (
-              <li key={cat.slug}>
-                <Link
-                  href={cat.href}
-                  className="group flex h-full flex-col gap-2 bg-white p-6 transition hover:bg-cream md:p-8"
-                >
-                  <Eyebrow className="text-gold-deep">{cat.label}</Eyebrow>
-                  <p className="text-sm leading-relaxed text-ink/70">{cat.accroche}</p>
-                  <span className="mt-2 inline-flex items-center gap-1.5 text-xs uppercase tracking-wider text-gold-deep transition group-hover:gap-2.5">
-                    Découvrir
-                    <ArrowUpRight className="h-3.5 w-3.5" />
-                  </span>
-                </Link>
-              </li>
-            ))}
-          </ul>
         </Container>
       </section>
 
