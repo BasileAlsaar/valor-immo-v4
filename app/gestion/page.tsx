@@ -14,7 +14,7 @@ import { SITE } from "@/lib/site"
 export const metadata: Metadata = {
   title: "Gestion locative et technique — Paris",
   description:
-    "Valor Immo gère votre patrimoine commercial parisien : gestion administrative, technique, locative et reporting patrimonial. Un seul interlocuteur du quittancement au renouvellement de bail.",
+    "Valor Immo gère votre patrimoine commercial parisien : gestion administrative, technique, locative et reporting patrimonial. Des interlocuteurs confirmés, un référent par dossier — du quittancement au renouvellement de bail.",
 }
 
 const SERVICES = [
@@ -56,10 +56,10 @@ export default function GestionPage() {
         eyebrow="Valor Immo · Gestion locative et technique · Paris"
         title={
           <>
-            Votre patrimoine commercial <span className="text-gold">entre les mains d'un seul interlocuteur.</span>
+            Votre patrimoine commercial <span className="text-gold">confié à des interlocuteurs confirmés.</span>
           </>
         }
-        subtitle="Gestion administrative, technique, locative et reporting patrimonial pour boutiques, bureaux, immeubles et hôtellerie parisiens. Un mandat resserré, un gestionnaire référent."
+        subtitle="Gestion administrative, technique, locative et reporting patrimonial pour boutiques, bureaux, immeubles et hôtellerie parisiens. Un mandat resserré, un référent par dossier."
         backgroundImage="/images/categories/immeubles.jpg"
         actions={
           <>

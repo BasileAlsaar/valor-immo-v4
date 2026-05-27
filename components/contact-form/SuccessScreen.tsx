@@ -48,7 +48,7 @@ export function SuccessScreen({ lead }: Props) {
         transition={{ delay: 0.55, duration: duration.base, ease: easing.smooth }}
         className="mt-4 max-w-md text-base text-ink/70"
       >
-        Un interlocuteur confirmé vous contacte sous 24h ouvrées.
+        Un de nos interlocuteurs confirmés vous contacte sous 24h ouvrées.
       </motion.p>
 
       <motion.div

@@ -22,7 +22,7 @@ export default function AgencePage() {
         eyebrow="L'agence"
         title={
           <>
-            Une équipe parisienne, <span className="text-gold">un interlocuteur confirmé.</span>
+            Une équipe parisienne, <span className="text-gold">des interlocuteurs confirmés.</span>
           </>
         }
         subtitle="Valor Immo est une agence indépendante d'immobilier commercial parisien. Modèle resserré : chaque dossier est traité sans relais ni apporteur intermédiaire."
@@ -35,7 +35,7 @@ export default function AgencePage() {
             <div>
               <Eyebrow className="text-gold-deep">Qui sommes-nous ?</Eyebrow>
               <h3 className="font-accent mt-4 text-[clamp(2rem,3vw,2.75rem)] italic leading-[1.05] text-fir-dark">
-                Une équipe resserrée, deux interlocuteurs confirmés.
+                Une équipe resserrée, des interlocuteurs confirmés.
               </h3>
               <div aria-hidden className="my-6 h-px w-12 bg-gold" />
             </div>
@@ -48,9 +48,9 @@ export default function AgencePage() {
                 urbaine, transmission d'établissements.
               </p>
               <p>
-                Notre modèle est délibérément resserré : un interlocuteur confirmé
-                par dossier, du premier appel à la signature notariée. Pas de
-                sous-traitance, pas de centre d'appels, pas de relais.
+                Notre modèle est délibérément resserré : un référent par dossier,
+                du premier appel à la signature notariée. Pas de sous-traitance,
+                pas de centre d'appels, pas de relais.
               </p>
             </div>
           </div>
@@ -61,7 +61,7 @@ export default function AgencePage() {
         <Container>
           <Eyebrow className="text-gold-deep">Direction</Eyebrow>
           <h2 className="font-display mt-6 text-[clamp(2rem,5.5vw,4.5rem)] uppercase leading-[0.95] tracking-tight text-fir-dark">
-            Deux interlocuteurs<br />
+            Des interlocuteurs<br />
             <span className="text-gold-deep">confirmés.</span>
           </h2>
 
