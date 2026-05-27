@@ -37,7 +37,7 @@ export function SiteHeader() {
           : "bg-transparent text-white",
       )}
     >
-      <div className="mx-auto flex h-40 max-w-[1440px] items-center justify-between gap-6 px-6 md:px-12 lg:px-12 2xl:px-24">
+      <div className="mx-auto flex h-24 max-w-[1440px] items-center justify-between gap-6 px-6 md:h-40 md:px-12 lg:px-12 2xl:px-24">
         <Link
           href="/"
           aria-label={`Retour à l'accueil — ${SITE.name}`}
@@ -49,7 +49,7 @@ export function SiteHeader() {
             width={400}
             height={400}
             className={cn(
-              "h-[140px] w-auto object-contain transition",
+              "h-[64px] w-auto object-contain transition md:h-[140px]",
               !scrolled && "brightness-0 invert",
             )}
             priority
@@ -61,7 +61,10 @@ export function SiteHeader() {
             <Link
               key={item.href}
               href={item.href}
-              className="whitespace-nowrap text-xs uppercase tracking-wider opacity-90 transition hover:opacity-100 hover:text-gold 2xl:text-sm"
+              className={cn(
+                "whitespace-nowrap text-xs uppercase tracking-wider opacity-90 transition hover:opacity-100 2xl:text-sm",
+                scrolled ? "hover:text-gold-deep" : "hover:text-gold",
+              )}
             >
               {item.label}
             </Link>
