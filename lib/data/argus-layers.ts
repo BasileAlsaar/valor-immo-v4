@@ -8,18 +8,18 @@
 
 import type { FillLayerSpecification, LineLayerSpecification, HeatmapLayerSpecification, CircleLayerSpecification } from "maplibre-gl"
 
-/** 6 paliers brief §141-146, interpolation linéaire sur `prix_commerce`. */
+/** 6 paliers recalibrés 2026-05-27 sur la distribution 1bis/2 (360 → 900 €/m²/an HT HC). */
 export const CHOROPLETH_FILL_PAINT: FillLayerSpecification["paint"] = {
   "fill-color": [
     "interpolate",
     ["linear"],
     ["get", "prix_commerce"],
-    0, "#F5F2EC",
-    1000, "#E0DCC4",
-    1500, "#A8B59C",
-    2000, "#5F7A5E",
-    3000, "#2D4A3D",
-    5000, "#0A2D22",
+    300, "#F5F2EC",
+    450, "#E0DCC4",
+    550, "#A8B59C",
+    650, "#5F7A5E",
+    800, "#2D4A3D",
+    950, "#0A2D22",
   ],
   "fill-opacity": [
     "case",
