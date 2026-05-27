@@ -21,11 +21,6 @@ const STEPS_DEFAULT: ReadonlyArray<Step> = [
     titre: "Première visite",
     text: "Sur les biens identifiés et validés ensemble.",
   },
-  {
-    chiffre: "1",
-    titre: "Interlocuteur confirmé",
-    text: "Du premier appel à la signature notariée. Pas de relais, pas de sous-traitance.",
-  },
 ] as const
 
 export function MethodSection({ steps }: { steps?: ReadonlyArray<Step> } = {}) {
