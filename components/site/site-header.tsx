@@ -3,7 +3,6 @@
 import Link from "next/link"
 import Image from "next/image"
 import { useEffect, useState } from "react"
-import { usePathname } from "next/navigation"
 import { Menu, X, Phone } from "lucide-react"
 
 import { cn } from "@/lib/utils"
@@ -12,11 +11,6 @@ import { SITE, NAV } from "@/lib/site"
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
-  const pathname = usePathname()
-  // Sprint 5a — sur la home le HeroLogo XL prend le relais ; on masque le logo
-  // de la barre sticky tant qu'on n'a pas scrollé (où le hero a disparu).
-  const isHome = pathname === "/"
-  const showLogo = !isHome || scrolled
 
   useEffect(() => {
     function onScroll() {
@@ -43,35 +37,26 @@ export function SiteHeader() {
           : "bg-transparent text-white",
       )}
     >
-      <div className="mx-auto flex max-w-[1440px] items-center justify-between gap-6 px-6 py-5 md:px-12 lg:px-12 2xl:px-24">
+      <div className="mx-auto flex h-40 max-w-[1440px] items-center justify-between gap-6 px-6 md:px-12 lg:px-12 2xl:px-24">
         <Link
           href="/"
           aria-label={`Retour à l'accueil — ${SITE.name}`}
-          className={cn(
-            "flex items-center gap-3",
-            // Home avant scroll : le HeroLogo XL ne prend le relais qu'à partir
-            // de lg (HeroLogo est hidden lg:block). En <lg on garde le logo
-            // du SiteHeader visible — sinon le mobile/tablette reste sans logo.
-            !showLogo && "lg:pointer-events-none lg:invisible",
-          )}
+          className="flex items-center"
         >
           <Image
             src="/logo-valor-immo.png"
-            alt=""
-            width={80}
-            height={80}
+            alt={SITE.name}
+            width={400}
+            height={400}
             className={cn(
-              "h-16 w-16 object-contain transition",
+              "h-[140px] w-auto object-contain transition",
               !scrolled && "brightness-0 invert",
             )}
             priority
           />
-          <span className="hidden whitespace-nowrap font-display text-xl uppercase tracking-tight md:inline 2xl:text-3xl">
-            {SITE.name}
-          </span>
         </Link>
 
-        <nav className="hidden items-center gap-4 lg:flex 2xl:gap-7">
+        <nav className="hidden items-center gap-3 lg:flex 2xl:gap-6">
           {NAV.map((item) => (
             <Link
               key={item.href}

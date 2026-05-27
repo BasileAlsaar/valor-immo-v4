@@ -13,7 +13,6 @@ import { Phone, ChevronDown } from "lucide-react"
 import { Container } from "@/components/ui/container"
 import { CtaPill } from "@/components/ui/cta-pill"
 import { SearchBar } from "@/components/home/search-bar"
-import { HeroLogo } from "@/components/home/hero-logo"
 import { CallbackTrigger } from "@/components/callback/CallbackTrigger"
 import { SITE } from "@/lib/site"
 import {
@@ -64,16 +63,7 @@ export function Hero() {
       {/* Overlay vert sapin Valor Immo — opacité ajustable pour contraste AA sur H1 */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-fir-dark/60 via-fir-dark/55 to-fir-dark/85" aria-hidden />
 
-      {/* Crest XL — aligné top-left sur les coordonnées exactes du SiteHeader
-          (mêmes max-w-[1440px] + paddings inline + top sur le baseline des liens
-          nav). Le SiteHeader reste cliquable au-dessus en z-50. */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 z-10 hidden lg:block">
-        <div className="mx-auto flex max-w-[1440px] px-6 md:px-12 lg:px-12 2xl:px-24">
-          <HeroLogo />
-        </div>
-      </div>
-
-      <Container className="relative flex flex-1 flex-col justify-center pt-24 pb-16 text-white lg:justify-start lg:pt-52 lg:pb-14 xl:pt-56">
+      <Container className="relative flex flex-1 flex-col justify-center pt-24 pb-16 text-white lg:justify-start lg:pt-44 lg:pb-14 xl:pt-48">
         <motion.div
           initial="hidden"
           animate="visible"
