@@ -43,7 +43,7 @@ export function CallbackSection() {
               </li>
               <li className="flex items-start gap-3">
                 <Clock className="mt-0.5 h-4 w-4 shrink-0 text-gold-deep" aria-hidden />
-                <HoursBlock valueClassName="text-ink/80" labelClassName="text-fir-dark opacity-100" />
+                <HoursBlock valueClassName="text-ink/80" labelClassName="text-neutral-900 opacity-100" />
               </li>
             </ul>
             <CtaPill href="/contact" variant="fir" size="lg">
