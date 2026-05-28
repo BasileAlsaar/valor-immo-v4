@@ -56,10 +56,7 @@ export default function GestionPage() {
         eyebrow="Valor Immo · Gestion locative et technique · Paris"
         title={
           <>
-            Votre patrimoine commercial
-            <span className="mt-3 block font-accent text-[0.55em] italic font-medium normal-case tracking-normal text-gold">
-              confié à des interlocuteurs confirmés.
-            </span>
+            Votre patrimoine commercial <span className="text-gold">confié à des interlocuteurs confirmés.</span>
           </>
         }
         subtitle="Gestion administrative, technique, locative et reporting patrimonial pour boutiques, bureaux, immeubles et hôtellerie parisiens. Un mandat resserré, un référent par dossier."
