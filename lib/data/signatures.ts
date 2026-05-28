@@ -1,5 +1,5 @@
 /**
- * 6 signatures fictives — réalisations récentes Valor Immo.
+ * Signatures fictives — réalisations récentes Valor Immo.
  * CONTENU FICTIF À REMPLACER AVANT MISE EN LIGNE PUBLIQUE.
  * Voir CONTENT_TODO.md section « PHASE 8 — Contenu fictif à remplacer ».
  *
@@ -54,21 +54,6 @@ export const signatures: Signature[] = [
       "Marque de mode parisienne en expansion régionale cherchant son cinquième point de vente, exigence d'une façade d'angle dans une artère commerçante du Marais avec flux week-end soutenu.",
     realisation:
       "Bail signé en mars 2026 sur 95 m² façade d'angle, ouverture boutique prévue en septembre — accompagnement état des lieux et travaux preneur.",
-  },
-  {
-    ref: "VI-2026-003",
-    badge: "CESSION",
-    type: "Fonds de commerce — Hôtellerie-Restauration",
-    quartier: "Saint-Germain-des-Prés",
-    arrondissement: 6,
-    surface: 140,
-    date: "2026-02",
-    dateDisplay: "Février 2026",
-    descripteur: "Cession fonds restaurant gastronomique",
-    contexte:
-      "Restaurant gastronomique étoilé en quête de transmission, contraintes spécifiques sur la continuité d'exploitation et le maintien de la clientèle existante pendant la transition.",
-    realisation:
-      "Cession totale du fonds incluant licence IV et matériel cuisine professionnel à un repreneur opérant déjà deux adresses parisiennes — closing février 2026 avec clauses de non-concurrence.",
   },
   {
     ref: "VI-2026-001",

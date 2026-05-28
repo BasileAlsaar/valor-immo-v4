@@ -9,7 +9,7 @@ import { z } from "zod"
 export const TYPOLOGIES = [
   "locaux-commerciaux",
   "bureaux",
-  "hotellerie-restauration",
+  "hotellerie",
   "immeubles",
   "entrepots-logistique",
   "cession-droit-au-bail",
@@ -136,7 +136,7 @@ export const LABELS = {
   typologie: {
     "locaux-commerciaux": "Locaux commerciaux",
     bureaux: "Bureaux",
-    "hotellerie-restauration": "Hôtellerie & Restauration",
+    hotellerie: "Hôtellerie",
     immeubles: "Immeubles",
     "entrepots-logistique": "Entrepôts & Logistique",
     "cession-droit-au-bail": "Cession de droit au bail",

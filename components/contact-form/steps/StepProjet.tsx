@@ -1,7 +1,7 @@
 "use client"
 
 import { useFormContext } from "react-hook-form"
-import { Building2, Briefcase, UtensilsCrossed, Building, Warehouse, Key } from "lucide-react"
+import { Building2, Briefcase, Hotel, Building, Warehouse, Key } from "lucide-react"
 
 import {
   LABELS,
@@ -16,7 +16,7 @@ import { cn } from "@/lib/utils"
 const TYPOLOGIE_ICONS: Record<Typologie, typeof Building2> = {
   "locaux-commerciaux": Building2,
   bureaux: Briefcase,
-  "hotellerie-restauration": UtensilsCrossed,
+  hotellerie: Hotel,
   immeubles: Building,
   "entrepots-logistique": Warehouse,
   "cession-droit-au-bail": Key,

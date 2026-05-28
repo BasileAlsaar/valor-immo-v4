@@ -27,10 +27,10 @@ export const CATEGORIES: Category[] = [
     accroche: "Plateaux indépendants, sièges sociaux, espaces flex.",
   },
   {
-    slug: "hotellerie-restauration",
-    label: "Hôtellerie & Restauration",
-    href: "/classes-d-actifs/hotellerie-restauration",
-    accroche: "Murs et fonds d'hôtels, brasseries, restaurants.",
+    slug: "hotellerie",
+    label: "Hôtellerie",
+    href: "/classes-d-actifs/hotellerie",
+    accroche: "Murs et fonds d'hôtels parisiens — indépendants et boutique-hôtels.",
   },
   {
     slug: "immeubles",

@@ -13,8 +13,8 @@ const DESCRIPTIONS: Record<string, string> = {
     "Boutiques, restauration, services. Emplacements n°1 à 2, baux 3/6/9 ou cessions de fonds.",
   bureaux:
     "Plateaux haussmanniens divisibles, sièges sociaux, certifications BREEAM. QCA et 9ᵉ Haussmann.",
-  "hotellerie-restauration":
-    "Murs et fonds d'hôtels, brasseries, restaurants gastronomiques. Licence IV, extraction.",
+  hotellerie:
+    "Murs et fonds d'hôtels indépendants, boutique-hôtels et résidences urbaines. Transmission, valorisation patrimoniale, repositionnement.",
   immeubles:
     "Mixtes commerce/habitation, monopropriétés, lots de copropriété. Investissement patrimonial.",
   "entrepots-logistique":

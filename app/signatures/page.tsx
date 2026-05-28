@@ -22,7 +22,7 @@ export default function SignaturesPage() {
         eyebrow="Signatures"
         title={
           <>
-            Six signatures<br /><span className="text-gold">qui parlent pour nous.</span>
+            Cinq signatures<br /><span className="text-gold">qui parlent pour nous.</span>
           </>
         }
         subtitle="Sélection anonymisée d'opérations récentes — baux flagship, cessions de fonds, acquisitions tertiaires. Conditions confidentielles par défaut, descriptifs validés avec nos clients."

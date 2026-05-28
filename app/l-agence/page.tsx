@@ -44,7 +44,7 @@ export default function AgencePage() {
                 Valor Immo accompagne opérateurs commerciaux, restaurateurs,
                 investisseurs patrimoniaux et family offices sur l'ensemble du marché
                 parisien et d'Île-de-France : boutiques pied d'immeuble, bureaux
-                haussmanniens, hôtellerie-restauration, immeubles mixtes, logistique
+                haussmanniens, hôtellerie, immeubles mixtes, logistique
                 urbaine, transmission d'établissements.
               </p>
               <p>

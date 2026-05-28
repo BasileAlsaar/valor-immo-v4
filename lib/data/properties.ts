@@ -26,7 +26,7 @@ export type PropertyType =
 export type PropertyCategory =
   | "locaux-commerciaux"
   | "bureaux"
-  | "hotellerie-restauration"
+  | "hotellerie"
   | "immeubles"
   | "entrepots-logistique"
   | "cession-droit-au-bail"
@@ -75,7 +75,7 @@ export const TYPE_LABEL: Record<PropertyType, string> = {
 export const CATEGORY_LABEL: Record<PropertyCategory, string> = {
   "locaux-commerciaux": "Locaux commerciaux",
   bureaux: "Bureaux",
-  "hotellerie-restauration": "Hôtellerie & Restauration",
+  hotellerie: "Hôtellerie",
   immeubles: "Immeubles",
   "entrepots-logistique": "Entrepôts & Logistique",
   "cession-droit-au-bail": "Cession de droit au bail",
@@ -139,33 +139,6 @@ export const properties: Property[] = [
     ],
   },
   {
-    slug: "brasserie-st-germain-220m2",
-    ref: "MZ3-2026",
-    statut: "vente",
-    type: "fonds-commerce",
-    categories: ["hotellerie-restauration", "cession-droit-au-bail"],
-    title: "Fonds de brasserie — Saint-Germain",
-    quartier: "Saint-Germain-des-Prés",
-    arrondissement: 6,
-    center: [2.3328, 48.8537],
-    surface: 220,
-    surfaceSousSol: 80,
-    activiteAutorisee: "Restauration avec extraction et terrasse",
-    tags: ["Terrasse 24 places", "Licence IV"],
-    prix: 1450000,
-    honoraires: "Inclus dans le prix",
-    description:
-      "Brasserie historique de Saint-Germain-des-Prés. 220 m² en RDC + 80 m² sous-sol (réserves + vestiaires). Terrasse 24 places sur rue piétonne. Licence IV en place. Extraction certifiée. Cession totale fonds + droit au bail.",
-    caracteristiques: [
-      { label: "Surface RDC", value: "220 m²" },
-      { label: "Surface sous-sol", value: "80 m²" },
-      { label: "Couverts", value: "70 + 24 en terrasse" },
-      { label: "Licence", value: "IV (transférable)" },
-      { label: "Bail", value: "Tous commerces avec extraction" },
-      { label: "Disponibilité", value: "Immédiate" },
-    ],
-  },
-  {
     slug: "immeuble-grands-boulevards-840m2",
     ref: "MZ4-2026",
     statut: "vente",
@@ -221,7 +194,7 @@ export const properties: Property[] = [
     ref: "MZ6-2026",
     statut: "murs-libres",
     type: "hotellerie",
-    categories: ["hotellerie-restauration"],
+    categories: ["hotellerie"],
     title: "Hôtel 3* murs libres — Le Marais",
     quartier: "Le Marais",
     arrondissement: 3,
@@ -262,31 +235,6 @@ export const properties: Property[] = [
       { label: "Hauteur libre", value: "5 m" },
       { label: "Plancher", value: "2,5 T/m²" },
       { label: "Quai", value: "1 quai de déchargement" },
-      { label: "Disponibilité", value: "Immédiate" },
-    ],
-  },
-  {
-    slug: "fonds-pizzeria-bastille-95m2",
-    ref: "MZ8-2026",
-    statut: "vente",
-    type: "fonds-commerce",
-    categories: ["hotellerie-restauration", "cession-droit-au-bail"],
-    title: "Cession de fonds — Pizzeria Bastille",
-    quartier: "Bastille",
-    arrondissement: 11,
-    center: [2.3705, 48.8530],
-    surface: 95,
-    activiteAutorisee: "Restauration avec extraction",
-    tags: ["Extraction en place", "Bail récent"],
-    prix: 285000,
-    description:
-      "Pizzeria au cœur du quartier Bastille. 95 m² avec extraction certifiée. Bail signé en 2023 (durée résiduelle 8 ans). Loyer 2 100 €/mois HT HC. CA stable, équipe en place. Cession fonds incluant matériel cuisine + mobilier.",
-    caracteristiques: [
-      { label: "Surface", value: "95 m²" },
-      { label: "Couverts", value: "32 en intérieur" },
-      { label: "Bail", value: "Signé 2023, 8 ans résiduels" },
-      { label: "Loyer en cours", value: "2 100 €/mois HT HC" },
-      { label: "Activité autorisée", value: "Restauration avec extraction" },
       { label: "Disponibilité", value: "Immédiate" },
     ],
   },

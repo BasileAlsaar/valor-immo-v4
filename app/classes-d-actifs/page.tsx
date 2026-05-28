@@ -12,7 +12,7 @@ import { CATEGORIES } from "@/lib/data/categories"
 export const metadata: Metadata = {
   title: "Classes d'actifs — Immobilier commercial Paris",
   description:
-    "Locaux commerciaux, bureaux, hôtellerie & restauration, immeubles, entrepôts, cession de droit au bail. Six expertises sectorielles pour traiter chaque typologie d'actif.",
+    "Locaux commerciaux, bureaux, hôtellerie, immeubles, entrepôts, cession de droit au bail. Six expertises sectorielles pour traiter chaque typologie d'actif.",
 }
 
 const DESCRIPTIONS: Record<string, string> = {
@@ -20,8 +20,8 @@ const DESCRIPTIONS: Record<string, string> = {
     "Boutiques pied d'immeuble, restauration, services, concept stores — emplacements n°1 à 2 sur les axes commerçants parisiens et baux 3/6/9 négociés au facial et à l'économique.",
   bureaux:
     "Plateaux haussmanniens divisibles, sièges sociaux, espaces flex tertiaires, certifications environnementales — QCA, 9ᵉ Haussmann et nouveaux quartiers d'affaires.",
-  "hotellerie-restauration":
-    "Murs et fonds d'hôtels, brasseries, restaurants gastronomiques, bars à concept — licence IV, extraction certifiée, autorisation d'occupation du domaine public.",
+  hotellerie:
+    "Murs et fonds d'hôtels indépendants, boutique-hôtels, résidences urbaines — transmission CHR, valorisation patrimoniale, repositionnement opérationnel sur emplacements premium intra-muros.",
   immeubles:
     "Immeubles mixtes commerce-habitation, monopropriétés haussmanniennes, lots de copropriété — investissement patrimonial, marchand de biens, foncière.",
   "entrepots-logistique":
