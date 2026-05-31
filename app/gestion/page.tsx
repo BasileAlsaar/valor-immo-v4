@@ -19,20 +19,28 @@ export const metadata: Metadata = {
 
 const SERVICES = [
   {
+    titre: "Encaissement des loyers",
+    text: "Appels, encaissements, quittancement, suivi des impayés.",
+  },
+  {
     titre: "Gestion administrative",
-    text: "Encaissement loyers, quittancement, charges récupérables, révisions indexées.",
+    text: "Baux, avenants, régularisations de charges, obligations réglementaires.",
   },
   {
-    titre: "Gestion technique",
-    text: "Suivi travaux, audits réglementaires, sinistres, certifications obligatoires.",
+    titre: "Suivi locatif",
+    text: "État du bien, sinistres, travaux, coordination des intervenants.",
   },
   {
-    titre: "Gestion locative",
-    text: "Renouvellement baux, négociation augmentations, gestion contentieux, recommercialisation.",
+    titre: "Relation locataire",
+    text: "Point de contact unique pour vos preneurs.",
   },
   {
-    titre: "Reporting patrimonial",
-    text: "Tableaux de bord trimestriels, valorisation actif, optimisation fiscale.",
+    titre: "Relances",
+    text: "Gestion des retards et procédures de recouvrement.",
+  },
+  {
+    titre: "Gestion quotidienne",
+    text: "Le traitement courant qui vous décharge au jour le jour.",
   },
 ] as const
 
@@ -79,21 +87,18 @@ export default function GestionPage() {
         }
       />
 
-      {/* Services — 2 colonnes (présentation + grille 2×2) */}
+      {/* Services — 6 services + clôture */}
       <section className="bg-cream py-24 md:py-32">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[2fr_3fr]">
             <div className="lg:sticky lg:top-[120px] lg:self-start">
               <Eyebrow className="text-gold-deep">Périmètre</Eyebrow>
               <h3 className="font-accent mt-4 text-[clamp(2rem,3vw,2.75rem)] italic leading-[1.05] text-fir-dark">
-                Trois métiers en un seul mandat.
+                La gestion n'est pas une boîte noire.
               </h3>
               <div aria-hidden className="my-6 h-px w-12 bg-gold" />
               <p className="max-w-[36ch] text-[15px] leading-relaxed text-fir-dark/70 md:text-base">
-                La gestion d'un actif commercial parisien combine trois disciplines
-                distinctes — administrative, technique, patrimoniale. Chacune exige
-                une expertise spécifique ; leur articulation conditionne la
-                rentabilité réelle de l'investissement.
+                Voici précisément ce que vous déléguez.
               </p>
             </div>
             <RevealStagger className="grid gap-6 md:grid-cols-2">
@@ -109,6 +114,10 @@ export default function GestionPage() {
               ))}
             </RevealStagger>
           </div>
+          <p className="mx-auto mt-16 max-w-3xl text-center text-base leading-relaxed text-fir-dark/80 md:text-lg">
+            Vous savez à tout moment ce qui est encaissé, ce qui est en cours,
+            ce qui demande votre décision.
+          </p>
         </Container>
       </section>
 

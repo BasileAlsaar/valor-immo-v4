@@ -29,31 +29,90 @@ export default function AgencePage() {
         backgroundImage="/images/categories/bureaux.jpg"
       />
 
-      <section className="py-24 md:py-32">
+      <section className="bg-cream py-24 md:py-32">
         <Container>
           <div className="grid gap-8 lg:grid-cols-[2fr_3fr] lg:gap-12">
             <div>
-              <Eyebrow className="text-gold-deep">Qui sommes-nous ?</Eyebrow>
+              <Eyebrow className="text-gold-deep">Pourquoi Valor Immo</Eyebrow>
               <h3 className="font-accent mt-4 text-[clamp(2rem,3vw,2.75rem)] italic leading-[1.05] text-fir-dark">
-                Une équipe resserrée, des interlocuteurs confirmés.
+                Un périmètre clair, sur Paris.
               </h3>
               <div aria-hidden className="my-6 h-px w-12 bg-gold" />
             </div>
             <div className="space-y-6 text-lg leading-relaxed text-ink/85">
               <p>
-                Valor Immo accompagne opérateurs commerciaux, restaurateurs,
-                investisseurs patrimoniaux et family offices sur l'ensemble du marché
-                parisien et d'Île-de-France : boutiques pied d'immeuble, bureaux
-                haussmanniens, hôtellerie, immeubles mixtes, logistique
-                urbaine, transmission d'établissements.
-              </p>
-              <p>
-                Notre modèle est délibérément resserré : un référent par dossier,
-                du premier appel à la signature notariée. Pas de sous-traitance,
-                pas de centre d'appels, pas de relais.
+                Valor Immo est une agence parisienne spécialisée sur
+                l'immobilier commercial et professionnel. Un périmètre clair :
+                transaction, location, gestion — sur boutiques, bureaux,
+                immeubles, hôtellerie et logistique.
               </p>
             </div>
           </div>
+        </Container>
+      </section>
+
+      <section className="bg-white py-24 md:py-32">
+        <Container>
+          <RevealStagger className="grid gap-6 md:grid-cols-2">
+            <RevealItem>
+              <article className="h-full rounded-2xl border border-fir-dark/10 bg-cream p-8 md:p-10">
+                <Eyebrow className="text-gold-deep">Spécialisation</Eyebrow>
+                <h3 className="font-accent mt-4 text-2xl italic leading-[1.1] text-fir-dark md:text-3xl">
+                  Une spécialisation, pas un catalogue.
+                </h3>
+                <div aria-hidden className="my-5 h-px w-10 bg-gold" />
+                <p className="text-base leading-relaxed text-ink/80">
+                  Nous ne faisons pas de résidentiel. Cette concentration est un
+                  choix : elle nous donne une lecture fine du marché commercial
+                  parisien et des interlocuteurs qui connaissent réellement
+                  leurs typologies.
+                </p>
+              </article>
+            </RevealItem>
+            <RevealItem>
+              <article className="h-full rounded-2xl border border-fir-dark/10 bg-cream p-8 md:p-10">
+                <Eyebrow className="text-gold-deep">Approche</Eyebrow>
+                <h3 className="font-accent mt-4 text-2xl italic leading-[1.1] text-fir-dark md:text-3xl">
+                  Notre approche.
+                </h3>
+                <div aria-hidden className="my-5 h-px w-10 bg-gold" />
+                <p className="text-base leading-relaxed text-ink/80">
+                  Un brief précis, des biens en cible, une négociation conduite
+                  sans relais. Vous parlez à la personne qui traite votre
+                  dossier, du premier échange à la signature.
+                </p>
+              </article>
+            </RevealItem>
+            <RevealItem>
+              <article className="h-full rounded-2xl border border-fir-dark/10 bg-cream p-8 md:p-10">
+                <Eyebrow className="text-gold-deep">Réactivité</Eyebrow>
+                <h3 className="font-accent mt-4 text-2xl italic leading-[1.1] text-fir-dark md:text-3xl">
+                  Réactivité.
+                </h3>
+                <div aria-hidden className="my-5 h-px w-10 bg-gold" />
+                <p className="text-base leading-relaxed text-ink/80">
+                  Brief sous 24h ouvrées, première visite sous 48h sur les biens
+                  validés ensemble. La vitesse fait partie de la valeur sur ce
+                  marché.
+                </p>
+              </article>
+            </RevealItem>
+            <RevealItem>
+              <article className="h-full rounded-2xl border border-fir-dark/10 bg-cream p-8 md:p-10">
+                <Eyebrow className="text-gold-deep">Proximité</Eyebrow>
+                <h3 className="font-accent mt-4 text-2xl italic leading-[1.1] text-fir-dark md:text-3xl">
+                  Proximité.
+                </h3>
+                <div aria-hidden className="my-5 h-px w-10 bg-gold" />
+                <p className="text-base leading-relaxed text-ink/80">
+                  Nous assumons notre format : une agence jeune, resserrée,
+                  joignable. Pas une structure de cent personnes où votre
+                  dossier change de mains trois fois — un interlocuteur qui vous
+                  suit.
+                </p>
+              </article>
+            </RevealItem>
+          </RevealStagger>
         </Container>
       </section>
 
