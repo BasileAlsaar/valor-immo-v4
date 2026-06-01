@@ -1,4 +1,5 @@
 import { Hero } from "@/components/home/hero"
+import { PortesEntrees } from "@/components/home/portes-entrees"
 import { QuotesCarousel } from "@/components/home/quotes-carousel"
 import { CategoriesGrid } from "@/components/home/categories-grid"
 import { MethodSection } from "@/components/home/method-section"
@@ -22,6 +23,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <PortesEntrees />
       <QuotesCarousel />
       <CategoriesGrid />
       <MethodSection />
