@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import {
   Anton,
   Inter,
-  Fraunces,
+  Cormorant_Garamond,
   JetBrains_Mono,
 } from "next/font/google"
 import "./globals.css"
@@ -26,9 +26,11 @@ const inter = Inter({
   display: "swap",
 })
 
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
   subsets: ["latin"],
+  weight: ["500", "600"],
+  style: ["italic"],
   display: "swap",
 })
 
@@ -73,7 +75,7 @@ export default function RootLayout({
   return (
     <html
       lang="fr"
-      className={`${anton.variable} ${inter.variable} ${fraunces.variable} ${jetbrainsMono.variable} h-full antialiased`}
+      className={`${anton.variable} ${inter.variable} ${cormorant.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-cream text-ink">
         <JsonLdScript data={organizationJsonLd()} />
