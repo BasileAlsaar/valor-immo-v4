@@ -8,6 +8,7 @@ import { MethodSection } from "@/components/home/method-section"
 import { Container } from "@/components/ui/container"
 import { Eyebrow } from "@/components/ui/eyebrow"
 import { CtaPill } from "@/components/ui/cta-pill"
+import { SectionCard } from "@/components/ui/section-card"
 import { RevealStagger, RevealItem } from "@/components/motion/reveal"
 import { SITE } from "@/lib/site"
 
@@ -104,12 +105,7 @@ export default function GestionPage() {
             <RevealStagger className="grid gap-6 md:grid-cols-2">
               {SERVICES.map((s) => (
                 <RevealItem key={s.titre}>
-                  <div className="h-full rounded-2xl border border-fir-dark/10 bg-white p-6 md:p-7">
-                    <h4 className="text-base font-medium uppercase tracking-tight text-fir-dark md:text-lg">
-                      {s.titre}
-                    </h4>
-                    <p className="mt-3 text-sm leading-relaxed text-ink/75">{s.text}</p>
-                  </div>
+                  <SectionCard title={s.titre} description={s.text} />
                 </RevealItem>
               ))}
             </RevealStagger>

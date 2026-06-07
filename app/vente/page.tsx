@@ -5,6 +5,7 @@ import { OpportunitiesPreview } from "@/components/home/opportunities-preview"
 import { Container } from "@/components/ui/container"
 import { Eyebrow } from "@/components/ui/eyebrow"
 import { CtaPill } from "@/components/ui/cta-pill"
+import { SectionCard } from "@/components/ui/section-card"
 import { RevealStagger, RevealItem } from "@/components/motion/reveal"
 
 export const metadata: Metadata = {
@@ -78,12 +79,7 @@ export default function VentePage() {
             <RevealStagger className="grid gap-6 md:grid-cols-2">
               {CATEGORIES.map((c) => (
                 <RevealItem key={c.titre}>
-                  <div className="h-full rounded-2xl border border-fir-dark/10 bg-white p-6 md:p-7">
-                    <h4 className="text-base font-medium uppercase tracking-tight text-fir-dark md:text-lg">
-                      {c.titre}
-                    </h4>
-                    <p className="mt-3 text-sm leading-relaxed text-ink/75">{c.text}</p>
-                  </div>
+                  <SectionCard title={c.titre} description={c.text} />
                 </RevealItem>
               ))}
             </RevealStagger>

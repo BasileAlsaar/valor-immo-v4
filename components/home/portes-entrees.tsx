@@ -1,8 +1,6 @@
-import Link from "next/link"
-import { ArrowUpRight } from "lucide-react"
-
 import { Container } from "@/components/ui/container"
 import { Eyebrow } from "@/components/ui/eyebrow"
+import { SectionCard } from "@/components/ui/section-card"
 import { RevealStagger, RevealItem } from "@/components/motion/reveal"
 
 type Porte = {
@@ -78,33 +76,15 @@ export function PortesEntrees() {
         </div>
 
         <RevealStagger className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {PORTES.map((p, i) => (
+          {PORTES.map((p) => (
             <RevealItem key={p.ariaLabel}>
-              <Link
+              <SectionCard
                 href={p.href}
-                aria-label={p.ariaLabel}
-                className="group relative flex h-full flex-col justify-between gap-8 rounded-2xl border border-fir-dark/10 bg-white p-7 transition-colors duration-300 ease-out-expo hover:border-gold md:p-8"
-              >
-                <div className="flex items-start justify-between gap-4">
-                  <span className="eyebrow text-gold-deep">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <ArrowUpRight
-                    className="h-5 w-5 text-fir-dark/40 transition-all duration-300 ease-out-expo group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-gold"
-                    aria-hidden
-                  />
-                </div>
-
-                <div>
-                  <p className="eyebrow text-ink/55">{p.amorce}</p>
-                  <p className="font-display mt-2 text-[clamp(1.75rem,2.5vw,2.5rem)] uppercase leading-[0.95] tracking-tight text-fir-dark">
-                    {p.cible}
-                  </p>
-                  <p className="mt-4 text-sm leading-relaxed text-ink/70">
-                    {p.sousTitre}
-                  </p>
-                </div>
-              </Link>
+                eyebrow={p.amorce}
+                title={p.cible}
+                description={p.sousTitre}
+                ariaLabel={p.ariaLabel}
+              />
             </RevealItem>
           ))}
         </RevealStagger>
