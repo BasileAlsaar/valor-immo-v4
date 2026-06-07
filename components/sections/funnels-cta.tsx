@@ -12,7 +12,7 @@ import { CtaPill } from "@/components/ui/cta-pill"
  */
 export function FunnelsCTA() {
   return (
-    <section className="bg-cream py-20 md:py-28 lg:py-32">
+    <section className="bg-white py-20 md:py-28 lg:py-32">
       <Container>
         <div className="mx-auto max-w-4xl text-center">
           <Eyebrow className="text-gold-deep">Votre projet</Eyebrow>
