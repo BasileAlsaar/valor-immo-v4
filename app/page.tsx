@@ -5,6 +5,7 @@ import { CategoriesGrid } from "@/components/home/categories-grid"
 import { MethodSection } from "@/components/home/method-section"
 import { ArgusSection } from "@/components/home/argus-section"
 import { OpportunitiesPreview } from "@/components/home/opportunities-preview"
+import { FunnelsCTA } from "@/components/sections/funnels-cta"
 import { ContactCTA } from "@/components/sections/contact-cta"
 
 /**
@@ -29,6 +30,7 @@ export default function HomePage() {
       <MethodSection />
       <ArgusSection />
       <OpportunitiesPreview />
+      <FunnelsCTA />
       <ContactCTA />
     </>
   )
