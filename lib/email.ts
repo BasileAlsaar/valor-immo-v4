@@ -8,8 +8,13 @@ import {
   buildUserHtml,
   buildUserSubject,
 } from "@/lib/email-templates/user-confirmation"
+import {
+  buildFunnelHtml,
+  buildFunnelSubject,
+} from "@/lib/email-templates/funnel-notification"
 import { SITE } from "@/lib/site"
 import type { ContactFormValues } from "@/lib/validations/contact"
+import type { Parcours } from "@/lib/validations/funnel"
 
 /**
  * Wrapper Resend — instancie le client à la demande et expose deux fonctions
@@ -88,5 +93,23 @@ export async function sendUserConfirmation(
     to: lead.email,
     subject: buildUserSubject(),
     html: buildUserHtml(lead),
+  })
+}
+
+/**
+ * Envoi interne d'un lead funnel (parcours propriétaire / investisseur /
+ * commerçant). Réutilise la même plomberie Resend que les formulaires
+ * contact — destinataire = boîte agence (SITE.email ou RESEND_TO_EMAIL).
+ */
+export async function sendFunnelNotification(args: {
+  parcours: Parcours
+  fields: Record<string, string | boolean>
+  replyTo?: string
+}): Promise<SendResult> {
+  return send({
+    to: getInternalTo(),
+    subject: buildFunnelSubject(args.parcours),
+    html: buildFunnelHtml(args.parcours, args.fields),
+    replyTo: args.replyTo,
   })
 }
