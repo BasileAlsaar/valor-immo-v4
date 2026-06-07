@@ -8,7 +8,7 @@ type Props = {
   description: string
   /** Amorce eyebrow optionnelle (ex. "Je cherche", "Je suis"). */
   eyebrow?: string
-  /** Si fourni : carte interactive (wrapper Link + flèche + hover gold). */
+  /** Si fourni : carte interactive (wrapper Link + flèche + hover or). */
   href?: string
   /** Surcharge aria-label de la carte interactive si le titre seul est ambigu. */
   ariaLabel?: string
@@ -16,14 +16,66 @@ type Props = {
   className?: string
 }
 
+/* -------------------------------------------------------------------------- */
+/*                          Tokens — source unique                            */
+/* -------------------------------------------------------------------------- */
+
 /**
- * Carte unifiée pour les sections de grille (homepage portes d'entrée, /vente
- * catégories, /location cibles, /gestion services).
+ * Ombre portée 2 couches — feel "papier sur table".
+ *   - couche 1 (contact) : 0 1px 2px, opacité 0.04
+ *   - couche 2 (ambiance) : 0 12px 28px -16px, opacité 0.15
+ * Couleur de l'ombre = fir-darker (#0A2D22) en rgba pour rester dans la palette.
+ */
+const SHADOW_REST =
+  "shadow-[0_1px_2px_rgba(10,45,34,0.04),0_12px_28px_-16px_rgba(10,45,34,0.15)]"
+const SHADOW_HOVER =
+  "hover:shadow-[0_2px_4px_rgba(10,45,34,0.06),0_28px_60px_-24px_rgba(10,45,34,0.25)]"
+
+const CONTAINER_BASE = cn(
+  "group relative flex h-full flex-col rounded-2xl border border-fir-dark/10 bg-white",
+  "p-7 md:p-9",
+  "transition-[transform,box-shadow,border-color] duration-500 ease-out-expo",
+  SHADOW_REST,
+  SHADOW_HOVER,
+  "motion-safe:hover:-translate-y-1",
+)
+const CONTAINER_HOVER_INTERACTIVE = "hover:border-gold/50"
+const CONTAINER_HOVER_STATIC = "hover:border-fir-dark/20"
+
+/**
+ * Filet or signature en tête de carte. Token visuel récurrent du site
+ * (même grammaire que /l-agence et /classes-d-actifs). Toujours présent.
+ */
+const RULE_BASE =
+  "block h-px w-10 bg-gold/40 transition-[width,background-color] duration-500 ease-out-expo"
+const RULE_HOVER_INTERACTIVE = "group-hover:w-16 group-hover:bg-gold"
+
+const TITLE_CLASS = cn(
+  "font-accent font-semibold leading-snug tracking-[0.06em] text-fir-dark",
+  "[font-variant-caps:all-small-caps]",
+  "text-xl md:text-2xl",
+)
+const DESCRIPTION_CLASS = "mt-4 text-[15px] leading-[1.7] text-ink/70"
+const EYEBROW_CLASS = "eyebrow text-gold-deep"
+const ARROW_CLASS = cn(
+  "h-5 w-5 text-fir-dark/30",
+  "transition-[transform,color] duration-500 ease-out-expo",
+  "motion-safe:group-hover:-translate-y-0.5 motion-safe:group-hover:translate-x-0.5",
+  "group-hover:text-gold",
+)
+
+/* -------------------------------------------------------------------------- */
+/*                                Composant                                   */
+/* -------------------------------------------------------------------------- */
+
+/**
+ * Carte unifiée pour les sections de grille (homepage portes d'entrée,
+ * /vente, /location, /gestion). Tokens uniformes, propagation auto.
  *
- * Tokens uniformes : `rounded-2xl border-fir-dark/10 bg-white p-6 md:p-7`.
- * Hover `border-gold` activé uniquement en mode interactif (`href` présent).
- * Titre en Cormorant Garamond petites capitales (le texte est rendu en
- * minuscules pour que `font-variant-caps: all-small-caps` s'applique).
+ * Anatomie verticale (top → bottom) :
+ *   1. Filet or signature (toujours)
+ *   2. Bloc haut (eyebrow ↔ flèche) — uniquement si eyebrow OU mode interactif
+ *   3. Bloc contenu — titre Cormorant petites capitales + description Inter
  */
 export function SectionCard({
   title,
@@ -37,34 +89,34 @@ export function SectionCard({
   const hasTopBlock = isInteractive || Boolean(eyebrow)
 
   const container = cn(
-    "group relative flex h-full flex-col rounded-2xl border border-fir-dark/10 bg-white p-6 transition-colors duration-300 ease-out-expo md:p-7",
-    isInteractive && "hover:border-gold",
+    CONTAINER_BASE,
+    isInteractive ? CONTAINER_HOVER_INTERACTIVE : CONTAINER_HOVER_STATIC,
     className,
   )
 
+  const rule = cn(RULE_BASE, isInteractive && RULE_HOVER_INTERACTIVE)
+
   const content = (
     <>
+      <span aria-hidden className={rule} />
+
       {hasTopBlock && (
-        <div className="flex items-start justify-between gap-4">
-          {eyebrow ? (
-            <span className="eyebrow text-ink/55">{eyebrow}</span>
-          ) : (
-            <span aria-hidden className="mt-1 block h-px w-8 bg-gold/60" />
+        <div
+          className={cn(
+            "mt-7 flex items-center gap-4",
+            eyebrow ? "justify-between" : "justify-end",
           )}
+        >
+          {eyebrow && <span className={EYEBROW_CLASS}>{eyebrow}</span>}
           {isInteractive && (
-            <ArrowUpRight
-              aria-hidden
-              className="h-5 w-5 text-fir-dark/40 transition-all duration-300 ease-out-expo group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-gold"
-            />
+            <ArrowUpRight aria-hidden className={ARROW_CLASS} />
           )}
         </div>
       )}
 
-      <div className={cn(hasTopBlock && "mt-8")}>
-        <h4 className="font-accent text-lg font-medium leading-snug tracking-[0.04em] text-fir-dark normal-case [font-variant-caps:all-small-caps]">
-          {title.toLowerCase()}
-        </h4>
-        <p className="mt-3 text-sm leading-relaxed text-ink/75">{description}</p>
+      <div className={cn(hasTopBlock ? "mt-8" : "mt-7 md:mt-9")}>
+        <h4 className={TITLE_CLASS}>{title.toLowerCase()}</h4>
+        <p className={DESCRIPTION_CLASS}>{description}</p>
       </div>
     </>
   )
