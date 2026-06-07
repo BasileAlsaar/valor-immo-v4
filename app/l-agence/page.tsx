@@ -29,7 +29,7 @@ export default function AgencePage() {
         backgroundImage="/images/categories/bureaux.jpg"
       />
 
-      <section className="bg-cream py-24 md:py-32">
+      <section className="bg-cream py-20 md:py-24">
         <Container>
           <div className="grid gap-8 lg:grid-cols-[2fr_3fr] lg:gap-12">
             <div>
@@ -48,6 +48,7 @@ export default function AgencePage() {
               </p>
             </div>
           </div>
+          <div aria-hidden className="mx-auto mt-16 h-px w-16 bg-gold/40 md:mt-20" />
         </Container>
       </section>
 

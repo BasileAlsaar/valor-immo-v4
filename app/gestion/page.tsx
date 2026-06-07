@@ -121,7 +121,7 @@ export default function GestionPage() {
       <MethodSection steps={GESTION_METHOD_STEPS} />
 
       {/* Tarification */}
-      <section className="bg-white py-24 md:py-32">
+      <section className="bg-white py-20 md:py-24">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[2fr_3fr] lg:items-end">
             <div>
@@ -144,6 +144,7 @@ export default function GestionPage() {
               </div>
             </div>
           </div>
+          <div aria-hidden className="mx-auto mt-16 h-px w-16 bg-gold/40 md:mt-20" />
         </Container>
       </section>
 

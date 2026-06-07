@@ -51,11 +51,11 @@ const RULE_BASE =
 const RULE_HOVER_INTERACTIVE = "group-hover:w-16 group-hover:bg-gold"
 
 const TITLE_CLASS = cn(
-  "font-accent font-semibold leading-snug tracking-[0.06em] text-fir-dark",
+  "font-accent font-bold leading-[1.1] tracking-[0.06em] text-fir-dark",
   "[font-variant-caps:all-small-caps]",
-  "text-xl md:text-2xl",
+  "text-2xl md:text-3xl",
 )
-const DESCRIPTION_CLASS = "mt-4 text-[15px] leading-[1.7] text-ink/70"
+const DESCRIPTION_CLASS = "mt-5 text-[15px] leading-[1.7] text-ink/70"
 const EYEBROW_CLASS = "eyebrow text-gold-deep"
 const ARROW_CLASS = cn(
   "h-5 w-5 text-fir-dark/30",

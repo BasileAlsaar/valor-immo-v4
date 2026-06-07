@@ -76,7 +76,7 @@ export default function LocationPage() {
         </Container>
       </section>
 
-      <section className="bg-white py-24 md:py-32">
+      <section className="bg-cream-soft py-20 md:py-24">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[2fr_3fr] lg:items-start">
             <div>
@@ -94,6 +94,7 @@ export default function LocationPage() {
               </p>
             </div>
           </div>
+          <div aria-hidden className="mx-auto mt-16 h-px w-16 bg-gold/40 md:mt-20" />
         </Container>
       </section>
 
