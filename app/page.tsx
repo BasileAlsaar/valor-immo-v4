@@ -25,6 +25,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <FunnelsCTA />
       <PortesEntrees />
       <QuotesCarousel />
       <CategoriesGrid />
@@ -32,7 +33,6 @@ export default function HomePage() {
       <ArgusSection />
       <RecherchesActives />
       <OpportunitiesPreview />
-      <FunnelsCTA />
       <ContactCTA />
     </>
   )
