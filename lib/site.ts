@@ -42,5 +42,6 @@ export const NAV = [
   { label: "Estimations", href: "/estimations" },
   { label: "Classes d'actifs", href: "/classes-d-actifs" },
   { label: "Opportunités", href: "/opportunites" },
+  { label: "Actualités", href: "/actualites" },
   { label: "L'agence", href: "/l-agence" },
 ] as const

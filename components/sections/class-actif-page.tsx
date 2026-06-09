@@ -67,11 +67,15 @@ export function ClassActifPage({
                 {vocabIntro}
               </p>
             </div>
-            <dl className="grid gap-6 md:grid-cols-2">
+            <dl className="grid gap-y-8 md:grid-cols-2 md:gap-x-9">
               {vocab.map((v) => (
-                <div key={v.label} className="rounded-2xl border border-fir-dark/10 bg-white p-6">
-                  <dt className="eyebrow text-gold-deep">{v.label}</dt>
-                  <dd className="mt-3 text-sm leading-relaxed text-ink/80">{v.value}</dd>
+                <div key={v.label} className="border-t border-fir-dark/20 pt-3.5">
+                  <dt className="text-[13px] font-semibold uppercase tracking-[0.14em] text-gold">
+                    {v.label}
+                  </dt>
+                  <dd className="mt-3 text-sm leading-[1.65] text-fir-dark/85">
+                    {v.value}
+                  </dd>
                 </div>
               ))}
             </dl>

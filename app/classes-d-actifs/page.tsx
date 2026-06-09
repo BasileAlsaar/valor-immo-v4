@@ -60,13 +60,13 @@ export default function ClassesActifsPage() {
                     sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                     className="object-cover transition duration-700 ease-out-expo group-hover:scale-[1.04]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-fir-darker/95 via-fir-dark/55 to-fir-dark/15" />
-                  <div className="absolute inset-0 flex flex-col justify-between p-8 text-white">
+                  <div className="absolute inset-0 bg-gradient-to-t from-fir-darker/95 via-fir-dark/55 to-fir-dark/15 transition group-hover:from-fir-darker/90" />
+                  <div className="absolute inset-0 flex flex-col justify-between p-7 text-white md:p-9">
                     <span className="eyebrow text-gold">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <div>
-                      <h2 className="font-display text-3xl uppercase leading-tight tracking-tight md:text-4xl">
+                      <h2 className="font-display text-[clamp(1.75rem,3.5vw,3rem)] uppercase leading-[0.95] tracking-tight">
                         {cat.label}
                       </h2>
                       <p className="mt-4 text-sm leading-relaxed opacity-85">
@@ -74,7 +74,7 @@ export default function ClassesActifsPage() {
                       </p>
                       <span className="mt-6 inline-flex items-center gap-1.5 text-xs uppercase tracking-wider text-gold">
                         Découvrir
-                        <ArrowUpRight className="h-3.5 w-3.5" />
+                        <ArrowUpRight className="h-3.5 w-3.5 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                       </span>
                     </div>
                   </div>
