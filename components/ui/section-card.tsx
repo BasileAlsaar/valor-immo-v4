@@ -21,26 +21,20 @@ type Props = {
 /* -------------------------------------------------------------------------- */
 
 /**
- * Ombre portée 2 couches — feel "papier sur table".
- *   - couche 1 (contact) : 0 1px 2px, opacité 0.04
- *   - couche 2 (ambiance) : 0 12px 28px -16px, opacité 0.15
- * Couleur de l'ombre = fir-darker (#0A2D22) en rgba pour rester dans la palette.
+ * Lot 3 : SectionCard en vert sapin (token --fir-dark), cohérent avec les
+ * cartes catégories. Titre Cormorant SC ivoire, description cream/85,
+ * eyebrow et accents gold. Filet or signature conservé (distinction vs
+ * catégories qui ont une image de fond). Pas d'ombre portée — la
+ * différenciation visuelle se fait par le lift au hover et le filet.
  */
-const SHADOW_REST =
-  "shadow-[0_1px_2px_rgba(10,45,34,0.04),0_12px_28px_-16px_rgba(10,45,34,0.15)]"
-const SHADOW_HOVER =
-  "hover:shadow-[0_2px_4px_rgba(10,45,34,0.06),0_28px_60px_-24px_rgba(10,45,34,0.25)]"
-
 const CONTAINER_BASE = cn(
-  "group relative flex h-full flex-col rounded-2xl border border-fir-dark/10 bg-white",
+  "group relative flex h-full flex-col rounded-2xl border border-cream/10 bg-fir-dark",
   "p-7 md:p-9",
-  "transition-[transform,box-shadow,border-color] duration-500 ease-out-expo",
-  SHADOW_REST,
-  SHADOW_HOVER,
+  "transition-[transform,border-color] duration-500 ease-out-expo",
   "motion-safe:hover:-translate-y-1",
 )
 const CONTAINER_HOVER_INTERACTIVE = "hover:border-gold/50"
-const CONTAINER_HOVER_STATIC = "hover:border-fir-dark/20"
+const CONTAINER_HOVER_STATIC = "hover:border-cream/15"
 
 /**
  * Filet or signature en tête de carte. Token visuel récurrent du site
@@ -51,14 +45,14 @@ const RULE_BASE =
 const RULE_HOVER_INTERACTIVE = "group-hover:w-16 group-hover:bg-gold"
 
 const TITLE_CLASS = cn(
-  "font-accent font-bold leading-[1.1] tracking-[0.06em] text-fir-dark",
+  "font-accent font-bold leading-[1.1] tracking-[0.06em] text-cream",
   "[font-variant-caps:all-small-caps]",
   "text-2xl md:text-3xl",
 )
-const DESCRIPTION_CLASS = "mt-5 text-[15px] leading-[1.7] text-ink/70"
-const EYEBROW_CLASS = "eyebrow text-gold-deep"
+const DESCRIPTION_CLASS = "mt-5 text-[15px] leading-[1.7] text-cream/85"
+const EYEBROW_CLASS = "eyebrow text-gold"
 const ARROW_CLASS = cn(
-  "h-5 w-5 text-fir-dark/30",
+  "h-5 w-5 text-cream/40",
   "transition-[transform,color] duration-500 ease-out-expo",
   "motion-safe:group-hover:-translate-y-0.5 motion-safe:group-hover:translate-x-0.5",
   "group-hover:text-gold",
