@@ -44,11 +44,6 @@ export function buildUserHtml(lead: ContactFormValues): string {
   const zonePrincipale = zoneLabel(lead.zones[0]!)
   const phoneMasked = maskPhoneLast4(lead.telephone)
 
-  const surfaceLine =
-    lead.surfaceMin === lead.surfaceMax
-      ? `${formatNumber(lead.surfaceMin)} m²`
-      : `${formatNumber(lead.surfaceMin)} – ${formatNumber(lead.surfaceMax)} m²`
-
   let budgetLine = ""
   if (lead.transaction === "location" && lead.budgetMax) {
     budgetLine = `<tr><td style="padding:6px 0;color:#5B6573;font-size:13px;width:38%;">Budget loyer</td><td style="padding:6px 0;color:#0A0E1A;font-size:14px;font-weight:500;">jusqu'à ${formatNumber(lead.budgetMax)} €/mois HT HC</td></tr>`
@@ -78,7 +73,6 @@ export function buildUserHtml(lead: ContactFormValues): string {
         <p style="margin:0 0 12px;color:#7A571E;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;">Récapitulatif de votre demande</p>
         <table cellpadding="0" cellspacing="0" border="0" style="width:100%;border-collapse:collapse;">
           <tr><td style="padding:6px 0;color:#5B6573;font-size:13px;width:38%;">Typologie</td><td style="padding:6px 0;color:#0A0E1A;font-size:14px;font-weight:500;">${typo}</td></tr>
-          <tr><td style="padding:6px 0;color:#5B6573;font-size:13px;width:38%;">Surface</td><td style="padding:6px 0;color:#0A0E1A;font-size:14px;font-weight:500;">${surfaceLine}</td></tr>
           ${budgetLine}
         </table>
       </div>

@@ -27,8 +27,6 @@ const STEP_FIELDS: Record<Step, (keyof ContactFormValues)[]> = {
   1: [
     "typologie",
     "transaction",
-    "surfaceMin",
-    "surfaceMax",
     "budgetMin",
     "budgetMax",
     "budgetMinAcquisition",

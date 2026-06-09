@@ -75,7 +75,6 @@ export function buildInternalHtml(lead: ContactFormValues): string {
   const projetRows = [
     row("Typologie", LABELS.typologie[lead.typologie]),
     row("Transaction", LABELS.transaction[lead.transaction]),
-    row("Surface", formatSurface(lead.surfaceMin, lead.surfaceMax)),
     lead.transaction === "location" || lead.transaction === "les-deux"
       ? row(
           "Budget loyer",

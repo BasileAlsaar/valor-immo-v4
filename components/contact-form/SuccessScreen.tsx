@@ -62,14 +62,6 @@ export function SuccessScreen({ lead }: Props) {
         <dl className="font-mono mt-4 space-y-2 text-sm tabular text-ink/80">
           <Row label="Typologie" value={LABELS.typologie[lead.typologie]} />
           <Row label="Transaction" value={LABELS.transaction[lead.transaction]} />
-          <Row
-            label="Surface"
-            value={
-              lead.surfaceMin === lead.surfaceMax
-                ? `${formatNumber(lead.surfaceMin)} m²`
-                : `${formatNumber(lead.surfaceMin)} – ${formatNumber(lead.surfaceMax)} m²`
-            }
-          />
           <Row label="Horizon" value={LABELS.deadline[lead.deadline]} />
           <Row
             label="Zone(s)"

@@ -114,34 +114,6 @@ export function StepProjet() {
         )}
       </fieldset>
 
-      {/* Surface — min / max */}
-      <fieldset>
-        <legend className="eyebrow text-gold-deep">Surface souhaitée</legend>
-        <p className="mt-2 text-xs text-ink/50">En m², 0 à 2000.</p>
-        <div className="mt-4 grid gap-4 sm:grid-cols-2">
-          <NumberField
-            label="Surface min"
-            name="surfaceMin"
-            placeholder="80"
-            step={10}
-            max={2000}
-            register={register}
-            setValue={setValue}
-            error={errors.surfaceMin?.message}
-          />
-          <NumberField
-            label="Surface max"
-            name="surfaceMax"
-            placeholder="200"
-            step={10}
-            max={2000}
-            register={register}
-            setValue={setValue}
-            error={errors.surfaceMax?.message}
-          />
-        </div>
-      </fieldset>
-
       {/* Budget — conditionnel selon transaction (pas affiché pour gestion) */}
       {transaction && transaction !== "gestion" && (
         <fieldset>

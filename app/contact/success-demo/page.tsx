@@ -12,8 +12,6 @@ import type { ContactFormValues } from "@/lib/validations/contact"
 const MOCK_LEAD: ContactFormValues = {
   typologie: "locaux-commerciaux",
   transaction: "location",
-  surfaceMin: 80,
-  surfaceMax: 200,
   budgetMin: 3000,
   budgetMax: 8000,
   deadline: "court-terme",

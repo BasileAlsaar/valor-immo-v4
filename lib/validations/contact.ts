@@ -69,8 +69,8 @@ export const PHONE_FR_REGEX = /^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$/
 const projetShape = {
   typologie: z.enum(TYPOLOGIES),
   transaction: z.enum(TRANSACTIONS),
-  surfaceMin: z.number().int().min(0).max(2000),
-  surfaceMax: z.number().int().min(0).max(2000),
+  // surfaceMin / surfaceMax retirés du schéma — le bloc "Surface souhaitée"
+  // du formulaire a été supprimé (cleanup juin 2026).
   /** En €/mois HT HC pour location, en € total pour acquisition. */
   budgetMin: z.number().int().min(0).optional(),
   budgetMax: z.number().int().min(0).optional(),
@@ -99,28 +99,17 @@ const coordonneesShape = {
   website: z.string().max(0).optional(),
 }
 
-const refineSurface = <T extends { surfaceMin: number; surfaceMax: number }>(d: T) =>
-  d.surfaceMax >= d.surfaceMin
-
 export const stepSchemas = {
-  projet: z.object(projetShape).refine(refineSurface, {
-    message: "Surface max doit être ≥ surface min",
-    path: ["surfaceMax"],
-  }),
+  projet: z.object(projetShape),
   contexte: z.object(contexteShape),
   coordonnees: z.object(coordonneesShape),
 } as const
 
-export const contactFormSchema = z
-  .object({
-    ...projetShape,
-    ...contexteShape,
-    ...coordonneesShape,
-  })
-  .refine(refineSurface, {
-    message: "Surface max doit être ≥ surface min",
-    path: ["surfaceMax"],
-  })
+export const contactFormSchema = z.object({
+  ...projetShape,
+  ...contexteShape,
+  ...coordonneesShape,
+})
 
 export type ContactFormValues = z.infer<typeof contactFormSchema>
 export type Typologie = (typeof TYPOLOGIES)[number]
