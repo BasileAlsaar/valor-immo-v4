@@ -114,7 +114,6 @@ export function SiteFooter() {
 
         <div className="mt-8 flex flex-col gap-3 border-t border-cream/15 pt-4 text-xs opacity-60 md:flex-row md:items-center md:justify-between">
           <p>© 2026 {SITE.name} · Tous droits réservés</p>
-          <p>{SITE.address.line1}, {SITE.address.line2} · {SITE.telephoneDisplay}</p>
         </div>
         <p className="mt-3 text-[11px] opacity-40">
           Vidéo hero :{" "}
