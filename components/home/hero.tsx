@@ -81,7 +81,7 @@ export function Hero() {
 
           <h1
             aria-label="Votre projet commercial mérite l'emplacement parfait."
-            className="font-display mt-2 text-[clamp(1.75rem,4vw,5rem)] uppercase leading-[0.95] tracking-tight"
+            className="font-display mt-2 text-[clamp(1.75rem,4vw,5rem)] uppercase leading-tight tracking-tight md:leading-[0.95]"
           >
             <SplitWords words={H1_WORDS_WHITE} reduce={reduce ?? false} />
             <span className="text-gold">

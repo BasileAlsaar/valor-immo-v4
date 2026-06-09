@@ -11,6 +11,7 @@ import { SITE, NAV } from "@/lib/site"
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+  const [panelVisible, setPanelVisible] = useState(false)
 
   useEffect(() => {
     function onScroll() {
@@ -26,6 +27,17 @@ export function SiteHeader() {
     return () => {
       document.body.style.overflow = ""
     }
+  }, [open])
+
+  // Fondu d'apparition du panneau mobile — render dès `open`, classe opacité
+  // appliquée au frame suivant pour déclencher la transition CSS.
+  useEffect(() => {
+    if (!open) {
+      setPanelVisible(false)
+      return
+    }
+    const id = requestAnimationFrame(() => setPanelVisible(true))
+    return () => cancelAnimationFrame(id)
   }, [open])
 
   return (
@@ -103,7 +115,13 @@ export function SiteHeader() {
       </div>
 
       {open && (
-        <div className="fixed inset-0 z-50 flex flex-col bg-fir-dark text-white">
+        <div
+          className={cn(
+            "fixed inset-0 z-[60] flex flex-col bg-fir-dark text-white",
+            "transition-opacity duration-300 ease-out-expo",
+            panelVisible ? "opacity-100" : "opacity-0",
+          )}
+        >
           <div className="flex items-center justify-between px-6 py-5">
             <Link href="/" onClick={() => setOpen(false)} className="flex items-center gap-3">
               <Image

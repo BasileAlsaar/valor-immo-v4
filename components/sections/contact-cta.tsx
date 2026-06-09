@@ -23,7 +23,7 @@ export function ContactCTA() {
   return (
     <section
       ref={ref}
-      className="relative flex min-h-[50vh] items-center overflow-hidden bg-fir-darker py-20 text-cream md:py-24"
+      className="relative flex items-center overflow-hidden bg-fir-darker py-12 text-cream md:min-h-[50vh] md:py-24"
     >
       <Container className="text-center">
         <motion.div

@@ -200,10 +200,10 @@ export function SearchBar() {
       )}
 
       {/* Submit */}
-      <div className="mt-4 flex flex-wrap items-center justify-end gap-4">
+      <div className="mt-4 flex flex-col gap-4 md:flex-row md:flex-wrap md:items-center md:justify-end">
         <button
           type="submit"
-          className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-3 text-sm font-medium uppercase tracking-wider text-ink transition hover:bg-gold-warm"
+          className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-8 py-3 text-sm font-medium uppercase tracking-wider text-ink transition hover:bg-gold-warm md:w-auto"
         >
           <Search className="h-4 w-4" /> Rechercher
         </button>

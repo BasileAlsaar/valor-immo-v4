@@ -89,7 +89,7 @@ export default function GestionPage() {
       />
 
       {/* Services — 6 services + clôture */}
-      <section className="bg-cream py-24 md:py-32">
+      <section className="bg-cream py-14 md:py-32">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[2fr_3fr]">
             <div className="lg:sticky lg:top-[120px] lg:self-start">
@@ -121,7 +121,7 @@ export default function GestionPage() {
       <MethodSection steps={GESTION_METHOD_STEPS} />
 
       {/* Tarification */}
-      <section className="bg-white py-20 md:py-24">
+      <section className="bg-white py-12 md:py-24">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[2fr_3fr] lg:items-end">
             <div>
