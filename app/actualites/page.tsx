@@ -84,11 +84,11 @@ function ArticleCard({ article }: { article: Article }) {
     <Link
       href={`/actualites/${article.slug}`}
       className={cn(
-        "group relative flex h-full flex-col rounded-2xl border border-fir-dark/10 bg-white p-7 md:p-8",
+        "group relative flex h-full flex-col rounded-2xl border border-gold/40 bg-fir-dark p-7 md:p-8",
         "shadow-[0_1px_2px_rgba(10,45,34,0.04),0_12px_28px_-16px_rgba(10,45,34,0.15)]",
         "transition-[transform,box-shadow,border-color] duration-500 ease-out-expo",
         "motion-safe:hover:-translate-y-1",
-        "hover:border-gold/40",
+        "hover:border-gold",
         "hover:shadow-[0_2px_4px_rgba(10,45,34,0.06),0_28px_60px_-24px_rgba(10,45,34,0.25)]",
       )}
     >
@@ -96,14 +96,14 @@ function ArticleCard({ article }: { article: Article }) {
         <span aria-hidden className="block h-px w-10 bg-gold/40 transition-[width,background-color] duration-500 ease-out-expo group-hover:w-16 group-hover:bg-gold" />
         <ArrowUpRight
           aria-hidden
-          className="h-5 w-5 text-fir-dark/30 transition-[transform,color] duration-500 ease-out-expo motion-safe:group-hover:-translate-y-0.5 motion-safe:group-hover:translate-x-0.5 group-hover:text-gold"
+          className="h-5 w-5 text-cream/40 transition-[transform,color] duration-500 ease-out-expo motion-safe:group-hover:-translate-y-0.5 motion-safe:group-hover:translate-x-0.5 group-hover:text-gold"
         />
       </div>
-      <p className="eyebrow mt-7 text-gold-deep">{article.datePublication}</p>
-      <h3 className="font-accent mt-4 text-xl font-semibold italic leading-[1.2] text-fir-dark md:text-2xl">
+      <p className="eyebrow mt-7 text-gold">{article.datePublication}</p>
+      <h3 className="font-display mt-4 text-xl uppercase leading-tight tracking-tight text-cream md:text-2xl">
         {article.titre}
       </h3>
-      <p className="mt-5 text-[15px] leading-[1.7] text-ink/70">
+      <p className="mt-5 text-[15px] leading-[1.7] text-cream/80">
         {article.metaDescription}
       </p>
     </Link>

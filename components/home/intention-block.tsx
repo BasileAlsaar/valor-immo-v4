@@ -83,11 +83,11 @@ function IntentionCard({ intention }: { intention: Intention }) {
       href={intention.href}
       aria-label={intention.ariaLabel}
       className={cn(
-        "group relative flex h-full flex-col gap-8 rounded-2xl border border-fir-dark/10 border-t-[3px] border-t-gold bg-white p-8 md:p-10",
+        "group relative flex h-full flex-col gap-8 rounded-2xl border border-gold/40 bg-white p-8 md:p-10",
         "shadow-[0_1px_2px_rgba(10,45,34,0.04),0_10px_24px_-16px_rgba(10,45,34,0.12)]",
         "transition-[transform,box-shadow,border-color] duration-500 ease-out-expo",
         "motion-safe:hover:-translate-y-1",
-        "hover:border-fir-dark/15 hover:border-t-gold",
+        "hover:border-gold",
         "hover:shadow-[0_2px_4px_rgba(10,45,34,0.06),0_28px_60px_-24px_rgba(10,45,34,0.25)]",
       )}
     >
