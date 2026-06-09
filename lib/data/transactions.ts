@@ -41,7 +41,7 @@ export const TRANSACTIONS: readonly Transaction[] = [
     arrondissement: "75116",
   },
   {
-    libelle: "Commerce",
+    libelle: "Marzouk — commerce",
     adresse: "79 avenue de Clichy",
     arrondissement: "75017",
   },
