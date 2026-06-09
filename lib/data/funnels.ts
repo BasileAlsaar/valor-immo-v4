@@ -157,20 +157,8 @@ export const investisseurFunnel: FunnelConfig = {
   eyebrow: "Investisseur",
   subtitle:
     "Précisez vos critères. Nous vous présentons les opportunités en cible — pas de bruit.",
-  stepLabels: ["Budget", "Actif", "Secteur", "Coordonnées"],
+  stepLabels: ["Actif", "Budget", "Secteur", "Coordonnées"],
   steps: [
-    {
-      kind: "choice",
-      title: "Quel est votre budget ?",
-      field: "budget",
-      options: [
-        { value: "lt-500k", label: "Moins de 500 K€" },
-        { value: "500k-1m", label: "500 K€ – 1 M€" },
-        { value: "1m-3m", label: "1 M€ – 3 M€" },
-        { value: "3m-10m", label: "3 M€ – 10 M€" },
-        { value: "gt-10m", label: "Plus de 10 M€" },
-      ],
-    },
     {
       kind: "choice",
       title: "Type d'actif recherché",
@@ -182,6 +170,18 @@ export const investisseurFunnel: FunnelConfig = {
         { value: "hotel", label: "Hôtel" },
         { value: "bureau", label: "Bureau" },
         { value: "logistique", label: "Logistique" },
+      ],
+    },
+    {
+      kind: "choice",
+      title: "Quel est votre budget ?",
+      field: "budget",
+      options: [
+        { value: "lt-500k", label: "Moins de 500 K€" },
+        { value: "500k-1m", label: "500 K€ – 1 M€" },
+        { value: "1m-3m", label: "1 M€ – 3 M€" },
+        { value: "3m-10m", label: "3 M€ – 10 M€" },
+        { value: "gt-10m", label: "Plus de 10 M€" },
       ],
     },
     {
