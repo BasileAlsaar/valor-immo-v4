@@ -38,6 +38,12 @@ type Props = {
   onSelect: (selection: ZoneSelection) => void
   placeholder?: string
   label?: string
+  /**
+   * Restreint la requête BAN à un type de résultat (municipality = villes
+   * + arrondissements ; street = rues ; housenumber = numéro précis).
+   * Si omis, tous les types sont retournés.
+   */
+  type?: "housenumber" | "street" | "locality" | "municipality"
 }
 
 function extractArrondissement(postcode?: string): number | null {
@@ -54,6 +60,7 @@ export function ZoneCombobox({
   onSelect,
   placeholder = "Paris 8ᵉ · adresse ou arrondissement",
   label = "Localisation",
+  type,
 }: Props) {
   const id = useId()
   const listboxId = `${id}-listbox`
@@ -75,7 +82,8 @@ export function ZoneCombobox({
     abortRef.current = ctrl
     setLoading(true)
     try {
-      const url = `https://api-adresse.data.gouv.fr/search/?q=${encodeURIComponent(q)}&limit=5&autocomplete=1`
+      const typeParam = type ? `&type=${type}` : ""
+      const url = `https://api-adresse.data.gouv.fr/search/?q=${encodeURIComponent(q)}&limit=5&autocomplete=1${typeParam}`
       const res = await fetch(url, { signal: ctrl.signal })
       if (!res.ok) throw new Error(`BAN ${res.status}`)
       const data = (await res.json()) as { features: BanFeature[] }
@@ -89,13 +97,13 @@ export function ZoneCombobox({
     }
   }, [])
 
-  // Debounce 250 ms
+  // Debounce 250 ms — re-fetch si le `type` change aussi.
   useEffect(() => {
     const handle = window.setTimeout(() => {
       void fetchSuggestions(value)
     }, 250)
     return () => window.clearTimeout(handle)
-  }, [value, fetchSuggestions])
+  }, [value, fetchSuggestions, type])
 
   // Click outside → close
   useEffect(() => {

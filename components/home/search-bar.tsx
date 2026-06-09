@@ -4,64 +4,68 @@ import { useState } from "react"
 import { useRouter } from "next/navigation"
 import { Search } from "lucide-react"
 
-import { FilterChip } from "@/components/ui/filter-chip"
 import { ZoneCombobox, type ZoneSelection } from "@/components/ui/zone-combobox"
+import { cn } from "@/lib/utils"
 
 /* -------------------------------------------------------------------------- */
-/*                         Définitions des options                            */
+/*                                  Options                                   */
 /* -------------------------------------------------------------------------- */
 
-/**
- * Transaction — alignée sur le contrat /opportunites (qui lit `transaction`
- * = "location" | "vente"). "Achat" est un synonyme côté visiteur acquéreur,
- * émet `transaction=vente`. "Fonds de commerce" mappe à la typologie
- * `cession-droit-au-bail` côté catalogue, donc émet `typologie=` sans
- * `transaction=`.
- */
-const TRANSACTIONS = [
+const TABS = [
   { id: "location-pure", label: "Location pure" },
   { id: "achat", label: "Achat" },
   { id: "vente", label: "Vente" },
   { id: "fonds-commerce", label: "Fonds de commerce" },
+  { id: "bureaux", label: "Bureaux" },
+  { id: "tous", label: "Tous" },
 ] as const
-type TransactionId = (typeof TRANSACTIONS)[number]["id"]
+
+type Tab = (typeof TABS)[number]["id"]
 
 /**
- * Typologie — alignée sur les slugs CATEGORIES (lib/data/categories.ts) lus
- * par /opportunites. "Restau. avec/sans extraction" sont 2 vues éditoriales
- * de la même typologie back-end `locaux-commerciaux` (le sous-filtre
- * extraction n'existe pas côté Property — promesse UI honorée par la
- * navigation, pas par un filtre dur).
+ * Sous-puces : conservent les 4 raffinements CHR/commerce d'origine
+ * (Avec/Sans extraction, Façade d'angle, Tous commerces) + 3 typologies
+ * additionnelles (Hôtellerie, Immeubles, Logistique). Cachées si tab=bureaux
+ * (la typologie est déjà fixée par l'onglet).
  */
-const TYPOLOGIES = [
-  { id: "locaux-commerciaux", label: "Locaux commerciaux" },
-  { id: "restau-avec-extraction", label: "Restau. avec extraction" },
-  { id: "restau-sans-extraction", label: "Restau. sans extraction" },
-  { id: "bureaux", label: "Bureaux" },
-  { id: "hotellerie", label: "Hôtellerie" },
-  { id: "immeubles", label: "Immeubles" },
-  { id: "entrepots-logistique", label: "Logistique" },
+const TAGS = [
+  "Avec extraction",
+  "Sans extraction",
+  "Façade d'angle",
+  "Tous commerces",
+  "Hôtellerie",
+  "Immeubles",
+  "Logistique",
 ] as const
-type TypologieId = (typeof TYPOLOGIES)[number]["id"]
 
-/** Mapping UI → param URL `transaction=` consommé par /opportunites. */
-function resolveTransactionParam(id: TransactionId | null): string | null {
-  if (id === "location-pure") return "location"
-  if (id === "achat" || id === "vente") return "vente"
+const CHR_TAGS: string[] = [
+  "Avec extraction",
+  "Sans extraction",
+  "Façade d'angle",
+  "Tous commerces",
+]
+
+/** Précédence chip → typologie (la plus spécifique gagne en cas de combo). */
+function resolveChipTypologie(activeTags: string[]): string | null {
+  if (activeTags.includes("Logistique")) return "entrepots-logistique"
+  if (activeTags.includes("Immeubles")) return "immeubles"
+  if (activeTags.includes("Hôtellerie")) return "hotellerie"
+  if (CHR_TAGS.some((t) => activeTags.includes(t))) return "locaux-commerciaux"
   return null
 }
 
-/** Mapping UI → param URL `typologie=` (slug CATEGORIES). */
-function resolveTypologieParam(
-  txId: TransactionId | null,
-  typoId: TypologieId | null,
-): string | null {
-  if (txId === "fonds-commerce") return "cession-droit-au-bail"
-  if (!typoId) return null
-  if (typoId === "restau-avec-extraction" || typoId === "restau-sans-extraction") {
-    return "locaux-commerciaux"
-  }
-  return typoId
+/** Mapping onglet → param `transaction` consommé par /opportunites. */
+function resolveTabTransaction(tab: Tab): string | null {
+  if (tab === "location-pure") return "location"
+  if (tab === "achat" || tab === "vente") return "vente"
+  return null
+}
+
+/** Mapping onglet → param `typologie` consommé par /opportunites. */
+function resolveTabTypologie(tab: Tab): string | null {
+  if (tab === "fonds-commerce") return "cession-droit-au-bail"
+  if (tab === "bureaux") return "bureaux"
+  return null
 }
 
 /* -------------------------------------------------------------------------- */
@@ -70,21 +74,17 @@ function resolveTypologieParam(
 
 export function SearchBar() {
   const router = useRouter()
-  const [tx, setTx] = useState<TransactionId | null>("location-pure")
-  const [typo, setTypo] = useState<TypologieId | null>(null)
+  const [tab, setTab] = useState<Tab>("location-pure")
   const [ville, setVille] = useState("")
   const [arrondissement, setArrondissement] = useState<number | null>(null)
+  const [surface, setSurface] = useState("")
+  const [loyerMax, setLoyerMax] = useState("")
+  const [activeTags, setActiveTags] = useState<string[]>([])
 
-  function onSubmit(e: React.FormEvent) {
-    e.preventDefault()
-    const params = new URLSearchParams()
-    const txParam = resolveTransactionParam(tx)
-    const typoParam = resolveTypologieParam(tx, typo)
-    if (txParam) params.set("transaction", txParam)
-    if (typoParam) params.set("typologie", typoParam)
-    if (arrondissement) params.set("arrondissement", String(arrondissement))
-    const qs = params.toString()
-    router.push(qs ? `/opportunites?${qs}` : "/opportunites")
+  function toggleTag(tag: string) {
+    setActiveTags((prev) =>
+      prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag],
+    )
   }
 
   function onZoneSelect(sel: ZoneSelection) {
@@ -93,63 +93,114 @@ export function SearchBar() {
 
   function onVilleChange(v: string) {
     setVille(v)
-    // L'utilisateur retape : on invalide l'arrondissement précédemment résolu.
+    // Saisie manuelle → on invalide la résolution précédente.
     if (arrondissement !== null) setArrondissement(null)
   }
 
-  function toggleTx(id: TransactionId) {
-    setTx((prev) => (prev === id ? null : id))
+  function onSubmit(e: React.FormEvent) {
+    e.preventDefault()
+    const params = new URLSearchParams()
+
+    const tx = resolveTabTransaction(tab)
+    if (tx) params.set("transaction", tx)
+
+    // Typologie : la chip override l'onglet si elle en résout une.
+    const chipTypo = resolveChipTypologie(activeTags)
+    const typo = chipTypo ?? resolveTabTypologie(tab)
+    if (typo) params.set("typologie", typo)
+
+    if (arrondissement) params.set("arrondissement", String(arrondissement))
+    if (ville) params.set("q", ville)
+    if (surface) params.set("surfaceMin", surface)
+    if (loyerMax) params.set("loyerMax", loyerMax)
+    if (activeTags.length) params.set("tags", activeTags.join(","))
+
+    const qs = params.toString()
+    router.push(qs ? `/opportunites?${qs}` : "/opportunites")
   }
-  function toggleTypo(id: TypologieId) {
-    setTypo((prev) => (prev === id ? null : id))
-  }
+
+  const isVenteLike = tab === "vente" || tab === "achat" || tab === "fonds-commerce"
 
   return (
     <form
       onSubmit={onSubmit}
       className="w-full rounded-3xl bg-white/95 p-5 text-ink shadow-[0_20px_60px_rgba(0,0,0,0.18)] backdrop-blur-md md:p-6"
     >
-      {/* Transaction */}
-      <div>
-        <span className="eyebrow text-ink/55">Type de transaction</span>
-        <div className="mt-3 flex flex-wrap gap-2">
-          {TRANSACTIONS.map((t) => (
-            <FilterChip
-              key={t.id}
-              label={t.label}
-              active={tx === t.id}
-              onClick={() => toggleTx(t.id)}
-            />
-          ))}
-        </div>
+      {/* Tabs */}
+      <div className="flex flex-wrap gap-1 border-b border-ink/10">
+        {TABS.map((t) => (
+          <button
+            key={t.id}
+            type="button"
+            onClick={() => {
+              setTab(t.id)
+              if (t.id === "bureaux") setActiveTags([])
+            }}
+            className={cn(
+              "relative px-5 py-2.5 text-sm font-medium uppercase tracking-wider transition",
+              tab === t.id ? "text-ink" : "text-ink/50 hover:text-ink",
+            )}
+          >
+            {t.label}
+            {tab === t.id && (
+              <span className="absolute inset-x-2 -bottom-px h-0.5 bg-gold" />
+            )}
+          </button>
+        ))}
       </div>
 
-      {/* Typologie */}
-      <div className="mt-5">
-        <span className="eyebrow text-ink/55">Type d&apos;actif</span>
-        <div className="mt-3 flex flex-wrap gap-2">
-          {TYPOLOGIES.map((t) => (
-            <FilterChip
-              key={t.id}
-              label={t.label}
-              active={typo === t.id}
-              onClick={() => toggleTypo(t.id)}
-            />
-          ))}
-        </div>
-      </div>
-
-      {/* Localisation BAN */}
-      <div className="mt-5">
+      {/* Champs */}
+      <div className="mt-4 grid gap-5 md:grid-cols-3">
         <ZoneCombobox
+          label="Ville · Arrondissement"
+          placeholder="Paris 8ᵉ · ville ou arrondissement"
           value={ville}
           onChange={onVilleChange}
           onSelect={onZoneSelect}
+          type="municipality"
+        />
+        <Field
+          label="Surface min (m²)"
+          value={surface}
+          onChange={setSurface}
+          placeholder="80"
+          type="number"
+        />
+        <Field
+          label={isVenteLike ? "Budget max (€)" : "Loyer max (€/mois HT)"}
+          value={loyerMax}
+          onChange={setLoyerMax}
+          placeholder={isVenteLike ? "1 500 000" : "8 000"}
+          type="number"
         />
       </div>
 
+      {/* Sous-puces — masquées si tab=bureaux (typologie déjà fixée). */}
+      {tab !== "bureaux" && (
+        <div className="mt-4 flex flex-wrap gap-2">
+          {TAGS.map((tag) => {
+            const on = activeTags.includes(tag)
+            return (
+              <button
+                key={tag}
+                type="button"
+                onClick={() => toggleTag(tag)}
+                className={cn(
+                  "rounded-full border px-4 py-2 text-xs font-medium uppercase tracking-wider transition",
+                  on
+                    ? "border-gold bg-gold text-ink"
+                    : "border-ink/15 text-ink/70 hover:border-ink/40 hover:text-ink",
+                )}
+              >
+                {tag}
+              </button>
+            )
+          })}
+        </div>
+      )}
+
       {/* Submit */}
-      <div className="mt-5 flex flex-wrap items-center justify-end gap-4">
+      <div className="mt-4 flex flex-wrap items-center justify-end gap-4">
         <button
           type="submit"
           className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-3 text-sm font-medium uppercase tracking-wider text-ink transition hover:bg-gold-warm"
@@ -158,5 +209,32 @@ export function SearchBar() {
         </button>
       </div>
     </form>
+  )
+}
+
+function Field({
+  label,
+  value,
+  onChange,
+  placeholder,
+  type = "text",
+}: {
+  label: string
+  value: string
+  onChange: (v: string) => void
+  placeholder?: string
+  type?: string
+}) {
+  return (
+    <label className="block">
+      <span className="eyebrow text-ink/60">{label}</span>
+      <input
+        type={type}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        placeholder={placeholder}
+        className="mt-2 w-full border-0 border-b-2 border-ink/15 bg-transparent px-0 pb-2 text-base text-ink placeholder:text-ink/30 focus:border-gold focus:outline-none focus:ring-0"
+      />
+    </label>
   )
 }
