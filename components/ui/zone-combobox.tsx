@@ -1,18 +1,36 @@
 "use client"
 
-import { useCallback, useEffect, useId, useRef, useState } from "react"
+import {
+  useCallback,
+  useEffect,
+  useId,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react"
+import { createPortal } from "react-dom"
 import { MapPin, Loader2 } from "lucide-react"
 
+import {
+  PARIS_AUTOCOMPLETE,
+  matchesParisQuery,
+} from "@/lib/data/paris-arrondissements"
 import { cn } from "@/lib/utils"
 
 /**
  * Combobox d'autocomplete adresse / arrondissement adossé à la Base Adresse
  * Nationale (api-adresse.data.gouv.fr) — gratuit, sans clé, sans facturation.
- * Debounced 250 ms, max 5 suggestions, focus Paris (autocomplete=1).
  *
- * À la sélection : remonte au parent via `onSelect({ label, postcode,
- * arrondissement })`. L'arrondissement est extrait du code postal 750XX si
- * applicable, sinon `null` (utile pour filtrer côté /opportunites).
+ * Comportements clés :
+ *   - Saisie ≥ 2 caractères → fetch BAN debounced 250 ms (AbortController).
+ *   - Si la saisie matche "Paris" → fallback liste locale ordonnée
+ *     ("Paris" entière puis Paris 1ᵉʳ → 20ᵉ).
+ *   - Dropdown portalé sur document.body en position fixed pour
+ *     échapper à tout parent en overflow-hidden / transform (z-index ≥ 70).
+ *   - max-h-72 + overflow-y-auto, scroll-into-view sur navigation clavier.
+ *   - À la sélection : remonte au parent via `onSelect({ label, postcode,
+ *     arrondissement })`. L'arrondissement parisien est extrait du code
+ *     postal 750XX si applicable.
  */
 
 type BanFeature = {
@@ -32,6 +50,13 @@ export type ZoneSelection = {
   arrondissement: number | null
 }
 
+type UnifiedSuggestion = {
+  key: string
+  primary: string
+  secondary: string | null
+  selection: ZoneSelection
+}
+
 type Props = {
   value: string
   onChange: (value: string) => void
@@ -46,12 +71,43 @@ type Props = {
   type?: "housenumber" | "street" | "locality" | "municipality"
 }
 
-function extractArrondissement(postcode?: string): number | null {
+function extractArrondissement(postcode?: string | null): number | null {
   if (!postcode) return null
   const m = /^750(\d{2})$/.exec(postcode)
   if (!m) return null
   const n = parseInt(m[1], 10)
   return n >= 1 && n <= 20 ? n : null
+}
+
+function banToUnified(f: BanFeature, idx: number): UnifiedSuggestion {
+  const postcode = f.properties.postcode ?? null
+  const secondary =
+    f.properties.city && f.properties.postcode
+      ? `${f.properties.postcode} · ${f.properties.city}`
+      : null
+  return {
+    key: `ban-${f.properties.label}-${idx}`,
+    primary: f.properties.label,
+    secondary,
+    selection: {
+      label: f.properties.label,
+      postcode,
+      arrondissement: extractArrondissement(postcode),
+    },
+  }
+}
+
+function parisToUnified(): UnifiedSuggestion[] {
+  return PARIS_AUTOCOMPLETE.map((item, idx) => ({
+    key: `paris-${idx}`,
+    primary: item.label,
+    secondary: item.postcode ? `${item.postcode} · Paris` : null,
+    selection: {
+      label: item.label,
+      postcode: item.postcode,
+      arrondissement: item.arrondissement,
+    },
+  }))
 }
 
 export function ZoneCombobox({
@@ -66,67 +122,111 @@ export function ZoneCombobox({
   const listboxId = `${id}-listbox`
   const [open, setOpen] = useState(false)
   const [loading, setLoading] = useState(false)
-  const [suggestions, setSuggestions] = useState<BanFeature[]>([])
+  const [suggestions, setSuggestions] = useState<UnifiedSuggestion[]>([])
   const [activeIndex, setActiveIndex] = useState(-1)
+  const [rect, setRect] = useState<{
+    top: number
+    left: number
+    width: number
+  } | null>(null)
+  const [mounted, setMounted] = useState(false)
   const inputRef = useRef<HTMLInputElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
+  const listRef = useRef<HTMLUListElement>(null)
   const abortRef = useRef<AbortController | null>(null)
 
-  const fetchSuggestions = useCallback(async (q: string) => {
-    if (q.trim().length < 2) {
-      setSuggestions([])
-      return
-    }
-    abortRef.current?.abort()
-    const ctrl = new AbortController()
-    abortRef.current = ctrl
-    setLoading(true)
-    try {
-      const typeParam = type ? `&type=${type}` : ""
-      const url = `https://api-adresse.data.gouv.fr/search/?q=${encodeURIComponent(q)}&limit=5&autocomplete=1${typeParam}`
-      const res = await fetch(url, { signal: ctrl.signal })
-      if (!res.ok) throw new Error(`BAN ${res.status}`)
-      const data = (await res.json()) as { features: BanFeature[] }
-      setSuggestions(data.features ?? [])
-    } catch (err) {
-      if ((err as Error).name !== "AbortError") {
-        setSuggestions([])
-      }
-    } finally {
-      setLoading(false)
-    }
+  useEffect(() => {
+    setMounted(true)
   }, [])
 
-  // Debounce 250 ms — re-fetch si le `type` change aussi.
+  const fetchSuggestions = useCallback(
+    async (q: string) => {
+      const trimmed = q.trim()
+      if (trimmed.length < 2) {
+        setSuggestions([])
+        return
+      }
+      // Court-circuit Paris : liste locale ordonnée, pas d'appel BAN.
+      if (matchesParisQuery(trimmed)) {
+        abortRef.current?.abort()
+        setLoading(false)
+        setSuggestions(parisToUnified())
+        return
+      }
+      abortRef.current?.abort()
+      const ctrl = new AbortController()
+      abortRef.current = ctrl
+      setLoading(true)
+      try {
+        const typeParam = type ? `&type=${type}` : ""
+        const url = `https://api-adresse.data.gouv.fr/search/?q=${encodeURIComponent(trimmed)}&limit=5&autocomplete=1${typeParam}`
+        const res = await fetch(url, { signal: ctrl.signal })
+        if (!res.ok) throw new Error(`BAN ${res.status}`)
+        const data = (await res.json()) as { features: BanFeature[] }
+        setSuggestions((data.features ?? []).map(banToUnified))
+      } catch (err) {
+        if ((err as Error).name !== "AbortError") {
+          setSuggestions([])
+        }
+      } finally {
+        setLoading(false)
+      }
+    },
+    [type],
+  )
+
+  // Debounce 250 ms.
   useEffect(() => {
     const handle = window.setTimeout(() => {
       void fetchSuggestions(value)
     }, 250)
     return () => window.clearTimeout(handle)
-  }, [value, fetchSuggestions, type])
+  }, [value, fetchSuggestions])
 
-  // Click outside → close
+  // Click outside → close. Détecte aussi les clics sur le dropdown portalé
+  // via la liste ref.
   useEffect(() => {
     function onDocClick(e: MouseEvent) {
-      if (!containerRef.current) return
-      if (!containerRef.current.contains(e.target as Node)) {
-        setOpen(false)
-      }
+      const t = e.target as Node
+      if (containerRef.current?.contains(t)) return
+      if (listRef.current?.contains(t)) return
+      setOpen(false)
     }
     document.addEventListener("mousedown", onDocClick)
     return () => document.removeEventListener("mousedown", onDocClick)
   }, [])
 
-  function commitSelection(idx: number) {
-    const feat = suggestions[idx]
-    if (!feat) return
-    const sel: ZoneSelection = {
-      label: feat.properties.label,
-      postcode: feat.properties.postcode ?? null,
-      arrondissement: extractArrondissement(feat.properties.postcode),
+  // Position du dropdown : suit l'input via scroll + resize. position fixed,
+  // donc on lit getBoundingClientRect (coords viewport) sans ajouter scrollY.
+  useLayoutEffect(() => {
+    if (!open) return
+    function update() {
+      const el = containerRef.current
+      if (!el) return
+      const r = el.getBoundingClientRect()
+      setRect({ top: r.bottom + 8, left: r.left, width: r.width })
     }
-    onChange(sel.label)
-    onSelect(sel)
+    update()
+    window.addEventListener("scroll", update, true)
+    window.addEventListener("resize", update)
+    return () => {
+      window.removeEventListener("scroll", update, true)
+      window.removeEventListener("resize", update)
+    }
+  }, [open, suggestions.length])
+
+  // Scroll-into-view sur navigation clavier.
+  useEffect(() => {
+    if (!open || activeIndex < 0) return
+    const el = document.getElementById(`${id}-opt-${activeIndex}`)
+    el?.scrollIntoView({ block: "nearest" })
+  }, [activeIndex, open, id])
+
+  function commitSelection(idx: number) {
+    const sug = suggestions[idx]
+    if (!sug) return
+    onChange(sug.selection.label)
+    onSelect(sug.selection)
     setOpen(false)
     setActiveIndex(-1)
   }
@@ -149,6 +249,9 @@ export function ZoneCombobox({
       setActiveIndex(-1)
     }
   }
+
+  const showDropdown =
+    open && mounted && suggestions.length > 0 && rect !== null
 
   return (
     <div ref={containerRef} className="relative">
@@ -191,41 +294,51 @@ export function ZoneCombobox({
           />
         )}
       </div>
-      {open && suggestions.length > 0 && (
-        <ul
-          id={listboxId}
-          role="listbox"
-          className="absolute z-30 mt-2 w-full overflow-hidden rounded-2xl border border-fir-dark/10 bg-white shadow-[0_24px_60px_-24px_rgba(10,45,34,0.25)]"
-        >
-          {suggestions.map((f, i) => {
-            const active = i === activeIndex
-            return (
-              <li
-                key={`${f.properties.label}-${i}`}
-                id={`${id}-opt-${i}`}
-                role="option"
-                aria-selected={active}
-                onMouseDown={(e) => {
-                  e.preventDefault()
-                  commitSelection(i)
-                }}
-                onMouseEnter={() => setActiveIndex(i)}
-                className={cn(
-                  "cursor-pointer px-4 py-3 text-sm transition-colors",
-                  active ? "bg-cream text-fir-dark" : "text-ink/85 hover:bg-cream/60",
-                )}
-              >
-                <div className="font-medium">{f.properties.label}</div>
-                {f.properties.city && f.properties.postcode && (
-                  <div className="text-xs text-ink/55">
-                    {f.properties.postcode} · {f.properties.city}
-                  </div>
-                )}
-              </li>
-            )
-          })}
-        </ul>
-      )}
+      {showDropdown &&
+        createPortal(
+          <ul
+            ref={listRef}
+            id={listboxId}
+            role="listbox"
+            style={{
+              position: "fixed",
+              top: rect.top,
+              left: rect.left,
+              width: rect.width,
+              zIndex: 70,
+            }}
+            className="max-h-72 overflow-y-auto overflow-x-hidden rounded-2xl border border-fir-dark/10 bg-white shadow-[0_24px_60px_-24px_rgba(10,45,34,0.35)]"
+          >
+            {suggestions.map((s, i) => {
+              const active = i === activeIndex
+              return (
+                <li
+                  key={s.key}
+                  id={`${id}-opt-${i}`}
+                  role="option"
+                  aria-selected={active}
+                  onMouseDown={(e) => {
+                    e.preventDefault()
+                    commitSelection(i)
+                  }}
+                  onMouseEnter={() => setActiveIndex(i)}
+                  className={cn(
+                    "cursor-pointer px-4 py-3 text-sm transition-colors",
+                    active
+                      ? "bg-cream text-fir-dark"
+                      : "text-ink/85 hover:bg-cream/60",
+                  )}
+                >
+                  <div className="font-medium">{s.primary}</div>
+                  {s.secondary && (
+                    <div className="text-xs text-ink/55">{s.secondary}</div>
+                  )}
+                </li>
+              )
+            })}
+          </ul>,
+          document.body,
+        )}
     </div>
   )
 }
