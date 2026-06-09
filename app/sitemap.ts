@@ -3,6 +3,7 @@ import type { MetadataRoute } from "next"
 import { SITE } from "@/lib/site"
 import { CATEGORIES } from "@/lib/data/categories"
 import { properties } from "@/lib/data/properties"
+import { ARTICLES } from "@/lib/data/articles"
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = SITE.url
@@ -43,5 +44,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }))
 
-  return [...staticRoutes, ...categoryRoutes, ...propertyRoutes]
+  const articleRoutes = ARTICLES.map((a) => ({
+    url: `${base}/actualites/${a.slug}`,
+    lastModified: now,
+    changeFrequency: "yearly" as const,
+    priority: 0.5,
+  }))
+
+  return [
+    ...staticRoutes,
+    ...categoryRoutes,
+    ...propertyRoutes,
+    ...articleRoutes,
+  ]
 }
