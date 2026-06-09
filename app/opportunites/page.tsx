@@ -11,6 +11,7 @@ import { Badge } from "@/components/ui/badge"
 import { CtaPill } from "@/components/ui/cta-pill"
 import { OpportunitiesFilters } from "@/components/sections/opportunities-filters"
 import { parseFiltersFromSearchParams } from "@/lib/filters/opportunities"
+import { ScrollToResultsOnMount } from "./scroll-on-search"
 import {
   properties,
   STATUT_LABEL,
@@ -30,6 +31,31 @@ function formatPrice(v: number) {
 }
 
 type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>
+
+/**
+ * Clés de paramètres URL considérées comme "recherche utilisateur" — pour
+ * décider si on doit auto-scroller vers la section résultats à l'arrivée.
+ * Whitelist explicite pour ignorer d'éventuels params techniques.
+ */
+const SEARCH_PARAM_KEYS = [
+  "transaction",
+  "typologie",
+  "arrondissement",
+  "surfaceMin",
+  "loyerMax",
+  "q",
+  "tags",
+] as const
+
+function hasAnySearchParam(
+  sp: { [key: string]: string | string[] | undefined },
+): boolean {
+  return SEARCH_PARAM_KEYS.some((k) => {
+    const v = sp[k]
+    if (Array.isArray(v)) return v.some((x) => typeof x === "string" && x.length > 0)
+    return typeof v === "string" && v.length > 0
+  })
+}
 
 /**
  * Plafond monétaire applicable à un bien selon son statut.
@@ -87,6 +113,7 @@ export default async function OpportunitesPage({
   const sp = await searchParams
   const filters = parseFiltersFromSearchParams(sp)
   const filtered = applyFilters(properties, filters)
+  const shouldScrollToResults = hasAnySearchParam(sp)
 
   return (
     <>
@@ -106,7 +133,9 @@ export default async function OpportunitesPage({
         totalCount={properties.length}
       />
 
-      <section className="py-12 md:py-16">
+      <ScrollToResultsOnMount active={shouldScrollToResults} />
+
+      <section id="resultats" className="scroll-mt-24 py-12 md:py-16">
         <Container>
           <div className="mb-8">
             <Eyebrow className="text-gold-deep">Sélection en cours</Eyebrow>
