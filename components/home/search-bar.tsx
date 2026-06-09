@@ -24,13 +24,13 @@ type Tab = (typeof TABS)[number]["id"]
 
 /**
  * Sous-puces : conservent les 4 raffinements CHR/commerce d'origine
- * (Avec/Sans extraction, Façade d'angle, Tous commerces) + 3 typologies
- * additionnelles (Hôtellerie, Immeubles, Logistique). Cachées si tab=bureaux
- * (la typologie est déjà fixée par l'onglet).
+ * (Restaurant avec/sans extraction, Façade d'angle, Tous commerces) +
+ * 3 typologies additionnelles (Hôtellerie, Immeubles, Logistique).
+ * Cachées si tab=bureaux (la typologie est déjà fixée par l'onglet).
  */
 const TAGS = [
-  "Avec extraction",
-  "Sans extraction",
+  "Restaurant avec extraction",
+  "Restaurant sans extraction",
   "Façade d'angle",
   "Tous commerces",
   "Hôtellerie",
@@ -39,8 +39,8 @@ const TAGS = [
 ] as const
 
 const CHR_TAGS: string[] = [
-  "Avec extraction",
-  "Sans extraction",
+  "Restaurant avec extraction",
+  "Restaurant sans extraction",
   "Façade d'angle",
   "Tous commerces",
 ]
