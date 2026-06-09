@@ -112,7 +112,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-8 flex flex-col gap-3 border-t border-cream/15 pt-4 text-xs opacity-60 md:flex-row md:items-center md:justify-between">
+        <div className="mt-8 flex flex-col gap-3 border-t border-cream/15 pt-4 text-xs opacity-60 md:flex-row md:items-center">
           <p>© 2026 {SITE.name} · Tous droits réservés</p>
         </div>
         <p className="mt-3 text-[11px] opacity-40">
