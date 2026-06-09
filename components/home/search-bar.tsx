@@ -177,7 +177,7 @@ export function SearchBar() {
 
       {/* Sous-puces — masquées si tab=bureaux (typologie déjà fixée). */}
       {tab !== "bureaux" && (
-        <div className="mt-4 flex flex-wrap gap-2">
+        <div className="mt-4 flex flex-wrap justify-center gap-2">
           {TAGS.map((tag) => {
             const on = activeTags.includes(tag)
             return (
