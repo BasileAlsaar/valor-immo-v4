@@ -31,6 +31,17 @@ function formatPrice(v: number) {
 
 type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>
 
+/**
+ * Plafond monétaire applicable à un bien selon son statut.
+ * - location → loyerMensuel (€/mois HT HC)
+ * - vente / murs-libres → prix (€ total)
+ * Renvoie undefined si le bien n'a pas la valeur correspondante.
+ */
+function priceForCap(p: Property): number | undefined {
+  if (p.statut === "location") return p.loyerMensuel
+  return p.prix
+}
+
 function applyFilters(
   list: Property[],
   f: ReturnType<typeof parseFiltersFromSearchParams>,
@@ -53,6 +64,16 @@ function applyFilters(
     }
     if (f.arrondissement.length > 0) {
       if (!f.arrondissement.includes(p.arrondissement)) return false
+    }
+    // Surface plancher — AND strict, exclus si bien.surface < surfaceMin.
+    if (f.surfaceMin !== undefined && p.surface < f.surfaceMin) {
+      return false
+    }
+    // Plafond monétaire — AND strict, exclus si plafond fourni mais bien
+    // sans loyer/prix ou bien.price > loyerMax.
+    if (f.loyerMax !== undefined) {
+      const price = priceForCap(p)
+      if (price === undefined || price > f.loyerMax) return false
     }
     return true
   })
