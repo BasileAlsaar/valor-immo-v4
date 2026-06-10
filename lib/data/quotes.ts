@@ -24,4 +24,14 @@ export const quotes: Quote[] = [
     text: "Trouver un local avec extraction dans le Marais relevait du parcours du combattant. Trois emplacements hors-marché présentés en deux semaines.",
     attribution: "Restaurateur, Paris 4e",
   },
+  {
+    id: "q3",
+    text: "Cession discrète, valorisation juste, acquéreur sérieux. L'accompagnement sur le bail 3-6-9 a fait la différence.",
+    attribution: "Gérante d'une enseigne de prêt-à-porter, Paris 6e",
+  },
+  {
+    id: "q4",
+    text: "Un interlocuteur unique, des comptes clairs chaque trimestre, aucun impayé laissé sans suite.",
+    attribution: "Propriétaire d'un portefeuille mixte, Paris 16e",
+  },
 ]
