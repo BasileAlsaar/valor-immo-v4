@@ -32,15 +32,15 @@ export default function AgencePage() {
 
       <section className="bg-cream py-16 md:py-20">
         <Container>
-          <div className="grid gap-8 lg:grid-cols-[2fr_3fr] lg:gap-12">
+          <div className="grid gap-8 lg:grid-cols-[5fr_7fr] lg:gap-12">
             <div>
               <Eyebrow className="text-gold-deep">Pourquoi Valor Immo</Eyebrow>
-              <SectionTitle as="h3" size="lg" className="mt-4">
+              <SectionTitle as="h3" size="md" className="mt-4">
                 Un périmètre clair, sur Paris.
               </SectionTitle>
               <div aria-hidden className="my-5 h-px w-12 bg-gold" />
             </div>
-            <div className="space-y-6 text-lg leading-relaxed text-ink/85">
+            <div className="space-y-6 text-lg leading-relaxed text-ink/85 lg:pt-6">
               <p>
                 Valor Immo est une agence parisienne spécialisée sur
                 l'immobilier commercial et professionnel. Un périmètre clair :
