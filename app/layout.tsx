@@ -1,4 +1,4 @@
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import {
   Anton,
   Inter,
@@ -10,6 +10,7 @@ import "./globals.css"
 import { SiteHeader } from "@/components/site/site-header"
 import { SiteFooter } from "@/components/site/site-footer"
 import { JsonLdScript } from "@/components/seo/json-ld-script"
+import { RegisterPWA } from "@/components/pwa/register-pwa"
 import { organizationJsonLd, websiteJsonLd } from "@/lib/seo/json-ld"
 import { SITE } from "@/lib/site"
 
@@ -65,6 +66,18 @@ export const metadata: Metadata = {
       "Immobilier commercial et professionnel à Paris.",
   },
   icons: { icon: "/favicon.ico" },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Valor Immo",
+  },
+}
+
+// themeColor lu dans app/globals.css → --color-fir-dark #0F3D2E
+export const viewport: Viewport = {
+  themeColor: "#0F3D2E",
+  width: "device-width",
+  initialScale: 1,
 }
 
 export default function RootLayout({
@@ -83,6 +96,7 @@ export default function RootLayout({
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />
+        <RegisterPWA />
       </body>
     </html>
   )

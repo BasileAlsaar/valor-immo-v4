@@ -1,4 +1,14 @@
 import type { NextConfig } from "next"
+import withSerwistInit from "@serwist/next"
+
+const withSerwist = withSerwistInit({
+  swSrc: "app/sw.ts",
+  swDest: "public/sw.js",
+  register: false, // registration manuelle via components/pwa/register-pwa.tsx
+  reloadOnOnline: true,
+  // Désactivé en dev — laisse pnpm dev intact, SW actif uniquement en prod build
+  disable: process.env.NODE_ENV !== "production",
+})
 
 const nextConfig: NextConfig = {
   images: {
@@ -18,4 +28,4 @@ const nextConfig: NextConfig = {
   },
 }
 
-export default nextConfig
+export default withSerwist(nextConfig)

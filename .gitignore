@@ -44,6 +44,12 @@ yarn-error.log*
 # vercel
 .vercel
 
+# serwist — service worker généré au build (rebuilt à chaque next build)
+/public/sw.js
+/public/sw.js.map
+/public/swe-worker-*.js
+/public/swe-worker-*.js.map
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
