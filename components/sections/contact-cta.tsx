@@ -53,7 +53,7 @@ export function ContactCTA() {
             ease: easing.smooth,
             delay: 0.24,
           }}
-          className="font-accent mx-auto mt-5 max-w-xl text-lg italic leading-snug opacity-85 md:text-xl"
+          className="mx-auto mt-5 max-w-xl text-lg leading-snug opacity-85 md:text-xl"
         >
           Réponse sous 24h ouvrées, sans relais.
         </motion.p>

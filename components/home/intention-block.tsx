@@ -59,7 +59,7 @@ export function IntentionBlock() {
           <h2 className="font-display mt-4 text-[clamp(2rem,5vw,4.5rem)] uppercase leading-[0.95] tracking-tight text-fir-dark">
             Vous avez un projet&nbsp;?
           </h2>
-          <p className="font-accent mt-5 text-lg italic leading-snug text-fir-dark/80 md:text-xl">
+          <p className="mt-5 text-lg leading-snug text-fir-dark/80 md:text-xl">
             Dites-nous votre intention, on s&apos;occupe du reste.
           </p>
         </div>
