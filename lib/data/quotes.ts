@@ -16,12 +16,12 @@ export type Quote = {
 export const quotes: Quote[] = [
   {
     id: "q1",
-    text: "Recherche d'un emplacement Triangle d'or pendant plus de six mois, négociation conduite sans relais — c'est ce qui fait la différence à ce niveau de marché.",
-    attribution: "Directeur immobilier d'un groupe horloger international",
+    text: "Nous cherchions à arbitrer un immeuble de bureaux dans le 9e. Estimation, sourcing de l'acquéreur, closing en quatre mois — sans que j'aie à courir après quoi que ce soit.",
+    attribution: "Investisseur, family office parisien",
   },
   {
     id: "q2",
-    text: "Sur des dossiers de cession à plusieurs millions d'euros, la qualité du conseil amont vaut largement les honoraires. On a évité deux erreurs structurelles dès la phase de brief.",
-    attribution: "Investisseur, family office parisien",
+    text: "Trouver un local avec extraction dans le Marais relevait du parcours du combattant. Trois emplacements hors-marché présentés en deux semaines.",
+    attribution: "Restaurateur, Paris 4e",
   },
 ]
