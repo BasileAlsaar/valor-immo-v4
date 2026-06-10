@@ -1,6 +1,6 @@
 /**
  * Quotes preuve sociale — fictives, anonymisées par persona générique.
- * CONTENU FICTIF À REMPLACER AVANT MISE EN LIGNE PUBLIQUE.
+ * Contenu validé client — 10 juin 2026
  * Voir CONTENT_TODO.md section « PHASE 11 — Quotes preuve sociale fictives ».
  *
  * Pas de nom d'entreprise réelle. Attributions copiées littéralement
