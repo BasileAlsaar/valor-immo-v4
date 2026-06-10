@@ -30,7 +30,7 @@ export default function AgencePage() {
         backgroundImage="/images/categories/bureaux.jpg"
       />
 
-      <section className="bg-cream py-20 md:py-24">
+      <section className="bg-cream py-16 md:py-20">
         <Container>
           <div className="grid gap-8 lg:grid-cols-[2fr_3fr] lg:gap-12">
             <div>
@@ -38,7 +38,7 @@ export default function AgencePage() {
               <SectionTitle as="h3" size="lg" className="mt-4">
                 Un périmètre clair, sur Paris.
               </SectionTitle>
-              <div aria-hidden className="my-6 h-px w-12 bg-gold" />
+              <div aria-hidden className="my-5 h-px w-12 bg-gold" />
             </div>
             <div className="space-y-6 text-lg leading-relaxed text-ink/85">
               <p>
@@ -49,7 +49,7 @@ export default function AgencePage() {
               </p>
             </div>
           </div>
-          <div aria-hidden className="mx-auto mt-16 h-px w-16 bg-gold/40 md:mt-20" />
+          <div aria-hidden className="mx-auto mt-10 h-px w-16 bg-gold/40 md:mt-12" />
         </Container>
       </section>
 
