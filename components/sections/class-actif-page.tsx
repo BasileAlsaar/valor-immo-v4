@@ -6,6 +6,7 @@ import { PageHero } from "@/components/sections/page-hero"
 import { CallbackSection } from "@/components/sections/callback-section"
 import { Container } from "@/components/ui/container"
 import { Eyebrow } from "@/components/ui/eyebrow"
+import { SectionTitle } from "@/components/ui/section-title"
 import { Badge } from "@/components/ui/badge"
 import { RevealStagger, RevealItem } from "@/components/motion/reveal"
 import {
@@ -59,9 +60,9 @@ export function ClassActifPage({
           <div className="grid gap-12 lg:grid-cols-[1fr_2fr]">
             <div className="lg:sticky lg:top-[120px] lg:self-start">
               <Eyebrow className="text-gold-deep">Vocabulaire métier</Eyebrow>
-              <h3 className="font-accent mt-4 text-[clamp(2rem,3vw,2.75rem)] italic leading-[1.05] text-fir-dark">
+              <SectionTitle as="h3" size="md" className="mt-4">
                 Les indices qui structurent la lecture.
-              </h3>
+              </SectionTitle>
               <div aria-hidden className="my-6 h-px w-12 bg-gold" />
               <p className="max-w-[36ch] text-[15px] leading-relaxed text-fir-dark/70 md:text-base">
                 {vocabIntro}
