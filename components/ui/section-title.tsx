@@ -13,6 +13,10 @@ type Props = {
    */
   size?: Size
   className?: string
+  /** Forwardé pour focus management a11y (cf. Funnel.tsx step heading). */
+  ref?: React.Ref<HTMLHeadingElement>
+  tabIndex?: number
+  id?: string
 }
 
 const SIZE_CLASS: Record<Size, string> = {
@@ -30,6 +34,18 @@ export function SectionTitle({
   as: Tag = "h2",
   size = "lg",
   className,
+  ref,
+  tabIndex,
+  id,
 }: Props) {
-  return <Tag className={cn(BASE_CLASS, SIZE_CLASS[size], className)}>{children}</Tag>
+  return (
+    <Tag
+      ref={ref}
+      tabIndex={tabIndex}
+      id={id}
+      className={cn(BASE_CLASS, SIZE_CLASS[size], className)}
+    >
+      {children}
+    </Tag>
+  )
 }

@@ -9,6 +9,7 @@ import type { FunnelConfig, FunnelField, FunnelStep } from "@/lib/data/funnels"
 import { slideStep, easing } from "@/lib/motion"
 import { SITE } from "@/lib/site"
 import { cn } from "@/lib/utils"
+import { SectionTitle } from "@/components/ui/section-title"
 
 /* -------------------------------------------------------------------------- */
 /*                                Validation                                  */
@@ -170,13 +171,15 @@ export function Funnel({ config }: { config: FunnelConfig }) {
             animate="center"
             exit={reduce ? undefined : "exit"}
           >
-            <h2
+            <SectionTitle
+              as="h2"
+              size="md"
               ref={headingRef}
               tabIndex={-1}
-              className="font-accent text-[clamp(1.5rem,3vw,2.25rem)] italic leading-[1.1] text-fir-dark focus:outline-none"
+              className="focus:outline-none"
             >
               {step.title}
-            </h2>
+            </SectionTitle>
             {step.subtitle && (
               <p className="mt-3 text-sm leading-relaxed text-ink/65 md:text-base">
                 {step.subtitle}
@@ -641,9 +644,9 @@ function FunnelSuccess({ message }: { message: string }) {
       <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-gold/15 text-gold-deep">
         <Check className="h-7 w-7" strokeWidth={2.4} />
       </div>
-      <h2 className="font-accent mt-6 text-[clamp(1.75rem,3vw,2.5rem)] italic leading-[1.1] text-fir-dark">
+      <SectionTitle as="h2" size="md" className="mt-6">
         Demande reçue.
-      </h2>
+      </SectionTitle>
       <p className="mx-auto mt-4 max-w-md text-base leading-relaxed text-ink/75">
         {message}
       </p>

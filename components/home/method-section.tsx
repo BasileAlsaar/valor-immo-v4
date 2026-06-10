@@ -3,6 +3,7 @@ import { Phone } from "lucide-react"
 
 import { Container } from "@/components/ui/container"
 import { Eyebrow } from "@/components/ui/eyebrow"
+import { SectionTitle } from "@/components/ui/section-title"
 import { CtaPill } from "@/components/ui/cta-pill"
 import { RevealStagger, RevealItem } from "@/components/motion/reveal"
 import { SITE } from "@/lib/site"
@@ -31,9 +32,9 @@ export function MethodSection({ steps }: { steps?: ReadonlyArray<Step> } = {}) {
         <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
           <div className="max-w-3xl">
             <Eyebrow className="text-gold">Méthode</Eyebrow>
-            <h2 className="font-accent mt-3 text-[clamp(1.5rem,4vw,3.75rem)] italic font-medium leading-[1.1] text-gold">
+            <SectionTitle as="h2" size="md" className="mt-3 text-gold">
               Du brief à la signature, sans relais.
-            </h2>
+            </SectionTitle>
           </div>
           <a
             href={`tel:${SITE.telephoneTel}`}

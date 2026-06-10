@@ -5,6 +5,7 @@ import { ArrowLeft } from "lucide-react"
 
 import { PageHero } from "@/components/sections/page-hero"
 import { Container } from "@/components/ui/container"
+import { SectionTitle } from "@/components/ui/section-title"
 import { CallbackSection } from "@/components/sections/callback-section"
 import { ARTICLES, type Article } from "@/lib/data/articles"
 
@@ -74,9 +75,9 @@ function ArticleBody({ article }: { article: Article }) {
 
       {article.sections.map((sec) => (
         <section key={sec.titre} className="mt-12">
-          <h2 className="font-accent text-2xl font-semibold italic leading-snug text-fir-dark md:text-3xl">
+          <SectionTitle as="h2" size="md">
             {sec.titre}
-          </h2>
+          </SectionTitle>
           <div aria-hidden className="mt-3 mb-6 h-px w-12 bg-gold/60" />
           {sec.paragraphes.map((p, i) => (
             <p key={i}>{p}</p>
