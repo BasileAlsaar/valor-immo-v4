@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     description:
       "Immobilier commercial et professionnel à Paris.",
   },
-  icons: { icon: "/favicon.ico" },
+  icons: { icon: "/favicon.ico", apple: "/apple-icon.png" },
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
