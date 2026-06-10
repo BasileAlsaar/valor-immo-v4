@@ -44,6 +44,9 @@ const RULE_BASE =
   "block h-px w-10 bg-gold/40 transition-[width,background-color] duration-500 ease-out-expo"
 const RULE_HOVER_INTERACTIVE = "group-hover:w-16 group-hover:bg-gold"
 
+// Cormorant volontaire — pattern signature pages services (cartes vert/ivoire).
+// NE PAS migrer vers SectionTitle ni supprimer le token --font-accent.
+// Décision DA 10/06/2026.
 const TITLE_CLASS = cn(
   "font-accent font-bold leading-[1.1] tracking-[0.06em] text-cream",
   "[font-variant-caps:all-small-caps]",
