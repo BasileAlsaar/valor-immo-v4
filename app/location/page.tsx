@@ -5,6 +5,7 @@ import { OpportunitiesPreview } from "@/components/home/opportunities-preview"
 import { Container } from "@/components/ui/container"
 import { Eyebrow } from "@/components/ui/eyebrow"
 import { SectionCard } from "@/components/ui/section-card"
+import { SectionTitle } from "@/components/ui/section-title"
 import { RevealStagger, RevealItem } from "@/components/motion/reveal"
 
 export const metadata: Metadata = {
@@ -55,9 +56,9 @@ export default function LocationPage() {
           <div className="grid gap-12 lg:grid-cols-[2fr_3fr]">
             <div className="lg:sticky lg:top-[120px] lg:self-start">
               <Eyebrow className="text-gold-deep">Cibles</Eyebrow>
-              <h3 className="font-accent mt-4 text-[clamp(2rem,3vw,2.75rem)] italic leading-[1.05] text-fir-dark">
+              <SectionTitle as="h3" size="md" className="mt-4">
                 Ce que nous vous aidons à trouver.
-              </h3>
+              </SectionTitle>
               <div aria-hidden className="my-6 h-px w-12 bg-gold" />
               <p className="max-w-[36ch] text-[15px] leading-relaxed text-fir-dark/70 md:text-base">
                 Vous cherchez un emplacement. Nous le cadrons avec vous, puis
@@ -81,9 +82,9 @@ export default function LocationPage() {
           <div className="grid gap-12 lg:grid-cols-[2fr_3fr] lg:items-start">
             <div>
               <Eyebrow className="text-gold-deep">Accompagnement</Eyebrow>
-              <h3 className="font-accent mt-4 text-[clamp(2rem,3vw,2.75rem)] italic leading-[1.05] text-fir-dark">
+              <SectionTitle as="h3" size="md" className="mt-4">
                 Du brief à la prise de possession.
-              </h3>
+              </SectionTitle>
               <div aria-hidden className="my-6 h-px w-12 bg-gold" />
             </div>
             <RevealStagger className="grid gap-8 sm:grid-cols-2 sm:gap-x-10">

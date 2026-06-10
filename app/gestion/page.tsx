@@ -9,6 +9,7 @@ import { Container } from "@/components/ui/container"
 import { Eyebrow } from "@/components/ui/eyebrow"
 import { CtaPill } from "@/components/ui/cta-pill"
 import { SectionCard } from "@/components/ui/section-card"
+import { SectionTitle } from "@/components/ui/section-title"
 import { RevealStagger, RevealItem } from "@/components/motion/reveal"
 import { SITE } from "@/lib/site"
 
@@ -66,7 +67,7 @@ export default function GestionPage() {
         title={
           <>
             Votre patrimoine commercial
-            <span className="mt-3 block font-accent text-[0.55em] italic font-medium normal-case tracking-normal text-gold">
+            <span className="mt-3 block text-[0.55em] font-medium normal-case tracking-normal text-gold">
               confié à des interlocuteurs confirmés.
             </span>
           </>
@@ -94,9 +95,9 @@ export default function GestionPage() {
           <div className="grid gap-12 lg:grid-cols-[2fr_3fr]">
             <div className="lg:sticky lg:top-[120px] lg:self-start">
               <Eyebrow className="text-gold-deep">Périmètre</Eyebrow>
-              <h3 className="font-accent mt-4 text-[clamp(2rem,3vw,2.75rem)] italic leading-[1.05] text-fir-dark">
+              <SectionTitle as="h3" size="md" className="mt-4">
                 La gestion n'est pas une boîte noire.
-              </h3>
+              </SectionTitle>
               <div aria-hidden className="my-6 h-px w-12 bg-gold" />
               <p className="max-w-[36ch] text-[15px] leading-relaxed text-fir-dark/70 md:text-base">
                 Voici précisément ce que vous déléguez.
@@ -126,9 +127,9 @@ export default function GestionPage() {
           <div className="grid gap-12 lg:grid-cols-[2fr_3fr] lg:items-end">
             <div>
               <Eyebrow className="text-gold-deep">Tarification</Eyebrow>
-              <h3 className="font-accent mt-4 text-[clamp(2rem,3vw,2.75rem)] italic leading-[1.05] text-fir-dark">
+              <SectionTitle as="h3" size="md" className="mt-4">
                 Honoraires de gestion alignés sur la performance.
-              </h3>
+              </SectionTitle>
               <div aria-hidden className="my-6 h-px w-12 bg-gold" />
             </div>
             <div>
