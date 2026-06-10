@@ -1,10 +1,8 @@
 /**
- * Quotes preuve sociale — fictives, anonymisées par persona générique.
+ * Quotes preuve sociale — anonymisées par persona générique.
  * Contenu validé client — 10 juin 2026
- * Voir CONTENT_TODO.md section « PHASE 11 — Quotes preuve sociale fictives ».
  *
- * Pas de nom d'entreprise réelle. Attributions copiées littéralement
- * depuis le brief Phase 11.
+ * Pas de nom d'entreprise réelle.
  */
 
 export type Quote = {
