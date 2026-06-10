@@ -4,6 +4,7 @@ import { PageHero } from "@/components/sections/page-hero"
 import { Container } from "@/components/ui/container"
 import { Eyebrow } from "@/components/ui/eyebrow"
 import { HoursBlock } from "@/components/ui/hours-block"
+import { SectionTitle } from "@/components/ui/section-title"
 import { CallbackSection } from "@/components/sections/callback-section"
 import { MethodSection } from "@/components/home/method-section"
 import { RevealStagger, RevealItem } from "@/components/motion/reveal"
@@ -34,9 +35,9 @@ export default function AgencePage() {
           <div className="grid gap-8 lg:grid-cols-[2fr_3fr] lg:gap-12">
             <div>
               <Eyebrow className="text-gold-deep">Pourquoi Valor Immo</Eyebrow>
-              <h3 className="font-accent mt-4 text-[clamp(2rem,3vw,2.75rem)] italic leading-[1.05] text-fir-dark">
+              <SectionTitle as="h3" size="lg" className="mt-4">
                 Un périmètre clair, sur Paris.
-              </h3>
+              </SectionTitle>
               <div aria-hidden className="my-6 h-px w-12 bg-gold" />
             </div>
             <div className="space-y-6 text-lg leading-relaxed text-ink/85">
@@ -58,9 +59,9 @@ export default function AgencePage() {
             <RevealItem>
               <article className="h-full rounded-2xl border border-fir-dark/10 bg-cream p-8 md:p-10">
                 <Eyebrow className="text-gold-deep">Spécialisation</Eyebrow>
-                <h3 className="font-accent mt-4 text-2xl italic leading-[1.1] text-fir-dark md:text-3xl">
+                <SectionTitle as="h3" size="md" className="mt-4">
                   Une spécialisation, pas un catalogue.
-                </h3>
+                </SectionTitle>
                 <div aria-hidden className="my-5 h-px w-10 bg-gold" />
                 <p className="text-base leading-relaxed text-ink/80">
                   Nous ne faisons pas de résidentiel. Cette concentration est un
@@ -73,9 +74,9 @@ export default function AgencePage() {
             <RevealItem>
               <article className="h-full rounded-2xl border border-fir-dark/10 bg-cream p-8 md:p-10">
                 <Eyebrow className="text-gold-deep">Approche</Eyebrow>
-                <h3 className="font-accent mt-4 text-2xl italic leading-[1.1] text-fir-dark md:text-3xl">
+                <SectionTitle as="h3" size="md" className="mt-4">
                   Notre approche.
-                </h3>
+                </SectionTitle>
                 <div aria-hidden className="my-5 h-px w-10 bg-gold" />
                 <p className="text-base leading-relaxed text-ink/80">
                   Un brief précis, des biens en cible, une négociation conduite
@@ -87,9 +88,9 @@ export default function AgencePage() {
             <RevealItem>
               <article className="h-full rounded-2xl border border-fir-dark/10 bg-cream p-8 md:p-10">
                 <Eyebrow className="text-gold-deep">Réactivité</Eyebrow>
-                <h3 className="font-accent mt-4 text-2xl italic leading-[1.1] text-fir-dark md:text-3xl">
+                <SectionTitle as="h3" size="md" className="mt-4">
                   Réactivité.
-                </h3>
+                </SectionTitle>
                 <div aria-hidden className="my-5 h-px w-10 bg-gold" />
                 <p className="text-base leading-relaxed text-ink/80">
                   Brief sous 24h ouvrées, première visite sous 48h sur les biens
@@ -101,9 +102,9 @@ export default function AgencePage() {
             <RevealItem>
               <article className="h-full rounded-2xl border border-fir-dark/10 bg-cream p-8 md:p-10">
                 <Eyebrow className="text-gold-deep">Proximité</Eyebrow>
-                <h3 className="font-accent mt-4 text-2xl italic leading-[1.1] text-fir-dark md:text-3xl">
+                <SectionTitle as="h3" size="md" className="mt-4">
                   Proximité.
-                </h3>
+                </SectionTitle>
                 <div aria-hidden className="my-5 h-px w-10 bg-gold" />
                 <p className="text-base leading-relaxed text-ink/80">
                   Nous assumons notre format : une agence jeune, resserrée,
