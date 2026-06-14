@@ -11,12 +11,12 @@ import { ContactCTA } from "@/components/sections/contact-cta"
  * Home — V4.
  *
  * 1. Hero (vidéo Paris + SearchBar onglets + 3 champs + sous-puces)
- * 2. IntentionBlock (3 cartes : Louer / Acheter / Vendre → funnels)
- * 3. QuotesCarousel (6 quotes — fond fir-dark)
- * 4. CategoriesGrid (6 tuiles classes d'actifs)
- * 5. MethodSection (24h/48h/1)
- * 6. ArgusSection (carte + tableau valeurs locatives)
- * 7. OpportunitiesPreview
+ * 2. OpportunitiesPreview (carousel marquee — biens à la une)
+ * 3. IntentionBlock (3 cartes : Louer / Acheter / Vendre → funnels)
+ * 4. QuotesCarousel (6 quotes — fond fir-dark)
+ * 5. CategoriesGrid (6 tuiles classes d'actifs)
+ * 6. MethodSection (24h/48h/1)
+ * 7. ArgusSection (carte + tableau valeurs locatives)
  * 8. ContactCTA
  *    Footer délivré par layout.tsx via <SiteFooter />.
  */
@@ -24,12 +24,12 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <OpportunitiesPreview />
       <IntentionBlock />
       <QuotesCarousel />
       <CategoriesGrid />
       <MethodSection />
       <ArgusSection />
-      <OpportunitiesPreview />
       <ContactCTA />
     </>
   )
