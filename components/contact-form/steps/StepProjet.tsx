@@ -114,8 +114,8 @@ export function StepProjet() {
         )}
       </fieldset>
 
-      {/* Budget — conditionnel selon transaction (pas affiché pour gestion) */}
-      {transaction && transaction !== "gestion" && (
+      {/* Budget — affiché dès qu'une transaction est sélectionnée */}
+      {transaction && (
         <fieldset>
           <legend className="eyebrow text-gold-deep">Budget</legend>
           {(transaction === "location" || transaction === "les-deux") && (
