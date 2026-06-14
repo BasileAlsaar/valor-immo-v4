@@ -6,6 +6,7 @@ import { Container } from "@/components/ui/container"
 import { Eyebrow } from "@/components/ui/eyebrow"
 import { Badge } from "@/components/ui/badge"
 import { RevealStagger, RevealItem } from "@/components/motion/reveal"
+import { PropertyCarousel } from "@/components/ui/property-carousel"
 import { properties, STATUT_LABEL, TYPE_LABEL } from "@/lib/data/properties"
 
 const SELECTION = ["MZ1-2026", "MZ2-2026", "MZ3-2026", "MZ5-2026"]
@@ -43,52 +44,58 @@ export function OpportunitiesPreview() {
           </Link>
         </div>
 
-        <RevealStagger className="mt-16 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-          {featured.map((p) => (
-            <RevealItem key={p.ref}>
-              <Link
-                href={`/opportunites/${p.slug}`}
-                className="group flex flex-col h-full overflow-hidden rounded-2xl bg-cream transition hover:-translate-y-1 hover:shadow-[0_24px_60px_-20px_rgba(15,61,46,0.25)]"
-              >
-                <div className="relative aspect-[4/3] overflow-hidden bg-fir-dark">
-                  <Image
-                    src={`/images/properties/${p.slug}.jpg`}
-                    alt=""
-                    fill
-                    sizes="(min-width: 1280px) 25vw, (min-width: 768px) 50vw, 100vw"
-                    className="object-cover transition duration-700 ease-out-expo group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-fir-dark/40 to-transparent" />
-                  <Badge
-                    variant="status"
-                    tone={p.statut === "vente" ? "gold" : p.statut === "murs-libres" ? "green" : "neutral"}
-                    className="absolute left-4 top-4"
-                  >
-                    {STATUT_LABEL[p.statut]}
-                  </Badge>
-                  <Badge variant="ref" tone="dark" className="absolute right-4 top-4">
-                    {p.ref}
-                  </Badge>
-                </div>
-                <div className="p-6 flex flex-1 flex-col">
-                  <p className="eyebrow text-gold-deep">{TYPE_LABEL[p.type]}</p>
-                  <h3 className="mt-3 text-lg font-medium leading-tight text-fir-dark">
-                    {p.title}
-                  </h3>
-                  <p className="mt-2 text-sm text-ink/60">
-                    {p.quartier} · {p.surface} m²
-                  </p>
-                  <p className="mt-auto pt-5 font-display text-3xl uppercase tracking-tight text-fir-dark">
-                    {p.loyerMensuel
-                      ? `${formatPrice(p.loyerMensuel)} €/mois`
-                      : p.prix
-                        ? `${formatPrice(p.prix)} €`
-                        : "Sur demande"}
-                  </p>
-                </div>
-              </Link>
-            </RevealItem>
-          ))}
+        <RevealStagger className="mt-16">
+          <RevealItem>
+            <PropertyCarousel
+              ariaLabel="Sélection d'opportunités à la une"
+              itemClassName="w-[280px] md:w-[320px]"
+            >
+              {featured.map((p) => (
+                <Link
+                  key={p.ref}
+                  href={`/opportunites/${p.slug}`}
+                  className="group flex flex-col h-full overflow-hidden rounded-2xl bg-cream transition hover:-translate-y-1 hover:shadow-[0_24px_60px_-20px_rgba(15,61,46,0.25)]"
+                >
+                  <div className="relative aspect-[4/3] overflow-hidden bg-fir-dark">
+                    <Image
+                      src={`/images/properties/${p.slug}.jpg`}
+                      alt=""
+                      fill
+                      sizes="(min-width: 768px) 320px, 280px"
+                      className="object-cover transition duration-700 ease-out-expo group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-fir-dark/40 to-transparent" />
+                    <Badge
+                      variant="status"
+                      tone={p.statut === "vente" ? "gold" : p.statut === "murs-libres" ? "green" : "neutral"}
+                      className="absolute left-4 top-4"
+                    >
+                      {STATUT_LABEL[p.statut]}
+                    </Badge>
+                    <Badge variant="ref" tone="dark" className="absolute right-4 top-4">
+                      {p.ref}
+                    </Badge>
+                  </div>
+                  <div className="p-6 flex flex-1 flex-col">
+                    <p className="eyebrow text-gold-deep">{TYPE_LABEL[p.type]}</p>
+                    <h3 className="mt-3 text-lg font-medium leading-tight text-fir-dark">
+                      {p.title}
+                    </h3>
+                    <p className="mt-2 text-sm text-ink/60">
+                      {p.quartier} · {p.surface} m²
+                    </p>
+                    <p className="mt-auto pt-5 font-display text-3xl uppercase tracking-tight text-fir-dark">
+                      {p.loyerMensuel
+                        ? `${formatPrice(p.loyerMensuel)} €/mois`
+                        : p.prix
+                          ? `${formatPrice(p.prix)} €`
+                          : "Sur demande"}
+                    </p>
+                  </div>
+                </Link>
+              ))}
+            </PropertyCarousel>
+          </RevealItem>
         </RevealStagger>
       </Container>
     </section>
