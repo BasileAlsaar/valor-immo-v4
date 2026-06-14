@@ -48,7 +48,7 @@ export function OpportunitiesPreview() {
             <RevealItem key={p.ref}>
               <Link
                 href={`/opportunites/${p.slug}`}
-                className="group block h-full overflow-hidden rounded-2xl bg-cream transition hover:-translate-y-1 hover:shadow-[0_24px_60px_-20px_rgba(15,61,46,0.25)]"
+                className="group flex flex-col h-full overflow-hidden rounded-2xl bg-cream transition hover:-translate-y-1 hover:shadow-[0_24px_60px_-20px_rgba(15,61,46,0.25)]"
               >
                 <div className="relative aspect-[4/3] overflow-hidden bg-fir-dark">
                   <Image
@@ -70,7 +70,7 @@ export function OpportunitiesPreview() {
                     {p.ref}
                   </Badge>
                 </div>
-                <div className="p-6">
+                <div className="p-6 flex flex-1 flex-col">
                   <p className="eyebrow text-gold-deep">{TYPE_LABEL[p.type]}</p>
                   <h3 className="mt-3 text-lg font-medium leading-tight text-fir-dark">
                     {p.title}
@@ -78,7 +78,7 @@ export function OpportunitiesPreview() {
                   <p className="mt-2 text-sm text-ink/60">
                     {p.quartier} · {p.surface} m²
                   </p>
-                  <p className="mt-5 font-display text-3xl uppercase tracking-tight text-fir-dark">
+                  <p className="mt-auto pt-5 font-display text-3xl uppercase tracking-tight text-fir-dark">
                     {p.loyerMensuel
                       ? `${formatPrice(p.loyerMensuel)} €/mois`
                       : p.prix
