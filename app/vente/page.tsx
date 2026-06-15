@@ -56,6 +56,8 @@ export default function VentePage() {
         backgroundImage="/images/categories/immeubles.jpg"
       />
 
+      <OpportunitiesPreview />
+
       <section className="bg-cream py-24 md:py-32">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[2fr_3fr]">
@@ -88,7 +90,6 @@ export default function VentePage() {
         </Container>
       </section>
 
-      <OpportunitiesPreview />
       <CallbackSection />
     </>
   )

@@ -51,6 +51,8 @@ export default function LocationPage() {
         backgroundImage="/images/categories/locaux-commerciaux.jpg"
       />
 
+      <OpportunitiesPreview />
+
       <section className="bg-cream py-24 md:py-32">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[2fr_3fr]">
@@ -130,7 +132,6 @@ export default function LocationPage() {
         </Container>
       </section>
 
-      <OpportunitiesPreview />
       <CallbackSection />
     </>
   )
