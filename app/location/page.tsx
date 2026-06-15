@@ -4,7 +4,7 @@ import { CallbackSection } from "@/components/sections/callback-section"
 import { OpportunitiesPreview } from "@/components/home/opportunities-preview"
 import { Container } from "@/components/ui/container"
 import { Eyebrow } from "@/components/ui/eyebrow"
-import { SectionCard } from "@/components/ui/section-card"
+import { SectionIndex } from "@/components/ui/section-index"
 import { SectionTitle } from "@/components/ui/section-title"
 import { RevealStagger, RevealItem } from "@/components/motion/reveal"
 
@@ -55,8 +55,8 @@ export default function LocationPage() {
 
       <section className="bg-cream py-24 md:py-32">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-[2fr_3fr]">
-            <div className="lg:sticky lg:top-[120px] lg:self-start">
+          <div className="grid gap-12 lg:grid-cols-[2fr_3fr] lg:items-start">
+            <div>
               <Eyebrow className="text-gold-deep">Cibles</Eyebrow>
               <SectionTitle as="h3" size="md" className="mt-4">
                 Ce que nous vous aidons à trouver.
@@ -68,13 +68,7 @@ export default function LocationPage() {
                 hors sujet.
               </p>
             </div>
-            <RevealStagger className="grid gap-6 md:grid-cols-2">
-              {CIBLES.map((c) => (
-                <RevealItem key={c.titre}>
-                  <SectionCard title={c.titre} description={c.text} />
-                </RevealItem>
-              ))}
-            </RevealStagger>
+            <SectionIndex items={CIBLES} />
           </div>
         </Container>
       </section>
