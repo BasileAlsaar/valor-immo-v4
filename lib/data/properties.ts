@@ -1,5 +1,5 @@
 /**
- * Mock opportunités — 8 biens fictifs (figés Phase 4) pour le carrousel home,
+ * Mock opportunités — 6 biens fictifs (figés Phase 4) pour le carrousel home,
  * les sous-pages classes-d-actifs et la page /opportunites (catalogue).
  *
  * Phase 7 : ajout du champ `categories: PropertyCategory[]` (tags multi-valeurs)
@@ -39,6 +39,8 @@ export type Property = {
   categories: PropertyCategory[]
   title: string
   quartier: string
+  ville: string
+  codePostal: string
   arrondissement: number
   /** Coordonnées approximatives [lng, lat] pour la carte catalogue */
   center: [number, number]
@@ -90,6 +92,8 @@ export const properties: Property[] = [
     categories: ["locaux-commerciaux"],
     title: "Local commercial — Châtelet · Les Halles",
     quartier: "Châtelet · Les Halles",
+    ville: "Paris",
+    codePostal: "75001",
     arrondissement: 1,
     center: [2.3470, 48.8606],
     surface: 173,
@@ -119,6 +123,8 @@ export const properties: Property[] = [
     categories: ["bureaux"],
     title: "Plateau de bureaux — Monceau",
     quartier: "Monceau",
+    ville: "Paris",
+    codePostal: "75008",
     arrondissement: 8,
     center: [2.3081, 48.8804],
     surface: 340,
@@ -146,6 +152,8 @@ export const properties: Property[] = [
     categories: ["immeubles"],
     title: "Immeuble mixte — Grands Boulevards",
     quartier: "Grands Boulevards",
+    ville: "Paris",
+    codePostal: "75009",
     arrondissement: 9,
     center: [2.3464, 48.8716],
     surface: 840,
@@ -171,6 +179,8 @@ export const properties: Property[] = [
     categories: ["locaux-commerciaux"],
     title: "Boutique de luxe — Passy",
     quartier: "Passy",
+    ville: "Paris",
+    codePostal: "75016",
     arrondissement: 16,
     center: [2.2769, 48.8579],
     surface: 86,
@@ -197,6 +207,8 @@ export const properties: Property[] = [
     categories: ["hotellerie"],
     title: "Hôtel 3* murs libres — Le Marais",
     quartier: "Le Marais",
+    ville: "Paris",
+    codePostal: "75003",
     arrondissement: 3,
     center: [2.3620, 48.8625],
     surface: 420,
@@ -221,6 +233,8 @@ export const properties: Property[] = [
     categories: ["entrepots-logistique"],
     title: "Entrepôt logistique urbaine — Pajol",
     quartier: "Pajol",
+    ville: "Paris",
+    codePostal: "75018",
     arrondissement: 18,
     center: [2.3582, 48.8898],
     surface: 680,
