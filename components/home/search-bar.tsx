@@ -77,6 +77,8 @@ export function SearchBar() {
   const [tab, setTab] = useState<Tab>("location-pure")
   const [ville, setVille] = useState("")
   const [arrondissement, setArrondissement] = useState<number | null>(null)
+  const [codePostal, setCodePostal] = useState<string | null>(null)
+  const [departement, setDepartement] = useState<string | null>(null)
   const [surface, setSurface] = useState("")
   const [loyerMax, setLoyerMax] = useState("")
   const [activeTags, setActiveTags] = useState<string[]>([])
@@ -89,12 +91,16 @@ export function SearchBar() {
 
   function onZoneSelect(sel: ZoneSelection) {
     setArrondissement(sel.arrondissement)
+    setCodePostal(sel.codePostal)
+    setDepartement(sel.departement)
   }
 
   function onVilleChange(v: string) {
     setVille(v)
-    // Saisie manuelle → on invalide la résolution précédente.
+    // Saisie manuelle → on invalide toutes les résolutions structurées.
     if (arrondissement !== null) setArrondissement(null)
+    if (codePostal !== null) setCodePostal(null)
+    if (departement !== null) setDepartement(null)
   }
 
   function onSubmit(e: React.FormEvent) {
@@ -109,8 +115,17 @@ export function SearchBar() {
     const typo = chipTypo ?? resolveTabTypologie(tab)
     if (typo) params.set("typologie", typo)
 
-    if (arrondissement) params.set("arrondissement", String(arrondissement))
-    if (ville) params.set("q", ville)
+    // Clés géo : précédence arrondissement > codePostal > departement.
+    // q n'est posée que si aucune clé structurée n'a été résolue.
+    if (arrondissement) {
+      params.set("arrondissement", String(arrondissement))
+    } else if (codePostal) {
+      params.set("codePostal", codePostal)
+    } else if (departement) {
+      params.set("departement", departement)
+    } else if (ville) {
+      params.set("q", ville)
+    }
     if (surface) params.set("surfaceMin", surface)
     if (loyerMax) params.set("loyerMax", loyerMax)
     if (activeTags.length) params.set("tags", activeTags.join(","))

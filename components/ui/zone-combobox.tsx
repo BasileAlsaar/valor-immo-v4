@@ -15,6 +15,7 @@ import {
   PARIS_AUTOCOMPLETE,
   matchesParisQuery,
 } from "@/lib/data/paris-arrondissements"
+import { getDepartement } from "@/lib/data/departements"
 import { cn } from "@/lib/utils"
 
 /**
@@ -48,6 +49,10 @@ export type ZoneSelection = {
   postcode: string | null
   /** Arrondissement parisien 1..20 si applicable, sinon null. */
   arrondissement: number | null
+  /** Code postal à pousser dans l'URL (CP non-Paris uniquement). */
+  codePostal: string | null
+  /** Code département 2 ou 3 chars (Corse 2A/2B exclu côté détection num). */
+  departement: string | null
 }
 
 type UnifiedSuggestion = {
@@ -85,6 +90,7 @@ function banToUnified(f: BanFeature, idx: number): UnifiedSuggestion {
     f.properties.city && f.properties.postcode
       ? `${f.properties.postcode} · ${f.properties.city}`
       : null
+  const arrondissement = extractArrondissement(postcode)
   return {
     key: `ban-${f.properties.label}-${idx}`,
     primary: f.properties.label,
@@ -92,7 +98,11 @@ function banToUnified(f: BanFeature, idx: number): UnifiedSuggestion {
     selection: {
       label: f.properties.label,
       postcode,
-      arrondissement: extractArrondissement(postcode),
+      arrondissement,
+      // Si la BAN a renvoyé un arrondissement parisien, on filtre par arr
+      // (cohérent avec PARIS_AUTOCOMPLETE) — sinon on pousse le codePostal.
+      codePostal: arrondissement !== null ? null : postcode,
+      departement: null,
     },
   }
 }
@@ -106,8 +116,25 @@ function parisToUnified(): UnifiedSuggestion[] {
       label: item.label,
       postcode: item.postcode,
       arrondissement: item.arrondissement,
+      codePostal: null,
+      departement: null,
     },
   }))
+}
+
+function departementToUnified(code: string, nom: string): UnifiedSuggestion {
+  return {
+    key: `dep-${code}`,
+    primary: `${nom} (${code})`,
+    secondary: "Département",
+    selection: {
+      label: `${nom} (${code})`,
+      postcode: null,
+      arrondissement: null,
+      codePostal: null,
+      departement: code,
+    },
+  }
 }
 
 export function ZoneCombobox({
@@ -152,6 +179,43 @@ export function ZoneCombobox({
         setLoading(false)
         setSuggestions(parisToUnified())
         return
+      }
+      // CP 5 chiffres parisien (750XX) : suggestion arrondissement locale.
+      // CP non-Paris : on laisse passer au fetch BAN générique qui résoudra
+      // la commune via q=CP (le mapping codePostal est fait par banToUnified).
+      if (/^\d{5}$/.test(trimmed) && /^750\d{2}$/.test(trimmed)) {
+        const parisItem = PARIS_AUTOCOMPLETE.find((p) => p.postcode === trimmed)
+        if (parisItem) {
+          abortRef.current?.abort()
+          setLoading(false)
+          setSuggestions([
+            {
+              key: `cp-${trimmed}`,
+              primary: parisItem.label,
+              secondary: `${trimmed} · Paris`,
+              selection: {
+                label: parisItem.label,
+                postcode: parisItem.postcode,
+                arrondissement: parisItem.arrondissement,
+                codePostal: null,
+                departement: null,
+              },
+            },
+          ])
+          return
+        }
+      }
+      // Département 2 ou 3 chiffres : table locale. Si code inconnu, on laisse
+      // passer au BAN (qui ne trouvera probablement rien d'utile, mais on
+      // n'invente pas de suggestion).
+      if (/^\d{2}$|^\d{3}$/.test(trimmed)) {
+        const nom = getDepartement(trimmed)
+        if (nom) {
+          abortRef.current?.abort()
+          setLoading(false)
+          setSuggestions([departementToUnified(trimmed, nom)])
+          return
+        }
       }
       abortRef.current?.abort()
       const ctrl = new AbortController()

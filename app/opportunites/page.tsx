@@ -91,6 +91,30 @@ function applyFilters(
     if (f.arrondissement.length > 0) {
       if (!f.arrondissement.includes(p.arrondissement)) return false
     }
+    // Code postal exact — précédence forte (sélection structurée).
+    if (f.codePostal !== undefined && p.codePostal !== f.codePostal) {
+      return false
+    }
+    // Département — préfixe 2 chars métropole, 3 chars DROM. Tous les biens
+    // étant 75XXX, seul departement="75" matche aujourd'hui.
+    if (f.departement !== undefined) {
+      const len = f.departement.length
+      if (p.codePostal.slice(0, len) !== f.departement) return false
+    }
+    // q (texte libre ville) — fallback souple. Match insensible casse sur
+    // ville ou quartier. Ignoré si une clé géo structurée filtre déjà.
+    if (
+      f.q !== undefined &&
+      f.arrondissement.length === 0 &&
+      f.codePostal === undefined &&
+      f.departement === undefined
+    ) {
+      const needle = f.q.toLowerCase()
+      const matches =
+        p.ville.toLowerCase().includes(needle) ||
+        p.quartier.toLowerCase().includes(needle)
+      if (!matches) return false
+    }
     // Surface plancher — AND strict, exclus si bien.surface < surfaceMin.
     if (f.surfaceMin !== undefined && p.surface < f.surfaceMin) {
       return false

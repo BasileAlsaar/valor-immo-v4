@@ -8,6 +8,16 @@ export type FilterParams = {
   typologie: string[]
   transaction: string[]
   arrondissement: number[]
+  /** Code postal exact (5 chiffres). Undefined = pas de contrainte. */
+  codePostal?: string
+  /** Code département (2 chars métropole / 2A / 2B, ou 3 chars DROM). */
+  departement?: string
+  /**
+   * Texte de recherche ville libre (fallback si aucune clé géo structurée
+   * n'a été résolue par le combobox). Match insensible casse sur
+   * `ville` ou `quartier`. Undefined = pas de contrainte.
+   */
+  q?: string
   /** Surface plancher en m² (saisie SearchBar Hero). Undefined = pas de contrainte. */
   surfaceMin?: number
   /**
@@ -42,6 +52,23 @@ function parsePositiveInt(raw: string | undefined): number | undefined {
   return n
 }
 
+function parseCodePostal(raw: string | undefined): string | undefined {
+  if (!raw) return undefined
+  return /^\d{5}$/.test(raw) ? raw : undefined
+}
+
+function parseDepartement(raw: string | undefined): string | undefined {
+  if (!raw) return undefined
+  // 2 chars (métropole y compris 2A/2B) ou 3 chars (DROM).
+  return /^(\d{2}|2A|2B|\d{3})$/.test(raw) ? raw : undefined
+}
+
+function parseQ(raw: string | undefined): string | undefined {
+  if (!raw) return undefined
+  const trimmed = raw.trim()
+  return trimmed.length > 0 ? trimmed : undefined
+}
+
 export function parseFiltersFromSearchParams(searchParams: {
   [key: string]: string | string[] | undefined
 }): FilterParams {
@@ -57,6 +84,9 @@ export function parseFiltersFromSearchParams(searchParams: {
     arrondissement: read("arrondissement")
       .map((n) => parseInt(n, 10))
       .filter((n) => Number.isFinite(n)),
+    codePostal: parseCodePostal(readScalar(searchParams, "codePostal")),
+    departement: parseDepartement(readScalar(searchParams, "departement")),
+    q: parseQ(readScalar(searchParams, "q")),
     surfaceMin: parsePositiveInt(readScalar(searchParams, "surfaceMin")),
     loyerMax: parsePositiveInt(readScalar(searchParams, "loyerMax")),
   }
