@@ -8,9 +8,8 @@ import { MethodSection } from "@/components/home/method-section"
 import { Container } from "@/components/ui/container"
 import { Eyebrow } from "@/components/ui/eyebrow"
 import { CtaPill } from "@/components/ui/cta-pill"
-import { SectionCard } from "@/components/ui/section-card"
+import { SectionIndex } from "@/components/ui/section-index"
 import { SectionTitle } from "@/components/ui/section-title"
-import { RevealStagger, RevealItem } from "@/components/motion/reveal"
 import { SITE } from "@/lib/site"
 
 export const metadata: Metadata = {
@@ -92,8 +91,8 @@ export default function GestionPage() {
       {/* Services — 6 services + clôture */}
       <section className="bg-cream py-14 md:py-32">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-[2fr_3fr]">
-            <div className="lg:sticky lg:top-[120px] lg:self-start">
+          <div className="grid gap-12 lg:grid-cols-[2fr_3fr] lg:items-start">
+            <div>
               <Eyebrow className="text-gold-deep">Périmètre</Eyebrow>
               <SectionTitle as="h3" size="md" className="mt-4">
                 La gestion n'est pas une boîte noire.
@@ -103,13 +102,7 @@ export default function GestionPage() {
                 Voici précisément ce que vous déléguez.
               </p>
             </div>
-            <RevealStagger className="grid gap-6 md:grid-cols-2">
-              {SERVICES.map((s) => (
-                <RevealItem key={s.titre}>
-                  <SectionCard title={s.titre} description={s.text} />
-                </RevealItem>
-              ))}
-            </RevealStagger>
+            <SectionIndex items={SERVICES} />
           </div>
           <p className="mx-auto mt-16 max-w-3xl text-center text-base leading-relaxed text-fir-dark/80 md:text-lg">
             Vous savez à tout moment ce qui est encaissé, ce qui est en cours,
