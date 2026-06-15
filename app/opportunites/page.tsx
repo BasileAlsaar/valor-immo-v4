@@ -10,7 +10,11 @@ import { Eyebrow } from "@/components/ui/eyebrow"
 import { Badge } from "@/components/ui/badge"
 import { CtaPill } from "@/components/ui/cta-pill"
 import { OpportunitiesFilters } from "@/components/sections/opportunities-filters"
-import { parseFiltersFromSearchParams } from "@/lib/filters/opportunities"
+import {
+  parseFiltersFromSearchParams,
+  type FilterParams,
+} from "@/lib/filters/opportunities"
+import { getDepartement } from "@/lib/data/departements"
 import { ScrollToResultsOnMount } from "./scroll-on-search"
 import {
   properties,
@@ -55,6 +59,37 @@ function hasAnySearchParam(
     if (Array.isArray(v)) return v.some((x) => typeof x === "string" && x.length > 0)
     return typeof v === "string" && v.length > 0
   })
+}
+
+function ordinalArrondissement(n: number): string {
+  return n === 1 ? "1ᵉʳ" : `${n}ᵉ`
+}
+
+/**
+ * Libellé de zone pour l'EmptyState contextualisé. Précédence identique à
+ * onSubmit (SearchBar) : arrondissement > codePostal > departement > q.
+ * - arrondissement (1 seul) → "dans le Nᵉ arrondissement"
+ * - codePostal                → "sur ce secteur (CP)"
+ * - departement (table connue) → "en <Nom>"
+ * - q                          → "à <texte>"
+ * Renvoie null si aucune clé géo applicable ou département non reconnu →
+ * fallback au message générique côté EmptyState.
+ */
+function buildZoneLabel(f: FilterParams): string | null {
+  if (f.arrondissement.length === 1) {
+    return `dans le ${ordinalArrondissement(f.arrondissement[0])} arrondissement`
+  }
+  if (f.codePostal) {
+    return `sur ce secteur (${f.codePostal})`
+  }
+  if (f.departement) {
+    const nom = getDepartement(f.departement)
+    if (nom) return `en ${nom}`
+  }
+  if (f.q) {
+    return `à ${f.q}`
+  }
+  return null
 }
 
 /**
@@ -169,7 +204,7 @@ export default async function OpportunitesPage({
           </div>
 
           {filtered.length === 0 ? (
-            <EmptyState />
+            <EmptyState zoneLabel={buildZoneLabel(filters)} />
           ) : (
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {filtered.map((p) => (
@@ -233,12 +268,15 @@ function PropertyCard({
   )
 }
 
-function EmptyState() {
+function EmptyState({ zoneLabel }: { zoneLabel?: string | null }) {
+  const titre = zoneLabel
+    ? `Pas encore de bien ${zoneLabel}.`
+    : "Aucun bien ne correspond à vos critères."
   return (
     <div className="rounded-3xl border border-fir-dark/10 bg-white p-12 text-center shadow-[0_8px_28px_-12px_rgba(15,61,46,0.10)]">
       <Eyebrow className="text-gold-deep">Aucun résultat</Eyebrow>
       <h2 className="font-display mt-4 text-2xl uppercase leading-tight tracking-tight text-fir-dark md:text-3xl">
-        Aucun bien ne correspond à vos critères.
+        {titre}
       </h2>
       <p className="mx-auto mt-4 max-w-md text-sm text-ink/70">
         Modifiez votre recherche ou contactez-nous pour une recherche personnalisée.
