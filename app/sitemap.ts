@@ -1,7 +1,6 @@
 import type { MetadataRoute } from "next"
 
 import { SITE } from "@/lib/site"
-import { CATEGORIES } from "@/lib/data/categories"
 import { properties } from "@/lib/data/properties"
 import { ARTICLES } from "@/lib/data/articles"
 
@@ -14,7 +13,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/vente",
     "/location",
     "/estimations",
-    "/classes-d-actifs",
     "/opportunites",
     "/signatures",
     "/actualites",
@@ -28,13 +26,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: now,
     changeFrequency: "monthly" as const,
     priority: path === "" ? 1 : 0.8,
-  }))
-
-  const categoryRoutes = CATEGORIES.map((c) => ({
-    url: `${base}${c.href}`,
-    lastModified: now,
-    changeFrequency: "monthly" as const,
-    priority: 0.7,
   }))
 
   const propertyRoutes = properties.map((p) => ({
@@ -53,7 +44,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     ...staticRoutes,
-    ...categoryRoutes,
     ...propertyRoutes,
     ...articleRoutes,
   ]

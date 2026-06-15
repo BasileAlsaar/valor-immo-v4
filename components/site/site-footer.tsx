@@ -5,7 +5,6 @@ import { Mail, MapPin, Phone, Clock } from "lucide-react"
 import { Container } from "@/components/ui/container"
 import { HoursBlock } from "@/components/ui/hours-block"
 import { SITE } from "@/lib/site"
-import { CATEGORIES } from "@/lib/data/categories"
 
 const PLAN_SITE = [
   { label: "Vente", href: "/vente" },
@@ -28,7 +27,7 @@ export function SiteFooter() {
   return (
     <footer className="bg-fir-dark text-cream">
       <Container className="pt-8 pb-3 lg:pt-10 lg:pb-3">
-        <div className="grid gap-8 lg:grid-cols-4">
+        <div className="grid gap-8 lg:grid-cols-3">
           <div>
             <Link href="/" className="flex items-center gap-3">
               <Image
@@ -76,19 +75,6 @@ export function SiteFooter() {
                 <li key={item.href}>
                   <Link href={item.href} className="opacity-80 transition hover:text-gold hover:opacity-100">
                     {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <p className="eyebrow text-gold">Classes d'actifs</p>
-            <ul className="mt-2.5 space-y-1.5 text-sm leading-[1.5]">
-              {CATEGORIES.map((cat) => (
-                <li key={cat.slug}>
-                  <Link href={cat.href} className="opacity-80 transition hover:text-gold hover:opacity-100">
-                    {cat.label}
                   </Link>
                 </li>
               ))}
