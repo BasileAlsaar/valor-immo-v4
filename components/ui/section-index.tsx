@@ -12,10 +12,10 @@ type Props = {
 }
 
 /**
- * Grille numérotée façon "process" — pattern répliqué de la section
- * "Du brief à la prise de possession" de /location (l.82-133).
- * Description toujours visible. Numérotation générée depuis l'index.
- * Tokens 1:1 avec la référence — DA Option A 15/06/2026.
+ * Grille numérotée façon "process". Description toujours visible.
+ * Numérotation générée depuis l'index. Tokens DA Option A 15/06/2026 :
+ * chiffre Anton or, titre Inter uppercase tracking-tight fir-dark,
+ * description Inter ink/75, filet or border-top 2px.
  */
 export function SectionIndex({ items, className }: Props) {
   return (

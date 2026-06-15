@@ -6,7 +6,6 @@ import { Container } from "@/components/ui/container"
 import { Eyebrow } from "@/components/ui/eyebrow"
 import { SectionIndex } from "@/components/ui/section-index"
 import { SectionTitle } from "@/components/ui/section-title"
-import { RevealStagger, RevealItem } from "@/components/motion/reveal"
 
 export const metadata: Metadata = {
   title: "Location — Immobilier commercial Paris",
@@ -70,59 +69,6 @@ export default function LocationPage() {
             </div>
             <SectionIndex items={CIBLES} />
           </div>
-        </Container>
-      </section>
-
-      <section className="bg-cream-soft py-20 md:py-24">
-        <Container>
-          <div className="grid gap-12 lg:grid-cols-[2fr_3fr] lg:items-start">
-            <div>
-              <Eyebrow className="text-gold-deep">Accompagnement</Eyebrow>
-              <SectionTitle as="h3" size="md" className="mt-4">
-                Du brief à la prise de possession.
-              </SectionTitle>
-              <div aria-hidden className="my-6 h-px w-12 bg-gold" />
-            </div>
-            <RevealStagger className="grid gap-8 sm:grid-cols-2 sm:gap-x-10">
-              {[
-                {
-                  num: "01",
-                  titre: "Brief",
-                  text: "Surface, emplacement, activité, budget. Cadrage précis.",
-                },
-                {
-                  num: "02",
-                  titre: "Sélection",
-                  text: "Biens en cible uniquement, pas de visite hors sujet.",
-                },
-                {
-                  num: "03",
-                  titre: "Visites & négociation",
-                  text: "Sur les biens validés, conditions et bail négociés.",
-                },
-                {
-                  num: "04",
-                  titre: "Signature",
-                  text: "Jusqu'à la prise de possession, interlocuteur unique.",
-                },
-              ].map((step) => (
-                <RevealItem key={step.num}>
-                  <div className="border-t-2 border-gold/30 pt-5">
-                    <p className="font-display text-[clamp(2.25rem,4vw,3.5rem)] leading-[0.85] text-gold">
-                      {step.num}
-                    </p>
-                    <h4 className="mt-3 text-sm font-medium uppercase tracking-tight text-fir-dark md:text-base">
-                      {step.titre}
-                    </h4>
-                    <p className="mt-2 text-sm leading-relaxed text-ink/75">
-                      {step.text}
-                    </p>
-                  </div>
-                </RevealItem>
-              ))}
-            </RevealStagger>
-          </div>
-          <div aria-hidden className="mx-auto mt-16 h-px w-16 bg-gold/40 md:mt-20" />
         </Container>
       </section>
 
