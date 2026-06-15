@@ -5,9 +5,9 @@ import { OpportunitiesPreview } from "@/components/home/opportunities-preview"
 import { Container } from "@/components/ui/container"
 import { Eyebrow } from "@/components/ui/eyebrow"
 import { CtaPill } from "@/components/ui/cta-pill"
-import { SectionCard } from "@/components/ui/section-card"
+import { SectionIndex } from "@/components/ui/section-index"
 import { SectionTitle } from "@/components/ui/section-title"
-import { RevealStagger, RevealItem } from "@/components/motion/reveal"
+import { Reveal } from "@/components/motion/reveal"
 
 export const metadata: Metadata = {
   title: "Vente — Immobilier commercial Paris",
@@ -60,33 +60,27 @@ export default function VentePage() {
 
       <section className="bg-cream py-24 md:py-32">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-[2fr_3fr]">
-            <div className="lg:sticky lg:top-[120px] lg:self-start">
-              <Eyebrow className="text-gold-deep">Périmètre</Eyebrow>
-              <SectionTitle as="h3" size="md" className="mt-4">
-                Six catégories, six logiques de valeur.
-              </SectionTitle>
-              <div aria-hidden className="my-6 h-px w-12 bg-gold" />
-              <p className="max-w-[36ch] text-[15px] leading-relaxed text-fir-dark/70 md:text-base">
-                Valor Immo intervient sur l'ensemble des actifs commerciaux et
-                professionnels, à la vente comme à l'acquisition. Chaque
-                catégorie répond à une logique de valeur et de marché distincte
-                — voici ce que nous traitons.
-              </p>
-              <div className="mt-8">
-                <CtaPill href="/contact" variant="fir" size="md">
-                  Démarrer mon projet
-                </CtaPill>
-              </div>
+          <div className="max-w-3xl">
+            <Eyebrow className="text-gold-deep">Périmètre</Eyebrow>
+            <SectionTitle as="h3" size="md" className="mt-4">
+              Six catégories, six logiques de valeur.
+            </SectionTitle>
+            <div aria-hidden className="my-6 h-px w-12 bg-gold" />
+            <p className="max-w-[60ch] text-[15px] leading-relaxed text-fir-dark/70 md:text-base">
+              Valor Immo intervient sur l'ensemble des actifs commerciaux et
+              professionnels, à la vente comme à l'acquisition. Chaque
+              catégorie répond à une logique de valeur et de marché distincte
+              — voici ce que nous traitons.
+            </p>
+            <div className="mt-8">
+              <CtaPill href="/contact" variant="fir" size="md">
+                Démarrer mon projet
+              </CtaPill>
             </div>
-            <RevealStagger className="grid gap-6 md:grid-cols-2">
-              {CATEGORIES.map((c) => (
-                <RevealItem key={c.titre}>
-                  <SectionCard title={c.titre} description={c.text} />
-                </RevealItem>
-              ))}
-            </RevealStagger>
           </div>
+          <Reveal className="mt-16 md:mt-20">
+            <SectionIndex items={CATEGORIES} />
+          </Reveal>
         </Container>
       </section>
 
