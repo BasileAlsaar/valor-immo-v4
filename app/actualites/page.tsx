@@ -111,10 +111,9 @@ function ArticleCard({ article }: { article: Article }) {
 }
 
 /**
- * Carte transaction — tokens alignés sur SectionCard (rounded-2xl,
- * border-fir-dark/10, bg-white, ombres multi-couches, lift au hover).
- * Si `image` est fournie, zone image en haut (aspect 16/10) ; sinon
- * la carte est texte seul, sans cadre vide.
+ * Carte transaction — rounded-2xl, border-fir-dark/10, bg-white, ombres
+ * multi-couches, lift au hover. Si `image` est fournie, zone image en
+ * haut (aspect 16/10) ; sinon la carte est texte seul, sans cadre vide.
  */
 function TransactionCard({ tx }: { tx: Transaction }) {
   const hasImage = Boolean(tx.image)
@@ -142,7 +141,7 @@ function TransactionCard({ tx }: { tx: Transaction }) {
       )}
       <div className="flex h-full flex-col p-7 md:p-8">
         <span aria-hidden className="block h-px w-10 bg-gold/40" />
-        {/* tokens alignés SectionCard, Cormorant volontaire, ne pas migrer (DA 10/06/2026). */}
+        {/* Cormorant volontaire, carte signature, ne pas migrer (DA 10/06/2026). */}
         <h2 className="font-accent mt-7 text-2xl font-bold leading-[1.1] tracking-[0.06em] text-fir-dark [font-variant-caps:all-small-caps] md:text-3xl">
           {tx.libelle.toLowerCase()}
         </h2>
