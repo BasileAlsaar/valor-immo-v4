@@ -3,7 +3,6 @@ import type {
   ApimoAgenciesResponse,
   ApimoAgency,
   ApimoPropertiesResponse,
-  ApimoProperty,
 } from "./types"
 
 export { apimoFetch, ApimoError } from "./client"
@@ -36,15 +35,4 @@ export async function listProperties(
     `/agencies/${agencyId}/properties`,
     { query: { limit, offset } }
   )
-}
-
-export async function createLead(
-  payload: Record<string, unknown>,
-  agencyId: string = VALOR_IMMO_AGENCY_ID
-): Promise<unknown> {
-  return apimoFetch<unknown>(`/agencies/${agencyId}/leads`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(payload),
-  })
 }

@@ -56,10 +56,12 @@ export function SuccessScreen({ lead }: Props) {
         initial="hidden"
         animate="visible"
         transition={{ delay: 0.7, duration: duration.base, ease: easing.smooth }}
-        className="mt-10 w-full max-w-md rounded-2xl bg-cream/70 p-6 text-left"
+        className="mt-8 w-full max-w-md rounded-2xl bg-white p-7 text-left ring-1 ring-fir-dark/5 shadow-[0_8px_28px_-12px_rgba(15,61,46,0.18)]"
       >
-        <p className="eyebrow text-gold-deep">Récapitulatif</p>
-        <dl className="font-mono mt-4 space-y-2 text-sm tabular text-ink/80">
+        <p className="eyebrow mb-1 border-b border-gold/15 pb-3 text-gold-deep">
+          Récapitulatif
+        </p>
+        <dl className="font-mono mt-4 divide-y divide-ink/5 text-sm tabular text-ink/80">
           <Row label="Typologie" value={LABELS.typologie[lead.typologie]} />
           <Row label="Transaction" value={LABELS.transaction[lead.transaction]} />
           <Row label="Horizon" value={LABELS.deadline[lead.deadline]} />
@@ -97,7 +99,7 @@ export function SuccessScreen({ lead }: Props) {
 
 function Row({ label, value }: { label: string; value: string }) {
   return (
-    <div className="flex items-baseline justify-between gap-4">
+    <div className="flex items-baseline justify-between gap-4 py-2.5">
       <dt className="text-ink/50">{label}</dt>
       <dd className="text-fir-dark">{value}</dd>
     </div>

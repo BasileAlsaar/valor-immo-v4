@@ -21,6 +21,7 @@
 
 import { NextResponse } from "next/server"
 
+import { createApimoLead } from "@/lib/apimo/leads"
 import { rateLimit } from "@/lib/rate-limit"
 import {
   sendInternalNotification,
@@ -60,26 +61,41 @@ export async function POST(req: Request) {
 
   const lead = parsed.data
 
-  // Envoi interne d'abord — le lead est capturé si celui-ci réussit.
-  const internal = await sendInternalNotification(lead)
-  if (!internal.ok) {
-    console.error("[contact] internal send failed", internal.error)
-    return NextResponse.json(
-      { error: "Envoi impossible pour le moment, réessayez ou appelez-nous." },
-      { status: 502 },
-    )
+  // Apimo est la condition de succès — c'est le CRM source de vérité.
+  // Si la création du lead échoue, on renvoie 502 : aucun lead capturé.
+  const apimo = await createApimoLead(lead)
+  if (!apimo.ok) {
+    console.error("[contact] apimo lead failed", {
+      status: apimo.status,
+      error: apimo.error,
+    })
+    return NextResponse.json({ error: "delivery" }, { status: 502 })
   }
 
-  // Confirmation user : best-effort. Si elle échoue, le lead est déjà capturé
-  // côté équipe → on log et on retourne succès UX (cf. brief §83).
-  const user = await sendUserConfirmation(lead)
-  if (!user.ok) {
-    console.error("[contact] user confirmation failed", user.error)
+  // Resend = best-effort. Le lead est déjà dans Apimo : les notifications
+  // email sont un confort, pas une condition de succès. Toute erreur (clé
+  // invalide, panne Resend, timeout) est loggée mais n'affecte pas la
+  // réponse au prospect.
+  try {
+    const internal = await sendInternalNotification(lead)
+    if (!internal.ok) {
+      console.error("[contact] internal send failed", internal.error)
+    }
+  } catch (err) {
+    console.error("[contact] internal send threw", err)
+  }
+
+  try {
+    const user = await sendUserConfirmation(lead)
+    if (!user.ok) {
+      console.error("[contact] user confirmation failed", user.error)
+    }
+  } catch (err) {
+    console.error("[contact] user confirmation threw", err)
   }
 
   return NextResponse.json({
     ok: true,
     message: "Demande reçue. Réponse sous 24h ouvrées.",
-    stub: "stub" in internal ? internal.stub : undefined,
   })
 }
