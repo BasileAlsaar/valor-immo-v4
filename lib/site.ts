@@ -6,8 +6,8 @@
 export const SITE = {
   name: "Valor Immo",
   baseline: "Immobilier commercial et professionnel",
-  domain: "valor-immo.com",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://valor-immo.com",
+  domain: "groupevalorimmo.fr",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://groupevalorimmo.fr",
   telephoneDisplay: "07 67 86 34 61",
   telephoneTel: "+33767863461",
   email: "contact1valorimmo@gmail.com",

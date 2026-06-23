@@ -31,8 +31,8 @@ function getClient(): Resend | null {
 }
 
 function getFrom(): string {
-  // Fallback dev tant que le domaine valor-immo.com n'est pas vérifié côté
-  // Resend par Basile. À switcher vers "Valor Immo <contact@valor-immo.com>"
+  // Fallback dev tant que le domaine groupevalorimmo.fr n'est pas vérifié côté
+  // Resend par Basile. À switcher vers "Valor Immo <contact@groupevalorimmo.fr>"
   // une fois la vérification de domaine effectuée.
   return process.env.RESEND_FROM_EMAIL ?? "Valor Immo <onboarding@resend.dev>"
 }
