@@ -7,8 +7,10 @@ import { Menu, X, Phone } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { SITE, NAV } from "@/lib/site"
+import { useHeaderMode } from "@/lib/header-mode"
 
 export function SiteHeader() {
+  const mode = useHeaderMode()
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
   const [panelVisible, setPanelVisible] = useState(false)
@@ -39,6 +41,29 @@ export function SiteHeader() {
     const id = requestAnimationFrame(() => setPanelVisible(true))
     return () => cancelAnimationFrame(id)
   }, [open])
+
+  if (mode === "minimal") {
+    return (
+      <header className="pointer-events-none fixed inset-x-0 top-0 z-50 text-cream">
+        <div className="mx-auto flex h-24 max-w-[1440px] items-center justify-center px-6 md:h-32 md:px-12">
+          <Link
+            href="/"
+            aria-label={`Retour à l'accueil — ${SITE.name}`}
+            className="pointer-events-auto flex items-center"
+          >
+            <Image
+              src="/logo-valor-immo.png"
+              alt={SITE.name}
+              width={400}
+              height={400}
+              className="h-14 w-auto object-contain brightness-0 invert md:h-20"
+              priority
+            />
+          </Link>
+        </div>
+      </header>
+    )
+  }
 
   return (
     <>

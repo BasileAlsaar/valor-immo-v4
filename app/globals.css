@@ -22,6 +22,9 @@
   /* Easing & durations sophistiquées */
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+
+  /* Élévations — tinted vert sapin (réutilisable sur surfaces blanches) */
+  --shadow-elevation-1: 0 8px 28px -12px rgb(15 61 46 / 0.18);
 }
 
 :root {

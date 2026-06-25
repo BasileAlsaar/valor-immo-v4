@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useState } from "react"
 import { FormProvider, useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { AnimatePresence, motion } from "framer-motion"
@@ -16,7 +16,6 @@ import { ProgressBar } from "@/components/contact-form/ProgressBar"
 import { StepProjet } from "@/components/contact-form/steps/StepProjet"
 import { StepContexte } from "@/components/contact-form/steps/StepContexte"
 import { StepCoordonnees } from "@/components/contact-form/steps/StepCoordonnees"
-import { SuccessScreen } from "@/components/contact-form/SuccessScreen"
 import { SITE } from "@/lib/site"
 import { cn } from "@/lib/utils"
 
@@ -45,12 +44,17 @@ const STEP_FIELDS: Record<Step, (keyof ContactFormValues)[]> = {
   ],
 }
 
-export function ContactForm() {
+type Props = {
+  /** Appelé avec les valeurs validées une fois l'API contact OK. Le parent
+   * monte alors le SuccessScreen plein écran à la place du formulaire. */
+  onSuccess: (values: ContactFormValues) => void
+}
+
+export function ContactForm({ onSuccess }: Props) {
   const [step, setStep] = useState<Step>(1)
   const [direction, setDirection] = useState<1 | -1>(1)
-  const [status, setStatus] = useState<"idle" | "submitting" | "error" | "success">("idle")
+  const [status, setStatus] = useState<"idle" | "submitting" | "error">("idle")
   const [errorMessage, setErrorMessage] = useState<string | null>(null)
-  const submittedLead = useRef<ContactFormValues | null>(null)
 
   const methods = useForm<ContactFormValues>({
     mode: "onChange",
@@ -133,22 +137,17 @@ export function ContactForm() {
         const body = await res.json().catch(() => ({}))
         throw new Error(body.error ?? "Envoi impossible")
       }
-      submittedLead.current = values
-      setStatus("success")
       try {
         sessionStorage.removeItem(STORAGE_KEY)
       } catch {
         // ignore
       }
+      onSuccess(values)
     } catch (err) {
       const message = err instanceof Error ? err.message : "Envoi impossible"
       setErrorMessage(message)
       setStatus("error")
     }
-  }
-
-  if (status === "success" && submittedLead.current) {
-    return <SuccessScreen lead={submittedLead.current} />
   }
 
   return (
