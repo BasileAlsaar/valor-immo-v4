@@ -8,9 +8,9 @@ export const SITE = {
   baseline: "Immobilier commercial et professionnel",
   domain: "groupevalorimmo.fr",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://groupevalorimmo.fr",
-  telephoneDisplay: "07 67 86 34 61",
-  telephoneTel: "+33767863461",
-  email: "contact1valorimmo@gmail.com",
+  telephoneDisplay: "01 89 40 70 00",
+  telephoneTel: "+33189407000",
+  email: "yoavmarciano@groupevalorimmo.fr",
   address: {
     line1: "96 Rue Boileau",
     line2: "75016 Paris",

@@ -9,6 +9,7 @@ import { CallbackSection } from "@/components/sections/callback-section"
 import { MethodSection } from "@/components/home/method-section"
 import { RevealStagger, RevealItem } from "@/components/motion/reveal"
 import { team } from "@/lib/data/team"
+import { SITE } from "@/lib/site"
 
 export const metadata: Metadata = {
   title: "L'agence",
@@ -183,11 +184,11 @@ export default function AgencePage() {
                 </div>
                 <div>
                   <dt className="text-xs uppercase tracking-wider text-ink/50">Téléphone</dt>
-                  <dd className="mt-1 text-lg text-fir-dark">07 67 86 34 61</dd>
+                  <dd className="mt-1 text-lg text-fir-dark">{SITE.telephoneDisplay}</dd>
                 </div>
                 <div>
                   <dt className="text-xs uppercase tracking-wider text-ink/50">Email</dt>
-                  <dd className="mt-1 text-lg text-fir-dark">contact1valorimmo@gmail.com</dd>
+                  <dd className="mt-1 text-lg text-fir-dark">{SITE.email}</dd>
                 </div>
                 <div>
                   <dt className="text-xs uppercase tracking-wider text-ink/50">Horaires</dt>

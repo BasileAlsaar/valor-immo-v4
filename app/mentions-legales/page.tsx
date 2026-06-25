@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { PageHero } from "@/components/sections/page-hero"
 import { Container } from "@/components/ui/container"
+import { SITE } from "@/lib/site"
 
 export const metadata: Metadata = {
   title: "Mentions légales",
@@ -21,8 +22,8 @@ export default function MentionsLegalesPage() {
             <p>
               Valor Immo<br />
               96 Rue Boileau, 75016 Paris<br />
-              Téléphone : 07 67 86 34 61<br />
-              Email : contact1valorimmo@gmail.com
+              Téléphone : {SITE.telephoneDisplay}<br />
+              Email : {SITE.email}
             </p>
             <p className="text-sm text-ink/60">
               [SIRET / RCS / Capital social — À FOURNIR]

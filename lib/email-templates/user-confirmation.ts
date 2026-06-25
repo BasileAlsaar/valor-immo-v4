@@ -3,6 +3,7 @@ import {
   zoneLabel,
   type ContactFormValues,
 } from "@/lib/validations/contact"
+import { SITE } from "@/lib/site"
 
 /**
  * Template HTML confirmation envoyée au prospect.
@@ -77,7 +78,7 @@ export function buildUserHtml(lead: ContactFormValues): string {
         </table>
       </div>
       <p style="margin:28px 0 0;font-size:13px;line-height:1.6;color:#5B6573;">Cet email confirme uniquement la réception de votre demande.</p>
-      <p style="margin:24px 0 0;padding-top:20px;border-top:1px solid rgba(15,61,46,0.08);font-size:13px;line-height:1.6;color:#5B6573;">Valor Immo<br/>96 Rue Boileau, 75016 Paris<br/>07 67 86 34 61</p>
+      <p style="margin:24px 0 0;padding-top:20px;border-top:1px solid rgba(15,61,46,0.08);font-size:13px;line-height:1.6;color:#5B6573;">Valor Immo<br/>${SITE.address.line1}, ${SITE.address.line2}<br/>${SITE.telephoneDisplay}</p>
     </div>
   </div>
 </body>

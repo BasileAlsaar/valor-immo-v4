@@ -10,8 +10,7 @@ import { SITE } from "@/lib/site"
 
 export const metadata: Metadata = {
   title: "Contact",
-  description:
-    "Valor Immo · 96 Rue Boileau 75016 Paris · 07 67 86 34 61. Brief en 3 étapes, réponse sous 24h ouvrées.",
+  description: `Valor Immo · ${SITE.address.line1} ${SITE.address.line2} · ${SITE.telephoneDisplay}. Brief en 3 étapes, réponse sous 24h ouvrées.`,
 }
 
 const POURQUOI_NOUS = [
