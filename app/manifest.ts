@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next"
 
+import { SITE } from "@/lib/site"
+
 // theme_color / background_color lus dans app/globals.css :
 // --color-fir-dark = #0F3D2E  (vert sapin, couleur de marque)
 // --color-cream    = #F5F2EC  (fond crème de l'app)
@@ -8,8 +10,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "Valor Immo",
     short_name: "Valor Immo",
-    description:
-      "Transaction, location et gestion d'actifs commerciaux à Paris : boutiques, bureaux, immeubles, hôtellerie, logistique.",
+    description: SITE.homeDescription,
     start_url: "/",
     display: "standalone",
     orientation: "portrait",

@@ -44,28 +44,24 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: `${SITE.name} — ${SITE.baseline} · Paris`,
+    default: SITE.homeTitle,
     template: `%s · ${SITE.name}`,
   },
-  description:
-    "Transaction, location et gestion d'actifs commerciaux à Paris : boutiques, bureaux, immeubles, hôtellerie, logistique.",
+  description: SITE.homeDescription,
   alternates: { canonical: SITE.url },
   openGraph: {
     type: "website",
     locale: "fr_FR",
     url: SITE.url,
     siteName: SITE.name,
-    title: `${SITE.name} — ${SITE.baseline} · Paris`,
-    description:
-      "Transaction, location et gestion d'actifs commerciaux à Paris : boutiques, bureaux, immeubles, hôtellerie, logistique.",
+    title: SITE.homeTitle,
+    description: SITE.homeDescription,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE.name} — ${SITE.baseline}`,
-    description:
-      "Immobilier commercial et professionnel à Paris.",
+    title: SITE.homeTitle,
+    description: SITE.homeDescription,
   },
-  icons: { icon: "/favicon.ico", apple: "/apple-icon.png" },
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",

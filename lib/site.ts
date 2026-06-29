@@ -6,6 +6,9 @@
 export const SITE = {
   name: "Valor Immo",
   baseline: "Immobilier commercial et professionnel",
+  homeTitle: "Valor Immo — Immobilier d'entreprise & commercial à Paris",
+  homeDescription:
+    "Agence parisienne d'immobilier d'entreprise et commercial : transaction, location et gestion de bureaux, commerces, immeubles et locaux d'activité.",
   domain: "groupevalorimmo.fr",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://groupevalorimmo.fr",
   telephoneDisplay: "01 89 40 70 00",
