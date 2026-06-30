@@ -8,8 +8,8 @@ import { SITE } from "@/lib/site"
 // Aucune valeur inventée.
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Valor Immo",
-    short_name: "Valor Immo",
+    name: SITE.name,
+    short_name: SITE.name,
     description: SITE.homeDescription,
     start_url: "/",
     display: "standalone",

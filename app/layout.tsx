@@ -43,6 +43,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
+  applicationName: SITE.name,
   title: {
     default: SITE.homeTitle,
     template: `%s · ${SITE.name}`,
@@ -65,7 +66,7 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "Valor Immo",
+    title: SITE.name,
   },
 }
 

@@ -3,10 +3,14 @@
  * Aucune invention : si une donnée manque, voir CONTENT_TODO.md.
  */
 
+// Casse de la marque : ne vit qu'ici. Toute occurrence destinée aux signaux
+// SEO/marque (title, OG siteName, JSON-LD, manifest) doit dériver de NAME.
+const NAME = "VALOR IMMO" as const
+
 export const SITE = {
-  name: "Valor Immo",
+  name: NAME,
   baseline: "Immobilier commercial et professionnel",
-  homeTitle: "Valor Immo — Immobilier d'entreprise & commercial à Paris",
+  homeTitle: `${NAME} — Immobilier d'entreprise & commercial à Paris`,
   homeDescription:
     "Agence parisienne d'immobilier d'entreprise et commercial : transaction, location et gestion de bureaux, commerces, immeubles et locaux d'activité.",
   domain: "groupevalorimmo.fr",
