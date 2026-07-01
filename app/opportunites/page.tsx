@@ -16,13 +16,13 @@ import {
 } from "@/lib/filters/opportunities"
 import { getDepartement } from "@/lib/data/departements"
 import { ScrollToResultsOnMount } from "./scroll-on-search"
-import {
-  properties,
-  STATUT_LABEL,
-  TYPE_LABEL,
-  type Property,
-  type PropertyCategory,
-} from "@/lib/data/properties"
+import { listPubliableProperties } from "@/lib/apimo"
+import { toDisplayProperty, type DisplayProperty } from "@/lib/apimo/to-display"
+import { STATUT_LABEL, TYPE_LABEL } from "@/lib/data/properties"
+
+// Revalidation ISR alignée sur /commerces (Apimo mis à jour 1-2×/jour côté
+// agence). Voir app/commerces/page.tsx pour la justification.
+export const revalidate = 3600
 
 export const metadata: Metadata = {
   title: "Opportunités — Catalogue",
@@ -45,6 +45,7 @@ const SEARCH_PARAM_KEYS = [
   "transaction",
   "typologie",
   "arrondissement",
+  "commune",
   "surfaceMin",
   "loyerMax",
   "q",
@@ -66,16 +67,13 @@ function ordinalArrondissement(n: number): string {
 }
 
 /**
- * Libellé de zone pour l'EmptyState contextualisé. Précédence identique à
- * onSubmit (SearchBar) : arrondissement > codePostal > departement > q.
- * - arrondissement (1 seul) → "dans le Nᵉ arrondissement"
- * - codePostal                → "sur ce secteur (CP)"
- * - departement (table connue) → "en <Nom>"
- * - q                          → "à <texte>"
- * Renvoie null si aucune clé géo applicable ou département non reconnu →
- * fallback au message générique côté EmptyState.
+ * Libellé de zone pour l'EmptyState contextualisé. Précédence : commune
+ * (chip UI) > arrondissement (SearchBar) > codePostal > departement > q.
  */
 function buildZoneLabel(f: FilterParams): string | null {
+  if (f.commune.length === 1) {
+    return `à ${f.commune[0]}`
+  }
   if (f.arrondissement.length === 1) {
     return `dans le ${ordinalArrondissement(f.arrondissement[0])} arrondissement`
   }
@@ -93,45 +91,84 @@ function buildZoneLabel(f: FilterParams): string | null {
 }
 
 /**
- * Plafond monétaire applicable à un bien selon son statut.
- * - location → loyerMensuel (€/mois HT HC)
- * - vente / murs-libres → prix (€ total)
- * Renvoie undefined si le bien n'a pas la valeur correspondante.
+ * Facteurs de conversion vers un loyer mensuel selon le label de période
+ * Apimo (culture=fr). Utilisé UNIQUEMENT pour NORMALISER le filtre
+ * `loyerMax` — jamais pour l'affichage. Voir carte : la valeur brute et la
+ * période brute restent affichées telles quelles (« 42 000 €/an »).
  */
-function priceForCap(p: Property): number | undefined {
-  if (p.statut === "location") return p.loyerMensuel
-  return p.prix
+const PERIOD_TO_MONTHLY_FACTOR: Record<string, number> = {
+  jour: 30,
+  semaine: 52 / 12,
+  quinzaine: 26 / 12,
+  mois: 1,
+  bimensuel: 0.5,
+  trimestre: 1 / 3,
+  semestre: 1 / 6,
+  an: 1 / 12,
+}
+
+function monthlyEquivalent(
+  loyer: number | undefined,
+  period: string | undefined,
+): number | undefined {
+  if (loyer == null) return undefined
+  if (!period) return loyer
+  const factor = PERIOD_TO_MONTHLY_FACTOR[period.toLowerCase()]
+  if (factor == null) return loyer
+  return loyer * factor
+}
+
+function priceForCap(
+  p: DisplayProperty,
+): { value: number; kind: "location" | "vente" } | undefined {
+  if (p.statut === "location") {
+    // Normalisation mensuelle CÔTÉ FILTRE UNIQUEMENT — les affichages
+    // conservent la valeur brute + la période.
+    const monthly = monthlyEquivalent(p.loyerMensuel, p.period)
+    if (monthly == null) return undefined
+    return { value: monthly, kind: "location" }
+  }
+  if (p.prix != null) return { value: p.prix, kind: "vente" }
+  return undefined
 }
 
 function applyFilters(
-  list: Property[],
-  f: ReturnType<typeof parseFiltersFromSearchParams>,
-): Property[] {
+  list: DisplayProperty[],
+  f: FilterParams,
+): DisplayProperty[] {
   return list.filter((p) => {
     if (f.typologie.length > 0) {
-      const match = p.categories.some((c) =>
-        f.typologie.includes(c as PropertyCategory),
-      )
+      const match = p.categories.some((c) => f.typologie.includes(c))
       if (!match) return false
     }
     if (f.transaction.length > 0) {
       if (f.transaction.includes("location") && p.statut === "location") {
         // ok
-      } else if (f.transaction.includes("vente") && (p.statut === "vente" || p.statut === "murs-libres")) {
+      } else if (
+        f.transaction.includes("vente") &&
+        (p.statut === "vente" || p.statut === "murs-libres")
+      ) {
         // ok
       } else {
         return false
       }
     }
+    // Commune (chip UI) — match exact case-insensitive contre p.ville.
+    // OR intra-groupe, AND vs autres filtres géo.
+    if (f.commune.length > 0) {
+      const villeLower = p.ville.toLowerCase()
+      const match = f.commune.some((c) => c.toLowerCase() === villeLower)
+      if (!match) return false
+    }
+    // Arrondissement (SearchBar Hero) — les biens hors 75 (arrondissement
+    // null) sont exclus si un filtre arrondissement est actif.
     if (f.arrondissement.length > 0) {
+      if (p.arrondissement == null) return false
       if (!f.arrondissement.includes(p.arrondissement)) return false
     }
-    // Code postal exact — précédence forte (sélection structurée).
     if (f.codePostal !== undefined && p.codePostal !== f.codePostal) {
       return false
     }
-    // Département — préfixe 2 chars métropole, 3 chars DROM. Tous les biens
-    // étant 75XXX, seul departement="75" matche aujourd'hui.
     if (f.departement !== undefined) {
       const len = f.departement.length
       if (p.codePostal.slice(0, len) !== f.departement) return false
@@ -140,6 +177,7 @@ function applyFilters(
     // ville ou quartier. Ignoré si une clé géo structurée filtre déjà.
     if (
       f.q !== undefined &&
+      f.commune.length === 0 &&
       f.arrondissement.length === 0 &&
       f.codePostal === undefined &&
       f.departement === undefined
@@ -150,17 +188,31 @@ function applyFilters(
         p.quartier.toLowerCase().includes(needle)
       if (!matches) return false
     }
-    // Surface plancher — AND strict, exclus si bien.surface < surfaceMin.
     if (f.surfaceMin !== undefined && p.surface < f.surfaceMin) {
       return false
     }
-    // Plafond monétaire — AND strict, exclus si plafond fourni mais bien
-    // sans loyer/prix ou bien.price > loyerMax.
     if (f.loyerMax !== undefined) {
-      const price = priceForCap(p)
-      if (price === undefined || price > f.loyerMax) return false
+      const cap = priceForCap(p)
+      if (cap === undefined || cap.value > f.loyerMax) return false
     }
     return true
+  })
+}
+
+/**
+ * Tri des communes pour le chip UI :
+ *   1. Paris intra-muros (Paris 1ᵉʳ → Paris 20ᵉ) triés par arrondissement,
+ *   2. Autres communes, ordre alphabétique.
+ */
+function sortCommunes(names: string[]): string[] {
+  const parisRe = /^Paris\s+(\d+)/i
+  return names.slice().sort((a, b) => {
+    const ma = a.match(parisRe)
+    const mb = b.match(parisRe)
+    if (ma && mb) return parseInt(ma[1], 10) - parseInt(mb[1], 10)
+    if (ma) return -1
+    if (mb) return 1
+    return a.localeCompare(b, "fr")
   })
 }
 
@@ -171,7 +223,20 @@ export default async function OpportunitesPage({
 }) {
   const sp = await searchParams
   const filters = parseFiltersFromSearchParams(sp)
-  const filtered = applyFilters(properties, filters)
+
+  const { publishable } = await listPubliableProperties()
+  const all = publishable.map(toDisplayProperty)
+  const filtered = applyFilters(all, filters)
+
+  // Options de filtres DYNAMIQUES — dérivées des biens réellement présents.
+  // Une classe / une commune n'apparaît que si ≥ 1 bien la porte.
+  const availableTypologies = Array.from(
+    new Set(all.flatMap((p) => p.categories)),
+  )
+  const availableCommunes = sortCommunes(
+    Array.from(new Set(all.map((p) => p.ville).filter(Boolean))),
+  )
+
   const shouldScrollToResults = hasAnySearchParam(sp)
 
   return (
@@ -189,7 +254,9 @@ export default async function OpportunitesPage({
 
       <OpportunitiesFilters
         resultCount={filtered.length}
-        totalCount={properties.length}
+        totalCount={all.length}
+        availableTypologies={availableTypologies}
+        availableCommunes={availableCommunes}
       />
 
       <ScrollToResultsOnMount active={shouldScrollToResults} />
@@ -224,25 +291,54 @@ function PropertyCard({
   property: p,
   formatPrice,
 }: {
-  property: Property
+  property: DisplayProperty
   formatPrice: (v: number) => string
 }) {
   const statusTone: "gold" | "neutral" | "green" =
     p.statut === "vente" ? "gold" : p.statut === "murs-libres" ? "green" : "neutral"
 
+  // Photo : première photo Apimo si disponible, sinon fond fir-dark (fallback
+  // brief V3 ligne 252). Aucun /images/properties/{slug}.jpg local n'existe
+  // pour les biens Apimo — les URLs media.apimo.pro sont autorisées via
+  // next.config.ts.
+  const photo = p.photos?.[0]
+
+  // Affichage prix : valeur brute + période (« 2 000 €/mois », « 42 000 €/an »).
+  // Jamais mensualisé à l'écran, cf. Commit 1 (period exposé).
+  let priceLabel: string
+  if (p.loyerMensuel != null) {
+    const suffix = p.period ? `/${p.period.toLowerCase()}` : ""
+    priceLabel = `${formatPrice(p.loyerMensuel)} €${suffix}`
+  } else if (p.prix != null) {
+    priceLabel = `${formatPrice(p.prix)} €`
+  } else {
+    priceLabel = "Sur demande"
+  }
+
+  // Localisation : quartier si dispo, sinon ville seule.
+  const locLine = p.quartier && p.quartier !== p.ville
+    ? `${p.quartier} · ${p.surface} m²`
+    : `${p.ville} · ${p.surface} m²`
+
   return (
     <Link
-      href={`/opportunites/${p.slug}`}
+      href={`/commerces/${p.slug}`}
       className="group flex flex-col h-full overflow-hidden rounded-2xl bg-white shadow-[0_8px_28px_-12px_rgba(15,61,46,0.18)] transition hover:-translate-y-1 hover:shadow-[0_24px_60px_-20px_rgba(15,61,46,0.25)]"
     >
       <div className="relative aspect-[4/3] overflow-hidden bg-fir-dark">
-        <Image
-          src={`/images/properties/${p.slug}.jpg`}
-          alt=""
-          fill
-          sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-          className="object-cover transition duration-700 ease-out group-hover:scale-105"
-        />
+        {photo ? (
+          <Image
+            src={photo}
+            alt=""
+            fill
+            sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+            className="object-cover transition duration-700 ease-out group-hover:scale-105"
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center text-white/60">
+            <span className="eyebrow">Photo à venir</span>
+          </div>
+        )}
         <Badge variant="status" tone={statusTone} className="absolute left-4 top-4">
           {STATUT_LABEL[p.statut]}
         </Badge>
@@ -253,15 +349,9 @@ function PropertyCard({
       <div className="p-6 flex flex-1 flex-col">
         <p className="eyebrow text-gold-deep">{TYPE_LABEL[p.type]}</p>
         <h2 className="mt-3 text-lg font-medium leading-tight text-fir-dark">{p.title}</h2>
-        <p className="mt-2 text-sm text-ink/60">
-          {p.quartier} · {p.surface} m²
-        </p>
+        <p className="mt-2 text-sm text-ink/60">{locLine}</p>
         <p className="mt-auto pt-5 font-display text-3xl uppercase tracking-tight text-fir-dark">
-          {p.loyerMensuel
-            ? `${formatPrice(p.loyerMensuel)} €/mois`
-            : p.prix
-              ? `${formatPrice(p.prix)} €`
-              : "Sur demande"}
+          {priceLabel}
         </p>
       </div>
     </Link>

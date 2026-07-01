@@ -13,13 +13,23 @@ const TRANSACTIONS = [
   { value: "vente", label: "Vente" },
 ] as const
 
-const ARRONDISSEMENTS = Array.from({ length: 20 }, (_, i) => i + 1)
-
 type Props = {
   /** Compteur de résultats actuel après filtrage server. */
   resultCount: number
   /** Compteur "tous biens" avant filtrage — pour l'affichage X/Y. */
   totalCount: number
+  /**
+   * Slugs de typologie effectivement présents dans le flux actuel.
+   * Les classes absentes (immeubles, bureaux, hôtellerie…) disparaissent
+   * du chip UI — voir Commit 1 pour la liste des classes non dérivables
+   * du flux Apimo publiable.
+   */
+  availableTypologies: string[]
+  /**
+   * Communes distinctes présentes dans le flux (city.name Apimo), ordre
+   * fourni par la page (généralement Paris d'abord puis alpha).
+   */
+  availableCommunes: string[]
 }
 
 function parseList(value: string | null): string[] {
@@ -27,7 +37,12 @@ function parseList(value: string | null): string[] {
   return value.split(",").map((v) => v.trim()).filter(Boolean)
 }
 
-export function OpportunitiesFilters({ resultCount, totalCount }: Props) {
+export function OpportunitiesFilters({
+  resultCount,
+  totalCount,
+  availableTypologies,
+  availableCommunes,
+}: Props) {
   const router = useRouter()
   const searchParams = useSearchParams()
 
@@ -35,9 +50,7 @@ export function OpportunitiesFilters({ resultCount, totalCount }: Props) {
     () => ({
       typologie: parseList(searchParams.get("typologie")),
       transaction: parseList(searchParams.get("transaction")),
-      arrondissement: parseList(searchParams.get("arrondissement")).map((n) =>
-        parseInt(n, 10),
-      ),
+      commune: parseList(searchParams.get("commune")),
     }),
     [searchParams],
   )
@@ -45,15 +58,14 @@ export function OpportunitiesFilters({ resultCount, totalCount }: Props) {
   const hasFilters =
     active.typologie.length > 0 ||
     active.transaction.length > 0 ||
-    active.arrondissement.length > 0
+    active.commune.length > 0
 
   const updateUrl = useCallback(
-    (next: { typologie: string[]; transaction: string[]; arrondissement: number[] }) => {
+    (next: { typologie: string[]; transaction: string[]; commune: string[] }) => {
       const params = new URLSearchParams()
       if (next.typologie.length) params.set("typologie", next.typologie.join(","))
       if (next.transaction.length) params.set("transaction", next.transaction.join(","))
-      if (next.arrondissement.length)
-        params.set("arrondissement", next.arrondissement.join(","))
+      if (next.commune.length) params.set("commune", next.commune.join(","))
       const query = params.toString()
       router.replace(query ? `/opportunites?${query}` : "/opportunites", {
         scroll: false,
@@ -75,16 +87,21 @@ export function OpportunitiesFilters({ resultCount, totalCount }: Props) {
     updateUrl({ ...active, transaction: next })
   }
 
-  function toggleArrondissement(n: number) {
-    const next = active.arrondissement.includes(n)
-      ? active.arrondissement.filter((v) => v !== n)
-      : [...active.arrondissement, n]
-    updateUrl({ ...active, arrondissement: next })
+  function toggleCommune(name: string) {
+    const next = active.commune.includes(name)
+      ? active.commune.filter((v) => v !== name)
+      : [...active.commune, name]
+    updateUrl({ ...active, commune: next })
   }
 
   function reset() {
     router.replace("/opportunites", { scroll: false })
   }
+
+  const typologyOptions = useMemo(
+    () => CATEGORIES.filter((c) => availableTypologies.includes(c.slug)),
+    [availableTypologies],
+  )
 
   return (
     <div
@@ -112,16 +129,18 @@ export function OpportunitiesFilters({ resultCount, totalCount }: Props) {
         </div>
 
         <div className="space-y-3">
-          <FilterGroup label="Typologie">
-            {CATEGORIES.map((c) => (
-              <FilterChip
-                key={c.slug}
-                label={c.label}
-                active={active.typologie.includes(c.slug)}
-                onClick={() => toggleTypologie(c.slug)}
-              />
-            ))}
-          </FilterGroup>
+          {typologyOptions.length > 0 && (
+            <FilterGroup label="Typologie">
+              {typologyOptions.map((c) => (
+                <FilterChip
+                  key={c.slug}
+                  label={c.label}
+                  active={active.typologie.includes(c.slug)}
+                  onClick={() => toggleTypologie(c.slug)}
+                />
+              ))}
+            </FilterGroup>
+          )}
 
           <FilterGroup label="Transaction">
             {TRANSACTIONS.map((t) => (
@@ -134,16 +153,18 @@ export function OpportunitiesFilters({ resultCount, totalCount }: Props) {
             ))}
           </FilterGroup>
 
-          <FilterGroup label="Arrondissement">
-            {ARRONDISSEMENTS.map((n) => (
-              <FilterChip
-                key={n}
-                label={n === 1 ? "Paris 1ᵉʳ" : `Paris ${n}ᵉ`}
-                active={active.arrondissement.includes(n)}
-                onClick={() => toggleArrondissement(n)}
-              />
-            ))}
-          </FilterGroup>
+          {availableCommunes.length > 0 && (
+            <FilterGroup label="Commune">
+              {availableCommunes.map((name) => (
+                <FilterChip
+                  key={name}
+                  label={name}
+                  active={active.commune.includes(name)}
+                  onClick={() => toggleCommune(name)}
+                />
+              ))}
+            </FilterGroup>
+          )}
         </div>
       </div>
     </div>

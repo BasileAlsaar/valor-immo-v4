@@ -8,6 +8,14 @@ export type FilterParams = {
   typologie: string[]
   transaction: string[]
   arrondissement: number[]
+  /**
+   * Communes exactes (city.name Apimo). Multi-select. Match strict
+   * case-insensitive contre `p.ville`. Utilisé par le chip UI de la barre
+   * de filtres — dérivé dynamiquement des biens présents. Coexiste avec
+   * `arrondissement` (émis par SearchBar Hero) : les deux sont appliqués
+   * en AND côté server.
+   */
+  commune: string[]
   /** Code postal exact (5 chiffres). Undefined = pas de contrainte. */
   codePostal?: string
   /** Code département (2 chars métropole / 2A / 2B, ou 3 chars DROM). */
@@ -84,6 +92,7 @@ export function parseFiltersFromSearchParams(searchParams: {
     arrondissement: read("arrondissement")
       .map((n) => parseInt(n, 10))
       .filter((n) => Number.isFinite(n)),
+    commune: read("commune"),
     codePostal: parseCodePostal(readScalar(searchParams, "codePostal")),
     departement: parseDepartement(readScalar(searchParams, "departement")),
     q: parseQ(readScalar(searchParams, "q")),
