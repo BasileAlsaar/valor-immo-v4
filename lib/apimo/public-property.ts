@@ -100,8 +100,12 @@ export function toPublicProperty(p: ApimoProperty): PublicProperty {
       }
     : null
 
+  // Tri par rank croissant → pictures[0] correspond toujours à la photo
+  // « rank le plus bas » (photo de couverture Apimo).
   const pictures: PublicPicture[] = (p.pictures ?? [])
     .filter((pic) => pic.internet === "1")
+    .slice()
+    .sort((a, b) => a.rank - b.rank)
     .map((pic) => ({
       url: pic.url,
       rank: pic.rank,
