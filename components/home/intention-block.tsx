@@ -50,7 +50,10 @@ const INTENTIONS: Intention[] = [
 
 export function IntentionBlock() {
   return (
-    <section className="bg-cream py-20 md:py-24 lg:py-28">
+    <section
+      id="expertise"
+      className="scroll-mt-[calc(var(--header-offset)+1.5rem)] bg-cream py-20 md:py-24 lg:py-28"
+    >
       <Container>
         <div className="mx-auto max-w-3xl text-center">
           <span className="font-display text-xs uppercase tracking-[0.3em] text-gold">

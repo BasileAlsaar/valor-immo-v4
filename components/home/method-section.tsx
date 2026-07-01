@@ -27,7 +27,10 @@ export function MethodSection({ steps }: { steps?: ReadonlyArray<Step> } = {}) {
   const items = steps ?? STEPS_DEFAULT
   const gridCols = items.length === 2 ? "md:grid-cols-2 md:max-w-3xl md:mx-auto" : "md:grid-cols-3"
   return (
-    <section className="relative overflow-hidden bg-fir-dark py-16 text-white md:py-18 lg:py-20">
+    <section
+      id="methode"
+      className="relative scroll-mt-[calc(var(--header-offset)+1.5rem)] overflow-hidden bg-fir-dark py-16 text-white md:py-18 lg:py-20"
+    >
       <Container>
         <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
           <div className="max-w-3xl">

@@ -23,7 +23,8 @@ export function ContactCTA() {
   return (
     <section
       ref={ref}
-      className="relative flex items-center overflow-hidden bg-fir-darker py-12 text-cream md:min-h-[50vh] md:py-24"
+      id="contact"
+      className="relative flex scroll-mt-[calc(var(--header-offset)+1.5rem)] items-center overflow-hidden bg-fir-darker py-12 text-cream md:min-h-[50vh] md:py-24"
     >
       <Container className="text-center">
         <motion.div

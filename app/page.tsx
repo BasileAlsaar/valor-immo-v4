@@ -1,4 +1,5 @@
 import { Hero } from "@/components/home/hero"
+import { SectionNav } from "@/components/home/section-nav"
 import { IntentionBlock } from "@/components/home/intention-block"
 import { QuotesCarousel } from "@/components/home/quotes-carousel"
 import { MethodSection } from "@/components/home/method-section"
@@ -22,6 +23,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <SectionNav />
       <OpportunitiesPreview />
       <IntentionBlock />
       <QuotesCarousel />
