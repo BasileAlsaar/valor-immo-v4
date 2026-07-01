@@ -19,6 +19,7 @@
  */
 
 import { labelFor } from "./catalogs"
+import { computeSlug } from "./slug"
 import type { ApimoProperty } from "./types"
 
 // Rayon par défaut du cercle de zone (en mètres) si Apimo ne fournit pas
@@ -84,6 +85,7 @@ export type PublicDistrict = {
 export type PublicProperty = {
   id: number
   reference: string
+  slug: string // kebab(title) + "-" + reference.toLowerCase()
   category: string // label
   type: string // label
   subtype: string // label
@@ -160,6 +162,7 @@ export function toPublicProperty(p: ApimoProperty): PublicProperty {
   return {
     id: p.id,
     reference: p.reference,
+    slug: computeSlug(fr?.title ?? null, p.reference),
     category: labelFor("property_category", p.category),
     type: labelFor("property_type", p.type),
     subtype: labelFor("property_subtype", p.subtype),

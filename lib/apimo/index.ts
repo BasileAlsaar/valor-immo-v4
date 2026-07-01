@@ -19,6 +19,7 @@ export {
   UNKNOWN_LABEL,
 } from "./catalogs"
 export type { CatalogName } from "./catalogs"
+export { computeSlug, extractReferenceFromSlug } from "./slug"
 export { toPublicProperty } from "./public-property"
 export type {
   PublicArea,

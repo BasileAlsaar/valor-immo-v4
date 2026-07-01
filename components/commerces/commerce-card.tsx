@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 
 import { Badge } from "@/components/ui/badge"
 import type { PublicProperty } from "@/lib/apimo"
@@ -40,12 +41,10 @@ export function CommerceCard({ property: p, priority }: Props) {
   const altText = p.content?.title ?? `${p.type} · ${p.reference}`
 
   return (
-    // Pilote étape 2 : cartes non cliquables tant que la fiche détail
-    // n'existe pas (route /commerces/[slug] câblée à l'étape 3). On garde
-    // la même mise en forme visuelle pour minimiser le diff futur.
-    <div
+    <Link
+      href={`/commerces/${p.slug}`}
       data-testid="commerce-card"
-      className="group flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_28px_-12px_rgba(15,61,46,0.18)]"
+      className="group flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_28px_-12px_rgba(15,61,46,0.18)] transition hover:-translate-y-1 hover:shadow-[0_24px_60px_-20px_rgba(15,61,46,0.25)]"
     >
       <div className="relative aspect-[4/3] overflow-hidden bg-fir-dark">
         {firstPic ? (
@@ -87,6 +86,6 @@ export function CommerceCard({ property: p, priority }: Props) {
           {priceStr}
         </p>
       </div>
-    </div>
+    </Link>
   )
 }
