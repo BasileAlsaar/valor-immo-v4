@@ -9,10 +9,41 @@
  *    updated_by, financial, exchanges, agreement, price.commission…) sont
  *    ignorés par construction, jamais mappés.
  *  - `publish_address` gouverne l'exposition de l'adresse rue.
+ *  - latitude/longitude sont ARRONDIES à 3 décimales (≈ ±100 m) avant
+ *    exposition. Les coords exactes ne franchissent jamais la frontière
+ *    serveur → client (RGPD, discrétion propriétaire).
+ *  - `content.comment` passe par un filet de redaction qui retire les
+ *    numéros de mobile français (06/07, +33 6/7). Filet de sécurité ; le
+ *    fix durable est de retirer les mobiles perso des descriptions côté
+ *    CRM Apimo.
  */
 
 import { labelFor } from "./catalogs"
 import type { ApimoProperty } from "./types"
+
+// Rayon par défaut du cercle de zone (en mètres) si Apimo ne fournit pas
+// `radius`. Choix : 400 m ≈ quartier piétonnier / grand îlot parisien.
+const DEFAULT_ZONE_RADIUS_M = 400
+
+// Mobile FR : 06/07 ou +33 6/+33 7, séparateurs espace, point ou tiret
+// facultatifs entre les paires. Volontairement conservateur (pas de fixe
+// 01-05, pas de 08/09) — objectif : masquer les numéros perso, pas les
+// standards de l'agence.
+const FRENCH_MOBILE_RE =
+  /(?:\+33\s?|0)[67](?:[\s.\-]?\d{2}){4}\b/g
+
+function redactFrenchMobile(text: string | null): string | null {
+  if (!text) return text
+  return text.replace(FRENCH_MOBILE_RE, "")
+}
+
+function roundCoord(v: string | number | null | undefined): number | null {
+  if (v == null) return null
+  const n = typeof v === "number" ? v : Number(v)
+  if (!Number.isFinite(n)) return null
+  // 3 décimales ≈ 111 m N-S, ~74 m E-W à la latitude de Paris.
+  return Math.round(n * 1000) / 1000
+}
 
 export type PublicPrice = {
   value: number | null
@@ -65,14 +96,9 @@ export type PublicProperty = {
   price: PublicPrice | null
   pictures: PublicPicture[]
   content: PublicComment | null // commentaire fr uniquement
-  latitude: number | null
-  longitude: number | null
-}
-
-function parseCoord(v: string | number | null | undefined): number | null {
-  if (v == null) return null
-  const n = typeof v === "number" ? v : Number(v)
-  return Number.isFinite(n) ? n : null
+  latitude: number | null // arrondi 3 décimales (≈ ±100 m)
+  longitude: number | null // arrondi 3 décimales (≈ ±100 m)
+  zoneRadius: number // rayon en m pour dessiner un cercle de zone (défaut 400)
 }
 
 function positiveOrNull(v: number | null | undefined): number | null {
@@ -119,9 +145,12 @@ export function toPublicProperty(p: ApimoProperty): PublicProperty {
         title: fr.title,
         subtitle: fr.subtitle,
         hook: fr.hook,
-        comment: fr.comment,
+        comment: redactFrenchMobile(fr.comment),
       }
     : null
+
+  const zoneRadius =
+    typeof p.radius === "number" && p.radius > 0 ? p.radius : DEFAULT_ZONE_RADIUS_M
 
   const area: PublicArea = {
     total: p.area?.total ?? null,
@@ -143,7 +172,8 @@ export function toPublicProperty(p: ApimoProperty): PublicProperty {
     price,
     pictures,
     content,
-    latitude: parseCoord(p.latitude),
-    longitude: parseCoord(p.longitude),
+    latitude: roundCoord(p.latitude),
+    longitude: roundCoord(p.longitude),
+    zoneRadius,
   }
 }

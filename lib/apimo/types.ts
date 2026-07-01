@@ -151,6 +151,7 @@ export type ApimoProperty = Record<string, unknown> & {
   address: string | null
   address_more: string | null
   publish_address: boolean
+  radius: number | null
   pictures: ApimoPicture[]
   medias: unknown[]
   comments: ApimoComment[]
