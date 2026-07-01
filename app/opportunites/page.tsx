@@ -365,8 +365,8 @@ function PropertyCard({
 }
 
 /**
- * Empty state affiché quand le CATALOGUE ENTIER est vide (0 bien publiable
- * après filtre `no_verified_tag`). Distinct de l'empty state "aucun
+ * Empty state affiché quand le CATALOGUE ENTIER est vide (0 bien
+ * publiable dans le flux Apimo). Distinct de l'empty state "aucun
  * résultat pour vos critères" — pour qu'un visiteur qui arrive sur une
  * page sans aucun filtre ne se demande pas ce qu'il a mal fait.
  */
