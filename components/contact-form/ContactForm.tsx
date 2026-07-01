@@ -44,13 +44,29 @@ const STEP_FIELDS: Record<Step, (keyof ContactFormValues)[]> = {
   ],
 }
 
+/**
+ * Métadonnées de rattachement à un bien Apimo, calculées côté serveur à
+ * partir de `?bien={reference}` sur `/contact`. La résolution reference →
+ * (id, label) se fait via `listPubliableProperties` : si la référence n'est
+ * pas publiable ou introuvable, le parent ne fournit pas cette prop et le
+ * formulaire fonctionne normalement (aucune régression).
+ */
+export type BienPrefill = {
+  reference: string
+  id: number
+  /** Libellé lisible pré-inséré dans le champ « Précisions », ex.
+   *  « Demande de visite — VI7 · Paris 14ème ». */
+  label: string
+}
+
 type Props = {
   /** Appelé avec les valeurs validées une fois l'API contact OK. Le parent
    * monte alors le SuccessScreen plein écran à la place du formulaire. */
   onSuccess: (values: ContactFormValues) => void
+  bienPrefill?: BienPrefill
 }
 
-export function ContactForm({ onSuccess }: Props) {
+export function ContactForm({ onSuccess, bienPrefill }: Props) {
   const [step, setStep] = useState<Step>(1)
   const [direction, setDirection] = useState<1 | -1>(1)
   const [status, setStatus] = useState<"idle" | "submitting" | "error">("idle")
@@ -65,21 +81,36 @@ export function ContactForm({ onSuccess }: Props) {
     },
   })
 
-  const { getValues, reset, trigger, handleSubmit } = methods
+  const { getValues, reset, setValue, trigger, handleSubmit } = methods
 
-  // Restauration sessionStorage au mount
+  // Restauration sessionStorage au mount, puis pré-remplissage bien (dans le
+  // MÊME effect pour garantir que le prefill écrase une éventuelle valeur
+  // restaurée — le prefill URL est plus intentionnel qu'un draft dormant).
   useEffect(() => {
     if (typeof window === "undefined") return
     try {
       const raw = sessionStorage.getItem(STORAGE_KEY)
-      if (!raw) return
-      const parsed = JSON.parse(raw) as { values: Partial<ContactFormValues>; step: Step }
-      reset(parsed.values as ContactFormValues, { keepDefaultValues: true })
-      if ([1, 2, 3].includes(parsed.step)) setStep(parsed.step)
+      if (raw) {
+        const parsed = JSON.parse(raw) as {
+          values: Partial<ContactFormValues>
+          step: Step
+        }
+        reset(parsed.values as ContactFormValues, { keepDefaultValues: true })
+        if ([1, 2, 3].includes(parsed.step)) setStep(parsed.step)
+      }
     } catch {
       // ignore — drafts corrompus
     }
-  }, [reset])
+    if (bienPrefill) {
+      setValue("bienReference", bienPrefill.reference, { shouldDirty: false })
+      setValue("bienId", bienPrefill.id, { shouldDirty: false })
+      setValue("message", bienPrefill.label, { shouldDirty: false })
+    }
+    // On veut ce comportement UNIQUEMENT au montage. Les changements
+    // ultérieurs de bienPrefill (rare) ne doivent pas ré-écraser un message
+    // en cours d'édition.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   // Persistance auto à chaque changement
   useEffect(() => {

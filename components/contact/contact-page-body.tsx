@@ -6,7 +6,7 @@ import { Clock, Mail, MapPin, Phone } from "lucide-react"
 import { Container } from "@/components/ui/container"
 import { Eyebrow } from "@/components/ui/eyebrow"
 import { HoursBlock } from "@/components/ui/hours-block"
-import { ContactForm } from "@/components/contact-form/ContactForm"
+import { ContactForm, type BienPrefill } from "@/components/contact-form/ContactForm"
 import { SuccessScreen } from "@/components/contact-form/SuccessScreen"
 import { ContactMap } from "@/components/contact/contact-map"
 import { SITE } from "@/lib/site"
@@ -18,7 +18,11 @@ const POURQUOI_NOUS = [
   "Carte T en cours d'obtention — délivrée par la CCI Paris Île-de-France.",
 ] as const
 
-export function ContactPageBody() {
+export function ContactPageBody({
+  bienPrefill,
+}: {
+  bienPrefill?: BienPrefill
+}) {
   const [submittedLead, setSubmittedLead] = useState<ContactFormValues | null>(null)
 
   if (submittedLead) {
@@ -58,7 +62,7 @@ export function ContactPageBody() {
                 précis, plus la réponse est rapide.
               </p>
               <div className="mt-8">
-                <ContactForm onSuccess={setSubmittedLead} />
+                <ContactForm onSuccess={setSubmittedLead} bienPrefill={bienPrefill} />
               </div>
             </div>
 

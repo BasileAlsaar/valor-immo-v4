@@ -173,8 +173,11 @@ export default async function CommerceDetailPage({
   const perSqm = annualPricePerSqm(b.price, b.area)
   const areaStr = formatArea(b.area)
   const geoLine = [b.district?.name, b.city?.name].filter(Boolean).join(" · ")
+  // Référence machine (parsable côté /contact). Le libellé lisible est
+  // reconstruit serveur-side sur /contact à partir de PublicProperty — on
+  // ne transporte plus de phrase en URL.
+  const contactHref = `/contact?bien=${encodeURIComponent(b.reference)}`
   const contactSubject = `Bien ${b.reference}${b.content?.title ? ` — ${b.content.title}` : ""}`
-  const contactHref = `/contact?sujet=${encodeURIComponent(contactSubject)}`
 
   return (
     <>

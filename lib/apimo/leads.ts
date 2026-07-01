@@ -22,6 +22,12 @@ type ApimoLeadPayload = {
   email: string
   phone: string
   message: string
+  // Rattachement à un bien Apimo lorsque le lead provient d'une fiche.
+  // Fournir les deux quand c'est possible : `property` (int, l'ID Apimo) est
+  // le canal fiable en base ; `property_reference` (str, la référence
+  // affichée type "VI7") sert de secours si l'ID n'a pas pu être résolu.
+  property?: number
+  property_reference?: string
 }
 
 const REQUEST_TIMEOUT_MS = 8000
@@ -45,12 +51,19 @@ function splitNom(nom: string): { firstname: string; lastname: string } {
 }
 
 function buildMessage(lead: ContactFormValues): string {
-  const lines: string[] = [
+  const lines: string[] = []
+  if (lead.bienReference) {
+    // Doublonne le rattachement en tête de message : garantit la lisibilité
+    // dans le CRM même si le champ `property` n'apparaît pas dans l'UI
+    // Apimo côté agent.
+    lines.push(`Concerne le bien : ${lead.bienReference}`, "")
+  }
+  lines.push(
     `Transaction : ${LABELS.transaction[lead.transaction]}`,
     `Typologie : ${LABELS.typologie[lead.typologie]}`,
     `Échéance : ${LABELS.deadline[lead.deadline]}`,
     `Financement : ${LABELS.financement[lead.financement]}`,
-  ]
+  )
   const secteur =
     lead.secteur === "autre" && lead.secteurAutre
       ? `${LABELS.secteur.autre} — ${lead.secteurAutre}`
@@ -65,9 +78,9 @@ function buildMessage(lead: ContactFormValues): string {
   return lines.join("\n")
 }
 
-function buildPayload(input: ContactFormValues): ApimoLeadPayload {
+export function buildPayload(input: ContactFormValues): ApimoLeadPayload {
   const { firstname, lastname } = splitNom(input.nom)
-  return {
+  const base: ApimoLeadPayload = {
     reference: `web-${Date.now()}`,
     date: formatDateTime(new Date()),
     step: "1",
@@ -80,6 +93,9 @@ function buildPayload(input: ContactFormValues): ApimoLeadPayload {
     phone: input.telephone,
     message: buildMessage(input),
   }
+  if (typeof input.bienId === "number") base.property = input.bienId
+  if (input.bienReference) base.property_reference = input.bienReference
+  return base
 }
 
 export async function createApimoLead(

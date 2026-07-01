@@ -99,6 +99,15 @@ const coordonneesShape = {
   website: z.string().max(0).optional(),
 }
 
+// Métadonnées de rattachement à un bien Apimo (fiche → CTA « Demander une
+// visite »). Toujours optionnelles, jamais liées à une étape UI : elles ne
+// figurent pas dans stepSchemas. Reconstruites côté serveur à chaque fetch
+// (jamais devinées côté client).
+const bienShape = {
+  bienReference: z.string().max(50).optional(),
+  bienId: z.number().int().positive().optional(),
+}
+
 export const stepSchemas = {
   projet: z.object(projetShape),
   contexte: z.object(contexteShape),
@@ -109,6 +118,7 @@ export const contactFormSchema = z.object({
   ...projetShape,
   ...contexteShape,
   ...coordonneesShape,
+  ...bienShape,
 })
 
 export type ContactFormValues = z.infer<typeof contactFormSchema>
