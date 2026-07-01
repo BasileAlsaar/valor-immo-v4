@@ -6,8 +6,11 @@
  *  - seuls les champs listés dans `PublicProperty` sont exposés ;
  *  - tous les autres champs Apimo (owner, user, tenant, private_comment,
  *    interagency_comment, status_comment, logs, referrals, created_by,
- *    updated_by, financial, exchanges, agreement, price.commission…) sont
- *    ignorés par construction, jamais mappés.
+ *    updated_by, financial, exchanges, agreement…) sont ignorés par
+ *    construction, jamais mappés.
+ *  - `price.commission` (honoraires d'agence à la charge du preneur) EST
+ *    exposé : info commerciale publique, déjà annoncée en clair dans nos
+ *    descriptions Apimo. À NE PAS confondre avec `price.fees` (charges).
  *  - `publish_address` gouverne l'exposition de l'adresse rue.
  *  - latitude/longitude sont ARRONDIES à 3 décimales (≈ ±100 m) avant
  *    exposition. Les coords exactes ne franchissent jamais la frontière
@@ -52,6 +55,14 @@ export type PublicPrice = {
   currency: string
   fees: number | null
   deposit: number | null
+  /**
+   * Honoraires d'agence (à la charge du preneur). Info commerciale
+   * publique — Apimo l'expose côté fiche, et elle est déjà annoncée en
+   * clair dans nos descriptions Apimo (ex. VI7 : « 7 200 € HT »). Distincte
+   * de `price.commission` au sens rémunération interne. À NE PAS confondre
+   * avec `fees` (provisions/charges).
+   */
+  commission: number | null
 }
 
 export type PublicPicture = {
@@ -125,6 +136,7 @@ export function toPublicProperty(p: ApimoProperty): PublicProperty {
         currency: p.price.currency,
         fees: p.price.fees,
         deposit: p.price.deposit,
+        commission: p.price.commission,
       }
     : null
 
