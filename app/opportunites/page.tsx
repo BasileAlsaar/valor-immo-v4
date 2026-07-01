@@ -252,12 +252,14 @@ export default async function OpportunitesPage({
         backgroundImage="/images/categories/locaux-commerciaux.jpg"
       />
 
-      <OpportunitiesFilters
-        resultCount={filtered.length}
-        totalCount={all.length}
-        availableTypologies={availableTypologies}
-        availableCommunes={availableCommunes}
-      />
+      {all.length > 0 && (
+        <OpportunitiesFilters
+          resultCount={filtered.length}
+          totalCount={all.length}
+          availableTypologies={availableTypologies}
+          availableCommunes={availableCommunes}
+        />
+      )}
 
       <ScrollToResultsOnMount active={shouldScrollToResults} />
 
@@ -271,7 +273,11 @@ export default async function OpportunitesPage({
           </div>
 
           {filtered.length === 0 ? (
-            <EmptyState zoneLabel={buildZoneLabel(filters)} />
+            all.length === 0 ? (
+              <EmptyCatalogState />
+            ) : (
+              <EmptyState zoneLabel={buildZoneLabel(filters)} />
+            )
           ) : (
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {filtered.map((p) => (
@@ -355,6 +361,33 @@ function PropertyCard({
         </p>
       </div>
     </Link>
+  )
+}
+
+/**
+ * Empty state affiché quand le CATALOGUE ENTIER est vide (0 bien publiable
+ * après filtre `no_verified_tag`). Distinct de l'empty state "aucun
+ * résultat pour vos critères" — pour qu'un visiteur qui arrive sur une
+ * page sans aucun filtre ne se demande pas ce qu'il a mal fait.
+ */
+function EmptyCatalogState() {
+  return (
+    <div className="rounded-3xl border border-fir-dark/10 bg-white p-12 text-center shadow-[0_8px_28px_-12px_rgba(15,61,46,0.10)]">
+      <Eyebrow className="text-gold-deep">Sélection en préparation</Eyebrow>
+      <h2 className="font-display mt-4 text-2xl uppercase leading-tight tracking-tight text-fir-dark md:text-3xl">
+        Nos biens sont en cours de publication.
+      </h2>
+      <p className="mx-auto mt-4 max-w-md text-sm text-ink/70">
+        La prochaine sélection est en cours de vérification par notre équipe.
+        Revenez très bientôt — ou contactez-nous pour être informé en priorité
+        des prochaines opportunités.
+      </p>
+      <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+        <CtaPill href="/contact" variant="fir" size="md">
+          <Mail className="h-4 w-4" /> Être prévenu
+        </CtaPill>
+      </div>
+    </div>
   )
 }
 

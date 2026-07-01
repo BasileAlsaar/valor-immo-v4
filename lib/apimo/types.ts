@@ -145,6 +145,15 @@ export type ApimoProperty = Record<string, unknown> & {
   subcategory: number | null
   type: number
   subtype: number | null
+  /**
+   * Tags éditoriaux libres saisis dans l'admin Apimo au niveau du bien.
+   * Distincts de `tags` (catalog global au niveau provider). Utilisés
+   * comme drapeau de publication site (voir `VERIFIED_TAG` dans
+   * lib/apimo/index.ts). Le type Apimo est effectivement `string[]` sur
+   * les 15 biens observés — on tolère `unknown[]` pour survivre à un
+   * jour où Apimo enverrait des objets tag.
+   */
+  tags_customized: unknown[] | null
   price: ApimoPrice | null
   city: ApimoCity | null
   district: ApimoDistrict | null

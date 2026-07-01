@@ -82,11 +82,49 @@ export const PUBLIABLE_CATEGORIES: ReadonlySet<number> = new Set([1, 2])
 export const PUBLIABLE_TYPES: ReadonlySet<number> = new Set([4, 7, 9])
 // 4 Commerce, 7 Bureau, 9 Locaux d'activité / Entrepôts
 
+/**
+ * Drapeau éditorial "vérifié / à publier sur le site". Apimo n'expose
+ * AUCUN champ prêt-à-l'emploi pour ça (cf. audit 2026-07-01 : `tags`,
+ * `tags_customized`, `ranking`, `providers`, `portals`, `publications`,
+ * `diffusion`, `broadcast`, `networks` sont tous vides/null sur les 15
+ * biens live). Convention : Yoav ajoute la chaîne `site-verifie` dans le
+ * champ `tags_customized` du bien côté admin Apimo. Sans ce tag, un bien
+ * ne franchit pas la frontière serveur → client.
+ *
+ * Le matching est TOLÉRANT (normalisation) pour survivre à une variante
+ * de casse ou d'accent saisie par erreur — mais la convention officielle
+ * reste strictement `site-verifie` (sans accent, sans espace, minuscules).
+ */
+export const VERIFIED_TAG = "site-verifie"
+
+function normalizeTag(s: string): string {
+  return s
+    .normalize("NFD")
+    .replace(/\p{Diacritic}/gu, "")
+    .toLowerCase()
+    .trim()
+}
+
+/**
+ * Un bien est considéré "vérifié" si `tags_customized` contient au moins
+ * un tag (string) dont la forme normalisée === `site-verifie`.
+ * Cas dégradés (tags_customized absent / null / non-array / tag non-string)
+ * → false, avec journalisation en amont (evaluatePubliable).
+ */
+export function hasVerifiedTag(p: ApimoProperty): boolean {
+  const raw = p.tags_customized
+  if (!Array.isArray(raw)) return false
+  return raw.some(
+    (t) => typeof t === "string" && normalizeTag(t) === VERIFIED_TAG
+  )
+}
+
 export type PubliableReason =
   | "step_not_active"
   | "status_not_active"
   | "category_out_of_scope"
   | "type_out_of_scope"
+  | "no_verified_tag"
 
 export type ExcludedProperty = {
   id: number
@@ -101,6 +139,9 @@ export function evaluatePubliable(p: ApimoProperty): PubliableReason[] {
   if (!PUBLIABLE_CATEGORIES.has(p.category))
     reasons.push("category_out_of_scope")
   if (!PUBLIABLE_TYPES.has(p.type)) reasons.push("type_out_of_scope")
+  // Garde-fou éditorial : par défaut FERMÉ (aucun bien ne remonte tant
+  // que Yoav n'a pas posé le tag). Voir VERIFIED_TAG.
+  if (!hasVerifiedTag(p)) reasons.push("no_verified_tag")
   return reasons
 }
 
