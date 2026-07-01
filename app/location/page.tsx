@@ -1,11 +1,18 @@
 import type { Metadata } from "next"
+
 import { PageHero } from "@/components/sections/page-hero"
 import { CallbackSection } from "@/components/sections/callback-section"
-import { OpportunitiesPreview } from "@/components/home/opportunities-preview"
+import { PropertyListingSection } from "@/components/sections/property-listing-section"
 import { Container } from "@/components/ui/container"
 import { Eyebrow } from "@/components/ui/eyebrow"
 import { SectionIndex } from "@/components/ui/section-index"
 import { SectionTitle } from "@/components/ui/section-title"
+import { parseFiltersFromSearchParams } from "@/lib/filters/opportunities"
+import { applyFilters, buildZoneLabel } from "@/lib/opportunities/pipeline"
+import { listPubliableProperties } from "@/lib/apimo"
+import { toDisplayProperty } from "@/lib/apimo/to-display"
+
+export const revalidate = 3600
 
 export const metadata: Metadata = {
   title: "Location — Immobilier commercial Paris",
@@ -36,7 +43,22 @@ const CIBLES = [
   },
 ] as const
 
-export default function LocationPage() {
+type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>
+
+export default async function LocationPage({
+  searchParams,
+}: {
+  searchParams: SearchParams
+}) {
+  const sp = await searchParams
+  const filters = parseFiltersFromSearchParams(sp)
+
+  const { publishable } = await listPubliableProperties()
+  const all = publishable
+    .map(toDisplayProperty)
+    .filter((p) => p.statut === "location")
+  const filtered = applyFilters(all, filters)
+
   return (
     <>
       <PageHero
@@ -50,7 +72,12 @@ export default function LocationPage() {
         backgroundImage="/images/categories/locaux-commerciaux.jpg"
       />
 
-      <OpportunitiesPreview />
+      <PropertyListingSection
+        basePath="/location"
+        all={all}
+        filtered={filtered}
+        emptyZoneLabel={buildZoneLabel(filters)}
+      />
 
       <section className="bg-cream py-24 md:py-32">
         <Container>

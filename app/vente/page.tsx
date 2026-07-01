@@ -1,12 +1,20 @@
 import type { Metadata } from "next"
+
 import { PageHero } from "@/components/sections/page-hero"
 import { CallbackSection } from "@/components/sections/callback-section"
-import { OpportunitiesPreview } from "@/components/home/opportunities-preview"
+import { PropertyListingSection } from "@/components/sections/property-listing-section"
 import { Container } from "@/components/ui/container"
 import { Eyebrow } from "@/components/ui/eyebrow"
 import { CtaPill } from "@/components/ui/cta-pill"
 import { SectionIndex } from "@/components/ui/section-index"
 import { SectionTitle } from "@/components/ui/section-title"
+import { parseFiltersFromSearchParams } from "@/lib/filters/opportunities"
+import { applyFilters, buildZoneLabel } from "@/lib/opportunities/pipeline"
+import { listPubliableProperties } from "@/lib/apimo"
+import { toDisplayProperty } from "@/lib/apimo/to-display"
+
+// ISR alignée sur /commerces + /opportunites.
+export const revalidate = 3600
 
 export const metadata: Metadata = {
   title: "Vente — Immobilier commercial Paris",
@@ -41,7 +49,25 @@ const CATEGORIES = [
   },
 ] as const
 
-export default function VentePage() {
+type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>
+
+export default async function VentePage({
+  searchParams,
+}: {
+  searchParams: SearchParams
+}) {
+  const sp = await searchParams
+  const filters = parseFiltersFromSearchParams(sp)
+
+  const { publishable } = await listPubliableProperties()
+  // /vente ne montre que les biens dont statut ∈ {vente, murs-libres}.
+  // Le mapper Apimo ne produit jamais "murs-libres" (concept éditorial
+  // non dérivable) → en pratique, statut === "vente".
+  const all = publishable
+    .map(toDisplayProperty)
+    .filter((p) => p.statut === "vente" || p.statut === "murs-libres")
+  const filtered = applyFilters(all, filters)
+
   return (
     <>
       <PageHero
@@ -55,7 +81,12 @@ export default function VentePage() {
         backgroundImage="/images/categories/immeubles.jpg"
       />
 
-      <OpportunitiesPreview />
+      <PropertyListingSection
+        basePath="/vente"
+        all={all}
+        filtered={filtered}
+        emptyZoneLabel={buildZoneLabel(filters)}
+      />
 
       <section className="bg-cream py-24 md:py-32">
         <Container>

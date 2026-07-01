@@ -1,7 +1,6 @@
 /**
  * Adaptateur `PublicProperty` (flux Apimo) → `DisplayProperty` (forme
- * consommée par les composants existants — Property mock de
- * lib/data/properties.ts).
+ * consommée par les cartes / la grille / la fiche détail).
  *
  * Discipline (identique à `public-property.ts`) :
  *  - fonction pure, construction d'un NOUVEL objet, jamais de spread ;
@@ -9,33 +8,25 @@
  *    ce module n'a AUCUNE dépendance sur `ApimoProperty` ni sur les
  *    catalogs bruts. Il ne consomme que la surface publique déjà
  *    normalisée par `toPublicProperty`.
- *  - tous les champs optionnels du mock qui ne sont pas dérivables
- *    d'Apimo restent `undefined` (jamais chaîne vide ni valeur factice).
+ *  - tous les champs optionnels qui ne sont pas dérivables d'Apimo
+ *    restent `undefined` (jamais chaîne vide ni valeur factice).
  *
- * Rôle : permettre aux pages actuelles (Opportunités / Location / Vente,
- * carrousel home, /classes-d-actifs/[slug]) de lire du flux Apimo sans
- * changement de forme, en préservant l'affichage brut + période côté prix
- * (voir champ `period` exposé pour usage filtre & affichage).
+ * Rôle : centraliser la traduction du flux Apimo vers le vocabulaire
+ * éditorial du site (statut, typologie, libellés €/mois vs €/an…) — les
+ * pages / composants n'ont pas à connaître Apimo au-delà de ça.
  *
- * ⚠️ Une fine divergence de forme est assumée par rapport au mock :
- *  - `arrondissement` : `number | null` (le mock imposait `number`). Apimo
- *    ne peut PAS fournir d'arrondissement pour un bien hors 75XXX ; on
- *    expose `null` plutôt qu'un `0` menteur.
- *  - `center` : `[number, number] | null` (le mock imposait `[number,
- *    number]`). Un bien Apimo sans lat/lng doit rester non-cartable —
- *    fallback interdit (ne mentirait pas juste sur la précision, mais
- *    inventerait une localisation).
- *  Les pages qui lisent ces deux champs devront gérer le cas `null` lors
- *  du branchement Apimo — c'est le seul contrat qui change.
+ * Divergences de forme (assumées) par rapport à un design Apimo-natif :
+ *  - `arrondissement` : `number | null` (null hors 75XXX intra-muros).
+ *  - `center` : `[number, number] | null` (null si Apimo n'a pas lat/lng).
+ *  Les composants qui lisent ces champs doivent gérer le cas `null`.
  */
 
 import type { PublicProperty } from "./public-property"
 import type {
-  Property as MockProperty,
   PropertyCategory,
   PropertyStatut,
   PropertyType,
-} from "@/lib/data/properties"
+} from "@/lib/property-labels"
 
 // ============================================================================
 // Table de correspondance typologie : (Apimo type, Apimo subtype) → PropertyCategory / PropertyType
@@ -145,15 +136,39 @@ export function deriveTypologie(
 // ============================================================================
 
 /**
- * Divergences délibérées du mock `Property` :
- *  - `arrondissement`  : `number | null` (mock : `number`)
- *  - `center`          : `[number, number] | null` (mock : `[number, number]`)
- *  - `period`          : nouveau champ (jamais présent sur le mock)
- * Tout le reste est strictement identique.
+ * Forme consommée par les cartes / la grille / la fiche détail. Héritée
+ * de l'ancien mock `Property` de lib/data/properties.ts (aujourd'hui
+ * supprimé) — on a conservé la structure pour que le design UI ne bouge
+ * pas, tout en la simplifiant sur les points où Apimo ne peut pas se
+ * plier au contrat du mock :
+ *  - `arrondissement` : `number | null` (null hors Paris intra-muros)
+ *  - `center`         : `[number, number] | null` (null si lat/lng absents)
+ *  - `period`         : champ ajouté pour filtre loyer + affichage brut
  */
-export type DisplayProperty = Omit<MockProperty, "arrondissement" | "center"> & {
+export type DisplayProperty = {
+  slug: string
+  ref: string
+  statut: PropertyStatut
+  type: PropertyType
+  categories: PropertyCategory[]
+  title: string
+  quartier: string
+  ville: string
+  codePostal: string
   arrondissement: number | null
   center: [number, number] | null
+  surface: number
+  surfaceSousSol?: number
+  activiteAutorisee?: string
+  tags?: string[]
+  loyerMensuel?: number
+  prix?: number
+  honoraires?: string
+  depotGarantie?: string
+  bail?: string
+  photos?: string[]
+  description?: string
+  caracteristiques?: { label: string; value: string }[]
   /**
    * Période brute Apimo (label fr : "Mois", "An", "Jour"…). Absent si le
    * bien n'a pas de prix. Utilisé par :

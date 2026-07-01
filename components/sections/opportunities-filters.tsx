@@ -21,8 +21,8 @@ type Props = {
   /**
    * Slugs de typologie effectivement présents dans le flux actuel.
    * Les classes absentes (immeubles, bureaux, hôtellerie…) disparaissent
-   * du chip UI — voir Commit 1 pour la liste des classes non dérivables
-   * du flux Apimo publiable.
+   * du chip UI — voir la table typologie dans lib/apimo/to-display.ts
+   * pour les classes non dérivables du flux Apimo publiable.
    */
   availableTypologies: string[]
   /**
@@ -30,6 +30,12 @@ type Props = {
    * fourni par la page (généralement Paris d'abord puis alpha).
    */
   availableCommunes: string[]
+  /**
+   * Base URL pour les mises à jour de query params. Chaque page listing
+   * (/opportunites, /location, /vente) passe la sienne. Défaut :
+   * /opportunites.
+   */
+  basePath?: string
 }
 
 function parseList(value: string | null): string[] {
@@ -42,6 +48,7 @@ export function OpportunitiesFilters({
   totalCount,
   availableTypologies,
   availableCommunes,
+  basePath = "/opportunites",
 }: Props) {
   const router = useRouter()
   const searchParams = useSearchParams()
@@ -67,11 +74,11 @@ export function OpportunitiesFilters({
       if (next.transaction.length) params.set("transaction", next.transaction.join(","))
       if (next.commune.length) params.set("commune", next.commune.join(","))
       const query = params.toString()
-      router.replace(query ? `/opportunites?${query}` : "/opportunites", {
+      router.replace(query ? `${basePath}?${query}` : basePath, {
         scroll: false,
       })
     },
-    [router],
+    [router, basePath],
   )
 
   function toggleTypologie(slug: string) {
@@ -95,7 +102,7 @@ export function OpportunitiesFilters({
   }
 
   function reset() {
-    router.replace("/opportunites", { scroll: false })
+    router.replace(basePath, { scroll: false })
   }
 
   const typologyOptions = useMemo(
