@@ -65,12 +65,18 @@ export function SiteHeader() {
     )
   }
 
+  // Mode "light" : la variante claire (cream + logo vert + ink) est
+  // forcée indépendamment du scroll. Utile sur les pages qui n'ont pas
+  // de hero sombre (ex. /commerces/[slug]) — le rendu blanc-inversé y
+  // serait invisible sur cream.
+  const showLight = mode === "light" || scrolled
+
   return (
     <>
       <header
         className={cn(
           "fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-out-expo",
-          scrolled
+          showLight
             ? "bg-cream/95 backdrop-blur-md text-ink shadow-[0_2px_24px_rgba(15,61,46,0.08)]"
             : "bg-transparent text-white",
         )}
@@ -88,7 +94,7 @@ export function SiteHeader() {
               height={400}
               className={cn(
                 "h-[64px] w-auto object-contain transition md:h-[140px]",
-                !scrolled && "brightness-0 invert",
+                !showLight && "brightness-0 invert",
               )}
               priority
             />
@@ -101,7 +107,7 @@ export function SiteHeader() {
                 href={item.href}
                 className={cn(
                   "whitespace-nowrap text-xs uppercase tracking-wider opacity-90 transition hover:opacity-100 2xl:text-sm",
-                  scrolled ? "hover:text-gold-deep" : "hover:text-gold",
+                  showLight ? "hover:text-gold-deep" : "hover:text-gold",
                 )}
               >
                 {item.label}
@@ -122,7 +128,7 @@ export function SiteHeader() {
               href="/contact"
               className={cn(
                 "hidden whitespace-nowrap rounded-full px-6 py-2.5 text-sm font-medium uppercase tracking-wider transition lg:inline-flex",
-                scrolled
+                showLight
                   ? "bg-fir-dark text-white hover:bg-ink"
                   : "bg-gold text-ink hover:bg-gold-warm",
               )}

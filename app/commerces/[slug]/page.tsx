@@ -10,6 +10,7 @@ import { Badge } from "@/components/ui/badge"
 import { Container } from "@/components/ui/container"
 import { CtaPill } from "@/components/ui/cta-pill"
 import { Eyebrow } from "@/components/ui/eyebrow"
+import { SetHeaderLight } from "@/components/site/set-header-light"
 import {
   extractReferenceFromSlug,
   listPubliableProperties,
@@ -181,12 +182,17 @@ export default async function CommerceDetailPage({
 
   return (
     <>
+      <SetHeaderLight />
       <script
         type="application/ld+json"
         // JSON-LD schema.org — city-level only, aucun geo précis.
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdForBien(b)) }}
       />
-      <section className="bg-cream pt-10 pb-6 md:pt-16 md:pb-10">
+      {/* Padding-top calé sur le token `--header-offset` (96 px mobile /
+          160 px desktop) pour que le contenu démarre proprement SOUS le
+          `SiteHeader` fixe. Sans ça, "Retour au catalogue" chevauche la
+          rangée du header. */}
+      <section className="bg-cream pt-[calc(var(--header-offset)+1.5rem)] pb-6 md:pt-[calc(var(--header-offset)+2rem)] md:pb-10">
         <Container>
           <Link
             href="/commerces"
