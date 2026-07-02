@@ -17,7 +17,7 @@ export const SITE = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://groupevalorimmo.fr",
   telephoneDisplay: "01 89 40 70 00",
   telephoneTel: "+33189407000",
-  email: "yoavmarciano@groupevalorimmo.fr",
+  email: "contact@groupevalorimmo.fr",
   address: {
     line1: "96 Rue Boileau",
     line2: "75016 Paris",
