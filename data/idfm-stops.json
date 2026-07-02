@@ -1,0 +1,10263 @@
+{
+  "_meta": {
+    "source": "Île-de-France Mobilités — arrets-lignes (Etalab 2.0)",
+    "generated_at": "2026-07-02T15:49:19.328Z",
+    "total": 1125,
+    "by_type": {
+      "metro": 321,
+      "rer": 243,
+      "train": 298,
+      "tram": 263
+    }
+  },
+  "stops": [
+    {
+      "name": "Abbesses",
+      "lat": 48.88439,
+      "lng": 2.33839,
+      "lines": [
+        "12"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Ablon",
+      "lat": 48.72578,
+      "lng": 2.41987,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Achères Grand Cormier",
+      "lat": 48.95541,
+      "lng": 2.09365,
+      "lines": [
+        "A"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Achères Ville",
+      "lat": 48.97064,
+      "lng": 2.07773,
+      "lines": [
+        "A"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Achères Ville",
+      "lat": 48.97064,
+      "lng": 2.07773,
+      "lines": [
+        "L"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Adrienne Bolland",
+      "lat": 48.87179,
+      "lng": 2.40874,
+      "lines": [
+        "T3b"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Aéroport CDG 1 (Terminal 3) - RER",
+      "lat": 49.00979,
+      "lng": 2.56141,
+      "lines": [
+        "B"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Aéroport Charles de Gaulle 2 (Terminal 2)",
+      "lat": 49.00415,
+      "lng": 2.57098,
+      "lines": [
+        "B"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Aéroport d'Orly",
+      "lat": 48.72955,
+      "lng": 2.3682,
+      "lines": [
+        "T7"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Aéroport d'Orly",
+      "lat": 48.7277,
+      "lng": 2.36246,
+      "lines": [
+        "14"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Aimé Césaire",
+      "lat": 48.90838,
+      "lng": 2.37804,
+      "lines": [
+        "12"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Alcide d'Orbigny",
+      "lat": 48.9654,
+      "lng": 2.36293,
+      "lines": [
+        "T5"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Alésia",
+      "lat": 48.8282,
+      "lng": 2.32709,
+      "lines": [
+        "4"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Alexandra David-Néel",
+      "lat": 48.84369,
+      "lng": 2.41003,
+      "lines": [
+        "T3a"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Alexandre Dumas",
+      "lat": 48.8562,
+      "lng": 2.39459,
+      "lines": [
+        "2"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Allée de la Tour-Rendez-vous",
+      "lat": 48.89729,
+      "lng": 2.50664,
+      "lines": [
+        "T4"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Allée Royale",
+      "lat": 48.81473,
+      "lng": 2.07854,
+      "lines": [
+        "T13"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Alma - Marceau",
+      "lat": 48.86473,
+      "lng": 2.30113,
+      "lines": [
+        "9"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Amédée Gordini",
+      "lat": 48.65874,
+      "lng": 2.37381,
+      "lines": [
+        "T12"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Anatole France",
+      "lat": 48.89223,
+      "lng": 2.28481,
+      "lines": [
+        "3"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Andrésy",
+      "lat": 48.97462,
+      "lng": 2.04867,
+      "lines": [
+        "J"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Angélique Compoint - Porte de Montmartre",
+      "lat": 48.89777,
+      "lng": 2.3382,
+      "lines": [
+        "T3b"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Angerville",
+      "lat": 48.31161,
+      "lng": 2.00375,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Anna de Noailles",
+      "lat": 48.87448,
+      "lng": 2.27807,
+      "lines": [
+        "T3b"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Anny Flore",
+      "lat": 48.88123,
+      "lng": 2.28546,
+      "lines": [
+        "T3b"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Antony",
+      "lat": 48.75463,
+      "lng": 2.30089,
+      "lines": [
+        "B"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Anvers",
+      "lat": 48.88287,
+      "lng": 2.34415,
+      "lines": [
+        "2"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Arboretum",
+      "lat": 48.89796,
+      "lng": 2.56173,
+      "lines": [
+        "T4"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Arcueil - Cachan",
+      "lat": 48.7987,
+      "lng": 2.32809,
+      "lines": [
+        "B"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Argenteuil",
+      "lat": 48.9469,
+      "lng": 2.25791,
+      "lines": [
+        "J"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Argentine",
+      "lat": 48.87538,
+      "lng": 2.29015,
+      "lines": [
+        "1"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Arpajon",
+      "lat": 48.586,
+      "lng": 2.24122,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Arts et Métiers",
+      "lat": 48.86553,
+      "lng": 2.35672,
+      "lines": [
+        "3",
+        "11"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Asnières - Gennevilliers - Les Courtilles",
+      "lat": 48.93076,
+      "lng": 2.28422,
+      "lines": [
+        "13"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Asnières-sur-Seine",
+      "lat": 48.90587,
+      "lng": 2.28321,
+      "lines": [
+        "J",
+        "L"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Assemblée Nationale",
+      "lat": 48.86112,
+      "lng": 2.32069,
+      "lines": [
+        "12"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Athis-Mons",
+      "lat": 48.71267,
+      "lng": 2.40367,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Auber",
+      "lat": 48.87235,
+      "lng": 2.32966,
+      "lines": [
+        "A"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Aubergenville Élisabethville",
+      "lat": 48.97233,
+      "lng": 1.84896,
+      "lines": [
+        "J"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Aubervilliers - Pantin - Quatre Chemins",
+      "lat": 48.90376,
+      "lng": 2.39222,
+      "lines": [
+        "7"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Auguste Perret (Cimetière Parisien)",
+      "lat": 48.76338,
+      "lng": 2.36771,
+      "lines": [
+        "T7"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Aulnay-sous-Bois",
+      "lat": 48.93198,
+      "lng": 2.49696,
+      "lines": [
+        "T4"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Aulnay-sous-Bois",
+      "lat": 48.93215,
+      "lng": 2.4956,
+      "lines": [
+        "K"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Aulnay-sous-Bois",
+      "lat": 48.93215,
+      "lng": 2.4956,
+      "lines": [
+        "B"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Auneau",
+      "lat": 48.44535,
+      "lng": 1.77963,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Auvers-sur-Oise",
+      "lat": 49.07034,
+      "lng": 2.17492,
+      "lines": [
+        "H"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Avenue de France",
+      "lat": 48.82556,
+      "lng": 2.3809,
+      "lines": [
+        "T3a"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Avenue du Président Kennedy Maison de Radio France",
+      "lat": 48.85353,
+      "lng": 2.27968,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Avenue Émile Zola",
+      "lat": 48.84696,
+      "lng": 2.29505,
+      "lines": [
+        "10"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Avenue Foch",
+      "lat": 48.86985,
+      "lng": 2.27477,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Avenue Henri Martin",
+      "lat": 48.86546,
+      "lng": 2.27224,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Avron",
+      "lat": 48.85162,
+      "lng": 2.39807,
+      "lines": [
+        "2"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Bagneaux-sur-Loing",
+      "lat": 48.22939,
+      "lng": 2.70403,
+      "lines": [
+        "R"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Bagneux",
+      "lat": 48.79334,
+      "lng": 2.32201,
+      "lines": [
+        "B"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Bagneux - Lucie Aubrac",
+      "lat": 48.80355,
+      "lng": 2.31746,
+      "lines": [
+        "4"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Bailly",
+      "lat": 48.83682,
+      "lng": 2.07482,
+      "lines": [
+        "T13"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Balard",
+      "lat": 48.83667,
+      "lng": 2.27836,
+      "lines": [
+        "8"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Balard",
+      "lat": 48.83633,
+      "lng": 2.27736,
+      "lines": [
+        "T3a"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Ballancourt",
+      "lat": 48.53102,
+      "lng": 2.37009,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Barbara",
+      "lat": 48.8098,
+      "lng": 2.31742,
+      "lines": [
+        "4"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Barbès - Rochechouart",
+      "lat": 48.88385,
+      "lng": 2.35057,
+      "lines": [
+        "2",
+        "4"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Baron le Roy",
+      "lat": 48.83043,
+      "lng": 2.39342,
+      "lines": [
+        "T3a"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Basilique de Saint-Denis",
+      "lat": 48.93659,
+      "lng": 2.3592,
+      "lines": [
+        "13"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Basilique de Saint-Denis",
+      "lat": 48.93803,
+      "lng": 2.36075,
+      "lines": [
+        "T1"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Bastille",
+      "lat": 48.85196,
+      "lng": 2.36869,
+      "lines": [
+        "1",
+        "5",
+        "8"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Baudelaire",
+      "lat": 48.94217,
+      "lng": 2.35676,
+      "lines": [
+        "T5"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Beauvais",
+      "lat": 49.42607,
+      "lng": 2.08858,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Bécon les Bruyères",
+      "lat": 48.90549,
+      "lng": 2.26879,
+      "lines": [
+        "L"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Beethoven - Concorde",
+      "lat": 48.79887,
+      "lng": 2.38155,
+      "lines": [
+        "T9"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Bel-Air",
+      "lat": 48.84143,
+      "lng": 2.40087,
+      "lines": [
+        "6"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Belleville",
+      "lat": 48.87191,
+      "lng": 2.37675,
+      "lines": [
+        "2",
+        "11"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Belloy - Saint-Martin",
+      "lat": 49.09839,
+      "lng": 2.36133,
+      "lines": [
+        "H"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Belvédère",
+      "lat": 48.87607,
+      "lng": 2.22602,
+      "lines": [
+        "T2"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Bérault",
+      "lat": 48.84555,
+      "lng": 2.42903,
+      "lines": [
+        "1"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Bercy",
+      "lat": 48.84015,
+      "lng": 2.37919,
+      "lines": [
+        "6",
+        "14"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Bessancourt",
+      "lat": 49.03528,
+      "lng": 2.2103,
+      "lines": [
+        "H"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Beynes",
+      "lat": 48.86006,
+      "lng": 1.8756,
+      "lines": [
+        "N"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Bibliothèque François Mitterrand",
+      "lat": 48.83001,
+      "lng": 2.37642,
+      "lines": [
+        "14"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Bibliothèque François Mitterrand",
+      "lat": 48.82888,
+      "lng": 2.37776,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Bièvres",
+      "lat": 48.75087,
+      "lng": 2.21616,
+      "lines": [
+        "V"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Billancourt",
+      "lat": 48.83192,
+      "lng": 2.23789,
+      "lines": [
+        "9"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Bir-Hakeim",
+      "lat": 48.85393,
+      "lng": 2.2894,
+      "lines": [
+        "6"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Blanche",
+      "lat": 48.88377,
+      "lng": 2.33248,
+      "lines": [
+        "2"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Blumenthal",
+      "lat": 48.94776,
+      "lng": 2.33913,
+      "lines": [
+        "T8"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Bobigny - Pablo Picasso",
+      "lat": 48.90648,
+      "lng": 2.44997,
+      "lines": [
+        "T1"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Bobigny - Pablo Picasso",
+      "lat": 48.90637,
+      "lng": 2.44903,
+      "lines": [
+        "5"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Bobigny-Pantin - Raymond Queneau",
+      "lat": 48.89564,
+      "lng": 2.42628,
+      "lines": [
+        "5"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Boigneville",
+      "lat": 48.34121,
+      "lng": 2.37862,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Bois Briard",
+      "lat": 48.62197,
+      "lng": 2.41582,
+      "lines": [
+        "T12"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Bois de Saint-Eutrope",
+      "lat": 48.63393,
+      "lng": 2.39567,
+      "lines": [
+        "T12"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Bois-Colombes",
+      "lat": 48.9142,
+      "lng": 2.27165,
+      "lines": [
+        "J"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Bois-le-Roi",
+      "lat": 48.4758,
+      "lng": 2.69154,
+      "lines": [
+        "R"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Boissière",
+      "lat": 48.86685,
+      "lng": 2.29003,
+      "lines": [
+        "6"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Boissise-le-Roi",
+      "lat": 48.52986,
+      "lng": 2.57179,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Boissy-l'Aillerie",
+      "lat": 49.07572,
+      "lng": 2.02539,
+      "lines": [
+        "J"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Boissy-Saint-Léger",
+      "lat": 48.75227,
+      "lng": 2.5045,
+      "lines": [
+        "A"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Bolivar",
+      "lat": 48.88079,
+      "lng": 2.37415,
+      "lines": [
+        "7B"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Bondy",
+      "lat": 48.89375,
+      "lng": 2.4821,
+      "lines": [
+        "T4"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Bondy",
+      "lat": 48.89397,
+      "lng": 2.47958,
+      "lines": [
+        "E"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Bonne Nouvelle",
+      "lat": 48.87048,
+      "lng": 2.3485,
+      "lines": [
+        "8",
+        "9"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Bonneval",
+      "lat": 48.18642,
+      "lng": 1.38627,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Bonnières",
+      "lat": 49.03882,
+      "lng": 1.58205,
+      "lines": [
+        "J"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Bonnières",
+      "lat": 49.03879,
+      "lng": 1.58208,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Boran-sur-Oise",
+      "lat": 49.16665,
+      "lng": 2.36224,
+      "lines": [
+        "H"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Botzaris",
+      "lat": 48.87944,
+      "lng": 2.38891,
+      "lines": [
+        "7B"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Boucicaut",
+      "lat": 48.84102,
+      "lng": 2.28792,
+      "lines": [
+        "8"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Bouffémont - Moisselles",
+      "lat": 49.0451,
+      "lng": 2.3229,
+      "lines": [
+        "H"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Bougival",
+      "lat": 48.85379,
+      "lng": 2.13203,
+      "lines": [
+        "L"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Boulainvilliers",
+      "lat": 48.85698,
+      "lng": 2.27481,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Boulogne Jean Jaurès",
+      "lat": 48.84199,
+      "lng": 2.23908,
+      "lines": [
+        "10"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Boulogne Pont de Saint-Cloud",
+      "lat": 48.84067,
+      "lng": 2.22831,
+      "lines": [
+        "10"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Bouray",
+      "lat": 48.5329,
+      "lng": 2.29008,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Bourg-la-Reine",
+      "lat": 48.78026,
+      "lng": 2.31228,
+      "lines": [
+        "B"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Bourron-Marlotte - Grez",
+      "lat": 48.33245,
+      "lng": 2.69188,
+      "lines": [
+        "R"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Bourse",
+      "lat": 48.86879,
+      "lng": 2.34068,
+      "lines": [
+        "3"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Boussy-Saint-Antoine",
+      "lat": 48.68087,
+      "lng": 2.5332,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Boutigny",
+      "lat": 48.43443,
+      "lng": 2.37675,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Brancion",
+      "lat": 48.82871,
+      "lng": 2.30085,
+      "lines": [
+        "T3a"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Bréguet-Sabin",
+      "lat": 48.85622,
+      "lng": 2.37033,
+      "lines": [
+        "5"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Bretagne",
+      "lat": 48.7682,
+      "lng": 2.36796,
+      "lines": [
+        "T7"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Brétigny",
+      "lat": 48.60665,
+      "lng": 2.30196,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Breuillet - Bruyères-le-Châtel",
+      "lat": 48.57761,
+      "lng": 2.19225,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Breuillet Village",
+      "lat": 48.56433,
+      "lng": 2.17035,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Bréval",
+      "lat": 48.94351,
+      "lng": 1.54179,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Brimborion",
+      "lat": 48.82214,
+      "lng": 2.23152,
+      "lines": [
+        "T2"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Brochant",
+      "lat": 48.89062,
+      "lng": 2.32019,
+      "lines": [
+        "13"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Brunoy",
+      "lat": 48.69891,
+      "lng": 2.50685,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Bruyères-sur-Oise",
+      "lat": 49.15512,
+      "lng": 2.32483,
+      "lines": [
+        "H"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Bry-sur-Marne",
+      "lat": 48.84514,
+      "lng": 2.52567,
+      "lines": [
+        "A"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Bueil",
+      "lat": 48.92545,
+      "lng": 1.44329,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Buno - Gironville",
+      "lat": 48.37149,
+      "lng": 2.38725,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Bures-sur-Yvette",
+      "lat": 48.69621,
+      "lng": 2.16435,
+      "lines": [
+        "B"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Bussy-Saint-Georges",
+      "lat": 48.83671,
+      "lng": 2.71038,
+      "lines": [
+        "A"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Butte du Chapeau Rouge",
+      "lat": 48.88502,
+      "lng": 2.39668,
+      "lines": [
+        "T3b"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Butte Pinson (Parc Régional)",
+      "lat": 48.97363,
+      "lng": 2.36612,
+      "lines": [
+        "T5"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Buttes Chaumont",
+      "lat": 48.87842,
+      "lng": 2.38163,
+      "lines": [
+        "7B"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Buzenval",
+      "lat": 48.85176,
+      "lng": 2.40117,
+      "lines": [
+        "9"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Cadet",
+      "lat": 48.87605,
+      "lng": 2.34438,
+      "lines": [
+        "7"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Cambronne",
+      "lat": 48.84754,
+      "lng": 2.30294,
+      "lines": [
+        "6"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Camille Groult",
+      "lat": 48.78567,
+      "lng": 2.39195,
+      "lines": [
+        "T9"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Camp des Loges",
+      "lat": 48.91393,
+      "lng": 2.08168,
+      "lines": [
+        "T13"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Campo-Formio",
+      "lat": 48.83554,
+      "lng": 2.35874,
+      "lines": [
+        "5"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Canal Saint-Denis",
+      "lat": 48.89867,
+      "lng": 2.38047,
+      "lines": [
+        "T3b"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Cardinal Lemoine",
+      "lat": 48.8467,
+      "lng": 2.35133,
+      "lines": [
+        "10"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Carle - Darthé",
+      "lat": 48.75927,
+      "lng": 2.40876,
+      "lines": [
+        "T9"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Caroline Aigle (Orlyfret)",
+      "lat": 48.73874,
+      "lng": 2.36983,
+      "lines": [
+        "T7"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Carrefour Pleyel",
+      "lat": 48.91902,
+      "lng": 2.34253,
+      "lines": [
+        "13"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Censier - Daubenton",
+      "lat": 48.84027,
+      "lng": 2.3515,
+      "lines": [
+        "7"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Centre de Châtillon",
+      "lat": 48.80417,
+      "lng": 2.28908,
+      "lines": [
+        "T6"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Cergy le Haut",
+      "lat": 49.04823,
+      "lng": 2.01158,
+      "lines": [
+        "A"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Cergy le Haut",
+      "lat": 49.04823,
+      "lng": 2.01158,
+      "lines": [
+        "L"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Cergy Préfecture",
+      "lat": 49.03631,
+      "lng": 2.07978,
+      "lines": [
+        "L"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Cergy Préfecture",
+      "lat": 49.03631,
+      "lng": 2.07978,
+      "lines": [
+        "A"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Cergy Saint-Christophe",
+      "lat": 49.04964,
+      "lng": 2.03452,
+      "lines": [
+        "A"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Cergy Saint-Christophe",
+      "lat": 49.04964,
+      "lng": 2.03452,
+      "lines": [
+        "L"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Cernay",
+      "lat": 48.98515,
+      "lng": 2.25702,
+      "lines": [
+        "H"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Cernay",
+      "lat": 48.98515,
+      "lng": 2.25702,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "César",
+      "lat": 48.94956,
+      "lng": 2.34259,
+      "lines": [
+        "T8"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Cesson",
+      "lat": 48.56486,
+      "lng": 2.59462,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Champ de Courses d'Enghien",
+      "lat": 48.97969,
+      "lng": 2.29115,
+      "lines": [
+        "H"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Champ de Mars Tour Eiffel",
+      "lat": 48.85648,
+      "lng": 2.28966,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Champagne-sur-Oise",
+      "lat": 49.13609,
+      "lng": 2.24299,
+      "lines": [
+        "H"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Champagne-sur-Seine",
+      "lat": 48.40712,
+      "lng": 2.79909,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Champagne-sur-Seine",
+      "lat": 48.40726,
+      "lng": 2.79892,
+      "lines": [
+        "R"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Champbenoist Poigny",
+      "lat": 48.54521,
+      "lng": 3.28663,
+      "lines": [
+        "P"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Champigny",
+      "lat": 48.80682,
+      "lng": 2.51054,
+      "lines": [
+        "A"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Champigny-sur-Yonne",
+      "lat": 48.32421,
+      "lng": 3.13015,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Champlan",
+      "lat": 48.70798,
+      "lng": 2.28075,
+      "lines": [
+        "T12"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Champs-Élysées - Clemenceau",
+      "lat": 48.86737,
+      "lng": 2.31395,
+      "lines": [
+        "1",
+        "13"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Changis - Saint-Jean",
+      "lat": 48.95917,
+      "lng": 3.02609,
+      "lines": [
+        "P"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Chanteloup-les-Vignes",
+      "lat": 48.97036,
+      "lng": 2.02762,
+      "lines": [
+        "J"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Chantilly - Gouvieux",
+      "lat": 49.18703,
+      "lng": 2.45952,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Chaponval",
+      "lat": 49.06913,
+      "lng": 2.14108,
+      "lines": [
+        "H"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Chardon Lagache",
+      "lat": 48.84509,
+      "lng": 2.26691,
+      "lines": [
+        "10"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Charenton - Écoles",
+      "lat": 48.82148,
+      "lng": 2.41384,
+      "lines": [
+        "8"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Charlebourg",
+      "lat": 48.9076,
+      "lng": 2.23847,
+      "lines": [
+        "T2"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Charles de Gaulle - Étoile",
+      "lat": 48.87518,
+      "lng": 2.29593,
+      "lines": [
+        "1",
+        "2",
+        "6"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Charles de Gaulle - Étoile",
+      "lat": 48.87417,
+      "lng": 2.29523,
+      "lines": [
+        "A"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Charles Michels",
+      "lat": 48.8466,
+      "lng": 2.28562,
+      "lines": [
+        "10"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Charonne",
+      "lat": 48.85494,
+      "lng": 2.38478,
+      "lines": [
+        "9"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Chars",
+      "lat": 49.163,
+      "lng": 1.93687,
+      "lines": [
+        "J"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Chartres",
+      "lat": 48.44816,
+      "lng": 1.48054,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Chartrettes",
+      "lat": 48.48702,
+      "lng": 2.69527,
+      "lines": [
+        "R"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Château d'Eau",
+      "lat": 48.87245,
+      "lng": 2.35605,
+      "lines": [
+        "4"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Château de Vincennes",
+      "lat": 48.84466,
+      "lng": 2.43879,
+      "lines": [
+        "1"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Château Landon",
+      "lat": 48.87845,
+      "lng": 2.36205,
+      "lines": [
+        "7"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Château Rouge",
+      "lat": 48.88724,
+      "lng": 2.34958,
+      "lines": [
+        "4"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Château-Thierry",
+      "lat": 49.03793,
+      "lng": 3.40952,
+      "lines": [
+        "P"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Château-Thierry",
+      "lat": 49.03793,
+      "lng": 3.40958,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Châteaudun",
+      "lat": 48.07349,
+      "lng": 1.33843,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Châteaudun - Barbès",
+      "lat": 48.81534,
+      "lng": 2.36844,
+      "lines": [
+        "T9"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Châtelet",
+      "lat": 48.85966,
+      "lng": 2.34664,
+      "lines": [
+        "1",
+        "4",
+        "7",
+        "11",
+        "14"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Châtelet - Les Halles",
+      "lat": 48.86175,
+      "lng": 2.34698,
+      "lines": [
+        "A",
+        "B",
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Châtillon - Montrouge",
+      "lat": 48.81073,
+      "lng": 2.3016,
+      "lines": [
+        "13"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Châtillon - Montrouge",
+      "lat": 48.81036,
+      "lng": 2.30062,
+      "lines": [
+        "T6"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Chatou - Croissy",
+      "lat": 48.8852,
+      "lng": 2.15594,
+      "lines": [
+        "A"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Chaumont-en-Vexin",
+      "lat": 49.26119,
+      "lng": 1.87324,
+      "lines": [
+        "J"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Chaussée d'Antin - La Fayette",
+      "lat": 48.87281,
+      "lng": 2.33397,
+      "lines": [
+        "7",
+        "9"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Chaville - Vélizy",
+      "lat": 48.79968,
+      "lng": 2.18342,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Chaville Rive Droite",
+      "lat": 48.813,
+      "lng": 2.18859,
+      "lines": [
+        "L",
+        "U"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Chaville Rive Gauche",
+      "lat": 48.80519,
+      "lng": 2.18943,
+      "lines": [
+        "N"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Chelles - Gournay",
+      "lat": 48.87412,
+      "lng": 2.58338,
+      "lines": [
+        "P"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Chelles - Gournay",
+      "lat": 48.87412,
+      "lng": 2.58338,
+      "lines": [
+        "E"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Chemin d'Antony",
+      "lat": 48.74794,
+      "lng": 2.31265,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Chemin Vert",
+      "lat": 48.85711,
+      "lng": 2.36822,
+      "lines": [
+        "8"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Chevaleret",
+      "lat": 48.83495,
+      "lng": 2.3681,
+      "lines": [
+        "6"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Chevilly-Larue",
+      "lat": 48.75954,
+      "lng": 2.36638,
+      "lines": [
+        "T7"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Chevilly-Larue (Marché International)",
+      "lat": 48.75848,
+      "lng": 2.36737,
+      "lines": [
+        "14"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Chézy-sur-Marne",
+      "lat": 48.99188,
+      "lng": 3.36442,
+      "lines": [
+        "P"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Chilly-Mazarin",
+      "lat": 48.70089,
+      "lng": 2.3071,
+      "lines": [
+        "T12"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Choisy-le-Roi",
+      "lat": 48.76388,
+      "lng": 2.41129,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Christophe Colomb",
+      "lat": 48.75217,
+      "lng": 2.417,
+      "lines": [
+        "T9"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Cimetière de Saint-Denis",
+      "lat": 48.93628,
+      "lng": 2.36405,
+      "lines": [
+        "T1"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Cimetière Parisien d'Ivry",
+      "lat": 48.81265,
+      "lng": 2.37057,
+      "lines": [
+        "T9"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Cité",
+      "lat": 48.85492,
+      "lng": 2.34736,
+      "lines": [
+        "4"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Cité Universitaire",
+      "lat": 48.82019,
+      "lng": 2.33914,
+      "lines": [
+        "T3a"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Cité Universitaire",
+      "lat": 48.82151,
+      "lng": 2.33886,
+      "lines": [
+        "B"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Cité-Jardin",
+      "lat": 48.76558,
+      "lng": 2.25976,
+      "lines": [
+        "T10"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Clamart",
+      "lat": 48.81423,
+      "lng": 2.27424,
+      "lines": [
+        "N"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Clichy - Levallois",
+      "lat": 48.8975,
+      "lng": 2.29747,
+      "lines": [
+        "L"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Clichy - Montfermeil",
+      "lat": 48.90454,
+      "lng": 2.55504,
+      "lines": [
+        "T4"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Clichy-sous-Bois - Mairie",
+      "lat": 48.90783,
+      "lng": 2.54632,
+      "lines": [
+        "T4"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Cluny - La Sorbonne",
+      "lat": 48.85103,
+      "lng": 2.3449,
+      "lines": [
+        "10"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Coeur d'Orly",
+      "lat": 48.73405,
+      "lng": 2.37119,
+      "lines": [
+        "T7"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Coignières",
+      "lat": 48.74375,
+      "lng": 1.92142,
+      "lines": [
+        "N"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Colette Besson",
+      "lat": 48.89844,
+      "lng": 2.36363,
+      "lines": [
+        "T3b"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Colombes",
+      "lat": 48.92396,
+      "lng": 2.25932,
+      "lines": [
+        "J"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Colonel Fabien",
+      "lat": 48.87765,
+      "lng": 2.37047,
+      "lines": [
+        "2"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Combs-la-Ville - Quincy",
+      "lat": 48.66782,
+      "lng": 2.5477,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Commerce",
+      "lat": 48.84464,
+      "lng": 2.29369,
+      "lines": [
+        "8"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Compans",
+      "lat": 48.99133,
+      "lng": 2.66496,
+      "lines": [
+        "K"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Concorde",
+      "lat": 48.86618,
+      "lng": 2.32306,
+      "lines": [
+        "1",
+        "8",
+        "12"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Conflans Fin d'Oise",
+      "lat": 48.99116,
+      "lng": 2.07465,
+      "lines": [
+        "J",
+        "L"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Conflans Fin d'Oise",
+      "lat": 48.99116,
+      "lng": 2.07465,
+      "lines": [
+        "A"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Conflans-Sainte-Honorine",
+      "lat": 48.99692,
+      "lng": 2.09872,
+      "lines": [
+        "J"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Constant Coquelin",
+      "lat": 48.78311,
+      "lng": 2.39382,
+      "lines": [
+        "T9"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Convention",
+      "lat": 48.83714,
+      "lng": 2.29639,
+      "lines": [
+        "12"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Corbeil-Essonnes",
+      "lat": 48.61324,
+      "lng": 2.47247,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Corentin Cariou",
+      "lat": 48.89467,
+      "lng": 2.38229,
+      "lines": [
+        "7"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Corentin Celton",
+      "lat": 48.82682,
+      "lng": 2.27896,
+      "lines": [
+        "12"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Cormeilles-en-Parisis",
+      "lat": 48.96864,
+      "lng": 2.19305,
+      "lines": [
+        "J"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Corvisart",
+      "lat": 48.82986,
+      "lng": 2.35061,
+      "lines": [
+        "6"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Cosmonautes",
+      "lat": 48.93179,
+      "lng": 2.37817,
+      "lines": [
+        "T1"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Coteaux Beauclair",
+      "lat": 48.88212,
+      "lng": 2.46736,
+      "lines": [
+        "11"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Coteaux de l'Orge",
+      "lat": 48.66533,
+      "lng": 2.3627,
+      "lines": [
+        "T12"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Couilly - Saint-Germain - Quincy",
+      "lat": 48.8828,
+      "lng": 2.85415,
+      "lines": [
+        "T14"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Coulommiers",
+      "lat": 48.80806,
+      "lng": 3.08126,
+      "lines": [
+        "P"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Cour Saint-Emilion",
+      "lat": 48.83335,
+      "lng": 2.38646,
+      "lines": [
+        "14"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Courbevoie",
+      "lat": 48.89862,
+      "lng": 2.24919,
+      "lines": [
+        "L"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Courcelle-sur-Yvette",
+      "lat": 48.70131,
+      "lng": 2.09772,
+      "lines": [
+        "B"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Courcelles",
+      "lat": 48.87927,
+      "lng": 2.30329,
+      "lines": [
+        "2"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Couronnes",
+      "lat": 48.86919,
+      "lng": 2.38029,
+      "lines": [
+        "2"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Crécy-la-Chapelle",
+      "lat": 48.85956,
+      "lng": 2.90519,
+      "lines": [
+        "T14"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Creil",
+      "lat": 49.26419,
+      "lng": 2.46893,
+      "lines": [
+        "H"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Creil",
+      "lat": 49.26419,
+      "lng": 2.46893,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Creil",
+      "lat": 49.26419,
+      "lng": 2.46893,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Crépy-en-Valois",
+      "lat": 49.23108,
+      "lng": 2.8881,
+      "lines": [
+        "K"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Crépy-en-Valois",
+      "lat": 49.2312,
+      "lng": 2.88775,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Créteil - L'Échat",
+      "lat": 48.79661,
+      "lng": 2.44937,
+      "lines": [
+        "8"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Créteil - Préfecture",
+      "lat": 48.77976,
+      "lng": 2.45931,
+      "lines": [
+        "8"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Créteil - Université",
+      "lat": 48.78994,
+      "lng": 2.45057,
+      "lines": [
+        "8"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Créteil Pompadour",
+      "lat": 48.77125,
+      "lng": 2.43532,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Crimée",
+      "lat": 48.89081,
+      "lng": 2.37704,
+      "lines": [
+        "7"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Croix de Chavaux",
+      "lat": 48.85799,
+      "lng": 2.43585,
+      "lines": [
+        "9"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Crouy-sur-Ourcq",
+      "lat": 49.09189,
+      "lng": 3.06267,
+      "lines": [
+        "P"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Dammartin - Juilly - Saint-Mard",
+      "lat": 49.03215,
+      "lng": 2.69905,
+      "lines": [
+        "K"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Dammartin - Juilly - Saint-Mard",
+      "lat": 49.03234,
+      "lng": 2.69934,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Danton",
+      "lat": 48.92266,
+      "lng": 2.40662,
+      "lines": [
+        "T1"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Danube",
+      "lat": 48.88195,
+      "lng": 2.39323,
+      "lines": [
+        "7B"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Daumesnil",
+      "lat": 48.83967,
+      "lng": 2.39557,
+      "lines": [
+        "6",
+        "8"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Delaunay - Belleville",
+      "lat": 48.94559,
+      "lng": 2.34741,
+      "lines": [
+        "T8"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Delphine Seyrig",
+      "lat": 48.89392,
+      "lng": 2.39779,
+      "lines": [
+        "T3b"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Denfert-Rochereau",
+      "lat": 48.83395,
+      "lng": 2.33202,
+      "lines": [
+        "4",
+        "6"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Denfert-Rochereau",
+      "lat": 48.83319,
+      "lng": 2.33322,
+      "lines": [
+        "B"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Desnouettes",
+      "lat": 48.83411,
+      "lng": 2.28454,
+      "lines": [
+        "T3a"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Deuil - Montmagny",
+      "lat": 48.97593,
+      "lng": 2.33813,
+      "lines": [
+        "H"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Dewoitine",
+      "lat": 48.78365,
+      "lng": 2.21437,
+      "lines": [
+        "T6"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Diane Arbus - Porte des Poissonniers",
+      "lat": 48.8983,
+      "lng": 2.35172,
+      "lines": [
+        "T3b"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Didot",
+      "lat": 48.82588,
+      "lng": 2.31334,
+      "lines": [
+        "T3a"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Division Leclerc",
+      "lat": 48.79444,
+      "lng": 2.27271,
+      "lines": [
+        "T6"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Domaine Chérioux",
+      "lat": 48.77897,
+      "lng": 2.36747,
+      "lines": [
+        "T7"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Domont",
+      "lat": 49.03284,
+      "lng": 2.33713,
+      "lines": [
+        "H"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Dordives",
+      "lat": 48.14791,
+      "lng": 2.76266,
+      "lines": [
+        "R"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Dourdan",
+      "lat": 48.53376,
+      "lng": 2.00876,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Dourdan",
+      "lat": 48.53376,
+      "lng": 2.00876,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Dourdan la Forêt",
+      "lat": 48.53542,
+      "lng": 1.99601,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Drancy",
+      "lat": 48.93273,
+      "lng": 2.45488,
+      "lines": [
+        "B"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Drancy - Avenir",
+      "lat": 48.91775,
+      "lng": 2.41767,
+      "lines": [
+        "T1"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Dreux",
+      "lat": 48.73111,
+      "lng": 1.37043,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Dreux",
+      "lat": 48.73111,
+      "lng": 1.37043,
+      "lines": [
+        "N"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Dugny - La Courneuve",
+      "lat": 48.94395,
+      "lng": 2.41114,
+      "lines": [
+        "T11"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Dugommier",
+      "lat": 48.83895,
+      "lng": 2.3896,
+      "lines": [
+        "6"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Dupleix",
+      "lat": 48.85038,
+      "lng": 2.29364,
+      "lines": [
+        "6"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Duroc",
+      "lat": 48.84676,
+      "lng": 2.31622,
+      "lines": [
+        "10",
+        "13"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "École Militaire",
+      "lat": 48.85492,
+      "lng": 2.30635,
+      "lines": [
+        "8"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "École Vétérinaire de Maisons-Alfort",
+      "lat": 48.81484,
+      "lng": 2.4224,
+      "lines": [
+        "8"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Écouen - Ézanville",
+      "lat": 49.0232,
+      "lng": 2.36224,
+      "lines": [
+        "H"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Edgar Quinet",
+      "lat": 48.8409,
+      "lng": 2.32529,
+      "lines": [
+        "6"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Église d'Auteuil",
+      "lat": 48.84714,
+      "lng": 2.26911,
+      "lines": [
+        "10"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Église de Pantin",
+      "lat": 48.89324,
+      "lng": 2.41307,
+      "lines": [
+        "5"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Égly",
+      "lat": 48.58272,
+      "lng": 2.22346,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Ella Fitzgerald",
+      "lat": 48.89736,
+      "lng": 2.39508,
+      "lines": [
+        "T3b"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Émerainville - Pontault-Combault",
+      "lat": 48.80588,
+      "lng": 2.6185,
+      "lines": [
+        "E"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Enghien-les-Bains",
+      "lat": 48.97288,
+      "lng": 2.30679,
+      "lines": [
+        "H"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Épernon",
+      "lat": 48.60506,
+      "lng": 1.68161,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Épinay - Orgemont",
+      "lat": 48.95542,
+      "lng": 2.29538,
+      "lines": [
+        "T8"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Épinay - Villetaneuse",
+      "lat": 48.95897,
+      "lng": 2.32839,
+      "lines": [
+        "T11"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Épinay - Villetaneuse",
+      "lat": 48.95793,
+      "lng": 2.32876,
+      "lines": [
+        "H"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Épinay-sur-Orge",
+      "lat": 48.66935,
+      "lng": 2.33204,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Épinay-sur-Orge",
+      "lat": 48.67059,
+      "lng": 2.33512,
+      "lines": [
+        "T12"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Épinay-sur-Seine",
+      "lat": 48.95383,
+      "lng": 2.30239,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Épinay-sur-Seine",
+      "lat": 48.95462,
+      "lng": 2.30234,
+      "lines": [
+        "T11"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Épinay-sur-Seine - Gare",
+      "lat": 48.95573,
+      "lng": 2.30186,
+      "lines": [
+        "T8"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Epinettes - Pouchet",
+      "lat": 48.89748,
+      "lng": 2.32492,
+      "lines": [
+        "T3b"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Épluches",
+      "lat": 49.05505,
+      "lng": 2.12266,
+      "lines": [
+        "H"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Épône - Mézières",
+      "lat": 48.9634,
+      "lng": 1.80913,
+      "lines": [
+        "J",
+        "N"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Éragny - Neuville",
+      "lat": 49.0179,
+      "lng": 2.09057,
+      "lines": [
+        "J"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Ermont - Eaubonne",
+      "lat": 48.9805,
+      "lng": 2.27075,
+      "lines": [
+        "H",
+        "J"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Ermont - Eaubonne",
+      "lat": 48.9805,
+      "lng": 2.27075,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Ermont Halte",
+      "lat": 48.99053,
+      "lng": 2.2632,
+      "lines": [
+        "H"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Esbly",
+      "lat": 48.9029,
+      "lng": 2.80964,
+      "lines": [
+        "P"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Esbly",
+      "lat": 48.90274,
+      "lng": 2.80929,
+      "lines": [
+        "T14"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Escadrille Normandie-Niemen",
+      "lat": 48.91267,
+      "lng": 2.43541,
+      "lines": [
+        "T1"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Esplanade de la Défense",
+      "lat": 48.88801,
+      "lng": 2.25006,
+      "lines": [
+        "1"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Essonnes Robinson",
+      "lat": 48.60582,
+      "lng": 2.4633,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Étampes",
+      "lat": 48.43701,
+      "lng": 2.15978,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Étampes",
+      "lat": 48.43706,
+      "lng": 2.15982,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Etienne Marcel",
+      "lat": 48.8637,
+      "lng": 2.34898,
+      "lines": [
+        "4"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Étigny - Véron",
+      "lat": 48.13765,
+      "lng": 3.29008,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Étréchy",
+      "lat": 48.49388,
+      "lng": 2.19477,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Europe",
+      "lat": 48.87875,
+      "lng": 2.32219,
+      "lines": [
+        "3"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Évreux Normandie",
+      "lat": 49.01841,
+      "lng": 1.14986,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Évry - Courcouronnes",
+      "lat": 48.62495,
+      "lng": 2.42549,
+      "lines": [
+        "T12"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Évry - Courcouronnes",
+      "lat": 48.62589,
+      "lng": 2.43003,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Évry - Val de Seine",
+      "lat": 48.63439,
+      "lng": 2.45231,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Exelmans",
+      "lat": 48.84258,
+      "lng": 2.2598,
+      "lines": [
+        "9"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Faidherbe - Chaligny",
+      "lat": 48.85011,
+      "lng": 2.38403,
+      "lines": [
+        "8"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Falguière",
+      "lat": 48.84444,
+      "lng": 2.31751,
+      "lines": [
+        "12"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Faremoutiers - Pommeuse",
+      "lat": 48.80854,
+      "lng": 2.99327,
+      "lines": [
+        "P"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Faubourg de l'Arche",
+      "lat": 48.89682,
+      "lng": 2.24012,
+      "lines": [
+        "T2"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Félix Faure",
+      "lat": 48.84275,
+      "lng": 2.29175,
+      "lines": [
+        "8"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Ferme Neuve",
+      "lat": 48.65217,
+      "lng": 2.38349,
+      "lines": [
+        "T12"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Ferrières - Fontenay",
+      "lat": 48.09589,
+      "lng": 2.77209,
+      "lines": [
+        "R"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Filles du Calvaire",
+      "lat": 48.86309,
+      "lng": 2.36683,
+      "lines": [
+        "8"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Fontaine Michalon",
+      "lat": 48.74305,
+      "lng": 2.29596,
+      "lines": [
+        "B"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Fontaine-le-Port",
+      "lat": 48.48735,
+      "lng": 2.75047,
+      "lines": [
+        "R"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Fontainebleau - Avon",
+      "lat": 48.41667,
+      "lng": 2.72677,
+      "lines": [
+        "R"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Fontenay-aux-Roses",
+      "lat": 48.78757,
+      "lng": 2.29291,
+      "lines": [
+        "B"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Fontenay-le-Fleury",
+      "lat": 48.80727,
+      "lng": 2.0407,
+      "lines": [
+        "N"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Fontenay-sous-Bois",
+      "lat": 48.84379,
+      "lng": 2.46354,
+      "lines": [
+        "A"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Fort d'Aubervilliers",
+      "lat": 48.91471,
+      "lng": 2.40419,
+      "lines": [
+        "7"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Four - Peary",
+      "lat": 48.75451,
+      "lng": 2.41184,
+      "lines": [
+        "T9"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Fourqueux - Bel Air",
+      "lat": 48.89492,
+      "lng": 2.06998,
+      "lines": [
+        "T13"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Franconville - Le Plessis-Bouchard",
+      "lat": 48.99375,
+      "lng": 2.23419,
+      "lines": [
+        "H"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Franconville - Le Plessis-Bouchard",
+      "lat": 48.99375,
+      "lng": 2.23419,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Franklin D. Roosevelt",
+      "lat": 48.8691,
+      "lng": 2.30978,
+      "lines": [
+        "1",
+        "9"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Freinville Sevran",
+      "lat": 48.92651,
+      "lng": 2.51917,
+      "lines": [
+        "T4"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Frépillon",
+      "lat": 49.04528,
+      "lng": 2.1971,
+      "lines": [
+        "H"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Front Populaire",
+      "lat": 48.90666,
+      "lng": 2.36579,
+      "lines": [
+        "12"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Gabriel Péri",
+      "lat": 48.91659,
+      "lng": 2.29433,
+      "lines": [
+        "13"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Gagny",
+      "lat": 48.88373,
+      "lng": 2.5254,
+      "lines": [
+        "E"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Gaîté",
+      "lat": 48.83878,
+      "lng": 2.32253,
+      "lines": [
+        "13"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Gallieni",
+      "lat": 48.86513,
+      "lng": 2.41593,
+      "lines": [
+        "3"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Gambetta",
+      "lat": 48.86503,
+      "lng": 2.39854,
+      "lines": [
+        "3",
+        "3B"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Garancières - La Queue",
+      "lat": 48.81046,
+      "lng": 1.76458,
+      "lines": [
+        "N"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Garches - Marnes-la-Coquette",
+      "lat": 48.83825,
+      "lng": 2.18709,
+      "lines": [
+        "L"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Gare d'Austerlitz",
+      "lat": 48.84228,
+      "lng": 2.3644,
+      "lines": [
+        "5",
+        "10"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Gare d'Austerlitz",
+      "lat": 48.84032,
+      "lng": 2.36782,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Gare d'Austerlitz",
+      "lat": 48.84032,
+      "lng": 2.36782,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Gare de Bellevue",
+      "lat": 48.81887,
+      "lng": 2.22996,
+      "lines": [
+        "N"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Gare de Chamarande",
+      "lat": 48.51405,
+      "lng": 2.21516,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Gare de l'Est",
+      "lat": 48.87628,
+      "lng": 2.3579,
+      "lines": [
+        "4",
+        "5",
+        "7"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Gare de l'Est",
+      "lat": 48.87857,
+      "lng": 2.36031,
+      "lines": [
+        "E"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Gare de l'Est",
+      "lat": 48.87857,
+      "lng": 2.36031,
+      "lines": [
+        "P"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Gare de l'Est",
+      "lat": 48.87857,
+      "lng": 2.36031,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Gare de Lyon",
+      "lat": 48.84589,
+      "lng": 2.37366,
+      "lines": [
+        "1",
+        "14"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Gare de Lyon",
+      "lat": 48.8434,
+      "lng": 2.37637,
+      "lines": [
+        "R"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Gare de Lyon",
+      "lat": 48.8434,
+      "lng": 2.37637,
+      "lines": [
+        "A",
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Gare de Lyon",
+      "lat": 48.8434,
+      "lng": 2.37637,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Gare de Saint-Denis",
+      "lat": 48.93591,
+      "lng": 2.34409,
+      "lines": [
+        "T1"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Gare de Villiers Neauphle Pontchartrain",
+      "lat": 48.81532,
+      "lng": 1.87754,
+      "lines": [
+        "N"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Gare du Nord",
+      "lat": 48.8797,
+      "lng": 2.35722,
+      "lines": [
+        "4",
+        "5"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Gare du Nord",
+      "lat": 48.88231,
+      "lng": 2.35669,
+      "lines": [
+        "H",
+        "K"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Gare du Nord",
+      "lat": 48.88231,
+      "lng": 2.35669,
+      "lines": [
+        "B",
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Gare du Nord",
+      "lat": 48.88231,
+      "lng": 2.35669,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Gare Montparnasse",
+      "lat": 48.83841,
+      "lng": 2.31639,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Gare Montparnasse",
+      "lat": 48.83841,
+      "lng": 2.31639,
+      "lines": [
+        "N"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Gare Saint-Lazare",
+      "lat": 48.87748,
+      "lng": 2.32444,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Gare Saint-Lazare",
+      "lat": 48.87748,
+      "lng": 2.32444,
+      "lines": [
+        "J",
+        "L"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Gargan",
+      "lat": 48.90727,
+      "lng": 2.5164,
+      "lines": [
+        "T4"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Gargenville",
+      "lat": 48.983,
+      "lng": 1.80901,
+      "lines": [
+        "J"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Garges - Sarcelles",
+      "lat": 48.97718,
+      "lng": 2.39068,
+      "lines": [
+        "T5"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Garges - Sarcelles",
+      "lat": 48.97633,
+      "lng": 2.38995,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Garibaldi",
+      "lat": 48.90525,
+      "lng": 2.3316,
+      "lines": [
+        "13"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Gaston Roulaud",
+      "lat": 48.91406,
+      "lng": 2.43126,
+      "lines": [
+        "T1"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Gazeran",
+      "lat": 48.62605,
+      "lng": 1.77272,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Gennevilliers",
+      "lat": 48.93282,
+      "lng": 2.30798,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Gentilly",
+      "lat": 48.81523,
+      "lng": 2.34093,
+      "lines": [
+        "B"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "George V",
+      "lat": 48.87213,
+      "lng": 2.30034,
+      "lines": [
+        "1"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Georges Brassens",
+      "lat": 48.83008,
+      "lng": 2.29502,
+      "lines": [
+        "T3a"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Georges Millandy",
+      "lat": 48.78358,
+      "lng": 2.23125,
+      "lines": [
+        "T6"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Georges Pompidou",
+      "lat": 48.78486,
+      "lng": 2.2371,
+      "lines": [
+        "T6"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Germaine Tailleferre",
+      "lat": 48.80329,
+      "lng": 2.37778,
+      "lines": [
+        "T9"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Gif-sur-Yvette",
+      "lat": 48.69818,
+      "lng": 2.13649,
+      "lines": [
+        "B"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Gilbert Bonnemaison",
+      "lat": 48.95536,
+      "lng": 2.30774,
+      "lines": [
+        "T8"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Gisors",
+      "lat": 49.2855,
+      "lng": 1.78477,
+      "lines": [
+        "J"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Glacière",
+      "lat": 48.83117,
+      "lng": 2.3435,
+      "lines": [
+        "6"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Goncourt",
+      "lat": 48.87001,
+      "lng": 2.37076,
+      "lines": [
+        "11"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Goussainville",
+      "lat": 49.02341,
+      "lng": 2.46257,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Grand Bourg",
+      "lat": 48.64881,
+      "lng": 2.43484,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Grands Boulevards",
+      "lat": 48.87141,
+      "lng": 2.34317,
+      "lines": [
+        "8",
+        "9"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Gravigny Balizy",
+      "lat": 48.6862,
+      "lng": 2.31732,
+      "lines": [
+        "T12"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Gretz-Armainvilliers",
+      "lat": 48.74646,
+      "lng": 2.72717,
+      "lines": [
+        "E"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Grigny Centre",
+      "lat": 48.65484,
+      "lng": 2.39679,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Gros Noyer Saint-Prix",
+      "lat": 48.99608,
+      "lng": 2.25968,
+      "lines": [
+        "H"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Groslay",
+      "lat": 48.98436,
+      "lng": 2.35352,
+      "lines": [
+        "H"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Guérard - La Celle-sur-Morin",
+      "lat": 48.81077,
+      "lng": 2.95381,
+      "lines": [
+        "P"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Guillerval",
+      "lat": 48.37428,
+      "lng": 2.0597,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Guy Môquet",
+      "lat": 48.89304,
+      "lng": 2.32755,
+      "lines": [
+        "13"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Guynemer",
+      "lat": 48.94819,
+      "lng": 2.35752,
+      "lines": [
+        "T5"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Haussmann Saint-Lazare",
+      "lat": 48.875,
+      "lng": 2.32865,
+      "lines": [
+        "E"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Havre-Caumartin",
+      "lat": 48.87367,
+      "lng": 2.32765,
+      "lines": [
+        "3",
+        "9"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Hélène Boucher (Orlytech)",
+      "lat": 48.73993,
+      "lng": 2.35949,
+      "lines": [
+        "T7"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Henri Farman",
+      "lat": 48.83479,
+      "lng": 2.2714,
+      "lines": [
+        "T2"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Herblay",
+      "lat": 48.99014,
+      "lng": 2.16223,
+      "lines": [
+        "J"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Héricy",
+      "lat": 48.44272,
+      "lng": 2.76075,
+      "lines": [
+        "R"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Hoche",
+      "lat": 48.8915,
+      "lng": 2.40311,
+      "lines": [
+        "5"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Honoré De Balzac",
+      "lat": 48.89632,
+      "lng": 2.3187,
+      "lines": [
+        "T3b"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Hôpital Avicenne",
+      "lat": 48.91579,
+      "lng": 2.42499,
+      "lines": [
+        "T1"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Hôpital Béclère",
+      "lat": 48.78675,
+      "lng": 2.25445,
+      "lines": [
+        "T6",
+        "T10"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Hôpital Bicêtre",
+      "lat": 48.80994,
+      "lng": 2.35001,
+      "lines": [
+        "14"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Hôpital de Montfermeil",
+      "lat": 48.90095,
+      "lng": 2.57075,
+      "lines": [
+        "T4"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Hôpital Delafontaine",
+      "lat": 48.93359,
+      "lng": 2.37114,
+      "lines": [
+        "T1"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Hôpital Robert Debré",
+      "lat": 48.8795,
+      "lng": 2.40127,
+      "lines": [
+        "T3b"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Hôtel de Ville",
+      "lat": 48.85757,
+      "lng": 2.35155,
+      "lines": [
+        "1",
+        "11"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Hôtel de Ville de Bobigny",
+      "lat": 48.90657,
+      "lng": 2.44381,
+      "lines": [
+        "T1"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Hôtel de ville de la Courneuve",
+      "lat": 48.92744,
+      "lng": 2.39218,
+      "lines": [
+        "T1"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Houdan",
+      "lat": 48.79603,
+      "lng": 1.60213,
+      "lines": [
+        "N"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Houilles - Carrières-sur-Seine",
+      "lat": 48.92035,
+      "lng": 2.18518,
+      "lines": [
+        "A"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Houilles - Carrières-sur-Seine",
+      "lat": 48.92035,
+      "lng": 2.18518,
+      "lines": [
+        "J",
+        "L"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Iéna",
+      "lat": 48.86478,
+      "lng": 2.29386,
+      "lines": [
+        "9"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Igny",
+      "lat": 48.74085,
+      "lng": 2.23081,
+      "lines": [
+        "V"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Inovel Parc Nord",
+      "lat": 48.78143,
+      "lng": 2.20903,
+      "lines": [
+        "T6"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Invalides",
+      "lat": 48.86109,
+      "lng": 2.31463,
+      "lines": [
+        "8",
+        "13"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Invalides",
+      "lat": 48.86271,
+      "lng": 2.31266,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Isles - Armentières - Congis",
+      "lat": 48.99837,
+      "lng": 3.00787,
+      "lines": [
+        "P"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Issou - Porcheville",
+      "lat": 48.97931,
+      "lng": 1.78384,
+      "lines": [
+        "J"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Issy",
+      "lat": 48.81934,
+      "lng": 2.25788,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Issy - Val de Seine",
+      "lat": 48.82975,
+      "lng": 2.26299,
+      "lines": [
+        "T2"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Issy - Val de Seine",
+      "lat": 48.83051,
+      "lng": 2.26401,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Ivry-sur-Seine",
+      "lat": 48.81396,
+      "lng": 2.39168,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Jacqueline Auriol",
+      "lat": 48.91073,
+      "lng": 2.2342,
+      "lines": [
+        "T2"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Jacques Bonsergent",
+      "lat": 48.87062,
+      "lng": 2.36102,
+      "lines": [
+        "5"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Jacques Prévert",
+      "lat": 48.97086,
+      "lng": 2.36594,
+      "lines": [
+        "T5"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Jacques-Henri Lartigue",
+      "lat": 48.82476,
+      "lng": 2.26044,
+      "lines": [
+        "T2"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Jardin Parisien",
+      "lat": 48.79007,
+      "lng": 2.25277,
+      "lines": [
+        "T10"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Jasmin",
+      "lat": 48.85246,
+      "lng": 2.26822,
+      "lines": [
+        "9"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Jaurès",
+      "lat": 48.88302,
+      "lng": 2.37144,
+      "lines": [
+        "2",
+        "5",
+        "7B"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Javel",
+      "lat": 48.84716,
+      "lng": 2.27804,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Javel - André Citroën",
+      "lat": 48.84609,
+      "lng": 2.27804,
+      "lines": [
+        "10"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Jean Moulin",
+      "lat": 48.82466,
+      "lng": 2.31888,
+      "lines": [
+        "T3a"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Jean Vilar",
+      "lat": 48.95275,
+      "lng": 2.3434,
+      "lines": [
+        "T8"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Joigny",
+      "lat": 47.97363,
+      "lng": 3.39335,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Joinville-le-Pont",
+      "lat": 48.8212,
+      "lng": 2.46387,
+      "lines": [
+        "A"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Joncherolles",
+      "lat": 48.95556,
+      "lng": 2.35827,
+      "lines": [
+        "T5"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Jourdain",
+      "lat": 48.87525,
+      "lng": 2.38933,
+      "lines": [
+        "11"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Jouy",
+      "lat": 48.50992,
+      "lng": 1.55738,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Jouy-en-Josas",
+      "lat": 48.76476,
+      "lng": 2.16445,
+      "lines": [
+        "V"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Jules Joffrin",
+      "lat": 48.89249,
+      "lng": 2.34432,
+      "lines": [
+        "12"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Jussieu",
+      "lat": 48.8462,
+      "lng": 2.35493,
+      "lines": [
+        "7",
+        "10"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Juvisy",
+      "lat": 48.68971,
+      "lng": 2.38333,
+      "lines": [
+        "C",
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Juziers",
+      "lat": 48.99224,
+      "lng": 1.84495,
+      "lines": [
+        "J"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Kléber",
+      "lat": 48.8713,
+      "lng": 2.29333,
+      "lines": [
+        "6"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "L'Abbaye",
+      "lat": 48.9218,
+      "lng": 2.51639,
+      "lines": [
+        "T4"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "L'Etang - Les Sablons",
+      "lat": 48.87251,
+      "lng": 2.0691,
+      "lines": [
+        "T13"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "L'Étang-la-Ville",
+      "lat": 48.86819,
+      "lng": 2.07689,
+      "lines": [
+        "L"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "L'Haÿ-les-Roses",
+      "lat": 48.77533,
+      "lng": 2.35503,
+      "lines": [
+        "14"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "L'Isle-Adam - Parmain",
+      "lat": 49.11455,
+      "lng": 2.20994,
+      "lines": [
+        "H"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "L'Onde (Maison des Arts)",
+      "lat": 48.78203,
+      "lng": 2.18054,
+      "lines": [
+        "T6"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "La Barre Ormesson",
+      "lat": 48.96628,
+      "lng": 2.3167,
+      "lines": [
+        "H"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "La Belle Epine",
+      "lat": 48.75669,
+      "lng": 2.36832,
+      "lines": [
+        "T7"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "La Borne Blanche (Gare)",
+      "lat": 49.12619,
+      "lng": 2.50699,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "La Briqueterie",
+      "lat": 48.80733,
+      "lng": 2.3749,
+      "lines": [
+        "T9"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "La Celle-Saint-Cloud",
+      "lat": 48.84263,
+      "lng": 2.13824,
+      "lines": [
+        "L"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "La Chapelle",
+      "lat": 48.88439,
+      "lng": 2.3604,
+      "lines": [
+        "2"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "La Courneuve - 8 Mai 1945",
+      "lat": 48.92086,
+      "lng": 2.41064,
+      "lines": [
+        "T1"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "La Courneuve - 8 Mai 1945",
+      "lat": 48.92037,
+      "lng": 2.41001,
+      "lines": [
+        "7"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "La Courneuve - Aubervilliers",
+      "lat": 48.9243,
+      "lng": 2.38611,
+      "lines": [
+        "B"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "La Courneuve - Six Routes",
+      "lat": 48.92995,
+      "lng": 2.38471,
+      "lines": [
+        "T1"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "La Croix de Berny",
+      "lat": 48.76172,
+      "lng": 2.30421,
+      "lines": [
+        "B"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "La Croix de Berny",
+      "lat": 48.76272,
+      "lng": 2.30292,
+      "lines": [
+        "T10"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "La Défense",
+      "lat": 48.89223,
+      "lng": 2.23842,
+      "lines": [
+        "L",
+        "U"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "La Défense",
+      "lat": 48.89223,
+      "lng": 2.23842,
+      "lines": [
+        "A",
+        "E"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "La Défense (Grande Arche)",
+      "lat": 48.89306,
+      "lng": 2.23738,
+      "lines": [
+        "T2"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "La Défense (Grande Arche)",
+      "lat": 48.8922,
+      "lng": 2.23704,
+      "lines": [
+        "1"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "La Dhuys",
+      "lat": 48.87808,
+      "lng": 2.46516,
+      "lines": [
+        "11"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "La Ferme",
+      "lat": 48.90968,
+      "lng": 2.43755,
+      "lines": [
+        "T1"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "La Ferté-Alais",
+      "lat": 48.4855,
+      "lng": 2.35226,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "La Ferté-Milon",
+      "lat": 49.17963,
+      "lng": 3.12068,
+      "lines": [
+        "P"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "La Ferté-sous-Jouarre",
+      "lat": 48.95078,
+      "lng": 3.1247,
+      "lines": [
+        "P"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "La Ferté-sous-Jouarre",
+      "lat": 48.95083,
+      "lng": 3.12529,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "La Fourche",
+      "lat": 48.88693,
+      "lng": 2.32582,
+      "lines": [
+        "13"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "La Fraternelle",
+      "lat": 48.74172,
+      "lng": 2.35285,
+      "lines": [
+        "T7"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "La Frette - Montigny",
+      "lat": 48.97988,
+      "lng": 2.18034,
+      "lines": [
+        "J"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "La Garenne-Colombes",
+      "lat": 48.90958,
+      "lng": 2.23979,
+      "lines": [
+        "L"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "La Grande-Paroisse",
+      "lat": 48.37863,
+      "lng": 2.8969,
+      "lines": [
+        "R"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "La Hacquinière",
+      "lat": 48.6953,
+      "lng": 2.15161,
+      "lines": [
+        "B"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "La Motte-Picquet - Grenelle",
+      "lat": 48.84877,
+      "lng": 2.29896,
+      "lines": [
+        "6",
+        "8",
+        "10"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "La Muette",
+      "lat": 48.85809,
+      "lng": 2.2741,
+      "lines": [
+        "9"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "La Norville - Saint-Germain-lès-Arpajon",
+      "lat": 48.59112,
+      "lng": 2.26622,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "La Plaine Stade de France",
+      "lat": 48.91808,
+      "lng": 2.36246,
+      "lines": [
+        "B"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "La Tour-Maubourg",
+      "lat": 48.85773,
+      "lng": 2.31047,
+      "lines": [
+        "8"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "La Varenne - Chennevières",
+      "lat": 48.79533,
+      "lng": 2.51323,
+      "lines": [
+        "A"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "La Verrière",
+      "lat": 48.75517,
+      "lng": 1.94306,
+      "lines": [
+        "N",
+        "U"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "La Villette Saint-Prest",
+      "lat": 48.4826,
+      "lng": 1.52449,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Lacépède",
+      "lat": 48.95589,
+      "lng": 2.31144,
+      "lines": [
+        "T8"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Lagny - Thorigny",
+      "lat": 48.88219,
+      "lng": 2.70596,
+      "lines": [
+        "P"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Lamarck - Caulaincourt",
+      "lat": 48.88968,
+      "lng": 2.33858,
+      "lines": [
+        "12"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Lamartine",
+      "lat": 48.78314,
+      "lng": 2.36708,
+      "lines": [
+        "T7"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Laplace",
+      "lat": 48.80836,
+      "lng": 2.33434,
+      "lines": [
+        "B"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Lardy",
+      "lat": 48.52062,
+      "lng": 2.25501,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Laroche - Migennes",
+      "lat": 47.9612,
+      "lng": 3.5127,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Laumière",
+      "lat": 48.88513,
+      "lng": 2.37939,
+      "lines": [
+        "5"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "LaVallée",
+      "lat": 48.76145,
+      "lng": 2.29046,
+      "lines": [
+        "T10"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Lavilletertre",
+      "lat": 49.20238,
+      "lng": 1.92058,
+      "lines": [
+        "J"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Le Blanc-Mesnil",
+      "lat": 48.93231,
+      "lng": 2.47539,
+      "lines": [
+        "B"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Le Bourget",
+      "lat": 48.93074,
+      "lng": 2.42583,
+      "lines": [
+        "B"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Le Bourget",
+      "lat": 48.93028,
+      "lng": 2.42332,
+      "lines": [
+        "T11"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Le Bras de Fer",
+      "lat": 48.62331,
+      "lng": 2.452,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Le Chénay Gagny",
+      "lat": 48.87716,
+      "lng": 2.55277,
+      "lines": [
+        "E"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Le Coudray-Montceaux",
+      "lat": 48.5662,
+      "lng": 2.49242,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Le Guichet",
+      "lat": 48.7055,
+      "lng": 2.19297,
+      "lines": [
+        "B"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Le Hameau",
+      "lat": 48.78259,
+      "lng": 2.25311,
+      "lines": [
+        "T10"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Le Kremlin-Bicêtre",
+      "lat": 48.81025,
+      "lng": 2.36213,
+      "lines": [
+        "7"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Le Mée",
+      "lat": 48.53875,
+      "lng": 2.62555,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Le Parc de Saint-Maur",
+      "lat": 48.80541,
+      "lng": 2.48662,
+      "lines": [
+        "A"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Le Peletier",
+      "lat": 48.87496,
+      "lng": 2.34015,
+      "lines": [
+        "7"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Le Perray",
+      "lat": 48.69336,
+      "lng": 1.85665,
+      "lines": [
+        "N"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Le Plessis Chenet",
+      "lat": 48.57359,
+      "lng": 2.47952,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Le Plessis-Belleville",
+      "lat": 49.09632,
+      "lng": 2.74504,
+      "lines": [
+        "K"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Le Plessis-Belleville",
+      "lat": 49.09632,
+      "lng": 2.74504,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Le Raincy - Villemomble - Montfermeil",
+      "lat": 48.88885,
+      "lng": 2.51306,
+      "lines": [
+        "E"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Le Stade",
+      "lat": 48.93172,
+      "lng": 2.26095,
+      "lines": [
+        "J"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Le Val d'Or",
+      "lat": 48.85625,
+      "lng": 2.21655,
+      "lines": [
+        "L"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Le Vert de Maisons",
+      "lat": 48.78883,
+      "lng": 2.43212,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Le Vésinet - Centre",
+      "lat": 48.89014,
+      "lng": 2.13433,
+      "lines": [
+        "A"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Le Vésinet - Le Pecq",
+      "lat": 48.89795,
+      "lng": 2.12213,
+      "lines": [
+        "A"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Ledru-Rollin",
+      "lat": 48.85134,
+      "lng": 2.37614,
+      "lines": [
+        "8"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Léon Blum",
+      "lat": 48.90855,
+      "lng": 2.53233,
+      "lines": [
+        "T4"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Les Agnettes",
+      "lat": 48.92302,
+      "lng": 2.28625,
+      "lines": [
+        "13"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Les Ardoines",
+      "lat": 48.78249,
+      "lng": 2.40959,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Les Baconnets",
+      "lat": 48.73985,
+      "lng": 2.28811,
+      "lines": [
+        "B"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Les Béatus",
+      "lat": 48.95176,
+      "lng": 2.32022,
+      "lines": [
+        "T8"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Les Boullereaux Champigny",
+      "lat": 48.82486,
+      "lng": 2.51199,
+      "lines": [
+        "E"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Les Cholettes",
+      "lat": 48.97755,
+      "lng": 2.37221,
+      "lines": [
+        "T5"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Les Clairières de Verneuil",
+      "lat": 48.99267,
+      "lng": 1.95524,
+      "lines": [
+        "J"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Les Coquetiers",
+      "lat": 48.89257,
+      "lng": 2.49981,
+      "lines": [
+        "T4"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Les Coteaux",
+      "lat": 48.85728,
+      "lng": 2.22047,
+      "lines": [
+        "T2"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Les Essarts-le-Roi",
+      "lat": 48.72169,
+      "lng": 1.88966,
+      "lines": [
+        "N"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Les Fauvelles",
+      "lat": 48.90263,
+      "lng": 2.23963,
+      "lines": [
+        "T2"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Les Flanades",
+      "lat": 48.97667,
+      "lng": 2.37748,
+      "lines": [
+        "T5"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Les Gobelins",
+      "lat": 48.83589,
+      "lng": 2.35253,
+      "lines": [
+        "7"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Les Grésillons",
+      "lat": 48.92069,
+      "lng": 2.3139,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Les Halles",
+      "lat": 48.8625,
+      "lng": 2.34613,
+      "lines": [
+        "4"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Les Milons",
+      "lat": 48.84996,
+      "lng": 2.22124,
+      "lines": [
+        "T2"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Les Mobiles",
+      "lat": 48.94969,
+      "lng": 2.32984,
+      "lines": [
+        "T8"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Les Moulineaux",
+      "lat": 48.82154,
+      "lng": 2.25127,
+      "lines": [
+        "T2"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Les Mureaux",
+      "lat": 48.99259,
+      "lng": 1.91347,
+      "lines": [
+        "J"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Les Noues",
+      "lat": 49.03307,
+      "lng": 2.47771,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Les Pavillons-sous-Bois",
+      "lat": 48.90265,
+      "lng": 2.51201,
+      "lines": [
+        "T4"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Les Peintres",
+      "lat": 48.76472,
+      "lng": 2.26609,
+      "lines": [
+        "T10"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Les Portes de Saint-Cyr",
+      "lat": 48.8066,
+      "lng": 2.07731,
+      "lines": [
+        "T13"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Les Sablons",
+      "lat": 48.88095,
+      "lng": 2.27228,
+      "lines": [
+        "1"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Les Saules",
+      "lat": 48.74697,
+      "lng": 2.41626,
+      "lines": [
+        "T9"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Les Saules",
+      "lat": 48.7452,
+      "lng": 2.41745,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Les Vallées",
+      "lat": 48.91365,
+      "lng": 2.2572,
+      "lines": [
+        "L"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Les Yvris Noisy-le-Grand",
+      "lat": 48.82311,
+      "lng": 2.57998,
+      "lines": [
+        "E"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Liancourt-Saint-Pierre",
+      "lat": 49.22054,
+      "lng": 1.90548,
+      "lines": [
+        "J"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Libération",
+      "lat": 48.90693,
+      "lng": 2.43858,
+      "lines": [
+        "T1"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Liberté",
+      "lat": 48.82615,
+      "lng": 2.40649,
+      "lines": [
+        "8"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Liège",
+      "lat": 48.88012,
+      "lng": 2.32701,
+      "lines": [
+        "13"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Lieusaint - Moissy",
+      "lat": 48.62834,
+      "lng": 2.56951,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Limay",
+      "lat": 48.9842,
+      "lng": 1.74741,
+      "lines": [
+        "J"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Lisière Pereire",
+      "lat": 48.90321,
+      "lng": 2.07288,
+      "lines": [
+        "T13"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Livry-sur-Seine",
+      "lat": 48.51029,
+      "lng": 2.67894,
+      "lines": [
+        "R"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Lizy-sur-Ourcq",
+      "lat": 49.02173,
+      "lng": 3.03178,
+      "lines": [
+        "P"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Lochères",
+      "lat": 48.97856,
+      "lng": 2.38507,
+      "lines": [
+        "T5"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Lognes",
+      "lat": 48.83926,
+      "lng": 2.63303,
+      "lines": [
+        "A"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Longjumeau",
+      "lat": 48.7024,
+      "lng": 2.29395,
+      "lines": [
+        "T12"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Longueville",
+      "lat": 48.51392,
+      "lng": 3.24989,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Longueville",
+      "lat": 48.51379,
+      "lng": 3.25011,
+      "lines": [
+        "P"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Louis Blanc",
+      "lat": 48.88118,
+      "lng": 2.36437,
+      "lines": [
+        "7",
+        "7B"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Louise Michel",
+      "lat": 48.88854,
+      "lng": 2.28828,
+      "lines": [
+        "3"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Lourmel",
+      "lat": 48.83866,
+      "lng": 2.28224,
+      "lines": [
+        "8"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Louveciennes",
+      "lat": 48.86126,
+      "lng": 2.12278,
+      "lines": [
+        "L"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Louvois",
+      "lat": 48.78003,
+      "lng": 2.19651,
+      "lines": [
+        "T6"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Louvre - Rivoli",
+      "lat": 48.86107,
+      "lng": 2.34016,
+      "lines": [
+        "1"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Louvres",
+      "lat": 49.04934,
+      "lng": 2.50181,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Lozère",
+      "lat": 48.70591,
+      "lng": 2.21272,
+      "lines": [
+        "B"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Luxembourg",
+      "lat": 48.84543,
+      "lng": 2.33981,
+      "lines": [
+        "B"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Luzarches",
+      "lat": 49.1171,
+      "lng": 2.42004,
+      "lines": [
+        "H"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Lycée Henri Sellier",
+      "lat": 48.91597,
+      "lng": 2.51517,
+      "lines": [
+        "T4"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Mabillon",
+      "lat": 48.85284,
+      "lng": 2.33514,
+      "lines": [
+        "10"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Madeleine",
+      "lat": 48.86957,
+      "lng": 2.32603,
+      "lines": [
+        "8",
+        "12",
+        "14"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Magenta",
+      "lat": 48.88081,
+      "lng": 2.3587,
+      "lines": [
+        "E"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Mail de la Plaine",
+      "lat": 48.78374,
+      "lng": 2.24698,
+      "lines": [
+        "T6"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Maintenon",
+      "lat": 48.58713,
+      "lng": 1.5927,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Mairie d'Aubervilliers",
+      "lat": 48.91374,
+      "lng": 2.38078,
+      "lines": [
+        "12"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Mairie d'Issy",
+      "lat": 48.82434,
+      "lng": 2.27356,
+      "lines": [
+        "12"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Mairie d'Ivry",
+      "lat": 48.81121,
+      "lng": 2.3835,
+      "lines": [
+        "7"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Mairie de Clichy",
+      "lat": 48.90397,
+      "lng": 2.30535,
+      "lines": [
+        "13"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Mairie de Montreuil",
+      "lat": 48.86231,
+      "lng": 2.44144,
+      "lines": [
+        "9"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Mairie de Montrouge",
+      "lat": 48.81847,
+      "lng": 2.31952,
+      "lines": [
+        "4"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Mairie de Pierrefitte",
+      "lat": 48.96348,
+      "lng": 2.36025,
+      "lines": [
+        "T5"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Mairie de Saint-Ouen",
+      "lat": 48.9116,
+      "lng": 2.33379,
+      "lines": [
+        "13",
+        "14"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Mairie de Vélizy",
+      "lat": 48.78049,
+      "lng": 2.19156,
+      "lines": [
+        "T6"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Mairie de Vitry-sur-Seine",
+      "lat": 48.78982,
+      "lng": 2.38879,
+      "lines": [
+        "T9"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Mairie des Lilas",
+      "lat": 48.87966,
+      "lng": 2.41635,
+      "lines": [
+        "11"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Maison Blanche",
+      "lat": 48.82119,
+      "lng": 2.35899,
+      "lines": [
+        "7",
+        "14"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Maisons-Alfort - Alfortville",
+      "lat": 48.80218,
+      "lng": 2.42644,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Maisons-Alfort - Les Juilliottes",
+      "lat": 48.80311,
+      "lng": 2.44579,
+      "lines": [
+        "8"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Maisons-Alfort - Stade",
+      "lat": 48.80892,
+      "lng": 2.43482,
+      "lines": [
+        "8"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Maisons-Laffitte",
+      "lat": 48.94574,
+      "lng": 2.14467,
+      "lines": [
+        "A"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Maisons-Laffitte",
+      "lat": 48.94574,
+      "lng": 2.14467,
+      "lines": [
+        "J",
+        "L"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Maisse",
+      "lat": 48.39367,
+      "lng": 2.39349,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Malabry",
+      "lat": 48.76934,
+      "lng": 2.24964,
+      "lines": [
+        "T10"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Malakoff - Plateau de Vanves",
+      "lat": 48.82225,
+      "lng": 2.29824,
+      "lines": [
+        "13"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Malakoff - Rue Étienne Dolet",
+      "lat": 48.81527,
+      "lng": 2.29697,
+      "lines": [
+        "13"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Malesherbes",
+      "lat": 48.88284,
+      "lng": 2.30949,
+      "lines": [
+        "3"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Malesherbes",
+      "lat": 48.29363,
+      "lng": 2.40104,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Mantes Station",
+      "lat": 48.98361,
+      "lng": 1.71513,
+      "lines": [
+        "J"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Mantes-la-Jolie",
+      "lat": 48.9893,
+      "lng": 1.70384,
+      "lines": [
+        "J",
+        "N"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Mantes-la-Jolie",
+      "lat": 48.98892,
+      "lng": 1.70389,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Maraîchers",
+      "lat": 48.85273,
+      "lng": 2.40604,
+      "lines": [
+        "9"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Marcadet - Poissonniers",
+      "lat": 48.89155,
+      "lng": 2.35002,
+      "lines": [
+        "4",
+        "12"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Marcel Sembat",
+      "lat": 48.83381,
+      "lng": 2.24347,
+      "lines": [
+        "9"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Marché de Saint-Denis",
+      "lat": 48.93856,
+      "lng": 2.35587,
+      "lines": [
+        "T1",
+        "T5"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Marchezais - Broué",
+      "lat": 48.76839,
+      "lng": 1.51357,
+      "lines": [
+        "N"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Mareil-Marly",
+      "lat": 48.88127,
+      "lng": 2.07917,
+      "lines": [
+        "T13"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Mareil-sur-Mauldre",
+      "lat": 48.89302,
+      "lng": 1.87185,
+      "lines": [
+        "N"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Mareuil-sur-Ourcq",
+      "lat": 49.13538,
+      "lng": 3.0755,
+      "lines": [
+        "P"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Marguerite Long",
+      "lat": 48.88962,
+      "lng": 2.30313,
+      "lines": [
+        "T3b"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Marie de Miribel",
+      "lat": 48.85866,
+      "lng": 2.40961,
+      "lines": [
+        "T3b"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Marles-en-Brie",
+      "lat": 48.73482,
+      "lng": 2.86881,
+      "lines": [
+        "P"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Marly-le-Roi",
+      "lat": 48.87153,
+      "lng": 2.09654,
+      "lines": [
+        "L"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Marne-la-Vallée Chessy",
+      "lat": 48.8698,
+      "lng": 2.78248,
+      "lines": [
+        "A"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Marolles-en-Hurepoix",
+      "lat": 48.56564,
+      "lng": 2.29091,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Marx Dormoy",
+      "lat": 48.89061,
+      "lng": 2.35995,
+      "lines": [
+        "12"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Maryse Bastié",
+      "lat": 48.82438,
+      "lng": 2.37755,
+      "lines": [
+        "T3a"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Massy - Palaiseau",
+      "lat": 48.72438,
+      "lng": 2.25654,
+      "lines": [
+        "T12"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Massy - Palaiseau",
+      "lat": 48.72552,
+      "lng": 2.25877,
+      "lines": [
+        "B",
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Massy - Palaiseau",
+      "lat": 48.72552,
+      "lng": 2.25877,
+      "lines": [
+        "V"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Massy - Verrières",
+      "lat": 48.73496,
+      "lng": 2.27398,
+      "lines": [
+        "B",
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Massy Europe",
+      "lat": 48.7235,
+      "lng": 2.27268,
+      "lines": [
+        "T12"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Maubert - Mutualité",
+      "lat": 48.8502,
+      "lng": 2.34828,
+      "lines": [
+        "10"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Maule",
+      "lat": 48.90933,
+      "lng": 1.8569,
+      "lines": [
+        "N"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Maurecourt",
+      "lat": 48.98686,
+      "lng": 2.05963,
+      "lines": [
+        "J"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Maurice Audin",
+      "lat": 48.90838,
+      "lng": 2.5392,
+      "lines": [
+        "T4"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Maurice Lachâtre",
+      "lat": 48.91915,
+      "lng": 2.41381,
+      "lines": [
+        "T1"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Meaux",
+      "lat": 48.95662,
+      "lng": 2.87331,
+      "lines": [
+        "P"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Melun",
+      "lat": 48.52749,
+      "lng": 2.6547,
+      "lines": [
+        "R"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Melun",
+      "lat": 48.52749,
+      "lng": 2.6547,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Ménilmontant",
+      "lat": 48.86639,
+      "lng": 2.38343,
+      "lines": [
+        "2"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Mennecy",
+      "lat": 48.57055,
+      "lng": 2.43193,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Mériel",
+      "lat": 49.07775,
+      "lng": 2.20544,
+      "lines": [
+        "H"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Méry-sur-Oise",
+      "lat": 49.05828,
+      "lng": 2.19142,
+      "lines": [
+        "H"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Meudon",
+      "lat": 48.81436,
+      "lng": 2.24288,
+      "lines": [
+        "N"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Meudon Val Fleury",
+      "lat": 48.80755,
+      "lng": 2.24094,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Meudon-la-Forêt",
+      "lat": 48.78357,
+      "lng": 2.22518,
+      "lines": [
+        "T6"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Meudon-sur-Seine",
+      "lat": 48.81914,
+      "lng": 2.23859,
+      "lines": [
+        "T2"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Meulan - Hardricourt",
+      "lat": 49.00582,
+      "lng": 1.90213,
+      "lines": [
+        "J"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Michel Bizot",
+      "lat": 48.837,
+      "lng": 2.40228,
+      "lines": [
+        "8"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Michel-Ange - Auteuil",
+      "lat": 48.84768,
+      "lng": 2.26394,
+      "lines": [
+        "9",
+        "10"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Michel-Ange - Molitor",
+      "lat": 48.84516,
+      "lng": 2.26182,
+      "lines": [
+        "9",
+        "10"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Mirabeau",
+      "lat": 48.84708,
+      "lng": 2.27306,
+      "lines": [
+        "10"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Miromesnil",
+      "lat": 48.87333,
+      "lng": 2.31454,
+      "lines": [
+        "9",
+        "13"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Mitry - Claye",
+      "lat": 48.97575,
+      "lng": 2.64223,
+      "lines": [
+        "K"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Mitry - Claye",
+      "lat": 48.97575,
+      "lng": 2.64223,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Mitry - Claye",
+      "lat": 48.97575,
+      "lng": 2.64223,
+      "lines": [
+        "B"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Monceau",
+      "lat": 48.88057,
+      "lng": 2.30941,
+      "lines": [
+        "2"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Monnerville",
+      "lat": 48.34848,
+      "lng": 2.0322,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Montargis",
+      "lat": 48.0067,
+      "lng": 2.7432,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Montargis",
+      "lat": 48.0067,
+      "lng": 2.7432,
+      "lines": [
+        "R"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Montempoivre",
+      "lat": 48.83988,
+      "lng": 2.40881,
+      "lines": [
+        "T3a"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Montereau",
+      "lat": 48.3796,
+      "lng": 2.94254,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Montereau",
+      "lat": 48.3796,
+      "lng": 2.94254,
+      "lines": [
+        "R"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Montfort-l'Amaury - Méré",
+      "lat": 48.80266,
+      "lng": 1.81584,
+      "lines": [
+        "N"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Montgallet",
+      "lat": 48.84406,
+      "lng": 2.39052,
+      "lines": [
+        "8"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Montgeron - Crosne",
+      "lat": 48.70871,
+      "lng": 2.46138,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Montgeroult - Courcelles",
+      "lat": 49.08081,
+      "lng": 2.00295,
+      "lines": [
+        "J"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Montigny - Beauchamp",
+      "lat": 49.00774,
+      "lng": 2.19652,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Montigny - Beauchamp",
+      "lat": 49.00774,
+      "lng": 2.19652,
+      "lines": [
+        "H"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Montigny-sur-Loing",
+      "lat": 48.3365,
+      "lng": 2.73834,
+      "lines": [
+        "R"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Montparnasse Bienvenue",
+      "lat": 48.84382,
+      "lng": 2.32399,
+      "lines": [
+        "4",
+        "6",
+        "12",
+        "13"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Montreuil",
+      "lat": 48.80597,
+      "lng": 2.15283,
+      "lines": [
+        "L"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Montreuil - Hôpital",
+      "lat": 48.87827,
+      "lng": 2.45467,
+      "lines": [
+        "11"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Montry - Condé",
+      "lat": 48.89108,
+      "lng": 2.8256,
+      "lines": [
+        "T14"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Montsoult - Maffliers",
+      "lat": 49.06616,
+      "lng": 2.32282,
+      "lines": [
+        "H"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Montsouris",
+      "lat": 48.82149,
+      "lng": 2.33324,
+      "lines": [
+        "T3a"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Moret - Veneux-les-Sablons",
+      "lat": 48.3779,
+      "lng": 2.80046,
+      "lines": [
+        "R"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Mormant",
+      "lat": 48.61409,
+      "lng": 2.88808,
+      "lines": [
+        "P"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Mortcerf",
+      "lat": 48.78959,
+      "lng": 2.90748,
+      "lines": [
+        "P"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Moulin Galant",
+      "lat": 48.58688,
+      "lng": 2.47344,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Moulin Vert",
+      "lat": 48.77207,
+      "lng": 2.36788,
+      "lines": [
+        "T7"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Mouroux",
+      "lat": 48.8137,
+      "lng": 3.04306,
+      "lines": [
+        "P"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Mouton-Duvernet",
+      "lat": 48.83138,
+      "lng": 2.32979,
+      "lines": [
+        "4"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Musée d'Orsay",
+      "lat": 48.86037,
+      "lng": 2.32662,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Musée de Sèvres",
+      "lat": 48.82883,
+      "lng": 2.22527,
+      "lines": [
+        "T2"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Musée MAC VAL",
+      "lat": 48.79284,
+      "lng": 2.38619,
+      "lines": [
+        "T9"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Nangis",
+      "lat": 48.56172,
+      "lng": 3.01218,
+      "lines": [
+        "P"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Nanterre - Ville",
+      "lat": 48.89502,
+      "lng": 2.19512,
+      "lines": [
+        "A"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Nanterre Préfecture",
+      "lat": 48.89589,
+      "lng": 2.22299,
+      "lines": [
+        "A"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Nanterre Université",
+      "lat": 48.90113,
+      "lng": 2.21354,
+      "lines": [
+        "A"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Nanterre Université",
+      "lat": 48.90113,
+      "lng": 2.21354,
+      "lines": [
+        "L"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Nanterre-La-Folie",
+      "lat": 48.89758,
+      "lng": 2.22657,
+      "lines": [
+        "E"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Nanteuil - Saâcy",
+      "lat": 48.974,
+      "lng": 3.21943,
+      "lines": [
+        "P"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Nanteuil-le-Haudouin",
+      "lat": 49.14285,
+      "lng": 2.79431,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Nanteuil-le-Haudouin",
+      "lat": 49.14251,
+      "lng": 2.79416,
+      "lines": [
+        "K"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Nation",
+      "lat": 48.84845,
+      "lng": 2.3958,
+      "lines": [
+        "1",
+        "2",
+        "6",
+        "9"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Nation",
+      "lat": 48.84823,
+      "lng": 2.39594,
+      "lines": [
+        "A"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Nationale",
+      "lat": 48.83324,
+      "lng": 2.3628,
+      "lines": [
+        "6"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Nemours - Saint-Pierre",
+      "lat": 48.26878,
+      "lng": 2.68496,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Nemours-Saint-Pierre",
+      "lat": 48.26864,
+      "lng": 2.68505,
+      "lines": [
+        "R"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Nemours-Saint-Pierre",
+      "lat": 48.26864,
+      "lng": 2.68505,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Neuilly - Porte Maillot",
+      "lat": 48.87835,
+      "lng": 2.28422,
+      "lines": [
+        "C",
+        "E"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Neuilly-Plaisance",
+      "lat": 48.85252,
+      "lng": 2.51459,
+      "lines": [
+        "A"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Neuville Université",
+      "lat": 49.01374,
+      "lng": 2.07835,
+      "lines": [
+        "A"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Neuville Université",
+      "lat": 49.01374,
+      "lng": 2.07835,
+      "lines": [
+        "L"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Nézel - Aulnay",
+      "lat": 48.93883,
+      "lng": 1.84042,
+      "lines": [
+        "N"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Nogent - Le Perreux",
+      "lat": 48.83999,
+      "lng": 2.49395,
+      "lines": [
+        "E"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Nogent-L'Artaud - Charly",
+      "lat": 48.96872,
+      "lng": 3.32285,
+      "lines": [
+        "P"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Nogent-sur-Marne",
+      "lat": 48.83431,
+      "lng": 2.47168,
+      "lines": [
+        "A"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Nointel - Mours",
+      "lat": 49.13283,
+      "lng": 2.27996,
+      "lines": [
+        "H"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Noisiel",
+      "lat": 48.84351,
+      "lng": 2.61666,
+      "lines": [
+        "A"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Noisy - Champs",
+      "lat": 48.8429,
+      "lng": 2.5801,
+      "lines": [
+        "A"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Noisy-le-Grand - Mont d'Est",
+      "lat": 48.84089,
+      "lng": 2.54881,
+      "lines": [
+        "A"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Noisy-le-Roi",
+      "lat": 48.84122,
+      "lng": 2.06162,
+      "lines": [
+        "T13"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Noisy-le-Sec",
+      "lat": 48.89666,
+      "lng": 2.4592,
+      "lines": [
+        "E"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Notre-Dame-de-Lorette",
+      "lat": 48.87604,
+      "lng": 2.3379,
+      "lines": [
+        "12"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Notre-Dame-des-Anges",
+      "lat": 48.90093,
+      "lng": 2.55601,
+      "lines": [
+        "T4"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Notre-Dame-des-Champs",
+      "lat": 48.84508,
+      "lng": 2.3287,
+      "lines": [
+        "12"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Noveos",
+      "lat": 48.77668,
+      "lng": 2.25007,
+      "lines": [
+        "T10"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Oberkampf",
+      "lat": 48.86487,
+      "lng": 2.36822,
+      "lines": [
+        "5",
+        "9"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Odéon",
+      "lat": 48.85218,
+      "lng": 2.33952,
+      "lines": [
+        "4",
+        "10"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Olympiades",
+      "lat": 48.82694,
+      "lng": 2.36703,
+      "lines": [
+        "14"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Opéra",
+      "lat": 48.87144,
+      "lng": 2.33105,
+      "lines": [
+        "3",
+        "7",
+        "8"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Orangis Bois de l'Épine",
+      "lat": 48.63634,
+      "lng": 2.40769,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Orgerus - Béhoust",
+      "lat": 48.82663,
+      "lng": 1.70303,
+      "lines": [
+        "N"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Orly - Gaston Viens",
+      "lat": 48.74502,
+      "lng": 2.40868,
+      "lines": [
+        "T9"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Orly Ville",
+      "lat": 48.74163,
+      "lng": 2.40305,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Ormoy-Villers",
+      "lat": 49.20071,
+      "lng": 2.83799,
+      "lines": [
+        "K"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Orry-la-Ville - Coye",
+      "lat": 49.13841,
+      "lng": 2.48986,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Orsay Ville",
+      "lat": 48.69751,
+      "lng": 2.18081,
+      "lines": [
+        "B"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Osny",
+      "lat": 49.06282,
+      "lng": 2.05816,
+      "lines": [
+        "J"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Ourcq",
+      "lat": 48.88692,
+      "lng": 2.38665,
+      "lines": [
+        "5"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Ozoir-la-Ferrière",
+      "lat": 48.77077,
+      "lng": 2.69012,
+      "lines": [
+        "E"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Pablo Neruda",
+      "lat": 48.95661,
+      "lng": 2.34313,
+      "lines": [
+        "T8"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Palais Royal - Musée du Louvre",
+      "lat": 48.86277,
+      "lng": 2.33709,
+      "lines": [
+        "1",
+        "7"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Palaiseau",
+      "lat": 48.71687,
+      "lng": 2.24558,
+      "lines": [
+        "B"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Palaiseau - Villebon",
+      "lat": 48.70815,
+      "lng": 2.23733,
+      "lines": [
+        "B"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Pantin",
+      "lat": 48.89799,
+      "lng": 2.40104,
+      "lines": [
+        "E"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Parc André Malraux",
+      "lat": 48.79992,
+      "lng": 2.28192,
+      "lines": [
+        "T6"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Parc de Saint-Cloud",
+      "lat": 48.84304,
+      "lng": 2.22178,
+      "lines": [
+        "T2"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Parc de Sceaux",
+      "lat": 48.76972,
+      "lng": 2.30993,
+      "lines": [
+        "B"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Parc des Expositions",
+      "lat": 48.97357,
+      "lng": 2.51455,
+      "lines": [
+        "B"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Parc des Sports",
+      "lat": 48.77979,
+      "lng": 2.25185,
+      "lines": [
+        "T10"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Parc du Château",
+      "lat": 48.6678,
+      "lng": 2.35534,
+      "lines": [
+        "T12"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Parc Pierre Lagravère",
+      "lat": 48.9177,
+      "lng": 2.22463,
+      "lines": [
+        "T2"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Paris Austerlitz",
+      "lat": 48.84017,
+      "lng": 2.36709,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Paris Est",
+      "lat": 48.87879,
+      "lng": 2.35978,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Paris Montparnasse",
+      "lat": 48.8392,
+      "lng": 2.3173,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Paris-Bercy Bourgogne - Pays d'Auvergne",
+      "lat": 48.83859,
+      "lng": 2.38421,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Parmentier",
+      "lat": 48.86516,
+      "lng": 2.37468,
+      "lines": [
+        "3"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Passy",
+      "lat": 48.85752,
+      "lng": 2.28584,
+      "lines": [
+        "6"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Pasteur",
+      "lat": 48.84253,
+      "lng": 2.31291,
+      "lines": [
+        "6",
+        "12"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Paul Éluard",
+      "lat": 48.93971,
+      "lng": 2.34514,
+      "lines": [
+        "T8"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Paul Valéry",
+      "lat": 48.9793,
+      "lng": 2.38025,
+      "lines": [
+        "T5"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Pavé Blanc",
+      "lat": 48.78075,
+      "lng": 2.24,
+      "lines": [
+        "T6"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Pelleport",
+      "lat": 48.86846,
+      "lng": 2.4015,
+      "lines": [
+        "3B"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Père Lachaise",
+      "lat": 48.86296,
+      "lng": 2.38616,
+      "lines": [
+        "2",
+        "3"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Pereire",
+      "lat": 48.88484,
+      "lng": 2.29768,
+      "lines": [
+        "3"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Péreire Levallois",
+      "lat": 48.88603,
+      "lng": 2.29923,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Pernety",
+      "lat": 48.8339,
+      "lng": 2.31795,
+      "lines": [
+        "13"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Persan - Beaumont",
+      "lat": 49.14758,
+      "lng": 2.2778,
+      "lines": [
+        "H"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Persan - Beaumont",
+      "lat": 49.14769,
+      "lng": 2.27765,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Petit Jouy Les Loges",
+      "lat": 48.77124,
+      "lng": 2.14685,
+      "lines": [
+        "V"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Petit Pierrefitte",
+      "lat": 48.95269,
+      "lng": 2.35803,
+      "lines": [
+        "T5"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Petit Vaux",
+      "lat": 48.67661,
+      "lng": 2.33285,
+      "lines": [
+        "T12"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Petit-Châtenay",
+      "lat": 48.76276,
+      "lng": 2.2807,
+      "lines": [
+        "T10"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Philippe Auguste",
+      "lat": 48.85809,
+      "lng": 2.3905,
+      "lines": [
+        "2"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Picpus",
+      "lat": 48.84502,
+      "lng": 2.40125,
+      "lines": [
+        "6"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Pierre de Geyter",
+      "lat": 48.93198,
+      "lng": 2.35269,
+      "lines": [
+        "T8"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Pierre et Marie Curie",
+      "lat": 48.81588,
+      "lng": 2.37736,
+      "lines": [
+        "7"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Pierrefitte - Stains",
+      "lat": 48.96018,
+      "lng": 2.36734,
+      "lines": [
+        "T11"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Pierrefitte - Stains",
+      "lat": 48.96278,
+      "lng": 2.37033,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Pierrelaye",
+      "lat": 49.01918,
+      "lng": 2.15453,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Pierrelaye",
+      "lat": 49.01918,
+      "lng": 2.15453,
+      "lines": [
+        "H"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Pigalle",
+      "lat": 48.88202,
+      "lng": 2.33721,
+      "lines": [
+        "2",
+        "12"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Place d'Italie",
+      "lat": 48.83154,
+      "lng": 2.3553,
+      "lines": [
+        "5",
+        "6",
+        "7"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Place de Clichy",
+      "lat": 48.88322,
+      "lng": 2.3272,
+      "lines": [
+        "2",
+        "13"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Place de la Logistique",
+      "lat": 48.75285,
+      "lng": 2.36192,
+      "lines": [
+        "T7"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Place des Fêtes",
+      "lat": 48.87672,
+      "lng": 2.39314,
+      "lines": [
+        "7B",
+        "11"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Place Monge",
+      "lat": 48.84268,
+      "lng": 2.35201,
+      "lines": [
+        "7"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Plaisance",
+      "lat": 48.83177,
+      "lng": 2.3139,
+      "lines": [
+        "13"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Plaisir - Grignon",
+      "lat": 48.83193,
+      "lng": 1.94354,
+      "lines": [
+        "N"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Plaisir - Les Clayes",
+      "lat": 48.83084,
+      "lng": 1.96009,
+      "lines": [
+        "N"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Pointe du Lac",
+      "lat": 48.76876,
+      "lng": 2.46432,
+      "lines": [
+        "8"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Poissonnière",
+      "lat": 48.87716,
+      "lng": 2.34874,
+      "lines": [
+        "7"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Poissy",
+      "lat": 48.93325,
+      "lng": 2.0408,
+      "lines": [
+        "J"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Poissy",
+      "lat": 48.93325,
+      "lng": 2.0408,
+      "lines": [
+        "A"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Pont Cardinet",
+      "lat": 48.8881,
+      "lng": 2.31537,
+      "lines": [
+        "14"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Pont Cardinet",
+      "lat": 48.8884,
+      "lng": 2.31295,
+      "lines": [
+        "L"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Pont de Bezons",
+      "lat": 48.92336,
+      "lng": 2.21762,
+      "lines": [
+        "T2"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Pont de l'Alma",
+      "lat": 48.86247,
+      "lng": 2.30036,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Pont de Levallois - Bécon",
+      "lat": 48.89723,
+      "lng": 2.2803,
+      "lines": [
+        "3"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Pont de Neuilly",
+      "lat": 48.88468,
+      "lng": 2.26072,
+      "lines": [
+        "1"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Pont de Rungis Aéroport d'Orly",
+      "lat": 48.74835,
+      "lng": 2.37321,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Pont de Sèvres",
+      "lat": 48.82969,
+      "lng": 2.23052,
+      "lines": [
+        "9"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Pont du Garigliano",
+      "lat": 48.83802,
+      "lng": 2.27117,
+      "lines": [
+        "T3a"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Pont du Garigliano - Hôpital Européen G. Pompidou",
+      "lat": 48.83888,
+      "lng": 2.27047,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Pont Marie (Cité des Arts)",
+      "lat": 48.85341,
+      "lng": 2.35735,
+      "lines": [
+        "7"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Pont Neuf",
+      "lat": 48.85846,
+      "lng": 2.34171,
+      "lines": [
+        "7"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Pont Petit",
+      "lat": 49.06088,
+      "lng": 2.13124,
+      "lines": [
+        "H"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Pont-sur-Yonne",
+      "lat": 48.2862,
+      "lng": 3.20182,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Ponthierry - Pringy",
+      "lat": 48.53508,
+      "lng": 2.54454,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Pontoise",
+      "lat": 49.04673,
+      "lng": 2.09579,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Pontoise",
+      "lat": 49.04673,
+      "lng": 2.09579,
+      "lines": [
+        "H",
+        "J"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Porchefontaine",
+      "lat": 48.79654,
+      "lng": 2.15223,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Port Royal",
+      "lat": 48.84006,
+      "lng": 2.33714,
+      "lines": [
+        "B"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Porte d'Aubervilliers",
+      "lat": 48.89852,
+      "lng": 2.36892,
+      "lines": [
+        "T3b"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Porte d'Auteuil",
+      "lat": 48.84813,
+      "lng": 2.25826,
+      "lines": [
+        "10"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Porte d'Issy",
+      "lat": 48.83173,
+      "lng": 2.28103,
+      "lines": [
+        "T2"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Porte d'Italie",
+      "lat": 48.81898,
+      "lng": 2.36016,
+      "lines": [
+        "T3a"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Porte d'Italie",
+      "lat": 48.81903,
+      "lng": 2.35946,
+      "lines": [
+        "7"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Porte d'Ivry",
+      "lat": 48.82135,
+      "lng": 2.36929,
+      "lines": [
+        "7"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Porte d'Ivry",
+      "lat": 48.82186,
+      "lng": 2.36996,
+      "lines": [
+        "T3a"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Porte d'Orléans",
+      "lat": 48.82339,
+      "lng": 2.32562,
+      "lines": [
+        "4"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Porte d'Orléans",
+      "lat": 48.82294,
+      "lng": 2.32618,
+      "lines": [
+        "T3a"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Porte Dauphine",
+      "lat": 48.8714,
+      "lng": 2.27763,
+      "lines": [
+        "2"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Porte Dauphine (Avenue Foch)",
+      "lat": 48.87037,
+      "lng": 2.27489,
+      "lines": [
+        "T3b"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Porte de Bagnolet",
+      "lat": 48.8634,
+      "lng": 2.40877,
+      "lines": [
+        "T3b"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Porte de Bagnolet",
+      "lat": 48.86433,
+      "lng": 2.40882,
+      "lines": [
+        "3"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Porte de Champerret",
+      "lat": 48.88602,
+      "lng": 2.29231,
+      "lines": [
+        "T3b"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Porte de Champerret",
+      "lat": 48.88565,
+      "lng": 2.29211,
+      "lines": [
+        "3"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Porte de Charenton",
+      "lat": 48.83202,
+      "lng": 2.39825,
+      "lines": [
+        "T3a"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Porte de Charenton",
+      "lat": 48.83345,
+      "lng": 2.40251,
+      "lines": [
+        "8"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Porte de Choisy",
+      "lat": 48.82006,
+      "lng": 2.36468,
+      "lines": [
+        "7"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Porte de Choisy",
+      "lat": 48.81977,
+      "lng": 2.36393,
+      "lines": [
+        "T3a",
+        "T9"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Porte de Clichy",
+      "lat": 48.89439,
+      "lng": 2.31349,
+      "lines": [
+        "13",
+        "14"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Porte de Clichy",
+      "lat": 48.89426,
+      "lng": 2.31594,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Porte de Clichy - Tribunal de Paris",
+      "lat": 48.89469,
+      "lng": 2.31418,
+      "lines": [
+        "T3b"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Porte de Clignancourt",
+      "lat": 48.89807,
+      "lng": 2.34505,
+      "lines": [
+        "T3b"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Porte de Clignancourt",
+      "lat": 48.89756,
+      "lng": 2.34475,
+      "lines": [
+        "4"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Porte de l'Essonne",
+      "lat": 48.71449,
+      "lng": 2.37167,
+      "lines": [
+        "T7"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Porte de la Chapelle",
+      "lat": 48.89844,
+      "lng": 2.35839,
+      "lines": [
+        "T3b"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Porte de la Chapelle",
+      "lat": 48.89741,
+      "lng": 2.3591,
+      "lines": [
+        "12"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Porte de la Villette",
+      "lat": 48.89787,
+      "lng": 2.38578,
+      "lines": [
+        "7"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Porte de la Villette (Cité des Sciences et de l'industrie)",
+      "lat": 48.89749,
+      "lng": 2.38646,
+      "lines": [
+        "T3b"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Porte de Montreuil",
+      "lat": 48.85348,
+      "lng": 2.41072,
+      "lines": [
+        "9"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Porte de Montreuil",
+      "lat": 48.85299,
+      "lng": 2.41067,
+      "lines": [
+        "T3b"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Porte de Pantin",
+      "lat": 48.88854,
+      "lng": 2.39206,
+      "lines": [
+        "5"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Porte de Pantin - Parc de la Villette",
+      "lat": 48.88903,
+      "lng": 2.39559,
+      "lines": [
+        "T3b"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Porte de Rungis",
+      "lat": 48.75262,
+      "lng": 2.35522,
+      "lines": [
+        "T7"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Porte de Saint-Cloud",
+      "lat": 48.83796,
+      "lng": 2.25705,
+      "lines": [
+        "9"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Porte de Saint-Ouen",
+      "lat": 48.89751,
+      "lng": 2.32894,
+      "lines": [
+        "13"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Porte de Saint-Ouen",
+      "lat": 48.89772,
+      "lng": 2.32956,
+      "lines": [
+        "T3b"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Porte de Vanves",
+      "lat": 48.82745,
+      "lng": 2.30668,
+      "lines": [
+        "T3a"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Porte de Vanves",
+      "lat": 48.82735,
+      "lng": 2.30483,
+      "lines": [
+        "13"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Porte de Versailles",
+      "lat": 48.83188,
+      "lng": 2.28717,
+      "lines": [
+        "T2"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Porte de Versailles",
+      "lat": 48.8323,
+      "lng": 2.28813,
+      "lines": [
+        "12"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Porte de Versailles - Parc des Expositions",
+      "lat": 48.83261,
+      "lng": 2.28802,
+      "lines": [
+        "T3a"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Porte de Vincennes",
+      "lat": 48.84738,
+      "lng": 2.40798,
+      "lines": [
+        "1"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Porte de Vincennes",
+      "lat": 48.84698,
+      "lng": 2.40954,
+      "lines": [
+        "T3a",
+        "T3b"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Porte des Lilas",
+      "lat": 48.87668,
+      "lng": 2.4069,
+      "lines": [
+        "T3b"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Porte des Lilas",
+      "lat": 48.87657,
+      "lng": 2.40706,
+      "lines": [
+        "3B",
+        "11"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Porte Dorée",
+      "lat": 48.83507,
+      "lng": 2.40575,
+      "lines": [
+        "8"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Porte Dorée",
+      "lat": 48.83597,
+      "lng": 2.40726,
+      "lines": [
+        "T3a"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Porte Maillot",
+      "lat": 48.87777,
+      "lng": 2.28241,
+      "lines": [
+        "1"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Porte Maillot - Palais des Congrès",
+      "lat": 48.87791,
+      "lng": 2.28373,
+      "lines": [
+        "T3b"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Poterne des Peupliers",
+      "lat": 48.82074,
+      "lng": 2.35006,
+      "lines": [
+        "T3a"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Pré-Saint-Gervais",
+      "lat": 48.88016,
+      "lng": 2.39858,
+      "lines": [
+        "7B"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Précy-sur-Oise",
+      "lat": 49.20348,
+      "lng": 2.37734,
+      "lines": [
+        "H"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Presles - Courcelles",
+      "lat": 49.11368,
+      "lng": 2.28785,
+      "lines": [
+        "H"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Provins",
+      "lat": 48.55553,
+      "lng": 3.30233,
+      "lines": [
+        "P"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Puteaux",
+      "lat": 48.88337,
+      "lng": 2.23362,
+      "lines": [
+        "L",
+        "U"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Puteaux",
+      "lat": 48.88289,
+      "lng": 2.23346,
+      "lines": [
+        "T2"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Pyramides",
+      "lat": 48.86576,
+      "lng": 2.33462,
+      "lines": [
+        "7",
+        "14"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Pyrénées",
+      "lat": 48.87382,
+      "lng": 2.3852,
+      "lines": [
+        "11"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Quai de la Gare",
+      "lat": 48.837,
+      "lng": 2.37283,
+      "lines": [
+        "6"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Quai de la Rapée",
+      "lat": 48.84643,
+      "lng": 2.36588,
+      "lines": [
+        "5"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Quatre Septembre",
+      "lat": 48.86966,
+      "lng": 2.33632,
+      "lines": [
+        "3"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Rambouillet",
+      "lat": 48.64444,
+      "lng": 1.83305,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Rambouillet",
+      "lat": 48.64385,
+      "lng": 1.83221,
+      "lines": [
+        "N"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Rambuteau",
+      "lat": 48.86119,
+      "lng": 2.35327,
+      "lines": [
+        "11"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Ranelagh",
+      "lat": 48.85531,
+      "lng": 2.27003,
+      "lines": [
+        "9"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Raspail",
+      "lat": 48.8391,
+      "lng": 2.33078,
+      "lines": [
+        "4",
+        "6"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Réaumur - Sébastopol",
+      "lat": 48.86638,
+      "lng": 2.35205,
+      "lines": [
+        "3",
+        "4"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Remise à Jorelle",
+      "lat": 48.89305,
+      "lng": 2.48796,
+      "lines": [
+        "T4"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Rennes",
+      "lat": 48.84819,
+      "lng": 2.32802,
+      "lines": [
+        "12"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "République",
+      "lat": 48.86712,
+      "lng": 2.36428,
+      "lines": [
+        "3",
+        "5",
+        "8",
+        "9",
+        "11"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "République - Marx Dormoy",
+      "lat": 48.90659,
+      "lng": 2.52393,
+      "lines": [
+        "T4"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Reuilly - Diderot",
+      "lat": 48.8472,
+      "lng": 2.3851,
+      "lines": [
+        "1",
+        "8"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Richard-Lenoir",
+      "lat": 48.85986,
+      "lng": 2.37195,
+      "lines": [
+        "5"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Richelieu - Drouot",
+      "lat": 48.87164,
+      "lng": 2.33846,
+      "lines": [
+        "8",
+        "9"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Riquet",
+      "lat": 48.88816,
+      "lng": 2.37367,
+      "lines": [
+        "7"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Ris-Orangis",
+      "lat": 48.65906,
+      "lng": 2.415,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Robert Schuman (Parc Silic Centre)",
+      "lat": 48.7466,
+      "lng": 2.35278,
+      "lines": [
+        "T7"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Robert Wagner",
+      "lat": 48.78514,
+      "lng": 2.17896,
+      "lines": [
+        "T6"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Robespierre",
+      "lat": 48.85567,
+      "lng": 2.42297,
+      "lines": [
+        "9"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Robinson",
+      "lat": 48.78024,
+      "lng": 2.28136,
+      "lines": [
+        "B"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Roger Semât",
+      "lat": 48.94483,
+      "lng": 2.35694,
+      "lines": [
+        "T5"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Roissy-en-Brie",
+      "lat": 48.79563,
+      "lng": 2.65053,
+      "lines": [
+        "E"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Romain Rolland",
+      "lat": 48.90472,
+      "lng": 2.54792,
+      "lines": [
+        "T4"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Romainville - Carnot",
+      "lat": 48.88369,
+      "lng": 2.44069,
+      "lines": [
+        "11"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Rome",
+      "lat": 48.88235,
+      "lng": 2.32136,
+      "lines": [
+        "2"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Rosa Parks",
+      "lat": 48.8975,
+      "lng": 2.37339,
+      "lines": [
+        "T3b"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Rosa Parks",
+      "lat": 48.89646,
+      "lng": 2.37372,
+      "lines": [
+        "E"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Rose Bertin",
+      "lat": 48.95318,
+      "lng": 2.31532,
+      "lines": [
+        "T8"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Rosny Bois Perrier",
+      "lat": 48.88259,
+      "lng": 2.48119,
+      "lines": [
+        "E"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Rosny-Bois-Perrier",
+      "lat": 48.88307,
+      "lng": 2.48061,
+      "lines": [
+        "11"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Rosny-sous-Bois",
+      "lat": 48.87007,
+      "lng": 2.48576,
+      "lines": [
+        "E"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Rosny-sur-Seine",
+      "lat": 48.99771,
+      "lng": 1.62907,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Rosny-sur-Seine",
+      "lat": 48.99752,
+      "lng": 1.62982,
+      "lines": [
+        "J"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Rougemont Chanteloup",
+      "lat": 48.93097,
+      "lng": 2.51487,
+      "lines": [
+        "T4"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Rouget de Lisle",
+      "lat": 48.76388,
+      "lng": 2.40576,
+      "lines": [
+        "T9"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Rue de la Pompe",
+      "lat": 48.86404,
+      "lng": 2.27792,
+      "lines": [
+        "9"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Rue des Boulets",
+      "lat": 48.85237,
+      "lng": 2.38943,
+      "lines": [
+        "9"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Rue du Bac",
+      "lat": 48.85588,
+      "lng": 2.3257,
+      "lines": [
+        "12"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Rue Saint-Maur",
+      "lat": 48.86405,
+      "lng": 2.38046,
+      "lines": [
+        "3"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Rueil-Malmaison",
+      "lat": 48.88767,
+      "lng": 2.17237,
+      "lines": [
+        "A"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Rungis la Fraternelle",
+      "lat": 48.74022,
+      "lng": 2.3522,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Saarinen",
+      "lat": 48.75019,
+      "lng": 2.35444,
+      "lines": [
+        "T7"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Saint-Ambroise",
+      "lat": 48.86142,
+      "lng": 2.37388,
+      "lines": [
+        "9"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Saint-Augustin",
+      "lat": 48.87455,
+      "lng": 2.32101,
+      "lines": [
+        "9"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Saint-Chéron",
+      "lat": 48.55094,
+      "lng": 2.12498,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Saint-Cloud",
+      "lat": 48.84606,
+      "lng": 2.21763,
+      "lines": [
+        "L",
+        "U"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Saint-Cyr",
+      "lat": 48.79877,
+      "lng": 2.07271,
+      "lines": [
+        "N",
+        "U"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Saint-Cyr",
+      "lat": 48.79901,
+      "lng": 2.07472,
+      "lines": [
+        "T13"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Saint-Cyr",
+      "lat": 48.79877,
+      "lng": 2.07271,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Saint-Cyr - voie 2",
+      "lat": 48.79899,
+      "lng": 2.07473,
+      "lines": [
+        "T13"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Saint-Denis",
+      "lat": 48.93483,
+      "lng": 2.34548,
+      "lines": [
+        "H"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Saint-Denis",
+      "lat": 48.93483,
+      "lng": 2.34548,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Saint-Denis - Gare",
+      "lat": 48.93525,
+      "lng": 2.34774,
+      "lines": [
+        "T8"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Saint-Denis - Pleyel",
+      "lat": 48.91873,
+      "lng": 2.34589,
+      "lines": [
+        "14"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Saint-Denis - Porte de Paris",
+      "lat": 48.93,
+      "lng": 2.3561,
+      "lines": [
+        "13"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Saint-Denis - Porte de Paris",
+      "lat": 48.92986,
+      "lng": 2.35727,
+      "lines": [
+        "T8"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Saint-Denis - Université",
+      "lat": 48.94588,
+      "lng": 2.36455,
+      "lines": [
+        "13"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Saint-Fargeau",
+      "lat": 48.87184,
+      "lng": 2.4045,
+      "lines": [
+        "3B"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Saint-Fargeau",
+      "lat": 48.56503,
+      "lng": 2.54261,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Saint-François-Xavier",
+      "lat": 48.85195,
+      "lng": 2.31441,
+      "lines": [
+        "13"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Saint-Georges",
+      "lat": 48.87842,
+      "lng": 2.33757,
+      "lines": [
+        "12"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Saint-Germain-des-Prés",
+      "lat": 48.85367,
+      "lng": 2.33399,
+      "lines": [
+        "4"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Saint-Germain-en-Laye",
+      "lat": 48.9016,
+      "lng": 2.09524,
+      "lines": [
+        "T13"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Saint-Germain-en-Laye",
+      "lat": 48.89875,
+      "lng": 2.09504,
+      "lines": [
+        "A"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Saint-Gratien",
+      "lat": 48.96366,
+      "lng": 2.28578,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Saint-Jacques",
+      "lat": 48.83286,
+      "lng": 2.3371,
+      "lines": [
+        "6"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Saint-Julien du Sault",
+      "lat": 48.02662,
+      "lng": 3.30276,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Saint-Lazare",
+      "lat": 48.87569,
+      "lng": 2.32745,
+      "lines": [
+        "3",
+        "12",
+        "13",
+        "14"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Saint-Leu-d'Esserent",
+      "lat": 49.21379,
+      "lng": 2.41707,
+      "lines": [
+        "H"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Saint-Leu-la-Forêt",
+      "lat": 49.01524,
+      "lng": 2.24289,
+      "lines": [
+        "H"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Saint-Mammès",
+      "lat": 48.38265,
+      "lng": 2.81651,
+      "lines": [
+        "R"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Saint-Mandé",
+      "lat": 48.84636,
+      "lng": 2.419,
+      "lines": [
+        "1"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Saint-Marcel",
+      "lat": 48.83848,
+      "lng": 2.36082,
+      "lines": [
+        "5"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Saint-Martin d'Étampes",
+      "lat": 48.42749,
+      "lng": 2.14526,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Saint-Maur - Créteil",
+      "lat": 48.8062,
+      "lng": 2.47291,
+      "lines": [
+        "A"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Saint-Michel",
+      "lat": 48.85358,
+      "lng": 2.34396,
+      "lines": [
+        "4"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Saint-Michel Notre-Dame",
+      "lat": 48.85302,
+      "lng": 2.34496,
+      "lines": [
+        "B",
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Saint-Michel-sur-Orge",
+      "lat": 48.63562,
+      "lng": 2.3068,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Saint-Nom-la-Bretèche - Forêt de Marly",
+      "lat": 48.8674,
+      "lng": 2.05074,
+      "lines": [
+        "T13"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Saint-Nom-la-Bretèche Forêt de Marly",
+      "lat": 48.8671,
+      "lng": 2.0513,
+      "lines": [
+        "L"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Saint-Ouen",
+      "lat": 48.90521,
+      "lng": 2.32266,
+      "lines": [
+        "14"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Saint-Ouen",
+      "lat": 48.90456,
+      "lng": 2.32269,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Saint-Ouen-l'Aumône",
+      "lat": 49.04531,
+      "lng": 2.10523,
+      "lines": [
+        "H"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Saint-Ouen-l'Aumône",
+      "lat": 49.04531,
+      "lng": 2.10523,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Saint-Ouen-l'Aumône Liesse",
+      "lat": 49.03412,
+      "lng": 2.12812,
+      "lines": [
+        "H"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Saint-Ouen-l'Aumône Liesse",
+      "lat": 49.03412,
+      "lng": 2.12812,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Saint-Ouen-l'Aumône Quartier de l'Église",
+      "lat": 49.03909,
+      "lng": 2.10347,
+      "lines": [
+        "J"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Saint-Paul (Le Marais)",
+      "lat": 48.85519,
+      "lng": 2.36089,
+      "lines": [
+        "1"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Saint-Philippe-du-Roule",
+      "lat": 48.87215,
+      "lng": 2.31,
+      "lines": [
+        "9"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Saint-Piat",
+      "lat": 48.54256,
+      "lng": 1.59007,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Saint-Placide",
+      "lat": 48.84701,
+      "lng": 2.32705,
+      "lines": [
+        "4"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Saint-Quentin en Yvelines - Montigny-le-Bretonneux",
+      "lat": 48.78748,
+      "lng": 2.04462,
+      "lines": [
+        "N",
+        "U"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Saint-Quentin en Yvelines - Montigny-le-Bretonneux",
+      "lat": 48.78723,
+      "lng": 2.04453,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Saint-Quentin en Yvelines - Montigny-le-Bretonneux",
+      "lat": 48.78748,
+      "lng": 2.04462,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Saint-Rémy-lès-Chevreuse",
+      "lat": 48.70273,
+      "lng": 2.07139,
+      "lines": [
+        "B"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Saint-Sébastien - Froissart",
+      "lat": 48.86095,
+      "lng": 2.36713,
+      "lines": [
+        "8"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Saint-Sulpice",
+      "lat": 48.85114,
+      "lng": 2.33095,
+      "lines": [
+        "4"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Sainte-Colombe Septveilles",
+      "lat": 48.52915,
+      "lng": 3.25534,
+      "lines": [
+        "P"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Sainte-Geneviève-des-Bois",
+      "lat": 48.65295,
+      "lng": 2.31296,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Sannois",
+      "lat": 48.97088,
+      "lng": 2.26382,
+      "lines": [
+        "J"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Santeuil - Le Perchay",
+      "lat": 49.12334,
+      "lng": 1.94941,
+      "lines": [
+        "J"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Sarcelles - Saint-Brice",
+      "lat": 48.9962,
+      "lng": 2.36869,
+      "lines": [
+        "H"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Sartrouville",
+      "lat": 48.9377,
+      "lng": 2.15722,
+      "lines": [
+        "J",
+        "L"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Sartrouville",
+      "lat": 48.9377,
+      "lng": 2.15722,
+      "lines": [
+        "A"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Savigny-le-Temple - Nandy",
+      "lat": 48.59549,
+      "lng": 2.58394,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Savigny-sur-Orge",
+      "lat": 48.67639,
+      "lng": 2.35235,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Sceaux",
+      "lat": 48.78131,
+      "lng": 2.29793,
+      "lines": [
+        "B"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Ségur",
+      "lat": 48.84723,
+      "lng": 2.30725,
+      "lines": [
+        "10"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Sens",
+      "lat": 48.19823,
+      "lng": 3.26738,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Sentier",
+      "lat": 48.86728,
+      "lng": 2.34751,
+      "lines": [
+        "3"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Serge Gainsbourg",
+      "lat": 48.88121,
+      "lng": 2.42716,
+      "lines": [
+        "11"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Sermaise",
+      "lat": 48.53569,
+      "lng": 2.06909,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Seugy",
+      "lat": 49.11913,
+      "lng": 2.39966,
+      "lines": [
+        "H"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Séverine",
+      "lat": 48.86749,
+      "lng": 2.40887,
+      "lines": [
+        "T3b"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Sevran - Beaudottes",
+      "lat": 48.947,
+      "lng": 2.52473,
+      "lines": [
+        "B"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Sevran - Livry",
+      "lat": 48.9364,
+      "lng": 2.53529,
+      "lines": [
+        "B"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Sèvres - Babylone",
+      "lat": 48.85157,
+      "lng": 2.32689,
+      "lines": [
+        "10",
+        "12"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Sèvres - Ville-d'Avray",
+      "lat": 48.82725,
+      "lng": 2.20073,
+      "lines": [
+        "L",
+        "U"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Sèvres Rive Gauche",
+      "lat": 48.82121,
+      "lng": 2.21508,
+      "lines": [
+        "N"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Sèvres-Lecourbe",
+      "lat": 48.84558,
+      "lng": 2.30947,
+      "lines": [
+        "6"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Simplon",
+      "lat": 48.89382,
+      "lng": 2.34779,
+      "lines": [
+        "4"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Soleil Levant",
+      "lat": 48.79028,
+      "lng": 2.26336,
+      "lines": [
+        "T6"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Solférino",
+      "lat": 48.85855,
+      "lng": 2.3231,
+      "lines": [
+        "12"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Souppes - Château-Landon",
+      "lat": 48.18118,
+      "lng": 2.73587,
+      "lines": [
+        "R"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Square Sainte-Odile",
+      "lat": 48.88743,
+      "lng": 2.29682,
+      "lines": [
+        "T3b"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Stade Charléty - Porte de Gentilly",
+      "lat": 48.81945,
+      "lng": 2.3458,
+      "lines": [
+        "T3a"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Stade de France Saint-Denis",
+      "lat": 48.9177,
+      "lng": 2.35044,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Stade Géo André",
+      "lat": 48.92433,
+      "lng": 2.40207,
+      "lines": [
+        "T1"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Stains - La Cerisaie",
+      "lat": 48.95477,
+      "lng": 2.39181,
+      "lines": [
+        "T11"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Stalingrad",
+      "lat": 48.88424,
+      "lng": 2.36575,
+      "lines": [
+        "2",
+        "5",
+        "7"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Strasbourg - Saint-Denis",
+      "lat": 48.86962,
+      "lng": 2.35449,
+      "lines": [
+        "4",
+        "8",
+        "9"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Sucy - Bonneuil",
+      "lat": 48.77206,
+      "lng": 2.5075,
+      "lines": [
+        "A"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Sully - Morland",
+      "lat": 48.85121,
+      "lng": 2.36175,
+      "lines": [
+        "7"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Suresnes - Longchamp",
+      "lat": 48.86811,
+      "lng": 2.22138,
+      "lines": [
+        "T2"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Suresnes Mont Valérien",
+      "lat": 48.87169,
+      "lng": 2.22106,
+      "lines": [
+        "L",
+        "U"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Survilliers - Fosses",
+      "lat": 49.09951,
+      "lng": 2.52552,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Suzanne Lenglen",
+      "lat": 48.83335,
+      "lng": 2.27689,
+      "lines": [
+        "T2"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Suzanne Valadon",
+      "lat": 48.95914,
+      "lng": 2.35869,
+      "lines": [
+        "T5"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Tacoignières - Richebourg",
+      "lat": 48.82932,
+      "lng": 1.66866,
+      "lines": [
+        "N"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Taverny",
+      "lat": 49.02498,
+      "lng": 2.22229,
+      "lines": [
+        "H"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Télégraphe",
+      "lat": 48.87551,
+      "lng": 2.39865,
+      "lines": [
+        "11"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Temple",
+      "lat": 48.86676,
+      "lng": 2.36156,
+      "lines": [
+        "3"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Ternes",
+      "lat": 48.8782,
+      "lng": 2.29811,
+      "lines": [
+        "2"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Théâtre Gérard Philipe",
+      "lat": 48.9375,
+      "lng": 2.35047,
+      "lines": [
+        "T1"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Théâtre La Piscine",
+      "lat": 48.76384,
+      "lng": 2.27279,
+      "lines": [
+        "T10"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Thérèse Pierre",
+      "lat": 48.88353,
+      "lng": 2.2882,
+      "lines": [
+        "T3b"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Thiais - Orly (Pont de Rungis)",
+      "lat": 48.74684,
+      "lng": 2.37247,
+      "lines": [
+        "14"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Thieux - Nantouillet",
+      "lat": 49.00814,
+      "lng": 2.68025,
+      "lines": [
+        "K"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Thomery",
+      "lat": 48.39428,
+      "lng": 2.76419,
+      "lines": [
+        "R"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Thun le Paradis",
+      "lat": 49.00667,
+      "lng": 1.91917,
+      "lines": [
+        "J"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Tolbiac",
+      "lat": 48.82614,
+      "lng": 2.35732,
+      "lines": [
+        "7"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Torcy",
+      "lat": 48.83971,
+      "lng": 2.65517,
+      "lines": [
+        "A"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Tournan",
+      "lat": 48.73945,
+      "lng": 2.7589,
+      "lines": [
+        "E"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Tournan",
+      "lat": 48.73945,
+      "lng": 2.7589,
+      "lines": [
+        "P"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Traité de Rome",
+      "lat": 48.62515,
+      "lng": 2.40737,
+      "lines": [
+        "T12"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Trappes",
+      "lat": 48.77479,
+      "lng": 2.00659,
+      "lines": [
+        "N",
+        "U"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Trie-Château",
+      "lat": 49.2824,
+      "lng": 1.8185,
+      "lines": [
+        "J"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Triel-sur-Seine",
+      "lat": 48.98142,
+      "lng": 2.00571,
+      "lines": [
+        "J"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Trilport",
+      "lat": 48.96017,
+      "lng": 2.94969,
+      "lines": [
+        "P"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Trinité - d'Estienne d'Orves",
+      "lat": 48.87634,
+      "lng": 2.33305,
+      "lines": [
+        "12"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Trocadéro",
+      "lat": 48.86346,
+      "lng": 2.28763,
+      "lines": [
+        "6",
+        "9"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Trois Communes",
+      "lat": 48.77299,
+      "lng": 2.39939,
+      "lines": [
+        "T9"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Tuileries",
+      "lat": 48.86474,
+      "lng": 2.3291,
+      "lines": [
+        "1"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Us",
+      "lat": 49.09955,
+      "lng": 1.97054,
+      "lines": [
+        "J"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Vaires - Torcy",
+      "lat": 48.87517,
+      "lng": 2.63771,
+      "lines": [
+        "E"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Vaires - Torcy",
+      "lat": 48.87517,
+      "lng": 2.63771,
+      "lines": [
+        "P"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Val d'Argenteuil",
+      "lat": 48.95066,
+      "lng": 2.23269,
+      "lines": [
+        "J"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Val d'Europe",
+      "lat": 48.85485,
+      "lng": 2.77243,
+      "lines": [
+        "A"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Val de Fontenay",
+      "lat": 48.85425,
+      "lng": 2.48905,
+      "lines": [
+        "A",
+        "E"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Vallée aux Loups",
+      "lat": 48.76636,
+      "lng": 2.25485,
+      "lines": [
+        "T10"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Valmondois",
+      "lat": 49.09094,
+      "lng": 2.20192,
+      "lines": [
+        "H"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Vaneau",
+      "lat": 48.84889,
+      "lng": 2.32135,
+      "lines": [
+        "10"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Vanves - Malakoff",
+      "lat": 48.81829,
+      "lng": 2.29197,
+      "lines": [
+        "N"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Varenne",
+      "lat": 48.8564,
+      "lng": 2.31494,
+      "lines": [
+        "13"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Vauban",
+      "lat": 48.8072,
+      "lng": 2.29406,
+      "lines": [
+        "T6"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Vauboyen",
+      "lat": 48.75897,
+      "lng": 2.19255,
+      "lines": [
+        "V"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Vaucelles",
+      "lat": 49.02173,
+      "lng": 2.22945,
+      "lines": [
+        "H"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Vaucresson",
+      "lat": 48.83668,
+      "lng": 2.15267,
+      "lines": [
+        "L"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Vaugirard",
+      "lat": 48.83954,
+      "lng": 2.30098,
+      "lines": [
+        "12"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Vaux-sur-Seine",
+      "lat": 49.00736,
+      "lng": 1.96303,
+      "lines": [
+        "J"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Vavin",
+      "lat": 48.84224,
+      "lng": 2.32902,
+      "lines": [
+        "4"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Vélizy 2",
+      "lat": 48.78501,
+      "lng": 2.21999,
+      "lines": [
+        "T6"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Verdun - Hoche",
+      "lat": 48.7684,
+      "lng": 2.40282,
+      "lines": [
+        "T9"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Verneuil-l'Étang",
+      "lat": 48.64439,
+      "lng": 2.82508,
+      "lines": [
+        "P"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Vernon - Giverny",
+      "lat": 49.09163,
+      "lng": 1.47778,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Vernon - Giverny",
+      "lat": 49.09163,
+      "lng": 1.47778,
+      "lines": [
+        "J"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Vernou-sur-Seine",
+      "lat": 48.38668,
+      "lng": 2.84215,
+      "lines": [
+        "R"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Vernouillet - Verneuil",
+      "lat": 48.98165,
+      "lng": 1.98294,
+      "lines": [
+        "J"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Versailles Chantiers",
+      "lat": 48.79504,
+      "lng": 2.1345,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Versailles Chantiers",
+      "lat": 48.79526,
+      "lng": 2.13491,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Versailles Chantiers",
+      "lat": 48.79526,
+      "lng": 2.13491,
+      "lines": [
+        "N",
+        "U",
+        "V"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Versailles Château Rive Gauche",
+      "lat": 48.79991,
+      "lng": 2.13015,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Versailles Rive Droite",
+      "lat": 48.80949,
+      "lng": 2.13689,
+      "lines": [
+        "L"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Vert-Galant",
+      "lat": 48.94409,
+      "lng": 2.5664,
+      "lines": [
+        "B"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Viarmes",
+      "lat": 49.11663,
+      "lng": 2.36824,
+      "lines": [
+        "H"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Victor Basch",
+      "lat": 48.91375,
+      "lng": 2.22986,
+      "lines": [
+        "T2"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Victor Hugo",
+      "lat": 48.86985,
+      "lng": 2.2859,
+      "lines": [
+        "2"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Vigneux-sur-Seine",
+      "lat": 48.70809,
+      "lng": 2.4135,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Villabé",
+      "lat": 48.59281,
+      "lng": 2.46153,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Villaines",
+      "lat": 49.07926,
+      "lng": 2.35054,
+      "lines": [
+        "H"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Villejuif - Gustave Roussy",
+      "lat": 48.79324,
+      "lng": 2.34926,
+      "lines": [
+        "14"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Villejuif - Louis Aragon",
+      "lat": 48.78757,
+      "lng": 2.36772,
+      "lines": [
+        "7"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Villejuif - Louis Aragon",
+      "lat": 48.78729,
+      "lng": 2.36688,
+      "lines": [
+        "T7"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Villejuif Léo Lagrange",
+      "lat": 48.80435,
+      "lng": 2.36393,
+      "lines": [
+        "7"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Villejuif Paul Vaillant-Couturier",
+      "lat": 48.79631,
+      "lng": 2.3682,
+      "lines": [
+        "7"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Villeneuve Triage",
+      "lat": 48.74461,
+      "lng": 2.4387,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Villeneuve-la-Guyard",
+      "lat": 48.34262,
+      "lng": 3.07202,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Villeneuve-le-Roi",
+      "lat": 48.73969,
+      "lng": 2.42642,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Villeneuve-Saint-Georges",
+      "lat": 48.73008,
+      "lng": 2.4463,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Villeneuve-sur-Yonne",
+      "lat": 48.08521,
+      "lng": 3.2865,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Villennes-sur-Seine",
+      "lat": 48.93983,
+      "lng": 1.99956,
+      "lines": [
+        "J"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Villeparisis - Mitry-le-Neuf",
+      "lat": 48.95316,
+      "lng": 2.60322,
+      "lines": [
+        "B"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Villepinte",
+      "lat": 48.96257,
+      "lng": 2.51278,
+      "lines": [
+        "B"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Villepreux - Les Clayes",
+      "lat": 48.82367,
+      "lng": 1.9928,
+      "lines": [
+        "N"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Villetaneuse - Université",
+      "lat": 48.96005,
+      "lng": 2.34236,
+      "lines": [
+        "T8",
+        "T11"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Villiers",
+      "lat": 48.88107,
+      "lng": 2.31582,
+      "lines": [
+        "2",
+        "3"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Villiers Montbarbin",
+      "lat": 48.86353,
+      "lng": 2.88253,
+      "lines": [
+        "T14"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Villiers-le-Bel - Gonesse - Arnouville",
+      "lat": 48.99377,
+      "lng": 2.41625,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Villiers-sur-Marne - Le Plessis-Trévise",
+      "lat": 48.82325,
+      "lng": 2.54264,
+      "lines": [
+        "E"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Vincennes",
+      "lat": 48.84735,
+      "lng": 2.43258,
+      "lines": [
+        "A"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Viroflay - Rive Droite",
+      "lat": 48.80561,
+      "lng": 2.16897,
+      "lines": [
+        "T6"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Viroflay - Rive Droite",
+      "lat": 48.80547,
+      "lng": 2.16765,
+      "lines": [
+        "L"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Viroflay - Rive Gauche",
+      "lat": 48.80102,
+      "lng": 2.17138,
+      "lines": [
+        "T6"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Viroflay Rive Gauche",
+      "lat": 48.80067,
+      "lng": 2.17158,
+      "lines": [
+        "N"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Viroflay Rive Gauche",
+      "lat": 48.80067,
+      "lng": 2.17158,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Viry-Châtillon",
+      "lat": 48.67591,
+      "lng": 2.38702,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Vitry-sur-Seine",
+      "lat": 48.80028,
+      "lng": 2.40269,
+      "lines": [
+        "C"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Volontaires",
+      "lat": 48.84141,
+      "lng": 2.30798,
+      "lines": [
+        "12"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Voltaire",
+      "lat": 48.85766,
+      "lng": 2.38003,
+      "lines": [
+        "9"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Vosves",
+      "lat": 48.51508,
+      "lng": 2.59941,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    },
+    {
+      "name": "Voves",
+      "lat": 48.27503,
+      "lng": 1.62204,
+      "lines": [
+        "TER"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Vulaines-sur-Seine - Samoreau",
+      "lat": 48.43046,
+      "lng": 2.7529,
+      "lines": [
+        "R"
+      ],
+      "type": "train"
+    },
+    {
+      "name": "Wagram",
+      "lat": 48.88385,
+      "lng": 2.30467,
+      "lines": [
+        "3"
+      ],
+      "type": "metro"
+    },
+    {
+      "name": "Watteau - Rondenay",
+      "lat": 48.77862,
+      "lng": 2.39634,
+      "lines": [
+        "T9"
+      ],
+      "type": "tram"
+    },
+    {
+      "name": "Yerres",
+      "lat": 48.70645,
+      "lng": 2.48319,
+      "lines": [
+        "D"
+      ],
+      "type": "rer"
+    }
+  ]
+}
