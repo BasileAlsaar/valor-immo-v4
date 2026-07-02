@@ -1,10 +1,11 @@
 "use client"
 
 import { useMemo } from "react"
-import { Layer, Map, Source } from "react-map-gl/maplibre"
+import { Layer, Map, Marker, Source } from "react-map-gl/maplibre"
 import "maplibre-gl/dist/maplibre-gl.css"
 
 import { cn } from "@/lib/utils"
+import type { NearbyStop } from "@/lib/transports/nearest-stops"
 
 const MAP_STYLE = "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json"
 const EARTH_RADIUS_M = 6_371_000
@@ -26,7 +27,25 @@ type Props = {
   radiusMeters: number
   cityLabel?: string | null
   districtLabel?: string | null
+  /**
+   * Stations de transport les plus proches, déjà résolues côté serveur
+   * via `nearestStops()`. 0-3 items. Rendues comme repères sur la carte.
+   */
+  stops?: NearbyStop[]
   className?: string
+}
+
+/**
+ * Libellé compact de la ligne à afficher dans la chip du marqueur.
+ * Convention éditoriale : « M13 » pour métro, « RER B » pour RER,
+ * « T3a » pour tramway, sinon le short name brut (TER, L, U…).
+ */
+function formatLineBadge(s: NearbyStop): string {
+  const primary = s.lines[0] ?? ""
+  if (s.type === "metro") return `M${primary}`
+  if (s.type === "rer") return `RER ${primary}`
+  if (s.type === "tram") return primary.toUpperCase().startsWith("T") ? primary : `T${primary}`
+  return primary // train / TER / L / U…
 }
 
 type ShellFeature = {
@@ -98,6 +117,7 @@ export function ZoneMap({
   radiusMeters,
   cityLabel,
   districtLabel,
+  stops,
   className,
 }: Props) {
   const shells = useMemo(
@@ -160,6 +180,29 @@ export function ZoneMap({
               }}
             />
           </Source>
+
+          {/* Repères transport : marqueur or + chip label serif. Les
+              distances sont volontairement non affichées (dérivées de
+              coord arrondies ±100 m → fausse précision au mètre). */}
+          {stops?.map((s) => (
+            <Marker
+              key={`${s.name}-${s.type}`}
+              longitude={s.lng}
+              latitude={s.lat}
+              anchor="bottom"
+            >
+              <div className="flex flex-col items-center gap-1">
+                <span className="rounded-full bg-cream/95 px-2.5 py-0.5 font-accent text-[11px] font-medium tracking-wide text-fir-dark shadow-[0_2px_10px_rgba(15,61,46,0.18)] whitespace-nowrap">
+                  <span className="text-gold-deep">{formatLineBadge(s)}</span>
+                  <span className="ml-1.5 opacity-80">{s.name}</span>
+                </span>
+                <span
+                  aria-hidden
+                  className="h-2.5 w-2.5 rounded-full bg-gold border-2 border-white shadow-[0_1px_4px_rgba(15,61,46,0.35)]"
+                />
+              </div>
+            </Marker>
+          ))}
         </Map>
       </div>
       <p className="mt-2 text-xs text-ink/55">

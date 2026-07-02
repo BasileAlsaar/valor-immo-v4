@@ -11,6 +11,7 @@ import { Container } from "@/components/ui/container"
 import { CtaPill } from "@/components/ui/cta-pill"
 import { Eyebrow } from "@/components/ui/eyebrow"
 import { SetHeaderLight } from "@/components/site/set-header-light"
+import { nearestStops } from "@/lib/transports/nearest-stops"
 import {
   extractReferenceFromSlug,
   listPubliableProperties,
@@ -349,29 +350,43 @@ export default async function CommerceDetailPage({
         </Container>
       </section>
 
-      {b.latitude != null && b.longitude != null && (
-        <section className="bg-cream py-14 md:py-20">
-          <Container>
-            <Eyebrow className="text-gold-deep">Zone</Eyebrow>
-            <div className="mt-4 flex items-center gap-2 text-sm text-ink/60">
-              <MapPin className="h-4 w-4" />
-              <span>
-                {geoLine || "Localisation approximative"} · rayon indicatif{" "}
-                {b.zoneRadius} m
-              </span>
-            </div>
-            <div className="mt-8">
-              <ZoneMap
-                centerLat={b.latitude}
-                centerLng={b.longitude}
-                radiusMeters={b.zoneRadius}
-                cityLabel={b.city?.name}
-                districtLabel={b.district?.name}
-              />
-            </div>
-          </Container>
-        </section>
-      )}
+      {b.latitude != null && b.longitude != null && (() => {
+        // Résolution des repères transport côté serveur, à partir des
+        // coord ARRONDIES (b.latitude/longitude sont déjà à 3 décimales).
+        // Le dataset IDFM complet ne franchit pas la frontière serveur →
+        // client — seules les 0-3 stations retournées sont sérialisées
+        // dans la carte.
+        const stops = nearestStops(b.latitude, b.longitude, 3)
+        return (
+          <section className="bg-cream py-14 md:py-20">
+            <Container>
+              <Eyebrow className="text-gold-deep">Zone</Eyebrow>
+              <div className="mt-4 flex items-center gap-2 text-sm text-ink/60">
+                <MapPin className="h-4 w-4" />
+                <span>
+                  {geoLine || "Localisation approximative"} · rayon indicatif{" "}
+                  {b.zoneRadius} m
+                </span>
+              </div>
+              <div className="mt-8">
+                <ZoneMap
+                  centerLat={b.latitude}
+                  centerLng={b.longitude}
+                  radiusMeters={b.zoneRadius}
+                  cityLabel={b.city?.name}
+                  districtLabel={b.district?.name}
+                  stops={stops}
+                />
+              </div>
+              {stops.length > 0 && (
+                <p className="mt-2 text-[11px] text-ink/45">
+                  Transport : Île-de-France Mobilités — Etalab 2.0.
+                </p>
+              )}
+            </Container>
+          </section>
+        )
+      })()}
     </>
   )
 }
