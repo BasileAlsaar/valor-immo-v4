@@ -226,40 +226,48 @@ export default async function CommerceDetailPage({
         </Container>
       </section>
 
-      {b.pictures.length > 0 && (
-        <section className="bg-cream pb-10 md:pb-14">
-          <Container>
-            <Gallery
-              images={b.pictures.map((pic) => ({
-                src: pic.url,
-                alt: b.content?.title ?? `${b.type} · ${b.reference}`,
-              }))}
-              aspectRatio="16/9"
-            />
-          </Container>
-        </section>
-      )}
-
+      {/* Section fusionnée : Gallery + Description (col gauche) et card
+          prix sticky (col droite) dans UNE seule grille 2-col. Évite le
+          débordement historique : la Gallery, précédemment full-width
+          avec `h-[60vh]` mais sans contrainte sur ses vignettes
+          `aspect-[4/3]`, laissait déborder ses vignettes sous sa
+          section quand ≥ 3 photos étaient publiées (Apimo VI7 en a 3,
+          dont la watermark VI). Confiner la Gallery dans une colonne
+          de largeur 2fr rend l'overflow structurellement impossible.
+          Mobile : `grid-cols-1` implicite → Gallery, puis Description,
+          puis card, sans overlap. */}
       <section className="bg-white py-14 md:py-20">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-[1.6fr_1fr]">
+          <div className="grid gap-10 lg:grid-cols-[2fr_1fr]">
             <div>
-              <Eyebrow className="text-gold-deep">Description</Eyebrow>
-              {b.content?.comment ? (
-                <div className="mt-6 space-y-4 text-base leading-relaxed text-ink/80">
-                  {b.content.comment
-                    .split(/\r?\n\r?\n+/)
-                    .map((para) => para.trim())
-                    .filter(Boolean)
-                    .map((para, i) => (
-                      <p key={i}>{para}</p>
-                    ))}
-                </div>
-              ) : (
-                <p className="mt-6 text-base text-ink/60">
-                  Description à venir. Contactez-nous pour plus d&apos;informations.
-                </p>
+              {b.pictures.length > 0 && (
+                <Gallery
+                  images={b.pictures.map((pic) => ({
+                    src: pic.url,
+                    alt: b.content?.title ?? `${b.type} · ${b.reference}`,
+                  }))}
+                  aspectRatio="16/9"
+                />
               )}
+
+              <div className={b.pictures.length > 0 ? "mt-12" : ""}>
+                <Eyebrow className="text-gold-deep">Description</Eyebrow>
+                {b.content?.comment ? (
+                  <div className="mt-6 space-y-4 text-base leading-relaxed text-ink/80">
+                    {b.content.comment
+                      .split(/\r?\n\r?\n+/)
+                      .map((para) => para.trim())
+                      .filter(Boolean)
+                      .map((para, i) => (
+                        <p key={i}>{para}</p>
+                      ))}
+                  </div>
+                ) : (
+                  <p className="mt-6 text-base text-ink/60">
+                    Description à venir. Contactez-nous pour plus d&apos;informations.
+                  </p>
+                )}
+              </div>
             </div>
 
             <aside className="lg:sticky lg:top-[calc(var(--header-offset)+2rem)] lg:self-start">
