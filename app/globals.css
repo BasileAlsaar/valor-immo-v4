@@ -132,6 +132,19 @@ body {
   font-size: 10px;
 }
 
+/*
+ * Cooperative gestures overlay — voile teinté marque, opacité allégée.
+ * Défaut MapLibre : voile noir semi-opaque qui plaque une teinte grise
+ * dure sur la carte. On passe en fir-dark très dilué → cohérent
+ * palette, préserve la lisibilité de la carte sous le voile pendant que
+ * le message de zoom s'affiche. Le message texte lui-même conserve les
+ * styles MapLibre par défaut (fond blanc arrondi, positionnement
+ * centré).
+ */
+.maplibregl-cooperative-gesture-screen {
+  background: rgba(15, 61, 46, 0.35);
+}
+
 /* Selection */
 ::selection {
   background: #C9A961;

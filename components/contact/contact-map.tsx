@@ -6,6 +6,20 @@ import "maplibre-gl/dist/maplibre-gl.css"
 
 import { SITE } from "@/lib/site"
 
+/**
+ * Traductions FR pour l'overlay des cooperative gestures — mêmes clés
+ * que ZoneMap (voir components/commerces/zone-map.tsx). MapLibre choisit
+ * Mac / Windows selon l'OS ; on couvre les deux + le message mobile.
+ */
+const MAP_LOCALE_FR = {
+  "CooperativeGesturesHandler.MacHelpText":
+    "Maintenez ⌘ + molette pour zoomer",
+  "CooperativeGesturesHandler.WindowsHelpText":
+    "Maintenez Ctrl + molette pour zoomer",
+  "CooperativeGesturesHandler.MobileHelpText":
+    "Utilisez deux doigts pour déplacer la carte",
+} as const
+
 export function ContactMap() {
   const ref = useRef<HTMLDivElement | null>(null)
   const mapRef = useRef<MlMap | null>(null)
@@ -18,6 +32,10 @@ export function ContactMap() {
       center: [SITE.coords.lng, SITE.coords.lat],
       zoom: 15,
       attributionControl: false,
+      // Empêche le scroll de la page d'être capturé par la carte ; l'overlay
+      // FR (MAP_LOCALE_FR) explique le geste alternatif à l'utilisateur.
+      cooperativeGestures: true,
+      locale: MAP_LOCALE_FR,
     })
     map.addControl(new maplibregl.AttributionControl({ compact: true }))
     map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "top-right")

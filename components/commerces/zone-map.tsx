@@ -19,6 +19,21 @@ const CIRCLE_STEPS = 96
  */
 const RADIAL_SHELLS = 6
 
+/**
+ * Traductions FR pour l'overlay des cooperative gestures MapLibre.
+ * L'overlay par défaut est en anglais (chaîne du bundle maplibre-gl
+ * mentionnant ⌘/Ctrl + molette). MapLibre choisit la clé Mac/Windows
+ * selon l'OS ; on couvre les deux + le message mobile pour cohérence.
+ */
+const MAP_LOCALE_FR = {
+  "CooperativeGesturesHandler.MacHelpText":
+    "Maintenez ⌘ + molette pour zoomer",
+  "CooperativeGesturesHandler.WindowsHelpText":
+    "Maintenez Ctrl + molette pour zoomer",
+  "CooperativeGesturesHandler.MobileHelpText":
+    "Utilisez deux doigts pour déplacer la carte",
+} as const
+
 type Props = {
   /** Latitude arrondie (≈ ±100 m). Ne JAMAIS passer la coord exacte. */
   centerLat: number
@@ -151,6 +166,7 @@ export function ZoneMap({
           mapStyle={MAP_STYLE}
           attributionControl={{ compact: true }}
           cooperativeGestures
+          locale={MAP_LOCALE_FR}
           style={{ width: "100%", height: "100%" }}
           aria-label={`Zone approximative${geoLabel ? ` — ${geoLabel}` : ""}, rayon ${radiusMeters} mètres`}
         >
