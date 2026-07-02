@@ -28,11 +28,6 @@ export default function MentionsLegalesPage() {
             <p className="text-sm text-ink/60">
               [SIRET / RCS / Capital social — À FOURNIR]
             </p>
-            <h2 className="font-display text-3xl uppercase tracking-tight text-fir-dark">Carte professionnelle Hoguet</h2>
-            <p>
-              Carte T en cours d'obtention — délivrée par la CCI Paris Île-de-France<br />
-              Garantie financière : en cours de souscription
-            </p>
             <h2 className="font-display text-3xl uppercase tracking-tight text-fir-dark">Directeur de publication</h2>
             <p>[Nom et qualité — À FOURNIR]</p>
             <h2 className="font-display text-3xl uppercase tracking-tight text-fir-dark">Hébergement</h2>

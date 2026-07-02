@@ -92,9 +92,6 @@ export function SiteFooter() {
                 </li>
               ))}
             </ul>
-            <p className="mt-5 text-xs leading-relaxed opacity-60">
-              Carte T en cours d'obtention — délivrée par la CCI Paris Île-de-France
-            </p>
           </div>
         </div>
 

@@ -15,7 +15,6 @@ import type { ContactFormValues } from "@/lib/validations/contact"
 const POURQUOI_NOUS = [
   "Réponse sous 24h ouvrées, par des interlocuteurs confirmés.",
   "Équipe 100 % parisienne, connaissance fine du marché Paris + Île-de-France.",
-  "Carte T en cours d'obtention — délivrée par la CCI Paris Île-de-France.",
 ] as const
 
 export function ContactPageBody({

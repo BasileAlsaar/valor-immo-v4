@@ -157,47 +157,28 @@ export default function AgencePage() {
 
       <section className="bg-white py-24 md:py-32">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-2">
-            <div>
-              <Eyebrow className="text-gold-deep">Carte professionnelle</Eyebrow>
-              <h2 className="font-display mt-4 text-3xl uppercase leading-tight tracking-tight text-fir-dark">
-                Conformité loi Hoguet
-              </h2>
-              <p className="mt-6 leading-relaxed text-ink/80">
-                Valor Immo est titulaire de la carte professionnelle Transaction (T)
-                délivrée par la CCI de Paris Île-de-France, en application de la loi
-                Hoguet du 2 janvier 1970. L'activité de location et transaction sur
-                immeubles et fonds de commerce est exercée sous garantie financière.
-              </p>
-              <p className="mt-4 text-sm text-ink/60">
-                Carte T en cours d'obtention — délivrée par la CCI Paris Île-de-France
-                <br />
-                Garantie financière : en cours de souscription
-              </p>
-            </div>
-            <div className="rounded-3xl bg-cream p-10">
-              <Eyebrow className="text-gold-deep">Coordonnées</Eyebrow>
-              <dl className="mt-8 space-y-5">
-                <div>
-                  <dt className="text-xs uppercase tracking-wider text-ink/50">Adresse</dt>
-                  <dd className="mt-1 text-lg text-fir-dark">96 Rue Boileau, 75016 Paris</dd>
-                </div>
-                <div>
-                  <dt className="text-xs uppercase tracking-wider text-ink/50">Téléphone</dt>
-                  <dd className="mt-1 text-lg text-fir-dark">{SITE.telephoneDisplay}</dd>
-                </div>
-                <div>
-                  <dt className="text-xs uppercase tracking-wider text-ink/50">Email</dt>
-                  <dd className="mt-1 text-lg text-fir-dark">{SITE.email}</dd>
-                </div>
-                <div>
-                  <dt className="text-xs uppercase tracking-wider text-ink/50">Horaires</dt>
-                  <dd className="mt-2">
-                    <HoursBlock valueClassName="text-fir-dark" labelClassName="text-ink/55" />
-                  </dd>
-                </div>
-              </dl>
-            </div>
+          <div className="mx-auto max-w-xl rounded-3xl bg-cream p-10">
+            <Eyebrow className="text-gold-deep">Coordonnées</Eyebrow>
+            <dl className="mt-8 space-y-5">
+              <div>
+                <dt className="text-xs uppercase tracking-wider text-ink/50">Adresse</dt>
+                <dd className="mt-1 text-lg text-fir-dark">96 Rue Boileau, 75016 Paris</dd>
+              </div>
+              <div>
+                <dt className="text-xs uppercase tracking-wider text-ink/50">Téléphone</dt>
+                <dd className="mt-1 text-lg text-fir-dark">{SITE.telephoneDisplay}</dd>
+              </div>
+              <div>
+                <dt className="text-xs uppercase tracking-wider text-ink/50">Email</dt>
+                <dd className="mt-1 text-lg text-fir-dark">{SITE.email}</dd>
+              </div>
+              <div>
+                <dt className="text-xs uppercase tracking-wider text-ink/50">Horaires</dt>
+                <dd className="mt-2">
+                  <HoursBlock valueClassName="text-fir-dark" labelClassName="text-ink/55" />
+                </dd>
+              </div>
+            </dl>
           </div>
         </Container>
       </section>

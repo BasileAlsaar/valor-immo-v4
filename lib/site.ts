@@ -39,7 +39,6 @@ export const SITE = {
     lng: 2.261717,
     lat: 48.839952,
   },
-  hoguet: "Carte T en cours d'obtention — délivrée par la CCI Paris Île-de-France",
 } as const
 
 export const NAV = [

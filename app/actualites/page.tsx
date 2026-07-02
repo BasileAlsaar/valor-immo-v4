@@ -111,9 +111,10 @@ function ArticleCard({ article }: { article: Article }) {
 }
 
 /**
- * Carte transaction — rounded-2xl, border-fir-dark/10, bg-white, ombres
- * multi-couches, lift au hover. Si `image` est fournie, zone image en
- * haut (aspect 16/10) ; sinon la carte est texte seul, sans cadre vide.
+ * Vignette transaction — rounded-2xl, border-fir-dark/10, bg-white,
+ * ombres multi-couches, lift au hover. Si `image` est fournie, zone
+ * image en haut (aspect 16/10) ; sinon la carte est texte seul, sans
+ * cadre vide.
  */
 function TransactionCard({ tx }: { tx: Transaction }) {
   const hasImage = Boolean(tx.image)
