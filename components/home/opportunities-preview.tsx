@@ -67,7 +67,7 @@ export async function OpportunitiesPreview() {
           <RevealItem>
             <PropertyCarousel
               ariaLabel="Sélection d'opportunités à la une"
-              itemClassName="w-[280px] md:w-[320px]"
+              itemClassName="w-80 md:w-[320px]"
             >
               {featured.map((p) => {
                 const photo = p.photos?.[0]
@@ -83,13 +83,13 @@ export async function OpportunitiesPreview() {
                     href={`/commerces/${p.slug}`}
                     className="group flex flex-col h-full overflow-hidden rounded-2xl bg-cream transition hover:-translate-y-1 hover:shadow-[0_24px_60px_-20px_rgba(15,61,46,0.25)]"
                   >
-                    <div className="relative aspect-[4/3] overflow-hidden bg-fir-dark">
+                    <div className="relative aspect-[4/5] md:aspect-[4/3] overflow-hidden bg-fir-dark">
                       {photo ? (
                         <Image
                           src={photo}
                           alt=""
                           fill
-                          sizes="(min-width: 768px) 320px, 280px"
+                          sizes="320px"
                           className="object-cover transition duration-700 ease-out-expo group-hover:scale-105"
                         />
                       ) : (
@@ -109,7 +109,7 @@ export async function OpportunitiesPreview() {
                         {p.ref}
                       </Badge>
                     </div>
-                    <div className="p-6 flex flex-1 flex-col">
+                    <div className="p-4 md:p-6 flex flex-1 flex-col">
                       <p className="eyebrow text-gold-deep">{TYPE_LABEL[p.type]}</p>
                       <h3 className="mt-3 text-lg font-medium leading-tight text-fir-dark">
                         {p.title}
@@ -119,7 +119,7 @@ export async function OpportunitiesPreview() {
                           ? `${p.quartier} · ${p.surface} m²`
                           : `${p.ville} · ${p.surface} m²`}
                       </p>
-                      <p className="mt-auto pt-5 font-display text-3xl uppercase tracking-tight text-fir-dark">
+                      <p className="mt-4 md:mt-auto md:pt-5 font-display text-3xl uppercase tracking-tight text-fir-dark">
                         {formatDisplayPrice(p)}
                       </p>
                     </div>
