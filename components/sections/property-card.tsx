@@ -46,7 +46,7 @@ export function PropertyCard({ property: p, priority }: Props) {
       href={`/commerces/${p.slug}`}
       className="group flex flex-col h-full overflow-hidden rounded-2xl bg-white shadow-[0_8px_28px_-12px_rgba(15,61,46,0.18)] transition hover:-translate-y-1 hover:shadow-[0_24px_60px_-20px_rgba(15,61,46,0.25)]"
     >
-      <div className="relative aspect-[4/3] overflow-hidden bg-fir-dark">
+      <div className="relative aspect-[4/5] md:aspect-[4/3] overflow-hidden bg-fir-dark">
         {photo ? (
           <Image
             src={photo}
@@ -68,13 +68,13 @@ export function PropertyCard({ property: p, priority }: Props) {
           {p.ref}
         </Badge>
       </div>
-      <div className="p-6 flex flex-1 flex-col">
+      <div className="p-5 md:p-6 flex flex-1 flex-col">
         <p className="eyebrow text-gold-deep">{TYPE_LABEL[p.type]}</p>
         <h2 className="mt-3 text-lg font-medium leading-tight text-fir-dark">
           {p.title}
         </h2>
         <p className="mt-2 text-sm text-ink/60">{locLine}</p>
-        <p className="mt-auto pt-5 font-display text-3xl uppercase tracking-tight text-fir-dark">
+        <p className="mt-4 md:mt-auto md:pt-5 font-display text-3xl uppercase tracking-tight text-fir-dark">
           {priceLabel}
         </p>
       </div>
