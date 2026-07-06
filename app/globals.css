@@ -30,8 +30,8 @@
 :root {
   --background: #ffffff;
   --foreground: #000000;
-  /* Hauteur du SiteHeader fixe — sert d'offset pour la SectionNav (sticky)
-     et pour le scroll-margin-top des sections ancrées sur la home. */
+  /* Hauteur du SiteHeader fixe — sert de scroll-margin-top pour les sections
+     ancrées sur la home. */
   --header-offset: 96px;
 }
 
