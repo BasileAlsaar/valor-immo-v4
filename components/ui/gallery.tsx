@@ -62,7 +62,7 @@ export function Gallery({ images, aspectRatio = "4/3", className }: Props) {
   return (
     <>
       <div data-testid="opportunity-gallery" className={cn("w-full", className)}>
-        <div className="grid h-[50vh] gap-3 md:h-[60vh] md:grid-cols-[2fr_1fr]">
+        <div className="grid gap-3 md:h-[60vh] md:grid-cols-[2fr_1fr]">
           {/* Image principale */}
           <button
             type="button"
@@ -70,6 +70,8 @@ export function Gallery({ images, aspectRatio = "4/3", className }: Props) {
             aria-label="Ouvrir la galerie en plein écran"
             className={cn(
               "group relative overflow-hidden rounded-2xl bg-fir-dark",
+              ASPECT[aspectRatio],
+              "md:aspect-auto",
               total === 1 && "md:col-span-1",
             )}
           >
