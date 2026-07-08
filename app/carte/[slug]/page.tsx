@@ -203,7 +203,7 @@ function ContactRow({
           <Eyebrow as="span" className="text-slate-muted">
             {label}
           </Eyebrow>
-          <span className="mt-0.5 block truncate text-sm font-medium text-ink">
+          <span className="mt-0.5 block break-all text-sm font-medium text-ink">
             {value}
           </span>
         </span>
