@@ -91,7 +91,7 @@ function formatPrice(price: NonNullable<PublicProperty["price"]>): string {
 }
 
 // Facteurs de conversion vers annuel selon le label de période (Apimo culture=fr).
-// Utilisé UNIQUEMENT pour dériver un €/m²/an « à titre indicatif ». On ne
+// Utilisé UNIQUEMENT pour dériver un €/m²/an sur une LOCATION. On ne
 // mensualise/annualise jamais le prix affiché principal.
 const PERIOD_TO_YEARLY_FACTOR: Record<string, number> = {
   jour: 365,
@@ -104,7 +104,24 @@ const PERIOD_TO_YEARLY_FACTOR: Record<string, number> = {
   an: 1,
 }
 
-function annualPricePerSqm(
+// Prix au m² : deux sémantiques distinctes selon la nature du bien.
+//  - Vente     → prix d'acquisition / surface   (unité : € / m², chiffre exact)
+//  - Location  → loyer annualisé / surface       (unité : € / m² / an, indicatif)
+// La distinction se fait sur `PublicProperty.category` (label "Vente" ou
+// "Location"). Utiliser l'annualisation sur une vente donnerait un « / an »
+// dépourvu de sens.
+
+function salePricePerSqm(
+  price: PublicProperty["price"],
+  area: PublicProperty["area"]
+): string | null {
+  if (!price || price.value == null) return null
+  if (area.total == null || area.total <= 0) return null
+  const perSqm = Math.round(price.value / area.total)
+  return `${NF.format(perSqm)} € / m²`
+}
+
+function annualRentPerSqm(
   price: PublicProperty["price"],
   area: PublicProperty["area"]
 ): string | null {
@@ -177,7 +194,21 @@ export default async function CommerceDetailPage({
       ? `${b.type} — ${b.subtype}`
       : b.type
   const priceStr = b.price ? formatPrice(b.price) : "Sur demande"
-  const perSqm = annualPricePerSqm(b.price, b.area)
+  // Prix au m² dérivé — deux sémantiques distinctes. `approx = true` pour
+  // la location (loyer annualisé indicatif), false pour la vente
+  // (division exacte prix / surface).
+  const perSqm: { label: string; approx: boolean } | null =
+    b.category === "Vente"
+      ? (() => {
+          const label = salePricePerSqm(b.price, b.area)
+          return label ? { label, approx: false } : null
+        })()
+      : b.category === "Location"
+        ? (() => {
+            const label = annualRentPerSqm(b.price, b.area)
+            return label ? { label, approx: true } : null
+          })()
+        : null
   const areaStr = formatArea(b.area)
   const geoLine = [b.district?.name, b.city?.name].filter(Boolean).join(" · ")
   // Référence machine (parsable côté /contact). Le libellé lisible est
@@ -283,7 +314,8 @@ export default async function CommerceDetailPage({
                 </p>
                 {perSqm && (
                   <p className="mt-2 text-xs text-ink/55">
-                    Soit ~{perSqm} à titre indicatif.
+                    Soit {perSqm.approx ? "~" : ""}
+                    {perSqm.label} à titre indicatif.
                   </p>
                 )}
 
