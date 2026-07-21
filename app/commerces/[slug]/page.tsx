@@ -4,6 +4,7 @@ import Link from "next/link"
 import { notFound, redirect } from "next/navigation"
 import { ArrowLeft, Mail, MapPin, Phone } from "lucide-react"
 
+import { DescriptionApimo } from "@/components/commerces/description-apimo"
 import { ZoneMap } from "@/components/commerces/zone-map"
 import { Gallery } from "@/components/ui/gallery"
 import { Badge } from "@/components/ui/badge"
@@ -254,15 +255,10 @@ export default async function CommerceDetailPage({
               <div className={b.pictures.length > 0 ? "mt-12" : ""}>
                 <Eyebrow className="text-gold-deep">Description</Eyebrow>
                 {b.content?.comment ? (
-                  <div className="mt-6 space-y-4 text-base leading-relaxed text-ink/80">
-                    {b.content.comment
-                      .split(/\r?\n\r?\n+/)
-                      .map((para) => para.trim())
-                      .filter(Boolean)
-                      .map((para, i) => (
-                        <p key={i}>{para}</p>
-                      ))}
-                  </div>
+                  <DescriptionApimo
+                    text={b.content.comment}
+                    className="mt-6"
+                  />
                 ) : (
                   <p className="mt-6 text-base text-ink/60">
                     Description à venir. Contactez-nous pour plus d&apos;informations.
