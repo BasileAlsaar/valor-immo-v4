@@ -9,6 +9,7 @@ import {
   MOBILE_ACTION_BAR_SPACER,
   MobileActionBar,
 } from "@/components/commerces/mobile-action-bar"
+import { MobileFigures } from "@/components/commerces/mobile-figures"
 import { ZoneMap } from "@/components/commerces/zone-map"
 import { Gallery } from "@/components/ui/gallery"
 import { Badge } from "@/components/ui/badge"
@@ -259,11 +260,32 @@ export default async function CommerceDetailPage({
             {b.content?.title ?? "Bien commercial"}
           </h1>
 
-          {(geoLine || areaStr) && (
+          {/* Sous-titre : `geoLine` toujours affiché (localisation). La
+              surface n'apparaît qu'à partir de `lg` — sous ce breakpoint,
+              elle est portée par `MobileFigures` juste en dessous, pour
+              éviter de la répéter. */}
+          {geoLine && (
             <p className="mt-4 text-base text-ink/70 md:text-lg">
-              {[geoLine, areaStr].filter(Boolean).join(" · ")}
+              {geoLine}
+              {areaStr && (
+                <span className="hidden lg:inline"> · {areaStr}</span>
+              )}
             </p>
           )}
+          {!geoLine && areaStr && (
+            <p className="mt-4 hidden text-base text-ink/70 md:text-lg lg:block">
+              {areaStr}
+            </p>
+          )}
+
+          <MobileFigures
+            className="mt-8"
+            category={b.category}
+            priceStr={priceStr}
+            perSqm={perSqm}
+            areaStr={areaStr}
+            deposit={b.price?.deposit ?? null}
+          />
         </Container>
       </section>
 
