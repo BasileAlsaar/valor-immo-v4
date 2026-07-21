@@ -256,7 +256,12 @@ export default async function CommerceDetailPage({
             )}
           </div>
 
-          <h1 className="font-display mt-4 text-[clamp(2rem,4.5vw,3.75rem)] uppercase leading-[0.95] tracking-tight text-fir-dark">
+          {/* Cormorant Garamond (font-accent), casse Apimo native. On ne
+              lowercase pas côté data — un titre saisi tout en majuscules
+              côté CRM reste visible tel quel : c'est un signal utile
+              plutôt qu'un défaut à masquer. Cohérence avec /carte/[slug]
+              (font-accent, font-medium). */}
+          <h1 className="font-accent mt-4 text-[clamp(2.25rem,5vw,3.75rem)] font-medium leading-[1.05] text-fir-dark">
             {b.content?.title ?? "Bien commercial"}
           </h1>
 
