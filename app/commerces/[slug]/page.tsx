@@ -5,6 +5,10 @@ import { notFound, redirect } from "next/navigation"
 import { ArrowLeft, Mail, MapPin, Phone } from "lucide-react"
 
 import { DescriptionApimo } from "@/components/commerces/description-apimo"
+import {
+  MOBILE_ACTION_BAR_SPACER,
+  MobileActionBar,
+} from "@/components/commerces/mobile-action-bar"
 import { ZoneMap } from "@/components/commerces/zone-map"
 import { Gallery } from "@/components/ui/gallery"
 import { Badge } from "@/components/ui/badge"
@@ -190,6 +194,10 @@ export default async function CommerceDetailPage({
         // JSON-LD schema.org — city-level only, aucun geo précis.
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdForBien(b)) }}
       />
+      {/* Wrapper : réserve l'espace de la MobileActionBar (fixed) sous
+          `lg` pour éviter que le dernier contenu passe derrière la barre.
+          Au-dessus de `lg`, la barre est masquée → pas de padding. */}
+      <div className={MOBILE_ACTION_BAR_SPACER}>
       {/* Padding-top calé sur le token `--header-offset` (96 px mobile /
           160 px desktop) pour que le contenu démarre proprement SOUS le
           `SiteHeader` fixe. Sans ça, "Retour au catalogue" chevauche la
@@ -383,6 +391,13 @@ export default async function CommerceDetailPage({
           </section>
         )
       })()}
+      </div>
+
+      <MobileActionBar
+        visitHref={contactHref}
+        telHref={`tel:${SITE.telephoneTel}`}
+        telDisplay={SITE.telephoneDisplay}
+      />
     </>
   )
 }
