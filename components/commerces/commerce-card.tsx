@@ -63,26 +63,36 @@ export function CommerceCard({ property: p, priority }: Props) {
           </div>
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-fir-dark/30 to-transparent" />
-        {p.category && p.category !== "—" && (
-          <Badge
-            variant="status"
-            tone="neutral"
-            className="absolute left-4 top-4"
-          >
-            {p.category}
-          </Badge>
-        )}
-        <Badge variant="ref" tone="dark" className="absolute right-4 top-4">
-          {p.reference}
-        </Badge>
       </div>
 
+      {/* Grammaire alignée sur la fiche (étape 3) :
+          badges → eyebrow type → titre → sub-line → prix section.
+          Les badges quittent l'overlay image pour rejoindre le flux
+          content, comme sur la fiche — même lecture des deux côtés. */}
       <div className="flex flex-1 flex-col p-6">
-        {typeLine && <p className="eyebrow text-gold-deep">{typeLine}</p>}
-        <h2 className="font-display mt-3 text-xl uppercase leading-tight tracking-tight text-fir-dark">
+        <div className="flex flex-wrap items-center gap-3">
+          {p.category && p.category !== "—" && (
+            <Badge variant="status" tone="neutral">
+              {p.category}
+            </Badge>
+          )}
+          <Badge variant="ref" tone="dark">
+            {p.reference}
+          </Badge>
+        </div>
+
+        {typeLine && (
+          <Eyebrow as="p" className="mt-4 text-gold-deep">
+            {typeLine}
+          </Eyebrow>
+        )}
+
+        <h2 className="font-display mt-2 text-xl uppercase leading-tight tracking-tight text-fir-dark">
           {p.content?.title ?? "Bien commercial"}
         </h2>
+
         {secondary && <p className="mt-2 text-sm text-ink/60">{secondary}</p>}
+
         <div className="mt-auto border-t border-gold-deep/40 pt-4">
           <Eyebrow className="text-gold-deep">Prix</Eyebrow>
           <p className="font-display mt-1 text-3xl uppercase tracking-tight text-fir-dark">
