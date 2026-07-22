@@ -78,7 +78,7 @@ export function CommerceCard({ property: p, priority }: Props) {
 
       <div className="flex flex-1 flex-col p-6">
         {typeLine && <p className="eyebrow text-gold-deep">{typeLine}</p>}
-        <h2 className="mt-3 text-lg font-medium leading-tight text-fir-dark">
+        <h2 className="font-display mt-3 text-xl uppercase leading-tight tracking-tight text-fir-dark">
           {p.content?.title ?? "Bien commercial"}
         </h2>
         {secondary && <p className="mt-2 text-sm text-ink/60">{secondary}</p>}
