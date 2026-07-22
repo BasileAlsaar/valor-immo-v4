@@ -48,7 +48,7 @@ export function MobileFigures({
 
   return (
     <div className={cn("lg:hidden", className)}>
-      <div className="rounded-2xl bg-cream-soft p-6 shadow-[0_8px_28px_-12px_rgba(15,61,46,0.10)]">
+      <div className="rounded-2xl bg-cream-soft p-6 shadow-[0_8px_28px_-12px_rgba(15,61,46,0.18)]">
         <Eyebrow className="text-gold-deep">Prix</Eyebrow>
         <p className="font-display mt-2 text-3xl uppercase tracking-tight text-fir-dark">
           {priceStr}

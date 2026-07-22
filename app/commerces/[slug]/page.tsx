@@ -329,7 +329,7 @@ export default async function CommerceDetailPage({
             </div>
 
             <aside className="lg:sticky lg:top-[calc(var(--header-offset)+2rem)] lg:self-start">
-              <div className="rounded-3xl border border-fir-dark/10 bg-cream p-8 shadow-[0_8px_28px_-12px_rgba(15,61,46,0.10)]">
+              <div className="rounded-2xl border border-fir-dark/10 bg-cream p-8 shadow-[0_8px_28px_-12px_rgba(15,61,46,0.18)]">
                 <Eyebrow className="text-gold-deep">Prix</Eyebrow>
                 <p className="font-display mt-3 text-3xl uppercase tracking-tight text-fir-dark md:text-4xl">
                   {priceStr}
