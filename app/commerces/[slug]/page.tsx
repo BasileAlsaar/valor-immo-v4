@@ -330,16 +330,18 @@ export default async function CommerceDetailPage({
 
             <aside className="lg:sticky lg:top-[calc(var(--header-offset)+2rem)] lg:self-start">
               <div className="rounded-2xl border border-fir-dark/10 bg-cream p-8 shadow-[0_8px_28px_-12px_rgba(15,61,46,0.18)]">
-                <Eyebrow className="text-gold-deep">Prix</Eyebrow>
-                <p className="font-display mt-3 text-3xl uppercase tracking-tight text-fir-dark md:text-4xl">
-                  {priceStr}
-                </p>
-                {perSqm && (
-                  <p className="mt-2 text-xs text-ink/55">
-                    Soit {perSqm.approx ? "~" : ""}
-                    {perSqm.label} à titre indicatif.
+                <div className="border-t border-gold-deep/40 pt-4">
+                  <Eyebrow className="text-gold-deep">Prix</Eyebrow>
+                  <p className="font-display mt-2 text-3xl uppercase tracking-tight text-fir-dark md:text-4xl">
+                    {priceStr}
                   </p>
-                )}
+                  {perSqm && (
+                    <p className="mt-2 text-xs text-ink/55">
+                      Soit {perSqm.approx ? "~" : ""}
+                      {perSqm.label} à titre indicatif.
+                    </p>
+                  )}
+                </div>
 
                 <dl className="mt-6 space-y-2 text-sm text-ink/70">
                   {areaStr && (

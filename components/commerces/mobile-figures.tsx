@@ -49,16 +49,18 @@ export function MobileFigures({
   return (
     <div className={cn("lg:hidden", className)}>
       <div className="rounded-2xl bg-cream-soft p-6 shadow-[0_8px_28px_-12px_rgba(15,61,46,0.18)]">
-        <Eyebrow className="text-gold-deep">Prix</Eyebrow>
-        <p className="font-display mt-2 text-3xl uppercase tracking-tight text-fir-dark">
-          {priceStr}
-        </p>
-        {perSqm && (
-          <p className="mt-2 text-xs text-ink/55">
-            Soit {perSqm.approx ? "~" : ""}
-            {perSqm.label} à titre indicatif.
+        <div className="border-t border-gold-deep/40 pt-4">
+          <Eyebrow className="text-gold-deep">Prix</Eyebrow>
+          <p className="font-display mt-2 text-3xl uppercase tracking-tight text-fir-dark">
+            {priceStr}
           </p>
-        )}
+          {perSqm && (
+            <p className="mt-2 text-xs text-ink/55">
+              Soit {perSqm.approx ? "~" : ""}
+              {perSqm.label} à titre indicatif.
+            </p>
+          )}
+        </div>
 
         {showVenteFooter && (
           <div className="mt-5 flex items-baseline justify-between border-t border-fir-dark/10 pt-4 text-sm">

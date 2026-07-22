@@ -2,6 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 import { Badge } from "@/components/ui/badge"
+import { Eyebrow } from "@/components/ui/eyebrow"
 import type { PublicProperty } from "@/lib/apimo"
 
 type Props = {
@@ -82,9 +83,12 @@ export function CommerceCard({ property: p, priority }: Props) {
           {p.content?.title ?? "Bien commercial"}
         </h2>
         {secondary && <p className="mt-2 text-sm text-ink/60">{secondary}</p>}
-        <p className="font-display mt-auto pt-5 text-3xl uppercase tracking-tight text-fir-dark">
-          {priceStr}
-        </p>
+        <div className="mt-auto border-t border-gold-deep/40 pt-4">
+          <Eyebrow className="text-gold-deep">Prix</Eyebrow>
+          <p className="font-display mt-1 text-3xl uppercase tracking-tight text-fir-dark">
+            {priceStr}
+          </p>
+        </div>
       </div>
     </Link>
   )
