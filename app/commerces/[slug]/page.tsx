@@ -309,7 +309,7 @@ export default async function CommerceDetailPage({
                     src: pic.url,
                     alt: b.content?.title ?? `${b.type} · ${b.reference}`,
                   }))}
-                  aspectRatio="16/9"
+                  aspectRatio="4/3"
                 />
               )}
 
