@@ -343,41 +343,35 @@ export default async function CommerceDetailPage({
                   )}
                 </div>
 
-                <dl className="mt-6 space-y-2 text-sm text-ink/70">
-                  {areaStr && (
-                    <div className="flex justify-between">
-                      <dt>Surface</dt>
-                      <dd className="text-fir-dark">{areaStr}</dd>
-                    </div>
-                  )}
-                  <div className="flex justify-between">
-                    <dt>Type</dt>
-                    <dd className="text-fir-dark">{typeLine}</dd>
+                {/* Métriques factuelles seulement — même règle que
+                    MobileFigures. Type (badge en haut de page), Secteur
+                    (sous-titre h1) et Charges (3 % de remplissage Apimo)
+                    sont retirés : redondants ou vides. */}
+                {b.category === "Vente" && areaStr && (
+                  <div className="mt-6 flex items-baseline justify-between border-t border-fir-dark/10 pt-4 text-sm">
+                    <span className="text-ink/60">Surface</span>
+                    <span className="text-fir-dark">{areaStr}</span>
                   </div>
-                  {b.price?.fees != null && (
-                    <div className="flex justify-between">
-                      <dt>Charges</dt>
-                      <dd className="text-fir-dark">
-                        {NF.format(b.price.fees)} € /{" "}
-                        {b.price.period.toLowerCase()}
-                      </dd>
-                    </div>
+                )}
+                {b.category === "Location" &&
+                  (areaStr || b.price?.deposit != null) && (
+                    <dl className="mt-6 grid grid-cols-2 gap-4 border-t border-fir-dark/10 pt-4 text-sm">
+                      {areaStr && (
+                        <div>
+                          <dt className="text-ink/60">Surface</dt>
+                          <dd className="mt-0.5 text-fir-dark">{areaStr}</dd>
+                        </div>
+                      )}
+                      {b.price?.deposit != null && (
+                        <div>
+                          <dt className="text-ink/60">Dépôt de garantie</dt>
+                          <dd className="mt-0.5 text-fir-dark">
+                            {NF.format(b.price.deposit)} €
+                          </dd>
+                        </div>
+                      )}
+                    </dl>
                   )}
-                  {b.price?.deposit != null && (
-                    <div className="flex justify-between">
-                      <dt>Dépôt de garantie</dt>
-                      <dd className="text-fir-dark">
-                        {NF.format(b.price.deposit)} €
-                      </dd>
-                    </div>
-                  )}
-                  {geoLine && (
-                    <div className="flex justify-between">
-                      <dt>Secteur</dt>
-                      <dd className="text-fir-dark">{geoLine}</dd>
-                    </div>
-                  )}
-                </dl>
 
                 <div className="mt-8 space-y-3 border-t border-fir-dark/10 pt-6">
                   <a
