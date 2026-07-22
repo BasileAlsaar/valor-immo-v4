@@ -244,6 +244,10 @@ export default async function CommerceDetailPage({
             Retour au catalogue
           </Link>
 
+          {/* Grammaire éditoriale reprise de la carte catalogue :
+              badges (metadata) → eyebrow (caption type) → h1 → sub-line.
+              Le typeLine était mélangé aux badges dans la même rangée,
+              ce qui empilait deux grammaires visuelles sans hiérarchie. */}
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <Badge variant="status" tone="neutral">
               {b.category}
@@ -251,12 +255,15 @@ export default async function CommerceDetailPage({
             <Badge variant="ref" tone="dark">
               {b.reference}
             </Badge>
-            {typeLine && (
-              <span className="eyebrow text-gold-deep">{typeLine}</span>
-            )}
           </div>
 
-          <h1 className="font-display mt-4 text-[clamp(2rem,4.5vw,3.75rem)] uppercase leading-[0.95] tracking-tight text-fir-dark">
+          {typeLine && (
+            <Eyebrow as="p" className="mt-4 text-gold-deep">
+              {typeLine}
+            </Eyebrow>
+          )}
+
+          <h1 className="font-display mt-2 text-[clamp(2rem,4.5vw,3.75rem)] uppercase leading-[0.95] tracking-tight text-fir-dark">
             {b.content?.title ?? "Bien commercial"}
           </h1>
 
