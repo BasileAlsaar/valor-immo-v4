@@ -90,9 +90,22 @@ export function Gallery({ images, aspectRatio = "4/3", className }: Props) {
             </span>
           </button>
 
-          {/* Thumbnails (colonne droite desktop, stack horizontal mobile) */}
+          {/* Thumbnails (colonne droite desktop, stack horizontal mobile).
+              Desktop, ≥ 2 thumbs (total > 2) : `auto-rows-fr` + `h-full`
+              partagent la hauteur 60vh de la piste parente. Sans ça, chaque
+              thumb prend sa hauteur intrinsèque `aspect-[4/3]` (largeur ×
+              3/4) et la somme déborde sous la Gallery (recouvre la
+              Description). Cas 1 thumb (total === 2) : on garde
+              `aspect-[4/3]` naturel — sinon la thumb unique s'étire sur
+              toute la piste (bande verticale disproportionnée).
+              Mobile : layout inchangé (grid-cols-3, aspect-[4/3]). */}
           {total > 1 && (
-            <div className="grid grid-cols-3 gap-3 md:grid-cols-1">
+            <div
+              className={cn(
+                "grid grid-cols-3 gap-3 md:grid-cols-1",
+                total > 2 && "md:h-full md:auto-rows-fr",
+              )}
+            >
               {images.map((img, i) => {
                 if (i === mainIndex) return null
                 return (
@@ -104,6 +117,7 @@ export function Gallery({ images, aspectRatio = "4/3", className }: Props) {
                     className={cn(
                       "relative overflow-hidden rounded-xl bg-fir-dark transition hover:ring-2 hover:ring-gold",
                       ASPECT[aspectRatio],
+                      total > 2 && "md:aspect-auto md:min-h-0",
                     )}
                   >
                     <Image
